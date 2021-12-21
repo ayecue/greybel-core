@@ -1,5 +1,6 @@
 import { 
 	ASTBase,
+	ASTChunk,
 	ASTProvider as ASTProviderBase
 } from 'greyscript-core';
 
@@ -24,6 +25,11 @@ export interface ASTFeatureIncludeExpression extends ASTBase {
 export interface ASTFeatureEnvarExpression extends ASTBase {
 	type: ASTType.FeatureEnvarExpression;
 	value: ASTBase;
+}
+
+export interface ASTChunkAdvanced extends ASTChunk {
+	imports: ASTFeatureImportExpression[];
+	includes: ASTFeatureIncludeExpression[];
 }
 
 export class ASTProvider extends ASTProviderBase {
@@ -56,6 +62,28 @@ export class ASTProvider extends ASTProviderBase {
 		return {
 			type: ASTType.FeatureDebuggerExpression,
 			line
+		};
+	}
+
+	chunkAdvanced(
+		body: ASTBase[],
+		nativeImports: string[],
+		namespaces: Set<string>,
+		literals: ASTBase[],
+		imports: ASTFeatureImportExpression[],
+		includes: ASTFeatureIncludeExpression[],
+		line: number
+	): ASTChunkAdvanced {
+		return {
+			...this.chunk(
+				body,
+				nativeImports,
+				namespaces,
+				literals,
+				line
+			),
+			imports,
+			includes
 		};
 	}
 }

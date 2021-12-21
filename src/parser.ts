@@ -3,6 +3,7 @@ import {
 	ParserOptions as ParserOptionsBase,
 	ASTLiteral,
 	TokenType,
+	UnexpectedEOF,
 	ASTBase
 } from 'greyscript-core';
 import Lexer from './lexer';
@@ -11,6 +12,7 @@ import {
 	ASTFeatureImportExpression,
 	ASTFeatureIncludeExpression,
 	ASTFeatureEnvarExpression,
+	ASTChunkAdvanced,
 	ASTProvider
 } from './parser/ast';
 
@@ -163,4 +165,27 @@ export default class Parser extends ParserBase {
 
 		return super.parseStatement(isShortcutStatement);
 	}
+
+	parseChunk(): ASTChunkAdvanced {
+		const me = this;
+
+		me.next();
+
+		const mainStatementLine = me.token.line;
+		const body = me.parseBlock();
+
+		if (TokenType.EOF !== me.token.type) {
+			throw new UnexpectedEOF(me.token);
+		}
+
+		return me.astProvider.chunkAdvanced(
+			body,
+			me.nativeImports,
+			me.namespaces,
+			me.literals,
+			me.imports,
+			me.includes,
+			mainStatementLine
+		);
+	};
 }
