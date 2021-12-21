@@ -3330,6 +3330,8 @@ Object {
       "type": "CallStatement",
     },
   ],
+  "imports": Array [],
+  "includes": Array [],
   "line": 1,
   "literals": Array [
     Object {
@@ -4672,6 +4674,8 @@ Object {
       "type": "LogicalExpression",
     },
   ],
+  "imports": Array [],
+  "includes": Array [],
   "line": 1,
   "literals": Array [],
   "namespaces": Set {
@@ -4716,6 +4720,25 @@ Object {
     Object {
       "line": 4,
       "type": "FeatureDebuggerExpression",
+    },
+  ],
+  "imports": Array [
+    Object {
+      "line": 1,
+      "name": Object {
+        "line": 1,
+        "name": "foo",
+        "type": "Identifier",
+      },
+      "path": "test/bar",
+      "type": "FeatureImportExpression",
+    },
+  ],
+  "includes": Array [
+    Object {
+      "line": 2,
+      "path": "test/bar",
+      "type": "FeatureIncludeExpression",
     },
   ],
   "line": 1,
@@ -4945,6 +4968,8 @@ Object {
       "type": "CallStatement",
     },
   ],
+  "imports": Array [],
+  "includes": Array [],
   "line": 1,
   "literals": Array [
     Object {
@@ -5283,6 +5308,8 @@ Object {
       "type": "CallStatement",
     },
   ],
+  "imports": Array [],
+  "includes": Array [],
   "line": 1,
   "literals": Array [
     Object {
@@ -6608,6 +6635,8 @@ Object {
       "type": "CallStatement",
     },
   ],
+  "imports": Array [],
+  "includes": Array [],
   "line": 1,
   "literals": Array [
     Object {
@@ -12042,6 +12071,8 @@ Object {
       "type": "CallStatement",
     },
   ],
+  "imports": Array [],
+  "includes": Array [],
   "line": 1,
   "literals": Array [
     Object {
@@ -13998,6 +14029,8 @@ Object {
       "type": "CallStatement",
     },
   ],
+  "imports": Array [],
+  "includes": Array [],
   "line": 1,
   "literals": Array [
     Object {
@@ -14296,6 +14329,8 @@ Object {
       "type": "CallStatement",
     },
   ],
+  "imports": Array [],
+  "includes": Array [],
   "line": 1,
   "literals": Array [
     Object {
@@ -14555,6 +14590,8 @@ Object {
       "type": "CallStatement",
     },
   ],
+  "imports": Array [],
+  "includes": Array [],
   "line": 1,
   "literals": Array [
     Object {
@@ -14943,6 +14980,8 @@ Object {
       "type": "CallStatement",
     },
   ],
+  "imports": Array [],
+  "includes": Array [],
   "line": 1,
   "literals": Array [
     Object {
