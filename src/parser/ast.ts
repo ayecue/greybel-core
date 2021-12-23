@@ -16,12 +16,14 @@ export interface ASTFeatureImportExpression extends ASTBase {
 	name: ASTBase;
 	path: string;
 	chunk?: ASTChunk;
+	namespace?: string;
 }
 
 export interface ASTFeatureIncludeExpression extends ASTBase {
 	type: ASTType.FeatureIncludeExpression;
 	path: string;
 	chunk?: ASTChunk;
+	namespace?: string;
 }
 
 export interface ASTFeatureEnvarExpression extends ASTBase {
