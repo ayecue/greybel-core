@@ -1,8 +1,9 @@
 {
     "name": "greybel-core",
-    "version": "0.1.0",
-    "description": "",
-    "main": "index.js",
+    "version": "0.1.1",
+    "description": "Core lexer/parser for Greybel",
+    "main": "dist/index",
+    "typings": "dist/index",
     "scripts": {
         "prepublishOnly": "npm run build",
         "build": "npm run clean && tsc -p .",
