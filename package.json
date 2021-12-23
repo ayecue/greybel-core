@@ -32,6 +32,6 @@
         "typescript": "^4.5.4"
     },
     "dependencies": {
-        "greyscript-core": "github:ayecue/greyscript-core"
+        "greyscript-core": "^0.1.0"
     }
 }
