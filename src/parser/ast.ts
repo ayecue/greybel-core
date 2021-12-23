@@ -15,11 +15,13 @@ export interface ASTFeatureImportExpression extends ASTBase {
 	type: ASTType.FeatureImportExpression;
 	name: ASTBase;
 	path: string;
+	chunk?: ASTChunk;
 }
 
 export interface ASTFeatureIncludeExpression extends ASTBase {
 	type: ASTType.FeatureIncludeExpression;
 	path: string;
+	chunk?: ASTChunk;
 }
 
 export interface ASTFeatureEnvarExpression extends ASTBase {
