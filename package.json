@@ -1,6 +1,6 @@
 {
     "name": "greybel-core",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Core lexer/parser for Greybel",
     "main": "dist/index",
     "typings": "dist/index",
@@ -34,5 +34,9 @@
     },
     "dependencies": {
         "greyscript-core": "^0.1.0"
-    }
+    },
+    "keywords": [
+        "greyscript",
+        "greyhack"
+    ]
 }
