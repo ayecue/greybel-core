@@ -185,7 +185,8 @@ export default class Parser extends ParserBase {
 			me.literals,
 			me.imports,
 			me.includes,
-			mainStatementLine
+			mainStatementLine,
+			me.token.line
 		);
 	};
 }

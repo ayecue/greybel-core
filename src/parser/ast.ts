@@ -76,7 +76,8 @@ export class ASTProvider extends ASTProviderBase {
 		literals: ASTBase[],
 		imports: ASTFeatureImportExpression[],
 		includes: ASTFeatureIncludeExpression[],
-		line: number
+		line: number,
+		endLine: number
 	): ASTChunkAdvanced {
 		return {
 			...this.chunk(
@@ -84,7 +85,8 @@ export class ASTProvider extends ASTProviderBase {
 				nativeImports,
 				namespaces,
 				literals,
-				line
+				line,
+				endLine
 			),
 			imports,
 			includes
