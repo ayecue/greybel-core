@@ -5748,7 +5748,7 @@ Object {
                       "line": 55,
                     },
                     "start": Object {
-                      "character": 6,
+                      "character": 3,
                       "line": 51,
                     },
                     "type": "IfClause",
@@ -5759,7 +5759,7 @@ Object {
                   "line": 55,
                 },
                 "start": Object {
-                  "character": 6,
+                  "character": 3,
                   "line": 51,
                 },
                 "type": "IfStatement",
@@ -5782,7 +5782,7 @@ Object {
               "type": "Identifier",
             },
             "start": Object {
-              "character": 6,
+              "character": 2,
               "line": 49,
             },
             "type": "ForGenericStatement",
@@ -6561,7 +6561,7 @@ Object {
                   "line": 62,
                 },
                 "start": Object {
-                  "character": 5,
+                  "character": 2,
                   "line": 58,
                 },
                 "type": "IfClause",
@@ -7409,7 +7409,7 @@ Object {
               "line": 66,
             },
             "start": Object {
-              "character": 5,
+              "character": 2,
               "line": 58,
             },
             "type": "IfStatement",
@@ -7774,7 +7774,7 @@ Object {
               "line": 69,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 68,
             },
             "type": "ReturnStatement",
@@ -7811,7 +7811,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 24,
+          "character": 16,
           "line": 45,
         },
         "type": "FunctionDeclaration",
@@ -10927,7 +10927,7 @@ Object {
       },
       "path": "test/bar",
       "start": Object {
-        "character": 9,
+        "character": 1,
         "line": 1,
       },
       "type": "FeatureImportExpression",
@@ -10939,7 +10939,7 @@ Object {
       },
       "path": "test/bar",
       "start": Object {
-        "character": 10,
+        "character": 1,
         "line": 2,
       },
       "type": "FeatureIncludeExpression",
@@ -10950,7 +10950,7 @@ Object {
         "line": 3,
       },
       "start": Object {
-        "character": 8,
+        "character": 1,
         "line": 3,
       },
       "type": "FeatureEnvarExpression",
@@ -10970,11 +10970,11 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 10,
+        "character": 9,
         "line": 4,
       },
       "start": Object {
-        "character": 9,
+        "character": 1,
         "line": 4,
       },
       "type": "FeatureDebuggerExpression",
@@ -11004,7 +11004,7 @@ Object {
       },
       "path": "test/bar",
       "start": Object {
-        "character": 9,
+        "character": 1,
         "line": 1,
       },
       "type": "FeatureImportExpression",
@@ -11018,7 +11018,7 @@ Object {
       },
       "path": "test/bar",
       "start": Object {
-        "character": 10,
+        "character": 1,
         "line": 2,
       },
       "type": "FeatureIncludeExpression",
@@ -13137,7 +13137,7 @@ Object {
               "line": 13,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 12,
             },
             "type": "ReturnStatement",
@@ -13149,7 +13149,7 @@ Object {
         },
         "parameters": Array [],
         "start": Object {
-          "character": 41,
+          "character": 33,
           "line": 8,
         },
         "type": "FunctionDeclaration",
@@ -13886,7 +13886,7 @@ Object {
                           "line": 27,
                         },
                         "start": Object {
-                          "character": 6,
+                          "character": 3,
                           "line": 25,
                         },
                         "type": "IfClause",
@@ -14007,7 +14007,7 @@ Object {
                       "line": 29,
                     },
                     "start": Object {
-                      "character": 6,
+                      "character": 3,
                       "line": 25,
                     },
                     "type": "IfStatement",
@@ -14054,7 +14054,7 @@ Object {
                   "line": 30,
                 },
                 "start": Object {
-                  "character": 5,
+                  "character": 2,
                   "line": 23,
                 },
                 "type": "IfClause",
@@ -14065,7 +14065,7 @@ Object {
               "line": 30,
             },
             "start": Object {
-              "character": 5,
+              "character": 2,
               "line": 23,
             },
             "type": "IfStatement",
@@ -14090,7 +14090,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 44,
+          "character": 36,
           "line": 15,
         },
         "type": "FunctionDeclaration",
@@ -14807,7 +14807,7 @@ Object {
               "line": 45,
             },
             "start": Object {
-              "character": 8,
+              "character": 2,
               "line": 40,
             },
             "type": "WhileStatement",
@@ -14835,7 +14835,7 @@ Object {
                       "line": 49,
                     },
                     "start": Object {
-                      "character": 10,
+                      "character": 3,
                       "line": 48,
                     },
                     "type": "ReturnStatement",
@@ -14930,7 +14930,7 @@ Object {
                   "line": 49,
                 },
                 "start": Object {
-                  "character": 5,
+                  "character": 2,
                   "line": 47,
                 },
                 "type": "IfClause",
@@ -14941,7 +14941,7 @@ Object {
               "line": 49,
             },
             "start": Object {
-              "character": 5,
+              "character": 2,
               "line": 47,
             },
             "type": "IfStatement",
@@ -14964,7 +14964,7 @@ Object {
               "line": 52,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 51,
             },
             "type": "ReturnStatement",
@@ -14976,7 +14976,7 @@ Object {
         },
         "parameters": Array [],
         "start": Object {
-          "character": 33,
+          "character": 25,
           "line": 33,
         },
         "type": "FunctionDeclaration",
@@ -15425,7 +15425,7 @@ Object {
         "line": 63,
       },
       "start": Object {
-        "character": 7,
+        "character": 1,
         "line": 60,
       },
       "type": "WhileStatement",
@@ -15894,7 +15894,7 @@ Object {
               "line": 6,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 5,
             },
             "type": "ReturnStatement",
@@ -15919,7 +15919,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 30,
+          "character": 22,
           "line": 3,
         },
         "type": "FunctionDeclaration",
@@ -16375,7 +16375,7 @@ Object {
               "line": 16,
             },
             "start": Object {
-              "character": 8,
+              "character": 2,
               "line": 13,
             },
             "type": "WhileStatement",
@@ -16459,7 +16459,7 @@ Object {
               "line": 19,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 18,
             },
             "type": "ReturnStatement",
@@ -16484,7 +16484,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 24,
+          "character": 16,
           "line": 8,
         },
         "type": "FunctionDeclaration",
@@ -16654,7 +16654,7 @@ Object {
               "line": 23,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 22,
             },
             "type": "ReturnStatement",
@@ -16679,7 +16679,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 29,
+          "character": 21,
           "line": 21,
         },
         "type": "FunctionDeclaration",
@@ -16885,7 +16885,7 @@ Object {
               "line": 27,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 26,
             },
             "type": "ReturnStatement",
@@ -16922,7 +16922,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 25,
+          "character": 17,
           "line": 25,
         },
         "type": "FunctionDeclaration",
@@ -17067,7 +17067,7 @@ Object {
               "line": 31,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 30,
             },
             "type": "ReturnStatement",
@@ -17092,7 +17092,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 26,
+          "character": 18,
           "line": 29,
         },
         "type": "FunctionDeclaration",
@@ -17310,7 +17310,7 @@ Object {
               "line": 35,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 34,
             },
             "type": "ReturnStatement",
@@ -17347,7 +17347,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 26,
+          "character": 18,
           "line": 33,
         },
         "type": "FunctionDeclaration",
@@ -17553,7 +17553,7 @@ Object {
               "line": 39,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 38,
             },
             "type": "ReturnStatement",
@@ -17578,7 +17578,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 25,
+          "character": 17,
           "line": 37,
         },
         "type": "FunctionDeclaration",
@@ -17674,7 +17674,7 @@ Object {
               "line": 43,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 42,
             },
             "type": "ReturnStatement",
@@ -17686,7 +17686,7 @@ Object {
         },
         "parameters": Array [],
         "start": Object {
-          "character": 27,
+          "character": 19,
           "line": 41,
         },
         "type": "FunctionDeclaration",
@@ -17806,7 +17806,7 @@ Object {
               "line": 47,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 46,
             },
             "type": "ReturnStatement",
@@ -17818,7 +17818,7 @@ Object {
         },
         "parameters": Array [],
         "start": Object {
-          "character": 25,
+          "character": 17,
           "line": 45,
         },
         "type": "FunctionDeclaration",
@@ -17963,7 +17963,7 @@ Object {
               "line": 51,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 50,
             },
             "type": "ReturnStatement",
@@ -17988,7 +17988,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 24,
+          "character": 16,
           "line": 49,
         },
         "type": "FunctionDeclaration",
@@ -18181,7 +18181,7 @@ Object {
               "line": 55,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 54,
             },
             "type": "ReturnStatement",
@@ -18206,7 +18206,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 23,
+          "character": 15,
           "line": 53,
         },
         "type": "FunctionDeclaration",
@@ -18724,7 +18724,7 @@ Object {
                   "line": 66,
                 },
                 "start": Object {
-                  "character": 5,
+                  "character": 2,
                   "line": 64,
                 },
                 "type": "IfClause",
@@ -18735,7 +18735,7 @@ Object {
               "line": 66,
             },
             "start": Object {
-              "character": 5,
+              "character": 2,
               "line": 64,
             },
             "type": "IfStatement",
@@ -18758,7 +18758,7 @@ Object {
               "line": 68,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 67,
             },
             "type": "ReturnStatement",
@@ -18795,7 +18795,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 29,
+          "character": 21,
           "line": 61,
         },
         "type": "FunctionDeclaration",
@@ -18978,7 +18978,7 @@ Object {
         },
         "parameters": Array [],
         "start": Object {
-          "character": 23,
+          "character": 15,
           "line": 70,
         },
         "type": "FunctionDeclaration",
@@ -20156,7 +20156,7 @@ Object {
               "line": 90,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 89,
             },
             "type": "ReturnStatement",
@@ -20205,7 +20205,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 30,
+          "character": 22,
           "line": 81,
         },
         "type": "FunctionDeclaration",
@@ -20529,7 +20529,7 @@ Object {
               "type": "Identifier",
             },
             "start": Object {
-              "character": 6,
+              "character": 2,
               "line": 96,
             },
             "type": "ForGenericStatement",
@@ -20611,7 +20611,7 @@ Object {
               "line": 101,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 100,
             },
             "type": "ReturnStatement",
@@ -20636,7 +20636,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 26,
+          "character": 18,
           "line": 92,
         },
         "type": "FunctionDeclaration",
@@ -21499,7 +21499,7 @@ Object {
                         "line": 115,
                       },
                       "start": Object {
-                        "character": 6,
+                        "character": 3,
                         "line": 113,
                       },
                       "type": "IfClause",
@@ -21510,7 +21510,7 @@ Object {
                     "line": 115,
                   },
                   "start": Object {
-                    "character": 6,
+                    "character": 3,
                     "line": 113,
                   },
                   "type": "IfStatement",
@@ -21580,7 +21580,7 @@ Object {
                     "line": 117,
                   },
                   "start": Object {
-                    "character": 10,
+                    "character": 3,
                     "line": 116,
                   },
                   "type": "ReturnStatement",
@@ -21605,7 +21605,7 @@ Object {
                 },
               ],
               "start": Object {
-                "character": 16,
+                "character": 8,
                 "line": 112,
               },
               "type": "FunctionDeclaration",
@@ -21703,7 +21703,7 @@ Object {
                     "line": 120,
                   },
                   "start": Object {
-                    "character": 10,
+                    "character": 3,
                     "line": 119,
                   },
                   "type": "ReturnStatement",
@@ -21740,7 +21740,7 @@ Object {
                 },
               ],
               "start": Object {
-                "character": 16,
+                "character": 8,
                 "line": 118,
               },
               "type": "FunctionDeclaration",
@@ -21838,7 +21838,7 @@ Object {
                     "line": 123,
                   },
                   "start": Object {
-                    "character": 10,
+                    "character": 3,
                     "line": 122,
                   },
                   "type": "ReturnStatement",
@@ -21875,7 +21875,7 @@ Object {
                 },
               ],
               "start": Object {
-                "character": 19,
+                "character": 11,
                 "line": 121,
               },
               "type": "FunctionDeclaration",
@@ -21973,7 +21973,7 @@ Object {
                     "line": 126,
                   },
                   "start": Object {
-                    "character": 10,
+                    "character": 3,
                     "line": 125,
                   },
                   "type": "ReturnStatement",
@@ -22010,7 +22010,7 @@ Object {
                 },
               ],
               "start": Object {
-                "character": 19,
+                "character": 11,
                 "line": 124,
               },
               "type": "FunctionDeclaration",
@@ -23449,7 +23449,7 @@ Object {
               "line": 138,
             },
             "start": Object {
-              "character": 8,
+              "character": 2,
               "line": 127,
             },
             "type": "WhileStatement",
@@ -24520,7 +24520,7 @@ Object {
                   "line": 148,
                 },
                 "start": Object {
-                  "character": 5,
+                  "character": 2,
                   "line": 139,
                 },
                 "type": "IfClause",
@@ -25199,7 +25199,7 @@ Object {
               "line": 154,
             },
             "start": Object {
-              "character": 5,
+              "character": 2,
               "line": 139,
             },
             "type": "IfStatement",
@@ -25272,7 +25272,7 @@ Object {
               "line": 156,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 155,
             },
             "type": "ReturnStatement",
@@ -25309,7 +25309,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 26,
+          "character": 18,
           "line": 103,
         },
         "type": "FunctionDeclaration",
@@ -26012,7 +26012,7 @@ Object {
                     "line": 172,
                   },
                   "start": Object {
-                    "character": 10,
+                    "character": 3,
                     "line": 171,
                   },
                   "type": "ReturnStatement",
@@ -26049,7 +26049,7 @@ Object {
                 },
               ],
               "start": Object {
-                "character": 16,
+                "character": 8,
                 "line": 170,
               },
               "type": "FunctionDeclaration",
@@ -26147,7 +26147,7 @@ Object {
                     "line": 175,
                   },
                   "start": Object {
-                    "character": 10,
+                    "character": 3,
                     "line": 174,
                   },
                   "type": "ReturnStatement",
@@ -26184,7 +26184,7 @@ Object {
                 },
               ],
               "start": Object {
-                "character": 19,
+                "character": 11,
                 "line": 173,
               },
               "type": "FunctionDeclaration",
@@ -26566,7 +26566,7 @@ Object {
                       "line": 182,
                     },
                     "start": Object {
-                      "character": 6,
+                      "character": 3,
                       "line": 180,
                     },
                     "type": "IfClause",
@@ -26625,7 +26625,7 @@ Object {
                   "line": 184,
                 },
                 "start": Object {
-                  "character": 6,
+                  "character": 3,
                   "line": 180,
                 },
                 "type": "IfStatement",
@@ -26803,7 +26803,7 @@ Object {
                                   "line": 187,
                                 },
                                 "start": Object {
-                                  "character": 56,
+                                  "character": 51,
                                   "line": 187,
                                 },
                                 "type": "BreakStatement",
@@ -27288,7 +27288,7 @@ Object {
                                           "line": 194,
                                         },
                                         "start": Object {
-                                          "character": 46,
+                                          "character": 41,
                                           "line": 194,
                                         },
                                         "type": "BreakStatement",
@@ -27515,7 +27515,7 @@ Object {
                               "line": 196,
                             },
                             "start": Object {
-                              "character": 7,
+                              "character": 4,
                               "line": 192,
                             },
                             "type": "IfClause",
@@ -27526,7 +27526,7 @@ Object {
                           "line": 196,
                         },
                         "start": Object {
-                          "character": 7,
+                          "character": 4,
                           "line": 192,
                         },
                         "type": "IfStatement",
@@ -27634,7 +27634,7 @@ Object {
                       "line": 198,
                     },
                     "start": Object {
-                      "character": 6,
+                      "character": 3,
                       "line": 185,
                     },
                     "type": "IfClause",
@@ -27645,7 +27645,7 @@ Object {
                   "line": 198,
                 },
                 "start": Object {
-                  "character": 6,
+                  "character": 3,
                   "line": 185,
                 },
                 "type": "IfStatement",
@@ -27752,7 +27752,7 @@ Object {
               "line": 200,
             },
             "start": Object {
-              "character": 8,
+              "character": 2,
               "line": 176,
             },
             "type": "WhileStatement",
@@ -27825,7 +27825,7 @@ Object {
               "line": 202,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 201,
             },
             "type": "ReturnStatement",
@@ -27862,7 +27862,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 26,
+          "character": 18,
           "line": 158,
         },
         "type": "FunctionDeclaration",
@@ -29684,7 +29684,7 @@ Object {
               "line": 8,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 7,
             },
             "type": "ReturnStatement",
@@ -29721,7 +29721,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 29,
+          "character": 21,
           "line": 6,
         },
         "type": "FunctionDeclaration",
@@ -30057,7 +30057,7 @@ Object {
               "type": "Identifier",
             },
             "start": Object {
-              "character": 6,
+              "character": 2,
               "line": 14,
             },
             "type": "ForGenericStatement",
@@ -30092,7 +30092,7 @@ Object {
               "line": 20,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 19,
             },
             "type": "ReturnStatement",
@@ -30117,7 +30117,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 27,
+          "character": 19,
           "line": 10,
         },
         "type": "FunctionDeclaration",
@@ -30594,7 +30594,7 @@ Object {
                               "line": 29,
                             },
                             "start": Object {
-                              "character": 28,
+                              "character": 21,
                               "line": 29,
                             },
                             "type": "ReturnStatement",
@@ -31058,7 +31058,7 @@ Object {
                       "line": 34,
                     },
                     "start": Object {
-                      "character": 10,
+                      "character": 3,
                       "line": 33,
                     },
                     "type": "ReturnStatement",
@@ -31130,7 +31130,7 @@ Object {
                   "line": 34,
                 },
                 "start": Object {
-                  "character": 5,
+                  "character": 2,
                   "line": 27,
                 },
                 "type": "IfClause",
@@ -31141,7 +31141,7 @@ Object {
               "line": 34,
             },
             "start": Object {
-              "character": 5,
+              "character": 2,
               "line": 27,
             },
             "type": "IfStatement",
@@ -31524,7 +31524,7 @@ Object {
               "line": 42,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 41,
             },
             "type": "ReturnStatement",
@@ -31585,7 +31585,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 22,
+          "character": 14,
           "line": 22,
         },
         "type": "FunctionDeclaration",
@@ -32029,7 +32029,7 @@ Object {
               "line": 52,
             },
             "start": Object {
-              "character": 8,
+              "character": 2,
               "line": 48,
             },
             "type": "WhileStatement",
@@ -32211,7 +32211,7 @@ Object {
               "line": 55,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 54,
             },
             "type": "ReturnStatement",
@@ -32284,7 +32284,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 22,
+          "character": 14,
           "line": 44,
         },
         "type": "FunctionDeclaration",
@@ -32417,7 +32417,7 @@ Object {
               "line": 59,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 58,
             },
             "type": "ReturnStatement",
@@ -32454,7 +32454,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 22,
+          "character": 14,
           "line": 57,
         },
         "type": "FunctionDeclaration",
@@ -33247,7 +33247,7 @@ Object {
         },
         "parameters": Array [],
         "start": Object {
-          "character": 20,
+          "character": 12,
           "line": 5,
         },
         "type": "FunctionDeclaration",
@@ -33812,7 +33812,7 @@ Object {
               "line": 10,
             },
             "start": Object {
-              "character": 8,
+              "character": 2,
               "line": 6,
             },
             "type": "WhileStatement",
@@ -33835,7 +33835,7 @@ Object {
               "line": 13,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 12,
             },
             "type": "ReturnStatement",
@@ -33872,7 +33872,7 @@ Object {
           },
         ],
         "start": Object {
-          "character": 24,
+          "character": 16,
           "line": 1,
         },
         "type": "FunctionDeclaration",
@@ -34080,7 +34080,7 @@ Object {
               "line": 3,
             },
             "start": Object {
-              "character": 9,
+              "character": 2,
               "line": 2,
             },
             "type": "ReturnStatement",
@@ -34092,7 +34092,7 @@ Object {
         },
         "parameters": Array [],
         "start": Object {
-          "character": 16,
+          "character": 8,
           "line": 1,
         },
         "type": "FunctionDeclaration",

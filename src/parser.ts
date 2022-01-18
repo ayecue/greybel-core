@@ -56,8 +56,8 @@ export default class Parser extends ParserBase {
 	parseFeatureIncludeStatement(): ASTFeatureIncludeExpression {
 		const me = this;
 		const start = {
-			line: me.token.line,
-			character: me.token.lineRange[0]
+			line: me.previousToken.line,
+			character: me.previousToken.lineRange[0]
 		};
 		const path = me.parseFeaturePath();
 
@@ -76,8 +76,8 @@ export default class Parser extends ParserBase {
 	parseFeatureImportStatement(): ASTFeatureImportExpression {
 		const me = this;
 		const start = {
-			line: me.token.line,
-			character: me.token.lineRange[0]
+			line: me.previousToken.line,
+			character: me.previousToken.lineRange[0]
 		};
 		const name = me.parseIdentifier();
 
@@ -129,8 +129,8 @@ export default class Parser extends ParserBase {
 	parseFeatureEnvarStatement(): ASTBase {
 		const me = this;
 		const start = {
-			line: me.token.line,
-			character: me.token.lineRange[0]
+			line: me.previousToken.line,
+			character: me.previousToken.lineRange[0]
 		};
 		const name = me.parseFeatureEnvarNameStatement();
 
@@ -184,11 +184,11 @@ export default class Parser extends ParserBase {
 				case 'debugger':
 					me.next();
 					return me.astProvider.featureDebuggerExpression({
-						line: me.token.line,
-						character: me.token.lineRange[0]
+						line: me.previousToken.line,
+						character: me.previousToken.lineRange[0]
 					}, {
-						line: me.token.line,
-						character: me.token.lineRange[1]
+						line: me.previousToken.line,
+						character: me.previousToken.lineRange[1]
 					});
 				default:
 					break;
