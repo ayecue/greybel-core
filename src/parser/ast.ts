@@ -1,5 +1,6 @@
 import { 
 	ASTBase,
+	ASTPosition,
 	ASTChunk,
 	ASTProvider as ASTProviderBase
 } from 'greyscript-core';
@@ -37,35 +38,39 @@ export interface ASTChunkAdvanced extends ASTChunk {
 }
 
 export class ASTProvider extends ASTProviderBase {
-	featureImportExpression(name: ASTBase, path: string, line: number): ASTFeatureImportExpression {
+	featureImportExpression(name: ASTBase, path: string, start: ASTPosition, end: ASTPosition): ASTFeatureImportExpression {
 		return {
 			type: ASTType.FeatureImportExpression,
 			name,
 			path,
-			line
+			start,
+			end
 		};
 	}
 
-	featureIncludeExpression(path: string, line: number): ASTFeatureIncludeExpression {
+	featureIncludeExpression(path: string, start: ASTPosition, end: ASTPosition): ASTFeatureIncludeExpression {
 		return {
 			type: ASTType.FeatureIncludeExpression,
 			path,
-			line
+			start,
+			end
 		};
 	}
 
-	featureEnvarExpression(value: ASTBase, line: number): ASTFeatureEnvarExpression {
+	featureEnvarExpression(value: ASTBase, start: ASTPosition, end: ASTPosition): ASTFeatureEnvarExpression {
 		return {
 			type: ASTType.FeatureEnvarExpression,
 			value,
-			line
+			start,
+			end
 		};
 	}
 
-	featureDebuggerExpression(line: number): ASTBase {
+	featureDebuggerExpression(start: ASTPosition, end: ASTPosition): ASTBase {
 		return {
 			type: ASTType.FeatureDebuggerExpression,
-			line
+			start,
+			end
 		};
 	}
 
@@ -76,8 +81,8 @@ export class ASTProvider extends ASTProviderBase {
 		literals: ASTBase[],
 		imports: ASTFeatureImportExpression[],
 		includes: ASTFeatureIncludeExpression[],
-		line: number,
-		endLine: number
+		start: ASTPosition,
+		end: ASTPosition
 	): ASTChunkAdvanced {
 		return {
 			...this.chunk(
@@ -85,8 +90,8 @@ export class ASTProvider extends ASTProviderBase {
 				nativeImports,
 				namespaces,
 				literals,
-				line,
-				endLine
+				start,
+				end
 			),
 			imports,
 			includes

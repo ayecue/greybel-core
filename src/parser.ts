@@ -55,12 +55,18 @@ export default class Parser extends ParserBase {
 
 	parseFeatureIncludeStatement(): ASTFeatureIncludeExpression {
 		const me = this;
-		const mainStatementLine = me.token.line;
+		const start = {
+			line: me.token.line,
+			character: me.token.lineRange[0]
+		};
 		const path = me.parseFeaturePath();
 
 		me.expect(';');
 
-		const base = me.astProvider.featureIncludeExpression(path, mainStatementLine);
+		const base = me.astProvider.featureIncludeExpression(path, start, {
+			line: me.token.line,
+			character: me.token.lineRange[1]
+		});
 
 		me.includes.push(base);
 
@@ -69,7 +75,10 @@ export default class Parser extends ParserBase {
 
 	parseFeatureImportStatement(): ASTFeatureImportExpression {
 		const me = this;
-		const mainStatementLine = me.token.line;
+		const start = {
+			line: me.token.line,
+			character: me.token.lineRange[0]
+		};
 		const name = me.parseIdentifier();
 
 		me.expect('from');
@@ -78,14 +87,22 @@ export default class Parser extends ParserBase {
 
 		me.expect(';');
 
-		const base = me.astProvider.featureImportExpression(name, path, mainStatementLine);
+		const base = me.astProvider.featureImportExpression(name, path, start, {
+			line: me.token.line,
+			character: me.token.lineRange[1]
+		});
+
 		me.imports.push(base);
+
 		return base;
 	}
 
 	parseFeatureEnvarNameStatement(): ASTLiteral {
 		const me = this;
-		const mainStatementLine = me.token.line;
+		const start = {
+			line: me.token.line,
+			character: me.token.lineRange[0]
+		};
 		const name = me.token.value;
 		const value = me.environmentVariables.get(name);
 		let raw;
@@ -98,7 +115,10 @@ export default class Parser extends ParserBase {
 			raw = '"' + value + '"';
 		}
 
-		const literal = me.astProvider.literal(type, value, raw, mainStatementLine);
+		const literal = me.astProvider.literal(type, value, raw, start, {
+			line: me.token.line,
+			character: me.token.lineRange[1]
+		});
 
 		me.literals.push(literal);
 		me.next();
@@ -108,12 +128,18 @@ export default class Parser extends ParserBase {
 
 	parseFeatureEnvarStatement(): ASTBase {
 		const me = this;
-		const mainStatementLine = me.token.line;
+		const start = {
+			line: me.token.line,
+			character: me.token.lineRange[0]
+		};
 		const name = me.parseFeatureEnvarNameStatement();
 
 		me.expect(';');
 
-		let base: ASTBase = me.astProvider.featureEnvarExpression(name, mainStatementLine);
+		let base: ASTBase = me.astProvider.featureEnvarExpression(name, start, {
+			line: me.token.line,
+			character: me.token.lineRange[1]
+		});
 
 		if ('.' === me.token.value) {
 			while (true) {
@@ -157,7 +183,13 @@ export default class Parser extends ParserBase {
 					return me.parseFeatureEnvarStatement();
 				case 'debugger':
 					me.next();
-					return me.astProvider.featureDebuggerExpression(me.token.line);
+					return me.astProvider.featureDebuggerExpression({
+						line: me.token.line,
+						character: me.token.lineRange[0]
+					}, {
+						line: me.token.line,
+						character: me.token.lineRange[1]
+					});
 				default:
 					break;
 			}
@@ -166,16 +198,19 @@ export default class Parser extends ParserBase {
 		return super.parseStatement(isShortcutStatement);
 	}
 
-	parseChunk(): ASTChunkAdvanced {
+	parseChunk(): ASTChunkAdvanced | ASTBase {
 		const me = this;
 
 		me.next();
 
-		const mainStatementLine = me.token.line;
+		const start = {
+			line: me.token.line,
+			character: me.token.lineRange[0]
+		};
 		const body = me.parseBlock();
 
 		if (TokenType.EOF !== me.token.type) {
-			throw new UnexpectedEOF(me.token);
+			return me.raise(new UnexpectedEOF(me.token));
 		}
 
 		return me.astProvider.chunkAdvanced(
@@ -185,8 +220,11 @@ export default class Parser extends ParserBase {
 			me.literals,
 			me.imports,
 			me.includes,
-			mainStatementLine,
-			me.token.line
+			start,
+			{
+				line: me.token.line,
+				character: me.token.lineRange[1]
+			}
 		);
 	};
 }

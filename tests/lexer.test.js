@@ -1,4 +1,4 @@
-const { Parser } = require('../dist');
+const { Lexer } = require('../dist');
 const fs = require('fs');
 const path = require('path');
 const testFolder = path.resolve(__dirname, 'scripts');
@@ -12,13 +12,15 @@ describe('parse', function() {
 
 				test(path.basename(filepath), () => {
 					const content = fs.readFileSync(filepath, 'utf-8');
-					const parser = new Parser(content, {
-						environmentVariables: new Map([
-							['TEST_ENV', 'foo'],
-						])
+					const lexer = new Lexer(content, {
+						tabWidth: 4
 					});
+					let token = lexer.next();
 
-					expect(parser.parseChunk()).toMatchSnapshot();
+					while (token.value !== '<eof>') {
+						expect(token).toMatchSnapshot();
+						token = lexer.next();
+					}
 				});
 			});
 
@@ -35,10 +37,11 @@ describe('parse', function() {
 
 				print("wo")
 			`;
-			const parser = new Parser(content, { unsafe: true });
-			parser.parseChunk();
+			const lexer = new Lexer(content, { unsafe: true });
 
-			expect(parser.errors).toMatchSnapshot();
+			while (lexer.next().value !== '<eof>') {}
+
+			expect(lexer.errors).toMatchSnapshot();
 		});
 	});
 });
