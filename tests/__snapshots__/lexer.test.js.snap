@@ -16278,7 +16278,7 @@ Object {
     27,
     28,
   ],
-  "type": "Punctuator",
+  "type": "EOL",
   "value": ";",
 }
 `;
@@ -16354,7 +16354,7 @@ Object {
     48,
     49,
   ],
-  "type": "Punctuator",
+  "type": "EOL",
   "value": ";",
 }
 `;
@@ -16430,7 +16430,7 @@ Object {
     65,
     66,
   ],
-  "type": "Punctuator",
+  "type": "EOL",
   "value": ";",
 }
 `;
@@ -16487,7 +16487,7 @@ Object {
     75,
     76,
   ],
-  "type": "Punctuator",
+  "type": "EOL",
   "value": ";",
 }
 `;
