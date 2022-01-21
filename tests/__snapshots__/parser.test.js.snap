@@ -11758,19 +11758,7 @@ Object {
               "character": 3,
               "line": 6,
             },
-            "key": Object {
-              "end": Object {
-                "character": 8,
-                "line": 4,
-              },
-              "raw": "\\"test\\"",
-              "start": Object {
-                "character": 2,
-                "line": 4,
-              },
-              "type": "StringLiteral",
-              "value": "test",
-            },
+            "key": "test",
             "start": Object {
               "character": 2,
               "line": 4,
@@ -11787,19 +11775,7 @@ Object {
                     "character": 19,
                     "line": 5,
                   },
-                  "key": Object {
-                    "end": Object {
-                      "character": 12,
-                      "line": 5,
-                    },
-                    "raw": "\\"another\\"",
-                    "start": Object {
-                      "character": 3,
-                      "line": 5,
-                    },
-                    "type": "StringLiteral",
-                    "value": "another",
-                  },
+                  "key": "another",
                   "start": Object {
                     "character": 3,
                     "line": 5,
@@ -11832,19 +11808,7 @@ Object {
               "character": 16,
               "line": 7,
             },
-            "key": Object {
-              "end": Object {
-                "character": 9,
-                "line": 7,
-              },
-              "raw": "\\"value\\"",
-              "start": Object {
-                "character": 2,
-                "line": 7,
-              },
-              "type": "StringLiteral",
-              "value": "value",
-            },
+            "key": "value",
             "start": Object {
               "character": 2,
               "line": 7,
@@ -11869,19 +11833,7 @@ Object {
               "character": 27,
               "line": 8,
             },
-            "key": Object {
-              "end": Object {
-                "character": 8,
-                "line": 8,
-              },
-              "raw": "\\"idtf\\"",
-              "start": Object {
-                "character": 2,
-                "line": 8,
-              },
-              "type": "StringLiteral",
-              "value": "idtf",
-            },
+            "key": "idtf",
             "start": Object {
               "character": 2,
               "line": 8,
@@ -12171,19 +12123,7 @@ Object {
                     "character": 19,
                     "line": 15,
                   },
-                  "key": Object {
-                    "end": Object {
-                      "character": 12,
-                      "line": 15,
-                    },
-                    "raw": "\\"another\\"",
-                    "start": Object {
-                      "character": 3,
-                      "line": 15,
-                    },
-                    "type": "StringLiteral",
-                    "value": "another",
-                  },
+                  "key": "another",
                   "start": Object {
                     "character": 3,
                     "line": 15,
@@ -12354,32 +12294,6 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 8,
-        "line": 4,
-      },
-      "raw": "\\"test\\"",
-      "start": Object {
-        "character": 2,
-        "line": 4,
-      },
-      "type": "StringLiteral",
-      "value": "test",
-    },
-    Object {
-      "end": Object {
-        "character": 12,
-        "line": 5,
-      },
-      "raw": "\\"another\\"",
-      "start": Object {
-        "character": 3,
-        "line": 5,
-      },
-      "type": "StringLiteral",
-      "value": "another",
-    },
-    Object {
-      "end": Object {
         "character": 19,
         "line": 5,
       },
@@ -12393,19 +12307,6 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 9,
-        "line": 7,
-      },
-      "raw": "\\"value\\"",
-      "start": Object {
-        "character": 2,
-        "line": 7,
-      },
-      "type": "StringLiteral",
-      "value": "value",
-    },
-    Object {
-      "end": Object {
         "character": 16,
         "line": 7,
       },
@@ -12416,32 +12317,6 @@ Object {
       },
       "type": "StringLiteral",
       "value": "123",
-    },
-    Object {
-      "end": Object {
-        "character": 8,
-        "line": 8,
-      },
-      "raw": "\\"idtf\\"",
-      "start": Object {
-        "character": 2,
-        "line": 8,
-      },
-      "type": "StringLiteral",
-      "value": "idtf",
-    },
-    Object {
-      "end": Object {
-        "character": 12,
-        "line": 15,
-      },
-      "raw": "\\"another\\"",
-      "start": Object {
-        "character": 3,
-        "line": 15,
-      },
-      "type": "StringLiteral",
-      "value": "another",
     },
     Object {
       "end": Object {
@@ -13511,18 +13386,18 @@ Object {
                   "line": 19,
                 },
                 "start": Object {
-                  "character": 22,
+                  "character": 2,
                   "line": 19,
                 },
                 "type": "IfShortcutClause",
               },
             ],
             "end": Object {
-              "character": 3,
-              "line": 20,
+              "character": 51,
+              "line": 19,
             },
             "start": Object {
-              "character": 22,
+              "character": 2,
               "line": 19,
             },
             "type": "IfShortcutStatement",
@@ -14665,18 +14540,18 @@ Object {
                       "line": 43,
                     },
                     "start": Object {
-                      "character": 48,
+                      "character": 3,
                       "line": 43,
                     },
                     "type": "IfShortcutClause",
                   },
                 ],
                 "end": Object {
-                  "character": 8,
-                  "line": 44,
+                  "character": 69,
+                  "line": 43,
                 },
                 "start": Object {
-                  "character": 48,
+                  "character": 3,
                   "line": 43,
                 },
                 "type": "IfShortcutStatement",
@@ -19660,18 +19535,18 @@ Object {
                   "line": 86,
                 },
                 "start": Object {
-                  "character": 28,
+                  "character": 2,
                   "line": 86,
                 },
                 "type": "IfShortcutClause",
               },
             ],
             "end": Object {
-              "character": 4,
-              "line": 87,
+              "character": 44,
+              "line": 86,
             },
             "start": Object {
-              "character": 28,
+              "character": 2,
               "line": 86,
             },
             "type": "IfShortcutStatement",
@@ -19806,18 +19681,18 @@ Object {
                   "line": 87,
                 },
                 "start": Object {
-                  "character": 26,
+                  "character": 2,
                   "line": 87,
                 },
                 "type": "IfShortcutClause",
               },
             ],
             "end": Object {
-              "character": 4,
-              "line": 88,
+              "character": 54,
+              "line": 87,
             },
             "start": Object {
-              "character": 26,
+              "character": 2,
               "line": 87,
             },
             "type": "IfShortcutStatement",
@@ -20122,18 +19997,18 @@ Object {
                   "line": 88,
                 },
                 "start": Object {
-                  "character": 29,
+                  "character": 2,
                   "line": 88,
                 },
                 "type": "IfShortcutClause",
               },
             ],
             "end": Object {
-              "character": 8,
-              "line": 89,
+              "character": 100,
+              "line": 88,
             },
             "start": Object {
-              "character": 29,
+              "character": 2,
               "line": 88,
             },
             "type": "IfShortcutStatement",
@@ -20831,18 +20706,18 @@ Object {
                   "line": 105,
                 },
                 "start": Object {
-                  "character": 23,
+                  "character": 2,
                   "line": 105,
                 },
                 "type": "IfShortcutClause",
               },
             ],
             "end": Object {
-              "character": 6,
-              "line": 106,
+              "character": 44,
+              "line": 105,
             },
             "start": Object {
-              "character": 23,
+              "character": 2,
               "line": 105,
             },
             "type": "IfShortcutStatement",
@@ -25504,18 +25379,18 @@ Object {
                   "line": 160,
                 },
                 "start": Object {
-                  "character": 23,
+                  "character": 2,
                   "line": 160,
                 },
                 "type": "IfShortcutClause",
               },
             ],
             "end": Object {
-              "character": 6,
-              "line": 161,
+              "character": 44,
+              "line": 160,
             },
             "start": Object {
-              "character": 23,
+              "character": 2,
               "line": 160,
             },
             "type": "IfShortcutStatement",
@@ -26886,18 +26761,18 @@ Object {
                               "line": 187,
                             },
                             "start": Object {
-                              "character": 51,
+                              "character": 4,
                               "line": 187,
                             },
                             "type": "IfShortcutClause",
                           },
                         ],
                         "end": Object {
-                          "character": 5,
-                          "line": 188,
+                          "character": 56,
+                          "line": 187,
                         },
                         "start": Object {
-                          "character": 51,
+                          "character": 4,
                           "line": 187,
                         },
                         "type": "IfShortcutStatement",
@@ -27359,18 +27234,18 @@ Object {
                                       "line": 194,
                                     },
                                     "start": Object {
-                                      "character": 41,
+                                      "character": 5,
                                       "line": 194,
                                     },
                                     "type": "IfShortcutClause",
                                   },
                                 ],
                                 "end": Object {
-                                  "character": 11,
-                                  "line": 195,
+                                  "character": 46,
+                                  "line": 194,
                                 },
                                 "start": Object {
-                                  "character": 41,
+                                  "character": 5,
                                   "line": 194,
                                 },
                                 "type": "IfShortcutStatement",
@@ -29568,19 +29443,7 @@ Object {
                     "character": 23,
                     "line": 7,
                   },
-                  "key": Object {
-                    "end": Object {
-                      "character": 17,
-                      "line": 7,
-                    },
-                    "raw": "\\"seed\\"",
-                    "start": Object {
-                      "character": 11,
-                      "line": 7,
-                    },
-                    "type": "StringLiteral",
-                    "value": "seed",
-                  },
+                  "key": "seed",
                   "start": Object {
                     "character": 11,
                     "line": 7,
@@ -29604,19 +29467,7 @@ Object {
                     "character": 37,
                     "line": 7,
                   },
-                  "key": Object {
-                    "end": Object {
-                      "character": 32,
-                      "line": 7,
-                    },
-                    "raw": "\\"value\\"",
-                    "start": Object {
-                      "character": 25,
-                      "line": 7,
-                    },
-                    "type": "StringLiteral",
-                    "value": "value",
-                  },
+                  "key": "value",
                   "start": Object {
                     "character": 25,
                     "line": 7,
@@ -29640,19 +29491,7 @@ Object {
                     "character": 54,
                     "line": 7,
                   },
-                  "key": Object {
-                    "end": Object {
-                      "character": 51,
-                      "line": 7,
-                    },
-                    "raw": "\\"generation\\"",
-                    "start": Object {
-                      "character": 39,
-                      "line": 7,
-                    },
-                    "type": "StringLiteral",
-                    "value": "generation",
-                  },
+                  "key": "generation",
                   "start": Object {
                     "character": 39,
                     "line": 7,
@@ -30348,18 +30187,18 @@ Object {
                   "line": 25,
                 },
                 "start": Object {
-                  "character": 24,
+                  "character": 2,
                   "line": 25,
                 },
                 "type": "IfShortcutClause",
               },
             ],
             "end": Object {
-              "character": 4,
-              "line": 26,
+              "character": 34,
+              "line": 25,
             },
             "start": Object {
-              "character": 24,
+              "character": 2,
               "line": 25,
             },
             "type": "IfShortcutStatement",
@@ -30470,18 +30309,18 @@ Object {
                   "line": 26,
                 },
                 "start": Object {
-                  "character": 25,
+                  "character": 2,
                   "line": 26,
                 },
                 "type": "IfShortcutClause",
               },
             ],
             "end": Object {
-              "character": 4,
-              "line": 27,
+              "character": 46,
+              "line": 26,
             },
             "start": Object {
-              "character": 25,
+              "character": 2,
               "line": 26,
             },
             "type": "IfShortcutStatement",
@@ -30628,18 +30467,18 @@ Object {
                           "line": 29,
                         },
                         "start": Object {
-                          "character": 21,
+                          "character": 3,
                           "line": 29,
                         },
                         "type": "IfShortcutClause",
                       },
                     ],
                     "end": Object {
-                      "character": 5,
-                      "line": 30,
+                      "character": 36,
+                      "line": 29,
                     },
                     "start": Object {
-                      "character": 21,
+                      "character": 3,
                       "line": 29,
                     },
                     "type": "IfShortcutStatement",
@@ -32177,18 +32016,18 @@ Object {
                   "line": 53,
                 },
                 "start": Object {
-                  "character": 29,
+                  "character": 2,
                   "line": 53,
                 },
                 "type": "IfShortcutClause",
               },
             ],
             "end": Object {
-              "character": 8,
-              "line": 54,
+              "character": 49,
+              "line": 53,
             },
             "start": Object {
-              "character": 29,
+              "character": 2,
               "line": 53,
             },
             "type": "IfShortcutStatement",
@@ -32769,45 +32608,6 @@ Object {
       },
       "type": "StringLiteral",
       "value": "random",
-    },
-    Object {
-      "end": Object {
-        "character": 17,
-        "line": 7,
-      },
-      "raw": "\\"seed\\"",
-      "start": Object {
-        "character": 11,
-        "line": 7,
-      },
-      "type": "StringLiteral",
-      "value": "seed",
-    },
-    Object {
-      "end": Object {
-        "character": 32,
-        "line": 7,
-      },
-      "raw": "\\"value\\"",
-      "start": Object {
-        "character": 25,
-        "line": 7,
-      },
-      "type": "StringLiteral",
-      "value": "value",
-    },
-    Object {
-      "end": Object {
-        "character": 51,
-        "line": 7,
-      },
-      "raw": "\\"generation\\"",
-      "start": Object {
-        "character": 39,
-        "line": 7,
-      },
-      "type": "StringLiteral",
-      "value": "generation",
     },
     Object {
       "end": Object {
