@@ -10239,17 +10239,17 @@ Object {
   "body": Array [
     Object {
       "end": Object {
-        "character": 8,
+        "character": 7,
         "line": 1,
       },
       "expression": Object {
         "end": Object {
-          "character": 8,
+          "character": 7,
           "line": 1,
         },
         "init": Object {
           "end": Object {
-            "character": 8,
+            "character": 7,
             "line": 1,
           },
           "left": Object {
@@ -10309,17 +10309,17 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 8,
+        "character": 7,
         "line": 2,
       },
       "expression": Object {
         "end": Object {
-          "character": 8,
+          "character": 7,
           "line": 2,
         },
         "init": Object {
           "end": Object {
-            "character": 8,
+            "character": 7,
             "line": 2,
           },
           "left": Object {
@@ -10379,17 +10379,17 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 8,
+        "character": 7,
         "line": 3,
       },
       "expression": Object {
         "end": Object {
-          "character": 8,
+          "character": 7,
           "line": 3,
         },
         "init": Object {
           "end": Object {
-            "character": 8,
+            "character": 7,
             "line": 3,
           },
           "left": Object {
@@ -10449,17 +10449,17 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 8,
+        "character": 7,
         "line": 4,
       },
       "expression": Object {
         "end": Object {
-          "character": 8,
+          "character": 7,
           "line": 4,
         },
         "init": Object {
           "end": Object {
-            "character": 8,
+            "character": 7,
             "line": 4,
           },
           "left": Object {
@@ -10519,7 +10519,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 8,
+        "character": 7,
         "line": 5,
       },
       "left": Object {
@@ -10555,7 +10555,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 8,
+        "character": 7,
         "line": 6,
       },
       "left": Object {
@@ -10591,12 +10591,12 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 25,
+        "character": 24,
         "line": 7,
       },
       "init": Object {
         "end": Object {
-          "character": 25,
+          "character": 24,
           "line": 7,
         },
         "left": Object {
@@ -10698,7 +10698,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 7,
+        "character": 6,
         "line": 8,
       },
       "left": Object {
@@ -10734,7 +10734,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 7,
+        "character": 6,
         "line": 9,
       },
       "left": Object {
@@ -10770,7 +10770,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 7,
+        "character": 6,
         "line": 10,
       },
       "left": Object {
@@ -10806,7 +10806,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 9,
+        "character": 8,
         "line": 11,
       },
       "left": Object {
@@ -10904,7 +10904,7 @@ Object {
   "body": Array [
     Object {
       "end": Object {
-        "character": 30,
+        "character": 29,
         "line": 1,
       },
       "name": Object {
@@ -10928,7 +10928,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 22,
+        "character": 21,
         "line": 2,
       },
       "path": "test/bar",
@@ -10940,7 +10940,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 18,
+        "character": 17,
         "line": 3,
       },
       "start": Object {
@@ -10981,7 +10981,7 @@ Object {
   "imports": Array [
     Object {
       "end": Object {
-        "character": 30,
+        "character": 29,
         "line": 1,
       },
       "name": Object {
@@ -11007,7 +11007,7 @@ Object {
   "includes": Array [
     Object {
       "end": Object {
-        "character": 22,
+        "character": 21,
         "line": 2,
       },
       "path": "test/bar",
@@ -11701,7 +11701,7 @@ Object {
   "body": Array [
     Object {
       "end": Object {
-        "character": 27,
+        "character": 26,
         "line": 1,
       },
       "init": Object {
@@ -11737,7 +11737,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 3,
+        "character": 2,
         "line": 9,
       },
       "init": Object {
@@ -11872,7 +11872,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 63,
+        "character": 62,
         "line": 11,
       },
       "expression": Object {
@@ -12069,7 +12069,7 @@ Object {
           "type": "Identifier",
         },
         "end": Object {
-          "character": 63,
+          "character": 62,
           "line": 11,
         },
         "start": Object {
@@ -12086,7 +12086,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 3,
+        "character": 2,
         "line": 19,
       },
       "init": Object {
@@ -15642,7 +15642,7 @@ Object {
   "body": Array [
     Object {
       "end": Object {
-        "character": 13,
+        "character": 12,
         "line": 1,
       },
       "init": Object {
@@ -15677,14 +15677,14 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 6,
       },
       "init": Object {
         "body": Array [
           Object {
             "end": Object {
-              "character": 17,
+              "character": 16,
               "line": 4,
             },
             "init": Object {
@@ -15833,14 +15833,14 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 19,
       },
       "init": Object {
         "body": Array [
           Object {
             "end": Object {
-              "character": 20,
+              "character": 19,
               "line": 9,
             },
             "init": Object {
@@ -15857,7 +15857,7 @@ Object {
                 "type": "Identifier",
               },
               "end": Object {
-                "character": 20,
+                "character": 19,
                 "line": 9,
               },
               "identifier": Object {
@@ -15899,7 +15899,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 12,
+              "character": 11,
               "line": 10,
             },
             "init": Object {
@@ -15935,7 +15935,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 24,
+              "character": 23,
               "line": 11,
             },
             "init": Object {
@@ -15952,7 +15952,7 @@ Object {
                 "type": "Identifier",
               },
               "end": Object {
-                "character": 24,
+                "character": 23,
                 "line": 11,
               },
               "identifier": Object {
@@ -15996,7 +15996,7 @@ Object {
             "body": Array [
               Object {
                 "end": Object {
-                  "character": 53,
+                  "character": 52,
                   "line": 14,
                 },
                 "init": Object {
@@ -16111,7 +16111,7 @@ Object {
                     "type": "MemberExpression",
                   },
                   "end": Object {
-                    "character": 53,
+                    "character": 52,
                     "line": 14,
                   },
                   "start": Object {
@@ -16140,12 +16140,12 @@ Object {
               },
               Object {
                 "end": Object {
-                  "character": 21,
+                  "character": 20,
                   "line": 15,
                 },
                 "init": Object {
                   "end": Object {
-                    "character": 21,
+                    "character": 20,
                     "line": 15,
                   },
                   "left": Object {
@@ -16201,7 +16201,7 @@ Object {
             ],
             "condition": Object {
               "end": Object {
-                "character": 25,
+                "character": 24,
                 "line": 13,
               },
               "left": Object {
@@ -16310,7 +16310,7 @@ Object {
                 "type": "MemberExpression",
               },
               "end": Object {
-                "character": 40,
+                "character": 39,
                 "line": 18,
               },
               "start": Object {
@@ -16398,7 +16398,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 23,
       },
       "init": Object {
@@ -16406,7 +16406,7 @@ Object {
           Object {
             "argument": Object {
               "end": Object {
-                "character": 36,
+                "character": 35,
                 "line": 22,
               },
               "left": Object {
@@ -16593,7 +16593,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 27,
       },
       "init": Object {
@@ -16736,7 +16736,7 @@ Object {
                 "type": "MemberExpression",
               },
               "end": Object {
-                "character": 71,
+                "character": 70,
                 "line": 26,
               },
               "start": Object {
@@ -16836,7 +16836,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 31,
       },
       "init": Object {
@@ -16918,7 +16918,7 @@ Object {
                 "type": "MemberExpression",
               },
               "end": Object {
-                "character": 31,
+                "character": 30,
                 "line": 30,
               },
               "start": Object {
@@ -17006,7 +17006,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 35,
       },
       "init": Object {
@@ -17161,7 +17161,7 @@ Object {
                 "type": "MemberExpression",
               },
               "end": Object {
-                "character": 63,
+                "character": 62,
                 "line": 34,
               },
               "start": Object {
@@ -17261,7 +17261,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 39,
       },
       "init": Object {
@@ -17404,7 +17404,7 @@ Object {
                 "type": "MemberExpression",
               },
               "end": Object {
-                "character": 54,
+                "character": 53,
                 "line": 38,
               },
               "start": Object {
@@ -17492,7 +17492,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 43,
       },
       "init": Object {
@@ -17512,7 +17512,7 @@ Object {
                 "type": "Identifier",
               },
               "end": Object {
-                "character": 18,
+                "character": 17,
                 "line": 42,
               },
               "identifier": Object {
@@ -17600,7 +17600,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 47,
       },
       "init": Object {
@@ -17644,7 +17644,7 @@ Object {
                 "type": "MemberExpression",
               },
               "end": Object {
-                "character": 22,
+                "character": 21,
                 "line": 46,
               },
               "identifier": Object {
@@ -17732,7 +17732,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 51,
       },
       "init": Object {
@@ -17814,7 +17814,7 @@ Object {
                 "type": "MemberExpression",
               },
               "end": Object {
-                "character": 35,
+                "character": 34,
                 "line": 50,
               },
               "start": Object {
@@ -17902,7 +17902,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 55,
       },
       "init": Object {
@@ -18032,7 +18032,7 @@ Object {
                 "type": "MemberExpression",
               },
               "end": Object {
-                "character": 49,
+                "character": 48,
                 "line": 54,
               },
               "start": Object {
@@ -18120,7 +18120,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 12,
+        "character": 11,
         "line": 57,
       },
       "init": Object {
@@ -18155,7 +18155,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 23,
+        "character": 22,
         "line": 59,
       },
       "init": Object {
@@ -18214,14 +18214,14 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 68,
       },
       "init": Object {
         "body": Array [
           Object {
             "end": Object {
-              "character": 11,
+              "character": 10,
               "line": 62,
             },
             "init": Object {
@@ -18256,7 +18256,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 22,
+              "character": 21,
               "line": 63,
             },
             "init": Object {
@@ -18319,7 +18319,7 @@ Object {
                 "body": Array [
                   Object {
                     "end": Object {
-                      "character": 76,
+                      "character": 75,
                       "line": 65,
                     },
                     "init": Object {
@@ -18495,7 +18495,7 @@ Object {
                         "type": "MemberExpression",
                       },
                       "end": Object {
-                        "character": 76,
+                        "character": 75,
                         "line": 65,
                       },
                       "start": Object {
@@ -18709,14 +18709,14 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 72,
       },
       "init": Object {
         "body": Array [
           Object {
             "end": Object {
-              "character": 54,
+              "character": 53,
               "line": 71,
             },
             "expression": Object {
@@ -18821,7 +18821,7 @@ Object {
                 "type": "Identifier",
               },
               "end": Object {
-                "character": 54,
+                "character": 53,
                 "line": 71,
               },
               "start": Object {
@@ -18892,7 +18892,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 13,
+        "character": 12,
         "line": 74,
       },
       "init": Object {
@@ -18927,7 +18927,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 92,
+        "character": 91,
         "line": 76,
       },
       "init": Object {
@@ -18987,7 +18987,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 34,
+        "character": 33,
         "line": 77,
       },
       "init": Object {
@@ -19047,7 +19047,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 28,
+        "character": 27,
         "line": 78,
       },
       "init": Object {
@@ -19107,7 +19107,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 22,
+        "character": 21,
         "line": 79,
       },
       "init": Object {
@@ -19166,14 +19166,14 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 90,
       },
       "init": Object {
         "body": Array [
           Object {
             "end": Object {
-              "character": 12,
+              "character": 11,
               "line": 82,
             },
             "init": Object {
@@ -19208,7 +19208,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 35,
+              "character": 34,
               "line": 83,
             },
             "init": Object {
@@ -19267,7 +19267,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 21,
+              "character": 20,
               "line": 84,
             },
             "init": Object {
@@ -19326,7 +19326,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 22,
+              "character": 21,
               "line": 85,
             },
             "init": Object {
@@ -19343,7 +19343,7 @@ Object {
                 "type": "Identifier",
               },
               "end": Object {
-                "character": 22,
+                "character": 21,
                 "line": 85,
               },
               "operator": "@",
@@ -19401,7 +19401,7 @@ Object {
                 "body": Array [
                   Object {
                     "end": Object {
-                      "character": 45,
+                      "character": 44,
                       "line": 86,
                     },
                     "init": Object {
@@ -19418,7 +19418,7 @@ Object {
                         "type": "Identifier",
                       },
                       "end": Object {
-                        "character": 45,
+                        "character": 44,
                         "line": 86,
                       },
                       "operator": "@",
@@ -19521,7 +19521,7 @@ Object {
                   "type": "BinaryExpression",
                 },
                 "end": Object {
-                  "character": 45,
+                  "character": 44,
                   "line": 86,
                 },
                 "start": Object {
@@ -19532,7 +19532,7 @@ Object {
               },
             ],
             "end": Object {
-              "character": 45,
+              "character": 44,
               "line": 86,
             },
             "start": Object {
@@ -19547,7 +19547,7 @@ Object {
                 "body": Array [
                   Object {
                     "end": Object {
-                      "character": 55,
+                      "character": 54,
                       "line": 87,
                     },
                     "init": Object {
@@ -19564,7 +19564,7 @@ Object {
                         "type": "Identifier",
                       },
                       "end": Object {
-                        "character": 55,
+                        "character": 54,
                         "line": 87,
                       },
                       "identifier": Object {
@@ -19667,7 +19667,7 @@ Object {
                   "type": "BinaryExpression",
                 },
                 "end": Object {
-                  "character": 55,
+                  "character": 54,
                   "line": 87,
                 },
                 "start": Object {
@@ -19678,7 +19678,7 @@ Object {
               },
             ],
             "end": Object {
-              "character": 55,
+              "character": 54,
               "line": 87,
             },
             "start": Object {
@@ -19693,7 +19693,7 @@ Object {
                 "body": Array [
                   Object {
                     "end": Object {
-                      "character": 101,
+                      "character": 100,
                       "line": 88,
                     },
                     "expression": Object {
@@ -19881,7 +19881,7 @@ Object {
                         "type": "MemberExpression",
                       },
                       "end": Object {
-                        "character": 101,
+                        "character": 100,
                         "line": 88,
                       },
                       "start": Object {
@@ -19983,7 +19983,7 @@ Object {
                   "type": "BinaryExpression",
                 },
                 "end": Object {
-                  "character": 101,
+                  "character": 100,
                   "line": 88,
                 },
                 "start": Object {
@@ -19994,7 +19994,7 @@ Object {
               },
             ],
             "end": Object {
-              "character": 101,
+              "character": 100,
               "line": 88,
             },
             "start": Object {
@@ -20119,14 +20119,14 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 101,
       },
       "init": Object {
         "body": Array [
           Object {
             "end": Object {
-              "character": 12,
+              "character": 11,
               "line": 93,
             },
             "init": Object {
@@ -20161,7 +20161,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 12,
+              "character": 11,
               "line": 94,
             },
             "init": Object {
@@ -20196,7 +20196,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 20,
+              "character": 19,
               "line": 95,
             },
             "init": Object {
@@ -20251,7 +20251,7 @@ Object {
                 "type": "MemberExpression",
               },
               "end": Object {
-                "character": 20,
+                "character": 19,
                 "line": 95,
               },
               "start": Object {
@@ -20282,7 +20282,7 @@ Object {
             "body": Array [
               Object {
                 "end": Object {
-                  "character": 24,
+                  "character": 23,
                   "line": 97,
                 },
                 "expression": Object {
@@ -20361,7 +20361,7 @@ Object {
                     "type": "MemberExpression",
                   },
                   "end": Object {
-                    "character": 24,
+                    "character": 23,
                     "line": 97,
                   },
                   "start": Object {
@@ -20413,7 +20413,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 15,
+              "character": 14,
               "line": 99,
             },
             "expression": Object {
@@ -20430,7 +20430,7 @@ Object {
                 "type": "Identifier",
               },
               "end": Object {
-                "character": 15,
+                "character": 14,
                 "line": 99,
               },
               "identifier": Object {
@@ -20550,14 +20550,14 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 156,
       },
       "init": Object {
         "body": Array [
           Object {
             "end": Object {
-              "character": 12,
+              "character": 11,
               "line": 104,
             },
             "init": Object {
@@ -20596,7 +20596,7 @@ Object {
                 "body": Array [
                   Object {
                     "end": Object {
-                      "character": 45,
+                      "character": 44,
                       "line": 105,
                     },
                     "init": Object {
@@ -20613,7 +20613,7 @@ Object {
                         "type": "Identifier",
                       },
                       "end": Object {
-                        "character": 45,
+                        "character": 44,
                         "line": 105,
                       },
                       "identifier": Object {
@@ -20692,7 +20692,7 @@ Object {
                   "type": "BinaryExpression",
                 },
                 "end": Object {
-                  "character": 45,
+                  "character": 44,
                   "line": 105,
                 },
                 "start": Object {
@@ -20703,7 +20703,7 @@ Object {
               },
             ],
             "end": Object {
-              "character": 45,
+              "character": 44,
               "line": 105,
             },
             "start": Object {
@@ -20714,7 +20714,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 24,
+              "character": 23,
               "line": 106,
             },
             "init": Object {
@@ -20769,7 +20769,7 @@ Object {
                 "type": "MemberExpression",
               },
               "end": Object {
-                "character": 24,
+                "character": 23,
                 "line": 106,
               },
               "start": Object {
@@ -20798,7 +20798,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 18,
+              "character": 17,
               "line": 107,
             },
             "init": Object {
@@ -20834,7 +20834,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 14,
+              "character": 13,
               "line": 108,
             },
             "init": Object {
@@ -20869,7 +20869,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 15,
+              "character": 14,
               "line": 109,
             },
             "init": Object {
@@ -20905,12 +20905,12 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 24,
+              "character": 23,
               "line": 110,
             },
             "init": Object {
               "end": Object {
-                "character": 24,
+                "character": 23,
                 "line": 110,
               },
               "left": Object {
@@ -20989,12 +20989,12 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 26,
+              "character": 25,
               "line": 111,
             },
             "init": Object {
               "end": Object {
-                "character": 26,
+                "character": 25,
                 "line": 111,
               },
               "left": Object {
@@ -21072,7 +21072,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 15,
+              "character": 14,
               "line": 117,
             },
             "init": Object {
@@ -21083,7 +21083,7 @@ Object {
                       "body": Array [
                         Object {
                           "end": Object {
-                            "character": 67,
+                            "character": 66,
                             "line": 114,
                           },
                           "expression": Object {
@@ -21247,7 +21247,7 @@ Object {
                               "type": "MemberExpression",
                             },
                             "end": Object {
-                              "character": 67,
+                              "character": 66,
                               "line": 114,
                             },
                             "start": Object {
@@ -21419,7 +21419,7 @@ Object {
                       "type": "MemberExpression",
                     },
                     "end": Object {
-                      "character": 22,
+                      "character": 21,
                       "line": 116,
                     },
                     "index": Object {
@@ -21495,7 +21495,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 15,
+              "character": 14,
               "line": 120,
             },
             "init": Object {
@@ -21554,7 +21554,7 @@ Object {
                       "type": "Identifier",
                     },
                     "end": Object {
-                      "character": 29,
+                      "character": 28,
                       "line": 119,
                     },
                     "start": Object {
@@ -21630,7 +21630,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 15,
+              "character": 14,
               "line": 123,
             },
             "init": Object {
@@ -21689,7 +21689,7 @@ Object {
                       "type": "Identifier",
                     },
                     "end": Object {
-                      "character": 30,
+                      "character": 29,
                       "line": 122,
                     },
                     "start": Object {
@@ -21765,7 +21765,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 15,
+              "character": 14,
               "line": 126,
             },
             "init": Object {
@@ -21824,7 +21824,7 @@ Object {
                       "type": "Identifier",
                     },
                     "end": Object {
-                      "character": 30,
+                      "character": 29,
                       "line": 125,
                     },
                     "start": Object {
@@ -21902,7 +21902,7 @@ Object {
             "body": Array [
               Object {
                 "end": Object {
-                  "character": 37,
+                  "character": 36,
                   "line": 128,
                 },
                 "init": Object {
@@ -21919,7 +21919,7 @@ Object {
                     "type": "Identifier",
                   },
                   "end": Object {
-                    "character": 37,
+                    "character": 36,
                     "line": 128,
                   },
                   "index": Object {
@@ -22033,7 +22033,7 @@ Object {
               },
               Object {
                 "end": Object {
-                  "character": 42,
+                  "character": 41,
                   "line": 129,
                 },
                 "init": Object {
@@ -22148,7 +22148,7 @@ Object {
                     "type": "Identifier",
                   },
                   "end": Object {
-                    "character": 42,
+                    "character": 41,
                     "line": 129,
                   },
                   "start": Object {
@@ -22177,7 +22177,7 @@ Object {
               },
               Object {
                 "end": Object {
-                  "character": 45,
+                  "character": 44,
                   "line": 130,
                 },
                 "init": Object {
@@ -22317,7 +22317,7 @@ Object {
                     "type": "Identifier",
                   },
                   "end": Object {
-                    "character": 45,
+                    "character": 44,
                     "line": 130,
                   },
                   "start": Object {
@@ -22346,12 +22346,12 @@ Object {
               },
               Object {
                 "end": Object {
-                  "character": 34,
+                  "character": 33,
                   "line": 131,
                 },
                 "init": Object {
                   "end": Object {
-                    "character": 34,
+                    "character": 33,
                     "line": 131,
                   },
                   "left": Object {
@@ -22477,12 +22477,12 @@ Object {
               },
               Object {
                 "end": Object {
-                  "character": 22,
+                  "character": 21,
                   "line": 132,
                 },
                 "init": Object {
                   "end": Object {
-                    "character": 22,
+                    "character": 21,
                     "line": 132,
                   },
                   "left": Object {
@@ -22560,7 +22560,7 @@ Object {
               },
               Object {
                 "end": Object {
-                  "character": 49,
+                  "character": 48,
                   "line": 133,
                 },
                 "expression": Object {
@@ -22716,7 +22716,7 @@ Object {
                     "type": "MemberExpression",
                   },
                   "end": Object {
-                    "character": 49,
+                    "character": 48,
                     "line": 133,
                   },
                   "start": Object {
@@ -22733,7 +22733,7 @@ Object {
               },
               Object {
                 "end": Object {
-                  "character": 49,
+                  "character": 48,
                   "line": 134,
                 },
                 "expression": Object {
@@ -22889,7 +22889,7 @@ Object {
                     "type": "MemberExpression",
                   },
                   "end": Object {
-                    "character": 49,
+                    "character": 48,
                     "line": 134,
                   },
                   "start": Object {
@@ -22906,7 +22906,7 @@ Object {
               },
               Object {
                 "end": Object {
-                  "character": 48,
+                  "character": 47,
                   "line": 135,
                 },
                 "expression": Object {
@@ -23062,7 +23062,7 @@ Object {
                     "type": "MemberExpression",
                   },
                   "end": Object {
-                    "character": 48,
+                    "character": 47,
                     "line": 135,
                   },
                   "start": Object {
@@ -23079,7 +23079,7 @@ Object {
               },
               Object {
                 "end": Object {
-                  "character": 37,
+                  "character": 36,
                   "line": 136,
                 },
                 "expression": Object {
@@ -23197,7 +23197,7 @@ Object {
                     "type": "MemberExpression",
                   },
                   "end": Object {
-                    "character": 37,
+                    "character": 36,
                     "line": 136,
                   },
                   "start": Object {
@@ -23214,12 +23214,12 @@ Object {
               },
               Object {
                 "end": Object {
-                  "character": 27,
+                  "character": 26,
                   "line": 137,
                 },
                 "init": Object {
                   "end": Object {
-                    "character": 27,
+                    "character": 26,
                     "line": 137,
                   },
                   "left": Object {
@@ -23275,7 +23275,7 @@ Object {
             ],
             "condition": Object {
               "end": Object {
-                "character": 23,
+                "character": 22,
                 "line": 127,
               },
               "left": Object {
@@ -23325,7 +23325,7 @@ Object {
                 "body": Array [
                   Object {
                     "end": Object {
-                      "character": 37,
+                      "character": 36,
                       "line": 140,
                     },
                     "init": Object {
@@ -23342,7 +23342,7 @@ Object {
                         "type": "Identifier",
                       },
                       "end": Object {
-                        "character": 37,
+                        "character": 36,
                         "line": 140,
                       },
                       "index": Object {
@@ -23456,7 +23456,7 @@ Object {
                   },
                   Object {
                     "end": Object {
-                      "character": 41,
+                      "character": 40,
                       "line": 141,
                     },
                     "init": Object {
@@ -23571,7 +23571,7 @@ Object {
                         "type": "Identifier",
                       },
                       "end": Object {
-                        "character": 41,
+                        "character": 40,
                         "line": 141,
                       },
                       "start": Object {
@@ -23600,12 +23600,12 @@ Object {
                   },
                   Object {
                     "end": Object {
-                      "character": 34,
+                      "character": 33,
                       "line": 142,
                     },
                     "init": Object {
                       "end": Object {
-                        "character": 34,
+                        "character": 33,
                         "line": 142,
                       },
                       "left": Object {
@@ -23731,12 +23731,12 @@ Object {
                   },
                   Object {
                     "end": Object {
-                      "character": 18,
+                      "character": 17,
                       "line": 143,
                     },
                     "init": Object {
                       "end": Object {
-                        "character": 18,
+                        "character": 17,
                         "line": 143,
                       },
                       "left": Object {
@@ -23790,7 +23790,7 @@ Object {
                   },
                   Object {
                     "end": Object {
-                      "character": 40,
+                      "character": 39,
                       "line": 144,
                     },
                     "expression": Object {
@@ -23908,7 +23908,7 @@ Object {
                         "type": "MemberExpression",
                       },
                       "end": Object {
-                        "character": 40,
+                        "character": 39,
                         "line": 144,
                       },
                       "start": Object {
@@ -23925,7 +23925,7 @@ Object {
                   },
                   Object {
                     "end": Object {
-                      "character": 48,
+                      "character": 47,
                       "line": 145,
                     },
                     "expression": Object {
@@ -24081,7 +24081,7 @@ Object {
                         "type": "MemberExpression",
                       },
                       "end": Object {
-                        "character": 48,
+                        "character": 47,
                         "line": 145,
                       },
                       "start": Object {
@@ -24098,7 +24098,7 @@ Object {
                   },
                   Object {
                     "end": Object {
-                      "character": 48,
+                      "character": 47,
                       "line": 146,
                     },
                     "expression": Object {
@@ -24254,7 +24254,7 @@ Object {
                         "type": "MemberExpression",
                       },
                       "end": Object {
-                        "character": 48,
+                        "character": 47,
                         "line": 146,
                       },
                       "start": Object {
@@ -24271,7 +24271,7 @@ Object {
                   },
                   Object {
                     "end": Object {
-                      "character": 20,
+                      "character": 19,
                       "line": 147,
                     },
                     "expression": Object {
@@ -24327,7 +24327,7 @@ Object {
                         "type": "MemberExpression",
                       },
                       "end": Object {
-                        "character": 20,
+                        "character": 19,
                         "line": 147,
                       },
                       "start": Object {
@@ -24394,7 +24394,7 @@ Object {
                 "body": Array [
                   Object {
                     "end": Object {
-                      "character": 37,
+                      "character": 36,
                       "line": 149,
                     },
                     "init": Object {
@@ -24411,7 +24411,7 @@ Object {
                         "type": "Identifier",
                       },
                       "end": Object {
-                        "character": 37,
+                        "character": 36,
                         "line": 149,
                       },
                       "index": Object {
@@ -24525,12 +24525,12 @@ Object {
                   },
                   Object {
                     "end": Object {
-                      "character": 35,
+                      "character": 34,
                       "line": 150,
                     },
                     "init": Object {
                       "end": Object {
-                        "character": 35,
+                        "character": 34,
                         "line": 150,
                       },
                       "left": Object {
@@ -24631,7 +24631,7 @@ Object {
                   },
                   Object {
                     "end": Object {
-                      "character": 39,
+                      "character": 38,
                       "line": 151,
                     },
                     "expression": Object {
@@ -24749,7 +24749,7 @@ Object {
                         "type": "MemberExpression",
                       },
                       "end": Object {
-                        "character": 39,
+                        "character": 38,
                         "line": 151,
                       },
                       "start": Object {
@@ -24766,7 +24766,7 @@ Object {
                   },
                   Object {
                     "end": Object {
-                      "character": 48,
+                      "character": 47,
                       "line": 152,
                     },
                     "expression": Object {
@@ -24922,7 +24922,7 @@ Object {
                         "type": "MemberExpression",
                       },
                       "end": Object {
-                        "character": 48,
+                        "character": 47,
                         "line": 152,
                       },
                       "start": Object {
@@ -24939,7 +24939,7 @@ Object {
                   },
                   Object {
                     "end": Object {
-                      "character": 21,
+                      "character": 20,
                       "line": 153,
                     },
                     "expression": Object {
@@ -24995,7 +24995,7 @@ Object {
                         "type": "MemberExpression",
                       },
                       "end": Object {
-                        "character": 21,
+                        "character": 20,
                         "line": 153,
                       },
                       "start": Object {
@@ -25123,7 +25123,7 @@ Object {
                 "type": "MemberExpression",
               },
               "end": Object {
-                "character": 25,
+                "character": 24,
                 "line": 155,
               },
               "start": Object {
@@ -25223,14 +25223,14 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 202,
       },
       "init": Object {
         "body": Array [
           Object {
             "end": Object {
-              "character": 12,
+              "character": 11,
               "line": 159,
             },
             "init": Object {
@@ -25269,7 +25269,7 @@ Object {
                 "body": Array [
                   Object {
                     "end": Object {
-                      "character": 45,
+                      "character": 44,
                       "line": 160,
                     },
                     "init": Object {
@@ -25286,7 +25286,7 @@ Object {
                         "type": "Identifier",
                       },
                       "end": Object {
-                        "character": 45,
+                        "character": 44,
                         "line": 160,
                       },
                       "identifier": Object {
@@ -25365,7 +25365,7 @@ Object {
                   "type": "BinaryExpression",
                 },
                 "end": Object {
-                  "character": 45,
+                  "character": 44,
                   "line": 160,
                 },
                 "start": Object {
@@ -25376,7 +25376,7 @@ Object {
               },
             ],
             "end": Object {
-              "character": 45,
+              "character": 44,
               "line": 160,
             },
             "start": Object {
@@ -25387,7 +25387,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 24,
+              "character": 23,
               "line": 161,
             },
             "init": Object {
@@ -25442,7 +25442,7 @@ Object {
                 "type": "MemberExpression",
               },
               "end": Object {
-                "character": 24,
+                "character": 23,
                 "line": 161,
               },
               "start": Object {
@@ -25471,7 +25471,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 18,
+              "character": 17,
               "line": 162,
             },
             "init": Object {
@@ -25507,7 +25507,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 24,
+              "character": 23,
               "line": 163,
             },
             "init": Object {
@@ -25524,7 +25524,7 @@ Object {
                 "type": "Identifier",
               },
               "end": Object {
-                "character": 24,
+                "character": 23,
                 "line": 163,
               },
               "identifier": Object {
@@ -25566,7 +25566,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 14,
+              "character": 13,
               "line": 164,
             },
             "init": Object {
@@ -25601,7 +25601,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 17,
+              "character": 16,
               "line": 165,
             },
             "init": Object {
@@ -25637,7 +25637,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 17,
+              "character": 16,
               "line": 166,
             },
             "init": Object {
@@ -25673,7 +25673,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 15,
+              "character": 14,
               "line": 167,
             },
             "init": Object {
@@ -25709,7 +25709,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 18,
+              "character": 17,
               "line": 168,
             },
             "init": Object {
@@ -25745,7 +25745,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 16,
+              "character": 15,
               "line": 169,
             },
             "init": Object {
@@ -25762,7 +25762,7 @@ Object {
                 "type": "Identifier",
               },
               "end": Object {
-                "character": 16,
+                "character": 15,
                 "line": 169,
               },
               "identifier": Object {
@@ -25804,7 +25804,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 15,
+              "character": 14,
               "line": 172,
             },
             "init": Object {
@@ -25863,7 +25863,7 @@ Object {
                       "type": "Identifier",
                     },
                     "end": Object {
-                      "character": 29,
+                      "character": 28,
                       "line": 171,
                     },
                     "start": Object {
@@ -25939,7 +25939,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 15,
+              "character": 14,
               "line": 175,
             },
             "init": Object {
@@ -25998,7 +25998,7 @@ Object {
                       "type": "Identifier",
                     },
                     "end": Object {
-                      "character": 30,
+                      "character": 29,
                       "line": 174,
                     },
                     "start": Object {
@@ -26076,7 +26076,7 @@ Object {
             "body": Array [
               Object {
                 "end": Object {
-                  "character": 44,
+                  "character": 43,
                   "line": 177,
                 },
                 "init": Object {
@@ -26178,7 +26178,7 @@ Object {
                     "type": "MemberExpression",
                   },
                   "end": Object {
-                    "character": 44,
+                    "character": 43,
                     "line": 177,
                   },
                   "start": Object {
@@ -26207,7 +26207,7 @@ Object {
               },
               Object {
                 "end": Object {
-                  "character": 27,
+                  "character": 26,
                   "line": 178,
                 },
                 "init": Object {
@@ -26242,12 +26242,12 @@ Object {
               },
               Object {
                 "end": Object {
-                  "character": 31,
+                  "character": 30,
                   "line": 179,
                 },
                 "init": Object {
                   "end": Object {
-                    "character": 31,
+                    "character": 30,
                     "line": 179,
                   },
                   "left": Object {
@@ -26306,12 +26306,12 @@ Object {
                     "body": Array [
                       Object {
                         "end": Object {
-                          "character": 42,
+                          "character": 41,
                           "line": 181,
                         },
                         "init": Object {
                           "end": Object {
-                            "character": 42,
+                            "character": 41,
                             "line": 181,
                           },
                           "left": Object {
@@ -26440,7 +26440,7 @@ Object {
                     "body": Array [
                       Object {
                         "end": Object {
-                          "character": 24,
+                          "character": 23,
                           "line": 183,
                         },
                         "init": Object {
@@ -26501,12 +26501,12 @@ Object {
                     "body": Array [
                       Object {
                         "end": Object {
-                          "character": 70,
+                          "character": 69,
                           "line": 186,
                         },
                         "init": Object {
                           "end": Object {
-                            "character": 70,
+                            "character": 69,
                             "line": 186,
                           },
                           "left": Object {
@@ -26747,7 +26747,7 @@ Object {
                               "type": "NegationExpression",
                             },
                             "end": Object {
-                              "character": 57,
+                              "character": 56,
                               "line": 187,
                             },
                             "start": Object {
@@ -26758,7 +26758,7 @@ Object {
                           },
                         ],
                         "end": Object {
-                          "character": 57,
+                          "character": 56,
                           "line": 187,
                         },
                         "start": Object {
@@ -26769,7 +26769,7 @@ Object {
                       },
                       Object {
                         "end": Object {
-                          "character": 32,
+                          "character": 31,
                           "line": 188,
                         },
                         "init": Object {
@@ -26786,7 +26786,7 @@ Object {
                             "type": "Identifier",
                           },
                           "end": Object {
-                            "character": 32,
+                            "character": 31,
                             "line": 188,
                           },
                           "index": Object {
@@ -26827,7 +26827,7 @@ Object {
                       },
                       Object {
                         "end": Object {
-                          "character": 40,
+                          "character": 39,
                           "line": 189,
                         },
                         "init": Object {
@@ -26908,7 +26908,7 @@ Object {
                             "type": "Identifier",
                           },
                           "end": Object {
-                            "character": 40,
+                            "character": 39,
                             "line": 189,
                           },
                           "start": Object {
@@ -26937,7 +26937,7 @@ Object {
                       },
                       Object {
                         "end": Object {
-                          "character": 46,
+                          "character": 45,
                           "line": 190,
                         },
                         "init": Object {
@@ -26980,7 +26980,7 @@ Object {
                             "type": "Identifier",
                           },
                           "end": Object {
-                            "character": 46,
+                            "character": 45,
                             "line": 190,
                           },
                           "start": Object {
@@ -27009,7 +27009,7 @@ Object {
                       },
                       Object {
                         "end": Object {
-                          "character": 36,
+                          "character": 35,
                           "line": 191,
                         },
                         "init": Object {
@@ -27053,7 +27053,7 @@ Object {
                             "type": "Identifier",
                           },
                           "end": Object {
-                            "character": 36,
+                            "character": 35,
                             "line": 191,
                           },
                           "start": Object {
@@ -27086,12 +27086,12 @@ Object {
                             "body": Array [
                               Object {
                                 "end": Object {
-                                  "character": 30,
+                                  "character": 29,
                                   "line": 193,
                                 },
                                 "init": Object {
                                   "end": Object {
-                                    "character": 30,
+                                    "character": 29,
                                     "line": 193,
                                   },
                                   "left": Object {
@@ -27220,7 +27220,7 @@ Object {
                                       "type": "BinaryExpression",
                                     },
                                     "end": Object {
-                                      "character": 47,
+                                      "character": 46,
                                       "line": 194,
                                     },
                                     "start": Object {
@@ -27231,7 +27231,7 @@ Object {
                                   },
                                 ],
                                 "end": Object {
-                                  "character": 47,
+                                  "character": 46,
                                   "line": 194,
                                 },
                                 "start": Object {
@@ -27242,7 +27242,7 @@ Object {
                               },
                               Object {
                                 "end": Object {
-                                  "character": 33,
+                                  "character": 32,
                                   "line": 195,
                                 },
                                 "expression": Object {
@@ -27322,7 +27322,7 @@ Object {
                                     "type": "MemberExpression",
                                   },
                                   "end": Object {
-                                    "character": 33,
+                                    "character": 32,
                                     "line": 195,
                                   },
                                   "start": Object {
@@ -27398,12 +27398,12 @@ Object {
                       },
                       Object {
                         "end": Object {
-                          "character": 34,
+                          "character": 33,
                           "line": 197,
                         },
                         "init": Object {
                           "end": Object {
-                            "character": 34,
+                            "character": 33,
                             "line": 197,
                           },
                           "left": Object {
@@ -27517,12 +27517,12 @@ Object {
               },
               Object {
                 "end": Object {
-                  "character": 27,
+                  "character": 26,
                   "line": 199,
                 },
                 "init": Object {
                   "end": Object {
-                    "character": 27,
+                    "character": 26,
                     "line": 199,
                   },
                   "left": Object {
@@ -27578,7 +27578,7 @@ Object {
             ],
             "condition": Object {
               "end": Object {
-                "character": 23,
+                "character": 22,
                 "line": 176,
               },
               "left": Object {
@@ -27676,7 +27676,7 @@ Object {
                 "type": "MemberExpression",
               },
               "end": Object {
-                "character": 25,
+                "character": 24,
                 "line": 201,
               },
               "start": Object {
@@ -27776,7 +27776,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 41,
+        "character": 40,
         "line": 204,
       },
       "init": Object {
@@ -27844,7 +27844,7 @@ Object {
           "type": "MemberExpression",
         },
         "end": Object {
-          "character": 41,
+          "character": 40,
           "line": 204,
         },
         "start": Object {
@@ -27873,7 +27873,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 15,
+        "character": 14,
         "line": 206,
       },
       "init": Object {
@@ -27909,7 +27909,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 25,
+        "character": 24,
         "line": 208,
       },
       "init": Object {
@@ -27964,7 +27964,7 @@ Object {
           "type": "MemberExpression",
         },
         "end": Object {
-          "character": 25,
+          "character": 24,
           "line": 208,
         },
         "start": Object {
@@ -27993,7 +27993,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 31,
+        "character": 30,
         "line": 209,
       },
       "init": Object {
@@ -28048,7 +28048,7 @@ Object {
           "type": "MemberExpression",
         },
         "end": Object {
-          "character": 31,
+          "character": 30,
           "line": 209,
         },
         "start": Object {
@@ -28077,7 +28077,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 12,
+        "character": 11,
         "line": 211,
       },
       "expression": Object {
@@ -28108,7 +28108,7 @@ Object {
           "type": "Identifier",
         },
         "end": Object {
-          "character": 12,
+          "character": 11,
           "line": 211,
         },
         "start": Object {
@@ -28125,7 +28125,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 18,
+        "character": 17,
         "line": 212,
       },
       "expression": Object {
@@ -28156,7 +28156,7 @@ Object {
           "type": "Identifier",
         },
         "end": Object {
-          "character": 18,
+          "character": 17,
           "line": 212,
         },
         "start": Object {
@@ -33192,14 +33192,14 @@ Object {
   "body": Array [
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 13,
       },
       "init": Object {
         "body": Array [
           Object {
             "end": Object {
-              "character": 13,
+              "character": 12,
               "line": 2,
             },
             "init": Object {
@@ -33235,7 +33235,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 19,
+              "character": 18,
               "line": 3,
             },
             "init": Object {
@@ -33252,7 +33252,7 @@ Object {
                 "type": "Identifier",
               },
               "end": Object {
-                "character": 19,
+                "character": 18,
                 "line": 3,
               },
               "identifier": Object {
@@ -33294,7 +33294,7 @@ Object {
           },
           Object {
             "end": Object {
-              "character": 13,
+              "character": 12,
               "line": 4,
             },
             "init": Object {
@@ -33331,12 +33331,12 @@ Object {
             "body": Array [
               Object {
                 "end": Object {
-                  "character": 25,
+                  "character": 24,
                   "line": 7,
                 },
                 "init": Object {
                   "end": Object {
-                    "character": 25,
+                    "character": 24,
                     "line": 7,
                   },
                   "left": Object {
@@ -33390,7 +33390,7 @@ Object {
               },
               Object {
                 "end": Object {
-                  "character": 32,
+                  "character": 31,
                   "line": 8,
                 },
                 "expression": Object {
@@ -33491,7 +33491,7 @@ Object {
                     "type": "MemberExpression",
                   },
                   "end": Object {
-                    "character": 32,
+                    "character": 31,
                     "line": 8,
                   },
                   "start": Object {
@@ -33508,7 +33508,7 @@ Object {
               },
               Object {
                 "end": Object {
-                  "character": 17,
+                  "character": 16,
                   "line": 9,
                 },
                 "init": Object {
@@ -33544,7 +33544,7 @@ Object {
             ],
             "condition": Object {
               "end": Object {
-                "character": 24,
+                "character": 23,
                 "line": 6,
               },
               "left": Object {
@@ -33825,7 +33825,7 @@ Object {
   "body": Array [
     Object {
       "end": Object {
-        "character": 14,
+        "character": 13,
         "line": 3,
       },
       "init": Object {
@@ -33886,7 +33886,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 46,
+        "character": 45,
         "line": 5,
       },
       "expression": Object {
@@ -34015,7 +34015,7 @@ Object {
           "type": "Identifier",
         },
         "end": Object {
-          "character": 46,
+          "character": 45,
           "line": 5,
         },
         "start": Object {
@@ -34032,7 +34032,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 48,
+        "character": 47,
         "line": 6,
       },
       "expression": Object {
@@ -34161,7 +34161,7 @@ Object {
           "type": "Identifier",
         },
         "end": Object {
-          "character": 48,
+          "character": 47,
           "line": 6,
         },
         "start": Object {
@@ -34178,7 +34178,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 49,
+        "character": 48,
         "line": 7,
       },
       "expression": Object {
@@ -34306,7 +34306,7 @@ Object {
           "type": "Identifier",
         },
         "end": Object {
-          "character": 49,
+          "character": 48,
           "line": 7,
         },
         "start": Object {
@@ -34323,7 +34323,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 51,
+        "character": 50,
         "line": 8,
       },
       "expression": Object {
@@ -34451,7 +34451,7 @@ Object {
           "type": "Identifier",
         },
         "end": Object {
-          "character": 51,
+          "character": 50,
           "line": 8,
         },
         "start": Object {
@@ -34468,7 +34468,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 15,
+        "character": 14,
         "line": 9,
       },
       "expression": Object {
@@ -34537,7 +34537,7 @@ Object {
           "type": "Identifier",
         },
         "end": Object {
-          "character": 15,
+          "character": 14,
           "line": 9,
         },
         "start": Object {
@@ -34554,7 +34554,7 @@ Object {
     },
     Object {
       "end": Object {
-        "character": 17,
+        "character": 16,
         "line": 10,
       },
       "expression": Object {
@@ -34623,7 +34623,7 @@ Object {
           "type": "Identifier",
         },
         "end": Object {
-          "character": 17,
+          "character": 16,
           "line": 10,
         },
         "start": Object {
