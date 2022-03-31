@@ -47,7 +47,7 @@ export default class Parser extends ParserBase {
 		while (true) {
 			path = path + me.token.value;
 			me.next();
-			if (';' === me.token.value) break;
+			if (me.token.value === ';' || me.token.value === '<eof>') break;
 		}
 
 		return path;
