@@ -1,230 +1,200 @@
 import {
-	Parser as ParserBase,
-	ParserOptions as ParserOptionsBase,
-	ASTLiteral,
-	TokenType,
-	UnexpectedEOF,
-	ASTBase
+  ASTBase,
+  Parser as ParserBase,
+  ParserOptions as ParserOptionsBase,
+  TokenType,
+  UnexpectedEOF
 } from 'greyscript-core';
+
 import Lexer from './lexer';
 import {
-	ASTType,
-	ASTFeatureImportExpression,
-	ASTFeatureIncludeExpression,
-	ASTFeatureEnvarExpression,
-	ASTChunkAdvanced,
-	ASTProvider
+  ASTChunkAdvanced,
+  ASTFeatureImportExpression,
+  ASTFeatureIncludeExpression,
+  ASTProvider
 } from './parser/ast';
 
 export interface ParserOptions extends ParserOptionsBase {
-	astProvider?: ASTProvider;
-	environmentVariables?: Map<string, string>;
-	lexer?: Lexer;
+  astProvider?: ASTProvider;
+  lexer?: Lexer;
 }
 
 export default class Parser extends ParserBase {
-	imports: ASTFeatureImportExpression[];
-	includes: ASTFeatureIncludeExpression[];
-	astProvider: ASTProvider;
-	environmentVariables: Map<string, string>;
+  imports: ASTFeatureImportExpression[];
+  includes: ASTFeatureIncludeExpression[];
+  astProvider: ASTProvider;
 
-	constructor(content: string, options: ParserOptions = {}) {
-		options.lexer = options.lexer || new Lexer(content);
-		options.astProvider = options.astProvider || new ASTProvider();
-		super(content, options);
+  constructor(content: string, options: ParserOptions = {}) {
+    options.lexer = options.lexer || new Lexer(content);
+    options.astProvider = options.astProvider || new ASTProvider();
+    super(content, options);
 
-		const me = this;
+    const me = this;
 
-		me.imports = [];
-		me.includes = [];
-		me.environmentVariables = options.environmentVariables || new Map();
-	}
+    me.imports = [];
+    me.includes = [];
+  }
 
-	parseFeaturePath(): string {
-		const me = this;
-		let path = '';
+  parseFeaturePath(): string {
+    const me = this;
+    let path = '';
 
-		while (true) {
-			path = path + me.token.value;
-			me.next();
-			if (me.token.value === ';' || me.token.value === '<eof>') break;
-		}
+    while (true) {
+      path = path + me.token.value;
+      me.next();
+      if (me.token.value === ';' || me.token.value === '<eof>') break;
+    }
 
-		return path;
-	}
+    return path;
+  }
 
-	parseFeatureIncludeStatement(): ASTFeatureIncludeExpression {
-		const me = this;
-		const start = {
-			line: me.previousToken.line,
-			character: me.previousToken.lineRange[0]
-		};
-		const path = me.parseFeaturePath();
+  parseFeatureIncludeStatement(): ASTFeatureIncludeExpression {
+    const me = this;
+    const start = {
+      line: me.previousToken.line,
+      character: me.previousToken.lineRange[0]
+    };
+    const path = me.parseFeaturePath();
 
-		me.expect(';');
+    me.expect(';');
 
-		const base = me.astProvider.featureIncludeExpression(path, start, {
-			line: me.token.line,
-			character: me.token.lineRange[1]
-		});
+    const base = me.astProvider.featureIncludeExpression(path, start, {
+      line: me.token.line,
+      character: me.token.lineRange[1]
+    });
 
-		me.includes.push(base);
+    me.includes.push(base);
 
-		return base;
-	}
+    return base;
+  }
 
-	parseFeatureImportStatement(): ASTFeatureImportExpression {
-		const me = this;
-		const start = {
-			line: me.previousToken.line,
-			character: me.previousToken.lineRange[0]
-		};
-		const name = me.parseIdentifier();
+  parseFeatureImportStatement(): ASTFeatureImportExpression {
+    const me = this;
+    const start = {
+      line: me.previousToken.line,
+      character: me.previousToken.lineRange[0]
+    };
+    const name = me.parseIdentifier();
 
-		me.expect('from');
+    me.expect('from');
 
-		const path = me.parseFeaturePath();
+    const path = me.parseFeaturePath();
 
-		me.expect(';');
+    me.expect(';');
 
-		const base = me.astProvider.featureImportExpression(name, path, start, {
-			line: me.token.line,
-			character: me.token.lineRange[1]
-		});
+    const base = me.astProvider.featureImportExpression(name, path, start, {
+      line: me.token.line,
+      character: me.token.lineRange[1]
+    });
 
-		me.imports.push(base);
+    me.imports.push(base);
 
-		return base;
-	}
+    return base;
+  }
 
-	parseFeatureEnvarNameStatement(): ASTLiteral {
-		const me = this;
-		const start = {
-			line: me.token.line,
-			character: me.token.lineRange[0]
-		};
-		const name = me.token.value;
-		const value = me.environmentVariables.get(name);
-		let raw;
-		let type = TokenType.StringLiteral;
+  parseFeatureEnvarStatement(): ASTBase {
+    const me = this;
+    const start = {
+      line: me.previousToken.line,
+      character: me.previousToken.lineRange[0]
+    };
+    const name = me.token.value;
 
-		if (value == null) {
-			type = TokenType.NilLiteral;
-			raw = 'null';
-		} else {
-			raw = '"' + value + '"';
-		}
+    me.next();
+    me.expect(';');
 
-		const literal = me.astProvider.literal(type, value, raw, start, {
-			line: me.token.line,
-			character: me.token.lineRange[1]
-		});
+    let base: ASTBase = me.astProvider.featureEnvarExpression(name, start, {
+      line: me.token.line,
+      character: me.token.lineRange[1]
+    });
 
-		me.literals.push(literal);
-		me.next();
+    if (me.token.value === '.') {
+      while (true) {
+        const newBase = me.parseRighthandExpressionPart(base);
+        if (newBase === null) break;
+        base = newBase;
+      }
+    }
 
-		return literal;
-	}
+    return base;
+  }
 
-	parseFeatureEnvarStatement(): ASTBase {
-		const me = this;
-		const start = {
-			line: me.previousToken.line,
-			character: me.previousToken.lineRange[0]
-		};
-		const name = me.parseFeatureEnvarNameStatement();
+  parsePrimaryExpression(): ASTBase | null {
+    const me = this;
+    const value = me.token.value;
+    const type = me.token.type;
 
-		me.expect(';');
+    if (TokenType.Keyword === type && value === '#envar') {
+      me.next();
+      return me.parseFeatureEnvarStatement();
+    }
 
-		let base: ASTBase = me.astProvider.featureEnvarExpression(name, start, {
-			line: me.token.line,
-			character: me.token.lineRange[1]
-		});
+    return super.parsePrimaryExpression();
+  }
 
-		if ('.' === me.token.value) {
-			while (true) {
-				const newBase = me.parseRighthandExpressionPart(base);
-				if (newBase === null) break;
-				base = newBase;
-			}
-		}
-		
-		return base;
-	}
+  parseStatement(isShortcutStatement: boolean = false): ASTBase | null {
+    const me = this;
 
-	parsePrimaryExpression(): ASTBase | null {
-		const me = this;
-		const value = me.token.value;
-		const type = me.token.type;
+    if (TokenType.Keyword === me.token.type) {
+      const value = me.token.value;
 
-		if (TokenType.Keyword === type && '#envar' === value) {
-			me.next();
-			return me.parseFeatureEnvarStatement();
-		}
+      switch (value) {
+        case '#include':
+          me.next();
+          return me.parseFeatureIncludeStatement();
+        case '#import':
+          me.next();
+          return me.parseFeatureImportStatement();
+        case '#envar':
+          me.next();
+          return me.parseFeatureEnvarStatement();
+        case 'debugger':
+          me.next();
+          return me.astProvider.featureDebuggerExpression(
+            {
+              line: me.previousToken.line,
+              character: me.previousToken.lineRange[0]
+            },
+            {
+              line: me.previousToken.line,
+              character: me.previousToken.lineRange[1]
+            }
+          );
+        default:
+          break;
+      }
+    }
 
-		return super.parsePrimaryExpression();
-	}
+    return super.parseStatement(isShortcutStatement);
+  }
 
-	parseStatement(isShortcutStatement: boolean = false): ASTBase | null {
-		const me = this;
+  parseChunk(): ASTChunkAdvanced | ASTBase {
+    const me = this;
 
-		if (TokenType.Keyword === me.token.type) {
-			const value = me.token.value;
+    me.next();
 
-			switch (value) {
-				case '#include':
-					me.next();
-					return me.parseFeatureIncludeStatement();
-				case '#import':
-					me.next();
-					return me.parseFeatureImportStatement();
-				case '#envar':
-					me.next();
-					return me.parseFeatureEnvarStatement();
-				case 'debugger':
-					me.next();
-					return me.astProvider.featureDebuggerExpression({
-						line: me.previousToken.line,
-						character: me.previousToken.lineRange[0]
-					}, {
-						line: me.previousToken.line,
-						character: me.previousToken.lineRange[1]
-					});
-				default:
-					break;
-			}
-		}
+    const start = {
+      line: me.token.line,
+      character: me.token.lineRange[0]
+    };
+    const body = me.parseBlock();
 
-		return super.parseStatement(isShortcutStatement);
-	}
+    if (TokenType.EOF !== me.token.type) {
+      return me.raise(new UnexpectedEOF(me.token));
+    }
 
-	parseChunk(): ASTChunkAdvanced | ASTBase {
-		const me = this;
-
-		me.next();
-
-		const start = {
-			line: me.token.line,
-			character: me.token.lineRange[0]
-		};
-		const body = me.parseBlock();
-
-		if (TokenType.EOF !== me.token.type) {
-			return me.raise(new UnexpectedEOF(me.token));
-		}
-
-		return me.astProvider.chunkAdvanced(
-			body,
-			me.nativeImports,
-			me.namespaces,
-			me.literals,
-			me.imports,
-			me.includes,
-			start,
-			{
-				line: me.token.line,
-				character: me.token.lineRange[1]
-			}
-		);
-	};
+    return me.astProvider.chunkAdvanced(
+      body,
+      me.nativeImports,
+      me.namespaces,
+      me.literals,
+      me.imports,
+      me.includes,
+      start,
+      {
+        line: me.token.line,
+        character: me.token.lineRange[1]
+      }
+    );
+  }
 }

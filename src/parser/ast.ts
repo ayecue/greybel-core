@@ -1,100 +1,106 @@
-import { 
-	ASTBase,
-	ASTPosition,
-	ASTChunk,
-	ASTProvider as ASTProviderBase
+import {
+  ASTBase,
+  ASTChunk,
+  ASTPosition,
+  ASTProvider as ASTProviderBase
 } from 'greyscript-core';
 
 export enum ASTType {
-	FeatureImportExpression = 'FeatureImportExpression',
-	FeatureIncludeExpression = 'FeatureIncludeExpression',
-	FeatureEnvarExpression = 'FeatureEnvarExpression',
-	FeatureDebuggerExpression = 'FeatureDebuggerExpression'
+  FeatureImportExpression = 'FeatureImportExpression',
+  FeatureIncludeExpression = 'FeatureIncludeExpression',
+  FeatureEnvarExpression = 'FeatureEnvarExpression',
+  FeatureDebuggerExpression = 'FeatureDebuggerExpression'
 }
 
 export interface ASTFeatureImportExpression extends ASTBase {
-	type: ASTType.FeatureImportExpression;
-	name: ASTBase;
-	path: string;
-	chunk?: ASTChunk;
-	namespace?: string;
+  type: ASTType.FeatureImportExpression;
+  name: ASTBase;
+  path: string;
+  chunk?: ASTChunk;
+  namespace?: string;
 }
 
 export interface ASTFeatureIncludeExpression extends ASTBase {
-	type: ASTType.FeatureIncludeExpression;
-	path: string;
-	chunk?: ASTChunk;
-	namespace?: string;
+  type: ASTType.FeatureIncludeExpression;
+  path: string;
+  chunk?: ASTChunk;
+  namespace?: string;
 }
 
 export interface ASTFeatureEnvarExpression extends ASTBase {
-	type: ASTType.FeatureEnvarExpression;
-	value: ASTBase;
+  type: ASTType.FeatureEnvarExpression;
+  name: string;
 }
 
 export interface ASTChunkAdvanced extends ASTChunk {
-	imports: ASTFeatureImportExpression[];
-	includes: ASTFeatureIncludeExpression[];
+  imports: ASTFeatureImportExpression[];
+  includes: ASTFeatureIncludeExpression[];
 }
 
 export class ASTProvider extends ASTProviderBase {
-	featureImportExpression(name: ASTBase, path: string, start: ASTPosition, end: ASTPosition): ASTFeatureImportExpression {
-		return {
-			type: ASTType.FeatureImportExpression,
-			name,
-			path,
-			start,
-			end
-		};
-	}
+  featureImportExpression(
+    name: ASTBase,
+    path: string,
+    start: ASTPosition,
+    end: ASTPosition
+  ): ASTFeatureImportExpression {
+    return {
+      type: ASTType.FeatureImportExpression,
+      name,
+      path,
+      start,
+      end
+    };
+  }
 
-	featureIncludeExpression(path: string, start: ASTPosition, end: ASTPosition): ASTFeatureIncludeExpression {
-		return {
-			type: ASTType.FeatureIncludeExpression,
-			path,
-			start,
-			end
-		};
-	}
+  featureIncludeExpression(
+    path: string,
+    start: ASTPosition,
+    end: ASTPosition
+  ): ASTFeatureIncludeExpression {
+    return {
+      type: ASTType.FeatureIncludeExpression,
+      path,
+      start,
+      end
+    };
+  }
 
-	featureEnvarExpression(value: ASTBase, start: ASTPosition, end: ASTPosition): ASTFeatureEnvarExpression {
-		return {
-			type: ASTType.FeatureEnvarExpression,
-			value,
-			start,
-			end
-		};
-	}
+  featureEnvarExpression(
+    name: string,
+    start: ASTPosition,
+    end: ASTPosition
+  ): ASTFeatureEnvarExpression {
+    return {
+      type: ASTType.FeatureEnvarExpression,
+      name,
+      start,
+      end
+    };
+  }
 
-	featureDebuggerExpression(start: ASTPosition, end: ASTPosition): ASTBase {
-		return {
-			type: ASTType.FeatureDebuggerExpression,
-			start,
-			end
-		};
-	}
+  featureDebuggerExpression(start: ASTPosition, end: ASTPosition): ASTBase {
+    return {
+      type: ASTType.FeatureDebuggerExpression,
+      start,
+      end
+    };
+  }
 
-	chunkAdvanced(
-		body: ASTBase[],
-		nativeImports: string[],
-		namespaces: Set<string>,
-		literals: ASTBase[],
-		imports: ASTFeatureImportExpression[],
-		includes: ASTFeatureIncludeExpression[],
-		start: ASTPosition,
-		end: ASTPosition
-	): ASTChunkAdvanced {
-		return {
-			...this.chunk(
-				body,
-				nativeImports,
-				namespaces,
-				literals,
-				start,
-				end
-			),
-			imports,
-			includes
-		};
-	}
+  chunkAdvanced(
+    body: ASTBase[],
+    nativeImports: string[],
+    namespaces: Set<string>,
+    literals: ASTBase[],
+    imports: ASTFeatureImportExpression[],
+    includes: ASTFeatureIncludeExpression[],
+    start: ASTPosition,
+    end: ASTPosition
+  ): ASTChunkAdvanced {
+    return {
+      ...this.chunk(body, nativeImports, namespaces, literals, start, end),
+      imports,
+      includes
+    };
+  }
 }

@@ -10943,24 +10943,12 @@ Object {
         "character": 17,
         "line": 3,
       },
+      "name": "TEST_ENV",
       "start": Object {
         "character": 1,
         "line": 3,
       },
       "type": "FeatureEnvarExpression",
-      "value": Object {
-        "end": Object {
-          "character": 16,
-          "line": 3,
-        },
-        "raw": "\\"foo\\"",
-        "start": Object {
-          "character": 8,
-          "line": 3,
-        },
-        "type": "StringLiteral",
-        "value": "foo",
-      },
     },
     Object {
       "end": Object {
@@ -11018,21 +11006,7 @@ Object {
       "type": "FeatureIncludeExpression",
     },
   ],
-  "literals": Array [
-    Object {
-      "end": Object {
-        "character": 16,
-        "line": 3,
-      },
-      "raw": "\\"foo\\"",
-      "start": Object {
-        "character": 8,
-        "line": 3,
-      },
-      "type": "StringLiteral",
-      "value": "foo",
-    },
-  ],
+  "literals": Array [],
   "namespaces": Set {
     "foo",
   },
