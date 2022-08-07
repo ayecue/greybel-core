@@ -12,11 +12,7 @@ describe('parse', function() {
 
 				test(path.basename(filepath), () => {
 					const content = fs.readFileSync(filepath, 'utf-8');
-					const parser = new Parser(content, {
-						environmentVariables: new Map([
-							['TEST_ENV', 'foo'],
-						])
-					});
+					const parser = new Parser(content);
 
 					expect(parser.parseChunk()).toMatchSnapshot();
 				});
