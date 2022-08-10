@@ -25,7 +25,12 @@ export default class Parser extends ParserBase {
   astProvider: ASTProvider;
 
   constructor(content: string, options: ParserOptions = {}) {
-    options.lexer = options.lexer || new Lexer(content);
+    options.lexer =
+      options.lexer ||
+      new Lexer(content, {
+        unsafe: options.unsafe,
+        tabWidth: options.tabWidth
+      });
     options.astProvider = options.astProvider || new ASTProvider();
     super(content, options);
 
