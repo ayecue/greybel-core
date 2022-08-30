@@ -1,5 +1,6 @@
 import {
   ASTBase,
+  ASTPosition,
   Parser as ParserBase,
   ParserOptions as ParserOptionsBase,
   TokenType,
@@ -55,17 +56,16 @@ export default class Parser extends ParserBase {
 
   parseFeatureIncludeStatement(): ASTFeatureIncludeExpression {
     const me = this;
-    const start = {
-      line: me.previousToken.line,
-      character: me.previousToken.lineRange[0]
-    };
+    const start = new ASTPosition(me.previousToken.line, me.previousToken.lineRange[0]);
     const path = me.parseFeaturePath();
 
     me.expect(';');
 
-    const base = me.astProvider.featureIncludeExpression(path, start, {
-      line: me.token.line,
-      character: me.token.lineRange[1]
+    const base = me.astProvider.featureIncludeExpression({
+      path,
+      start,
+      end: new ASTPosition(me.token.line, me.token.lineRange[1]),
+      scope: me.currentScope
     });
 
     me.includes.push(base);
@@ -75,10 +75,7 @@ export default class Parser extends ParserBase {
 
   parseFeatureImportStatement(): ASTFeatureImportExpression {
     const me = this;
-    const start = {
-      line: me.previousToken.line,
-      character: me.previousToken.lineRange[0]
-    };
+    const start = new ASTPosition(me.previousToken.line, me.previousToken.lineRange[0]);
     const name = me.parseIdentifier();
 
     me.expect('from');
@@ -87,9 +84,12 @@ export default class Parser extends ParserBase {
 
     me.expect(';');
 
-    const base = me.astProvider.featureImportExpression(name, path, start, {
-      line: me.token.line,
-      character: me.token.lineRange[1]
+    const base = me.astProvider.featureImportExpression({
+      name,
+      path,
+      start,
+      end: new ASTPosition(me.token.line, me.token.lineRange[1]),
+      scope: me.currentScope
     });
 
     me.imports.push(base);
@@ -99,18 +99,17 @@ export default class Parser extends ParserBase {
 
   parseFeatureEnvarStatement(): ASTBase {
     const me = this;
-    const start = {
-      line: me.previousToken.line,
-      character: me.previousToken.lineRange[0]
-    };
+    const start = new ASTPosition(me.previousToken.line, me.previousToken.lineRange[0]);
     const name = me.token.value;
 
     me.next();
     me.expect(';');
 
-    let base: ASTBase = me.astProvider.featureEnvarExpression(name, start, {
-      line: me.token.line,
-      character: me.token.lineRange[1]
+    let base: ASTBase = me.astProvider.featureEnvarExpression({
+      name,
+      start,
+      end: new ASTPosition(me.token.line, me.token.lineRange[1]),
+      scope: me.currentScope
     });
 
     if (me.token.value === '.') {
@@ -155,16 +154,11 @@ export default class Parser extends ParserBase {
           return me.parseFeatureEnvarStatement();
         case 'debugger':
           me.next();
-          return me.astProvider.featureDebuggerExpression(
-            {
-              line: me.previousToken.line,
-              character: me.previousToken.lineRange[0]
-            },
-            {
-              line: me.previousToken.line,
-              character: me.previousToken.lineRange[1]
-            }
-          );
+          return me.astProvider.featureDebuggerExpression({
+            start: new ASTPosition(me.previousToken.line, me.previousToken.lineRange[0]),
+            end: new ASTPosition(me.previousToken.line, me.previousToken.lineRange[1]),
+            scope: me.currentScope
+          });
         default:
           break;
       }
@@ -178,28 +172,27 @@ export default class Parser extends ParserBase {
 
     me.next();
 
-    const start = {
-      line: me.token.line,
-      character: me.token.lineRange[0]
-    };
+    const start = new ASTPosition(me.token.line, me.token.lineRange[0]);
+    const chunk = me.astProvider.chunkAdvanced({ start, end: null });
+
+    me.pushScope(chunk);
+
     const body = me.parseBlock();
+
+    me.popScope();
 
     if (TokenType.EOF !== me.token.type) {
       return me.raise(new UnexpectedEOF(me.token));
     }
 
-    return me.astProvider.chunkAdvanced(
-      body,
-      me.nativeImports,
-      me.namespaces,
-      me.literals,
-      me.imports,
-      me.includes,
-      start,
-      {
-        line: me.token.line,
-        character: me.token.lineRange[1]
-      }
-    );
+    chunk.body = body;
+    chunk.nativeImports = me.nativeImports;
+    chunk.imports = me.imports;
+    chunk.includes = me.includes;
+    chunk.literals =  me.literals;
+    chunk.scopes = me.scopes;
+    chunk.end = new ASTPosition(me.token.line, me.token.lineRange[1]);
+
+    return chunk;
   }
 }
