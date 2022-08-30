@@ -191,6 +191,7 @@ export default class Parser extends ParserBase {
     chunk.includes = me.includes;
     chunk.literals =  me.literals;
     chunk.scopes = me.scopes;
+    chunk.lines = me.astProvider.lines;
     chunk.end = new ASTPosition(me.token.line, me.token.lineRange[1]);
 
     return chunk;
