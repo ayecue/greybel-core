@@ -8119,7 +8119,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTCallStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(7) { 'pw', 'me', 'x', 'hashFn', 'push', 'code', 'reverse' },
+        namespaces: Set(6) { 'pw', 'me', 'x', 'hashFn', 'push', 'reverse' },
         assignments: [
           [ASTAssignmentStatement],
           [ASTAssignmentStatement],
@@ -8176,7 +8176,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -8193,7 +8193,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -9366,7 +9365,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTCallStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(7) { 'pw', 'me', 'x', 'hashFn', 'push', 'code', 'reverse' },
+        namespaces: Set(6) { 'pw', 'me', 'x', 'hashFn', 'push', 'reverse' },
         assignments: [
           [ASTAssignmentStatement],
           [ASTAssignmentStatement],
@@ -9423,7 +9422,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -9440,7 +9439,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -10115,7 +10113,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -10132,7 +10130,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -10196,7 +10193,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -10213,7 +10210,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -10277,7 +10273,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -10294,7 +10290,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -10358,7 +10353,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -10375,7 +10370,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -10543,7 +10537,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -10560,7 +10554,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -10624,7 +10617,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -10641,7 +10634,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -10705,7 +10697,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -10722,7 +10714,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -10786,7 +10777,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -10803,7 +10794,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -10867,7 +10857,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -10884,7 +10874,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -10948,7 +10937,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -10965,7 +10954,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -11029,7 +11017,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -11046,7 +11034,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -11110,7 +11097,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -11127,7 +11114,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -11191,7 +11177,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -11208,7 +11194,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -11272,7 +11257,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -11289,7 +11274,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -11353,7 +11337,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -11370,7 +11354,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -11434,7 +11417,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -11451,7 +11434,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -11515,7 +11497,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -11532,7 +11514,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -11596,7 +11577,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -11613,7 +11594,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -11677,7 +11657,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -11694,7 +11674,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -11758,7 +11737,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -11775,7 +11754,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -11839,7 +11817,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -11856,7 +11834,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -11920,7 +11897,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -11937,7 +11914,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -12001,7 +11977,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -12018,7 +11994,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -12082,7 +12057,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -12099,7 +12074,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -12163,7 +12137,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -12180,7 +12154,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -12244,7 +12217,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -12261,7 +12234,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -12325,7 +12297,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -12342,7 +12314,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -12406,7 +12377,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -12423,7 +12394,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -12487,7 +12457,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -12504,7 +12474,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -12568,7 +12537,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -12585,7 +12554,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -12649,7 +12617,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -12666,7 +12634,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -12730,7 +12697,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -12747,7 +12714,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -12811,7 +12777,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -12828,7 +12794,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -12892,7 +12857,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -12909,7 +12874,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -15433,7 +15397,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           argument: [ASTIdentifier]
         }
       ],
-      namespaces: Set(7) { 'pw', 'me', 'x', 'hashFn', 'push', 'code', 'reverse' },
+      namespaces: Set(6) { 'pw', 'me', 'x', 'hashFn', 'push', 'reverse' },
       assignments: [
         ASTAssignmentStatement {
           type: 'AssignmentStatement',
@@ -15594,7 +15558,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           argument: [ASTCallExpression]
         }
       ],
-      namespaces: Set(22) {
+      namespaces: Set(21) {
         'pw',
         'me',
         'defaultSecret',
@@ -15611,7 +15575,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
         'RSHIFT',
         'm',
         'a',
-        'code',
         'b',
         'c',
         'buffer',
@@ -15855,7 +15818,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -15872,7 +15835,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -15961,7 +15923,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -15978,7 +15940,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -16067,7 +16028,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -16084,7 +16045,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -16173,7 +16133,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           [ASTIfStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(22) {
+        namespaces: Set(21) {
           'pw',
           'me',
           'defaultSecret',
@@ -16190,7 +16150,6 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
           'RSHIFT',
           'm',
           'a',
-          'code',
           'b',
           'c',
           'buffer',
@@ -17030,7 +16989,7 @@ exports[`parse default scripts random.src 1`] = `
           [ASTForGenericStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(5) { 'seed', 'seedVal', 'pos', 'len', 'code' },
+        namespaces: Set(4) { 'seed', 'seedVal', 'pos', 'len' },
         assignments: [
           [ASTAssignmentStatement],
           [ASTAssignmentStatement],
@@ -17441,7 +17400,7 @@ exports[`parse default scripts random.src 1`] = `
           [ASTForGenericStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(5) { 'seed', 'seedVal', 'pos', 'len', 'code' },
+        namespaces: Set(4) { 'seed', 'seedVal', 'pos', 'len' },
         assignments: [
           [ASTAssignmentStatement],
           [ASTAssignmentStatement],
@@ -17731,7 +17690,7 @@ exports[`parse default scripts random.src 1`] = `
           [ASTForGenericStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(5) { 'seed', 'seedVal', 'pos', 'len', 'code' },
+        namespaces: Set(4) { 'seed', 'seedVal', 'pos', 'len' },
         assignments: [
           [ASTAssignmentStatement],
           [ASTAssignmentStatement],
@@ -17758,7 +17717,7 @@ exports[`parse default scripts random.src 1`] = `
           [ASTForGenericStatement],
           [ASTReturnStatement]
         ],
-        namespaces: Set(5) { 'seed', 'seedVal', 'pos', 'len', 'code' },
+        namespaces: Set(4) { 'seed', 'seedVal', 'pos', 'len' },
         assignments: [
           [ASTAssignmentStatement],
           [ASTAssignmentStatement],
@@ -18278,7 +18237,7 @@ exports[`parse default scripts random.src 1`] = `
           argument: [ASTIdentifier]
         }
       ],
-      namespaces: Set(5) { 'seed', 'seedVal', 'pos', 'len', 'code' },
+      namespaces: Set(4) { 'seed', 'seedVal', 'pos', 'len' },
       assignments: [
         ASTAssignmentStatement {
           type: 'AssignmentStatement',
