@@ -17,23 +17,23 @@ import { ASTBase, ASTBaseOptions, ASTProvider as ASTProviderBase } from 'greyscr
 
 export class ASTProvider extends ASTProviderBase {
   featureImportExpression(options: ASTFeatureImportExpressionOptions): ASTFeatureImportExpression {
-    return this.addLine(new ASTFeatureImportExpression(options)) as ASTFeatureImportExpression;
+    return new ASTFeatureImportExpression(options);
   }
 
   featureIncludeExpression(options: ASTFeatureIncludeExpressionOptions): ASTFeatureIncludeExpression {
-    return this.addLine(new ASTFeatureIncludeExpression(options)) as ASTFeatureIncludeExpression;
+    return new ASTFeatureIncludeExpression(options);
   }
 
   featureEnvarExpression(options: ASTFeatureEnvarExpressionOptions): ASTFeatureEnvarExpression {
-    return this.addLine(new ASTFeatureEnvarExpression(options)) as ASTFeatureEnvarExpression;
+    return new ASTFeatureEnvarExpression(options);
   }
 
   featureDebuggerExpression(options: ASTBaseOptions): ASTBase {
-    return this.addLine(new ASTBase(ASTType.FeatureDebuggerExpression, options));
+    return new ASTBase(ASTType.FeatureDebuggerExpression, options);
   }
 
   chunkAdvanced(options: ASTChunkAdvancedOptions): ASTChunkAdvanced {
-    return this.addLine(new ASTChunkAdvanced(options)) as ASTChunkAdvanced;
+    return new ASTChunkAdvanced(options);
   }
 }
 
