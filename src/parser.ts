@@ -57,9 +57,7 @@ export default class Parser extends ParserBase {
   parseFeatureIncludeStatement(): ASTFeatureIncludeExpression {
     const me = this;
     const start = new ASTPosition(me.previousToken.line, me.previousToken.lineRange[0]);
-    const path = me.parseFeaturePath();
-
-    me.expect(';');
+    const path = me.parseFeaturePath(); 
 
     const base = me.astProvider.featureIncludeExpression({
       path,
@@ -82,8 +80,6 @@ export default class Parser extends ParserBase {
 
     const path = me.parseFeaturePath();
 
-    me.expect(';');
-
     const base = me.astProvider.featureImportExpression({
       name,
       path,
@@ -103,7 +99,6 @@ export default class Parser extends ParserBase {
     const name = me.token.value;
 
     me.next();
-    me.expect(';');
 
     let base: ASTBase = me.astProvider.featureEnvarExpression({
       name,
@@ -111,14 +106,6 @@ export default class Parser extends ParserBase {
       end: new ASTPosition(me.token.line, me.token.lineRange[1]),
       scope: me.currentScope
     });
-
-    if (me.token.value === '.') {
-      while (true) {
-        const newBase = me.parseRighthandExpressionPart(base);
-        if (newBase === null) break;
-        base = newBase;
-      }
-    }
 
     return base;
   }
@@ -136,7 +123,7 @@ export default class Parser extends ParserBase {
     return super.parsePrimaryExpression();
   }
 
-  parseStatement(isShortcutStatement: boolean = false): ASTBase | null {
+  parseStatement(): ASTBase | null {
     const me = this;
 
     if (TokenType.Keyword === me.token.type) {
@@ -164,7 +151,7 @@ export default class Parser extends ParserBase {
       }
     }
 
-    return super.parseStatement(isShortcutStatement);
+    return super.parseStatement();
   }
 
   parseChunk(): ASTChunkAdvanced | ASTBase {
