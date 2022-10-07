@@ -22,6 +22,10 @@ export class ASTFeatureImportExpression extends ASTBase {
     this.chunk = options.chunk;
     this.namespace = options.namespace;
   }
+
+  toString(): string {
+    return `FeatureImportExpression[name = ${this.name}, path = ${this.path}]`
+  }
 }
 
 export interface ASTFeatureIncludeExpressionOptions extends ASTBaseOptions {
@@ -41,6 +45,10 @@ export class ASTFeatureIncludeExpression extends ASTBase {
     this.chunk = options.chunk;
     this.namespace = options.namespace;
   }
+
+  toString(): string {
+    return `FeatureIncludeExpression[path = ${this.path}]`
+  }
 }
 
 export interface ASTFeatureEnvarExpressionOptions extends ASTBaseOptions {
@@ -53,5 +61,9 @@ export class ASTFeatureEnvarExpression extends ASTBase {
   constructor(options: ASTFeatureEnvarExpressionOptions) {
     super(ASTType.FeatureEnvarExpression, options);
     this.name = options.name;
+  }
+
+  toString(): string {
+    return `FeatureEnvarExpression[path = ${this.name}]`
   }
 }

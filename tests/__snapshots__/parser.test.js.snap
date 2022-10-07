@@ -542,18 +542,18 @@ exports[`parse default scripts binary-expressions.src unsafe 1`] = `
 
 exports[`parse default scripts greybel-utils.src 1`] = `
 "Chunk[
-	1: FeatureImportExpression[]
-	2: FeatureIncludeExpression[]
-	3: FeatureEnvarExpression[]
+	1: FeatureImportExpression[name = Identifier[foo], path = test/bar]
+	2: FeatureIncludeExpression[path = test/bar]
+	3: FeatureEnvarExpression[path = TEST_ENV]
 	4: FeatureDebuggerExpression[]
 ]"
 `;
 
 exports[`parse default scripts greybel-utils.src unsafe 1`] = `
 "Chunk[
-	1: FeatureImportExpression[]
-	2: FeatureIncludeExpression[]
-	3: FeatureEnvarExpression[]
+	1: FeatureImportExpression[name = Identifier[foo], path = test/bar]
+	2: FeatureIncludeExpression[path = test/bar]
+	3: FeatureEnvarExpression[path = TEST_ENV]
 	4: FeatureDebuggerExpression[]
 ]"
 `;
