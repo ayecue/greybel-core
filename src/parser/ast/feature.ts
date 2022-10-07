@@ -1,18 +1,19 @@
 import { ASTBase, ASTBaseOptions, ASTChunk } from 'greyscript-core';
+
 import { ASTType } from './base';
 
 export interface ASTFeatureImportExpressionOptions extends ASTBaseOptions {
-    name: ASTBase;
-    path: string;
-    chunk?: ASTChunk;
-    namespace?: string;
+  name: ASTBase;
+  path: string;
+  chunk?: ASTChunk;
+  namespace?: string;
 }
 
 export class ASTFeatureImportExpression extends ASTBase {
-    name: ASTBase;
-    path: string;
-    chunk?: ASTChunk;
-    namespace?: string;
+  name: ASTBase;
+  path: string;
+  chunk?: ASTChunk;
+  namespace?: string;
 
   constructor(options: ASTFeatureImportExpressionOptions) {
     super(ASTType.FeatureImportExpression, options);
@@ -24,15 +25,15 @@ export class ASTFeatureImportExpression extends ASTBase {
 }
 
 export interface ASTFeatureIncludeExpressionOptions extends ASTBaseOptions {
-    path: string;
-    chunk?: ASTChunk;
-    namespace?: string;
+  path: string;
+  chunk?: ASTChunk;
+  namespace?: string;
 }
 
 export class ASTFeatureIncludeExpression extends ASTBase {
-    path: string;
-    chunk?: ASTChunk;
-    namespace?: string;
+  path: string;
+  chunk?: ASTChunk;
+  namespace?: string;
 
   constructor(options: ASTFeatureIncludeExpressionOptions) {
     super(ASTType.FeatureIncludeExpression, options);
@@ -43,11 +44,11 @@ export class ASTFeatureIncludeExpression extends ASTBase {
 }
 
 export interface ASTFeatureEnvarExpressionOptions extends ASTBaseOptions {
-    name: string;
+  name: string;
 }
 
 export class ASTFeatureEnvarExpression extends ASTBase {
-    name: string;
+  name: string;
 
   constructor(options: ASTFeatureEnvarExpressionOptions) {
     super(ASTType.FeatureEnvarExpression, options);
