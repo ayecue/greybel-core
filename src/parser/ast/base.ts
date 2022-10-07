@@ -1,6 +1,6 @@
 export enum ASTType {
-    FeatureImportExpression = 'FeatureImportExpression',
-    FeatureIncludeExpression = 'FeatureIncludeExpression',
-    FeatureEnvarExpression = 'FeatureEnvarExpression',
-    FeatureDebuggerExpression = 'FeatureDebuggerExpression'
-};
+  FeatureImportExpression = 'FeatureImportExpression',
+  FeatureIncludeExpression = 'FeatureIncludeExpression',
+  FeatureEnvarExpression = 'FeatureEnvarExpression',
+  FeatureDebuggerExpression = 'FeatureDebuggerExpression'
+}

@@ -13,14 +13,18 @@ describe('parse', function() {
 				test(path.basename(filepath), () => {
 					const content = fs.readFileSync(filepath, 'utf-8');
 					const lexer = new Lexer(content, {
-						tabWidth: 4
+						tabWidth: 4,
+						unsafe: true
 					});
 					let token = lexer.next();
+					const payload = [];
 
 					while (token.value !== '<eof>') {
-						expect(token).toMatchSnapshot();
+						payload.push(token.toString());
 						token = lexer.next();
 					}
+
+					expect(payload.join('\n')).toMatchSnapshot();
 				});
 			});
 

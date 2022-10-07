@@ -1,8 +1,7 @@
-const { Parser } = require('../dist');
+const { Parser, Lexer, ASTBase } = require('../dist');
 const fs = require('fs');
 const path = require('path');
 const testFolder = path.resolve(__dirname, 'scripts');
-const util = require('util');
 
 describe('parse', function() {
 	describe('default scripts', function() {
@@ -13,15 +12,32 @@ describe('parse', function() {
 
 				test(path.basename(filepath), () => {
 					const content = fs.readFileSync(filepath, 'utf-8');
-					const parser = new Parser(content);
-					const payload = util.inspect(parser.parseChunk(), {
-						depth: 4
+					const parser = new Parser(content, {
+						tabWidth: 4
 					});
+					const payload = parser.parseChunk().toString();
 
 					expect(payload).toMatchSnapshot();
 				});
 			});
 
+		fs
+			.readdirSync(testFolder)
+			.forEach(file => {
+				const filepath = path.resolve(testFolder, file);
+
+				test(path.basename(filepath) + ' unsafe', () => {
+					const content = fs.readFileSync(filepath, 'utf-8');
+					const parser = new Parser(content, {
+						tabWidth: 4,
+						unsafe: true
+					});
+					const payload = parser.parseChunk().toString();
+
+					expect(payload).toMatchSnapshot();
+				});
+			});
+		
 		test('invalid code', () => {
 			const content = `
 				print(" ad"
@@ -30,14 +46,37 @@ describe('parse', function() {
 
 				print("was")
 
+				wad;  aw dwad wa
+
+				not @a;not -@b
+				not +@v
+
+				not not not not not not not not @a
+
+				if not @a then x
+
 				function () .
 				end func
 
 				print("wo")
+
+				if (true) then;
+					print("true")
+				else;
+					print((false));
+				end if;
+
+				if (false) print("false")
 			`;
-			const parser = new Parser(content, { unsafe: true });
+			const lexer = new Lexer(content, { unsafe: true });
+			const parser = new Parser(content, {
+				unsafe: true,
+				lexer
+			});
+
 			parser.parseChunk();
 
+			expect(lexer.errors).toMatchSnapshot();
 			expect(parser.errors).toMatchSnapshot();
 		});
 	});

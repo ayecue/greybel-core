@@ -3,8 +3,7 @@ import {
   ASTPosition,
   Parser as ParserBase,
   ParserOptions as ParserOptionsBase,
-  TokenType,
-  UnexpectedEOF
+  TokenType
 } from 'greyscript-core';
 
 import Lexer from './lexer';
@@ -14,6 +13,8 @@ import {
   ASTFeatureIncludeExpression,
   ASTProvider
 } from './parser/ast';
+import { GreybelKeyword } from './types/keywords';
+import { Selectors } from './types/selector';
 
 export interface ParserOptions extends ParserOptionsBase {
   astProvider?: ASTProvider;
@@ -48,7 +49,7 @@ export default class Parser extends ParserBase {
     while (true) {
       path = path + me.token.value;
       me.next();
-      if (me.token.value === ';' || me.token.value === '<eof>') break;
+      if (me.isOneOf(Selectors.EndOfLine, Selectors.EndOfFile)) break;
     }
 
     return path;
@@ -56,8 +57,11 @@ export default class Parser extends ParserBase {
 
   parseFeatureIncludeStatement(): ASTFeatureIncludeExpression {
     const me = this;
-    const start = new ASTPosition(me.previousToken.line, me.previousToken.lineRange[0]);
-    const path = me.parseFeaturePath(); 
+    const start = new ASTPosition(
+      me.previousToken.line,
+      me.previousToken.lineRange[0]
+    );
+    const path = me.parseFeaturePath();
 
     const base = me.astProvider.featureIncludeExpression({
       path,
@@ -71,12 +75,17 @@ export default class Parser extends ParserBase {
     return base;
   }
 
-  parseFeatureImportStatement(): ASTFeatureImportExpression {
+  parseFeatureImportStatement(): ASTFeatureImportExpression | ASTBase {
     const me = this;
-    const start = new ASTPosition(me.previousToken.line, me.previousToken.lineRange[0]);
+    const start = new ASTPosition(
+      me.previousToken.line,
+      me.previousToken.lineRange[0]
+    );
     const name = me.parseIdentifier();
 
-    me.expect('from');
+    if (!me.consume(Selectors.From)) {
+      return me.raise(`Unexpected from at line ${me.token.line}.`, me.token);
+    }
 
     const path = me.parseFeaturePath();
 
@@ -95,12 +104,15 @@ export default class Parser extends ParserBase {
 
   parseFeatureEnvarStatement(): ASTBase {
     const me = this;
-    const start = new ASTPosition(me.previousToken.line, me.previousToken.lineRange[0]);
+    const start = new ASTPosition(
+      me.previousToken.line,
+      me.previousToken.lineRange[0]
+    );
     const name = me.token.value;
 
     me.next();
 
-    let base: ASTBase = me.astProvider.featureEnvarExpression({
+    const base: ASTBase = me.astProvider.featureEnvarExpression({
       name,
       start,
       end: new ASTPosition(me.token.line, me.token.lineRange[1]),
@@ -110,17 +122,15 @@ export default class Parser extends ParserBase {
     return base;
   }
 
-  parsePrimaryExpression(): ASTBase | null {
+  parsePrimary(): ASTBase | null {
     const me = this;
-    const value = me.token.value;
-    const type = me.token.type;
 
-    if (TokenType.Keyword === type && value === '#envar') {
+    if (me.is(Selectors.Envar)) {
       me.next();
       return me.parseFeatureEnvarStatement();
     }
 
-    return super.parsePrimaryExpression();
+    return super.parsePrimary();
   }
 
   parseStatement(): ASTBase | null {
@@ -130,20 +140,26 @@ export default class Parser extends ParserBase {
       const value = me.token.value;
 
       switch (value) {
-        case '#include':
+        case GreybelKeyword.Include:
           me.next();
           return me.parseFeatureIncludeStatement();
-        case '#import':
+        case GreybelKeyword.Import:
           me.next();
           return me.parseFeatureImportStatement();
-        case '#envar':
+        case GreybelKeyword.Envar:
           me.next();
           return me.parseFeatureEnvarStatement();
-        case 'debugger':
+        case GreybelKeyword.Debugger:
           me.next();
           return me.astProvider.featureDebuggerExpression({
-            start: new ASTPosition(me.previousToken.line, me.previousToken.lineRange[0]),
-            end: new ASTPosition(me.previousToken.line, me.previousToken.lineRange[1]),
+            start: new ASTPosition(
+              me.previousToken.line,
+              me.previousToken.lineRange[0]
+            ),
+            end: new ASTPosition(
+              me.previousToken.line,
+              me.previousToken.lineRange[1]
+            ),
             scope: me.currentScope
           });
         default:
@@ -169,14 +185,17 @@ export default class Parser extends ParserBase {
     me.popScope();
 
     if (TokenType.EOF !== me.token.type) {
-      return me.raise(new UnexpectedEOF(me.token));
+      return me.raise(
+        `Unexpected end of file at line ${me.token.line}.`,
+        me.token
+      );
     }
 
     chunk.body = body;
     chunk.nativeImports = me.nativeImports;
     chunk.imports = me.imports;
     chunk.includes = me.includes;
-    chunk.literals =  me.literals;
+    chunk.literals = me.literals;
     chunk.scopes = me.scopes;
     chunk.lines = me.lines;
     chunk.end = new ASTPosition(me.token.line, me.token.lineRange[1]);
