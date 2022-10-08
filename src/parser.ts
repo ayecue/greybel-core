@@ -57,16 +57,13 @@ export default class Parser extends ParserBase {
 
   parseFeatureIncludeStatement(): ASTFeatureIncludeExpression {
     const me = this;
-    const start = new ASTPosition(
-      me.previousToken.line,
-      me.previousToken.lineRange[0]
-    );
+    const start = me.previousToken.getStart();
     const path = me.parseFeaturePath();
 
     const base = me.astProvider.featureIncludeExpression({
       path,
       start,
-      end: new ASTPosition(me.token.line, me.token.lineRange[1]),
+      end: me.previousToken.getEnd(),
       scope: me.currentScope
     });
 
@@ -77,10 +74,7 @@ export default class Parser extends ParserBase {
 
   parseFeatureImportStatement(): ASTFeatureImportExpression | ASTBase {
     const me = this;
-    const start = new ASTPosition(
-      me.previousToken.line,
-      me.previousToken.lineRange[0]
-    );
+    const start = me.previousToken.getStart();
     const name = me.parseIdentifier();
 
     if (!me.consume(Selectors.From)) {
@@ -93,7 +87,7 @@ export default class Parser extends ParserBase {
       name,
       path,
       start,
-      end: new ASTPosition(me.token.line, me.token.lineRange[1]),
+      end: me.previousToken.getEnd(),
       scope: me.currentScope
     });
 
@@ -104,10 +98,7 @@ export default class Parser extends ParserBase {
 
   parseFeatureEnvarStatement(): ASTBase {
     const me = this;
-    const start = new ASTPosition(
-      me.previousToken.line,
-      me.previousToken.lineRange[0]
-    );
+    const start = me.previousToken.getStart();
     const name = me.token.value;
 
     me.next();
@@ -115,7 +106,7 @@ export default class Parser extends ParserBase {
     const base: ASTBase = me.astProvider.featureEnvarExpression({
       name,
       start,
-      end: new ASTPosition(me.token.line, me.token.lineRange[1]),
+      end: me.previousToken.getEnd(),
       scope: me.currentScope
     });
 
@@ -175,7 +166,7 @@ export default class Parser extends ParserBase {
 
     me.next();
 
-    const start = new ASTPosition(me.token.line, me.token.lineRange[0]);
+    const start = me.token.getStart();
     const chunk = me.astProvider.chunkAdvanced({ start, end: null });
 
     me.pushScope(chunk);
@@ -198,7 +189,7 @@ export default class Parser extends ParserBase {
     chunk.literals = me.literals;
     chunk.scopes = me.scopes;
     chunk.lines = me.lines;
-    chunk.end = new ASTPosition(me.token.line, me.token.lineRange[1]);
+    chunk.end = me.token.getEnd();
 
     return chunk;
   }

@@ -24,7 +24,7 @@ export class ASTFeatureImportExpression extends ASTBase {
   }
 
   toString(): string {
-    return `FeatureImportExpression[name = ${this.name}, path = ${this.path}]`
+    return `FeatureImportExpression[name = ${this.name}, path = ${this.path}]`;
   }
 }
 
@@ -47,7 +47,7 @@ export class ASTFeatureIncludeExpression extends ASTBase {
   }
 
   toString(): string {
-    return `FeatureIncludeExpression[path = ${this.path}]`
+    return `FeatureIncludeExpression[path = ${this.path}]`;
   }
 }
 
@@ -64,6 +64,6 @@ export class ASTFeatureEnvarExpression extends ASTBase {
   }
 
   toString(): string {
-    return `FeatureEnvarExpression[path = ${this.name}]`
+    return `FeatureEnvarExpression[path = ${this.name}]`;
   }
 }
