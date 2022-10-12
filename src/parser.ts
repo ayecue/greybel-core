@@ -49,7 +49,7 @@ export default class Parser extends ParserBase {
     while (true) {
       path = path + me.token.value;
       me.next();
-      if (me.isOneOf(Selectors.EndOfLine, Selectors.EndOfFile)) break;
+      if (me.isOneOf(Selectors.EndOfLine, Selectors.Comment, Selectors.EndOfFile)) break;
     }
 
     return path;
