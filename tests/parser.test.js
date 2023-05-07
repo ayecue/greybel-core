@@ -21,7 +21,7 @@ describe('parse', function() {
 				});
 			});
 
-		/*fs
+		fs
 			.readdirSync(testFolder)
 			.forEach(file => {
 				const filepath = path.resolve(testFolder, file);
@@ -36,7 +36,7 @@ describe('parse', function() {
 
 					expect(payload).toMatchSnapshot();
 				});
-			});*/
+			});
 		
 		test('invalid code', () => {
 			const content = `

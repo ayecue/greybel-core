@@ -175,7 +175,9 @@ export default class Parser extends ParserBase {
       nativeImports: chunk.nativeImports,
       literals: chunk.literals,
       scopes: chunk.scopes,
-      lines: chunk.lines
+      lines: chunk.lines,
+      namespaces: chunk.namespaces,
+      assignments: chunk.assignments
     });
 
     advancedChunk.imports = me.imports;
