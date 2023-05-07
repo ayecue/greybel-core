@@ -167,22 +167,43 @@ export default class Parser extends ParserBase {
 
   parseChunk(): ASTChunkAdvanced | ASTBase {
     const me = this;
-    const chunk = super.parseChunk() as ASTChunk;
-    const advancedChunk = me.astProvider.chunkAdvanced({
-      start: chunk.start,
-      end: chunk.end,
-      body: chunk.body,
-      nativeImports: chunk.nativeImports,
-      literals: chunk.literals,
-      scopes: chunk.scopes,
-      lines: chunk.lines,
-      namespaces: chunk.namespaces,
-      assignments: chunk.assignments
-    });
 
-    advancedChunk.imports = me.imports;
-    advancedChunk.includes = me.includes;
+    me.next();
 
-    return advancedChunk;
+    const start = me.token.getStart();
+    const chunk = me.astProvider.chunkAdvanced({ start, end: null });
+    const block: ASTBase[] = [];
+
+    me.currentBlock = block;
+
+    me.pushScope(chunk);
+
+    while (!me.is(Selectors.EndOfFile)) {
+      me.skipNewlines();
+
+      if (me.is(Selectors.EndOfFile)) break;
+
+      const statement = me.parseStatement();
+
+      if (statement) {
+        me.addLine(statement);
+        block.push(statement);
+      }
+    }
+
+    me.popScope();
+
+    chunk.body = block;
+    chunk.nativeImports = me.nativeImports;
+    chunk.literals = me.literals;
+    chunk.scopes = me.scopes;
+    chunk.lines = me.lines;
+    chunk.end = me.token.getEnd();
+    chunk.imports = me.imports;
+    chunk.includes = me.includes;
+
+    me.currentBlock = null;
+
+    return chunk;
   }
 }
