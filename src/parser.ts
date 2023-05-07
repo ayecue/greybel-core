@@ -1,5 +1,6 @@
 import {
   ASTBase,
+  ASTChunk,
   ASTPosition,
   Parser as ParserBase,
   ParserOptions as ParserOptionsBase,
@@ -49,7 +50,10 @@ export default class Parser extends ParserBase {
     while (true) {
       path = path + me.token.value;
       me.next();
-      if (me.isOneOf(Selectors.EndOfLine, Selectors.Comment, Selectors.EndOfFile)) break;
+      if (
+        me.isOneOf(Selectors.EndOfLine, Selectors.Comment, Selectors.EndOfFile)
+      )
+        break;
     }
 
     return path;
@@ -78,7 +82,7 @@ export default class Parser extends ParserBase {
     const name = me.parseIdentifier();
 
     if (!me.consume(Selectors.From)) {
-      return me.raise(`Unexpected from at line ${me.token.line}.`, me.token);
+      return me.raise(`expected from keyword`, me.token);
     }
 
     const path = me.parseFeaturePath();
@@ -113,7 +117,7 @@ export default class Parser extends ParserBase {
     return base;
   }
 
-  parsePrimary(): ASTBase | null {
+  parseAtom(): ASTBase | null {
     const me = this;
 
     if (me.is(Selectors.Envar)) {
@@ -121,13 +125,13 @@ export default class Parser extends ParserBase {
       return me.parseFeatureEnvarStatement();
     }
 
-    return super.parsePrimary();
+    return super.parseAtom();
   }
 
   parseStatement(): ASTBase | null {
     const me = this;
 
-    if (TokenType.Keyword === me.token.type) {
+    if (me.isType(TokenType.Keyword)) {
       const value = me.token.value;
 
       switch (value) {
@@ -163,34 +167,20 @@ export default class Parser extends ParserBase {
 
   parseChunk(): ASTChunkAdvanced | ASTBase {
     const me = this;
+    const chunk = super.parseChunk() as ASTChunk;
+    const advancedChunk = me.astProvider.chunkAdvanced({
+      start: chunk.start,
+      end: chunk.end,
+      body: chunk.body,
+      nativeImports: chunk.nativeImports,
+      literals: chunk.literals,
+      scopes: chunk.scopes,
+      lines: chunk.lines
+    });
 
-    me.next();
+    advancedChunk.imports = me.imports;
+    advancedChunk.includes = me.includes;
 
-    const start = me.token.getStart();
-    const chunk = me.astProvider.chunkAdvanced({ start, end: null });
-
-    me.pushScope(chunk);
-
-    const body = me.parseBlock();
-
-    me.popScope();
-
-    if (TokenType.EOF !== me.token.type) {
-      return me.raise(
-        `Unexpected end of file at line ${me.token.line}.`,
-        me.token
-      );
-    }
-
-    chunk.body = body;
-    chunk.nativeImports = me.nativeImports;
-    chunk.imports = me.imports;
-    chunk.includes = me.includes;
-    chunk.literals = me.literals;
-    chunk.scopes = me.scopes;
-    chunk.lines = me.lines;
-    chunk.end = me.token.getEnd();
-
-    return chunk;
+    return advancedChunk;
   }
 }

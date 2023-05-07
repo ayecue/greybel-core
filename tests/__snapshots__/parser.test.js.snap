@@ -1,560 +1,281 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`parse default scripts ascii.src 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[AsciiGen] = MapConstructor[]]
-	3: AssignmentStatement[Identifier[map] = MapConstructor[]]
-	5: AssignmentStatement[MemberExpression[Identifier[map].Identifier[a]] = ListConstructor[
-		5: ListValue[Literal[||¯|| ]]
-		5: ListValue[Literal[||_|| ]]
-		5: ListValue[Literal[|| || ]]
+"Chunk[1:1-71:29][
+	AssignmentStatement[1:1-1:14][Identifier[1:1-1:9][AsciiGen] = MapConstructor[1:12-1:14][]]
+	AssignmentStatement[3:1-3:9][Identifier[3:1-3:4][map] = MapConstructor[3:7-3:9][]]
+	AssignmentStatement[5:1-5:39][MemberExpression[5:4-5:6][Identifier[5:1-5:4][map].Identifier[5:5-5:6][a]] = ListConstructor[5:9-5:39][
+		ListValue[5:10-5:18][Literal[5:10-5:18][||¯|| ]]
+		ListValue[5:20-5:28][Literal[5:20-5:28][||_|| ]]
+		ListValue[5:30-5:38][Literal[5:30-5:38][|| || ]]
 	]]
-	6: AssignmentStatement[MemberExpression[Identifier[map].Identifier[b]] = ListConstructor[
-		6: ListValue[Literal[||¯/ ]]
-		6: ListValue[Literal[|| \\\\ ]]
-		6: ListValue[Literal[||_/ ]]
+	AssignmentStatement[6:1-6:36][MemberExpression[6:4-6:6][Identifier[6:1-6:4][map].Identifier[6:5-6:6][b]] = ListConstructor[6:9-6:36][
+		ListValue[6:10-6:17][Literal[6:10-6:17][||¯/ ]]
+		ListValue[6:19-6:26][Literal[6:19-6:26][|| \\\\ ]]
+		ListValue[6:28-6:35][Literal[6:28-6:35][||_/ ]]
 	]]
-	7: AssignmentStatement[MemberExpression[Identifier[map].Identifier[c]] = ListConstructor[
-		7: ListValue[Literal[||¯ ]]
-		7: ListValue[Literal[||  ]]
-		7: ListValue[Literal[||_ ]]
+	AssignmentStatement[7:1-7:33][MemberExpression[7:4-7:6][Identifier[7:1-7:4][map].Identifier[7:5-7:6][c]] = ListConstructor[7:9-7:33][
+		ListValue[7:10-7:16][Literal[7:10-7:16][||¯ ]]
+		ListValue[7:18-7:24][Literal[7:18-7:24][||  ]]
+		ListValue[7:26-7:32][Literal[7:26-7:32][||_ ]]
 	]]
-	8: AssignmentStatement[MemberExpression[Identifier[map].Identifier[d]] = ListConstructor[
-		8: ListValue[Literal[||¯\\\\\\\\ ]]
-		8: ListValue[Literal[|| // ]]
-		8: ListValue[Literal[||//  ]]
+	AssignmentStatement[8:1-8:39][MemberExpression[8:4-8:6][Identifier[8:1-8:4][map].Identifier[8:5-8:6][d]] = ListConstructor[8:9-8:39][
+		ListValue[8:10-8:18][Literal[8:10-8:18][||¯\\\\\\\\ ]]
+		ListValue[8:20-8:28][Literal[8:20-8:28][|| // ]]
+		ListValue[8:30-8:38][Literal[8:30-8:38][||//  ]]
 	]]
-	9: AssignmentStatement[MemberExpression[Identifier[map].Identifier[e]] = ListConstructor[
-		9: ListValue[Literal[||¯ ]]
-		9: ListValue[Literal[||- ]]
-		9: ListValue[Literal[||_ ]]
+	AssignmentStatement[9:1-9:33][MemberExpression[9:4-9:6][Identifier[9:1-9:4][map].Identifier[9:5-9:6][e]] = ListConstructor[9:9-9:33][
+		ListValue[9:10-9:16][Literal[9:10-9:16][||¯ ]]
+		ListValue[9:18-9:24][Literal[9:18-9:24][||- ]]
+		ListValue[9:26-9:32][Literal[9:26-9:32][||_ ]]
 	]]
-	10: AssignmentStatement[MemberExpression[Identifier[map].Identifier[f]] = ListConstructor[
-		10: ListValue[Literal[||¯ ]]
-		10: ListValue[Literal[||_ ]]
-		10: ListValue[Literal[||  ]]
+	AssignmentStatement[10:1-10:33][MemberExpression[10:4-10:6][Identifier[10:1-10:4][map].Identifier[10:5-10:6][f]] = ListConstructor[10:9-10:33][
+		ListValue[10:10-10:16][Literal[10:10-10:16][||¯ ]]
+		ListValue[10:18-10:24][Literal[10:18-10:24][||_ ]]
+		ListValue[10:26-10:32][Literal[10:26-10:32][||  ]]
 	]]
-	11: AssignmentStatement[MemberExpression[Identifier[map].Identifier[g]] = ListConstructor[
-		11: ListValue[Literal[||¯¯  ]]
-		11: ListValue[Literal[|| \\\\\\\\ ]]
-		11: ListValue[Literal[||_|| ]]
+	AssignmentStatement[11:1-11:39][MemberExpression[11:4-11:6][Identifier[11:1-11:4][map].Identifier[11:5-11:6][g]] = ListConstructor[11:9-11:39][
+		ListValue[11:10-11:18][Literal[11:10-11:18][||¯¯  ]]
+		ListValue[11:20-11:28][Literal[11:20-11:28][|| \\\\\\\\ ]]
+		ListValue[11:30-11:38][Literal[11:30-11:38][||_|| ]]
 	]]
-	12: AssignmentStatement[MemberExpression[Identifier[map].Identifier[h]] = ListConstructor[
-		12: ListValue[Literal[|| || ]]
-		12: ListValue[Literal[||-|| ]]
-		12: ListValue[Literal[|| || ]]
+	AssignmentStatement[12:1-12:39][MemberExpression[12:4-12:6][Identifier[12:1-12:4][map].Identifier[12:5-12:6][h]] = ListConstructor[12:9-12:39][
+		ListValue[12:10-12:18][Literal[12:10-12:18][|| || ]]
+		ListValue[12:20-12:28][Literal[12:20-12:28][||-|| ]]
+		ListValue[12:30-12:38][Literal[12:30-12:38][|| || ]]
 	]]
-	13: AssignmentStatement[MemberExpression[Identifier[map].Identifier[i]] = ListConstructor[
-		13: ListValue[Literal[|| ]]
-		13: ListValue[Literal[|| ]]
-		13: ListValue[Literal[|| ]]
+	AssignmentStatement[13:1-13:30][MemberExpression[13:4-13:6][Identifier[13:1-13:4][map].Identifier[13:5-13:6][i]] = ListConstructor[13:9-13:30][
+		ListValue[13:10-13:15][Literal[13:10-13:15][|| ]]
+		ListValue[13:17-13:22][Literal[13:17-13:22][|| ]]
+		ListValue[13:24-13:29][Literal[13:24-13:29][|| ]]
 	]]
-	14: AssignmentStatement[MemberExpression[Identifier[map].Identifier[j]] = ListConstructor[
-		14: ListValue[Literal[ ¯||¯ ]]
-		14: ListValue[Literal[  ||  ]]
-		14: ListValue[Literal[|_||  ]]
+	AssignmentStatement[14:1-14:39][MemberExpression[14:4-14:6][Identifier[14:1-14:4][map].Identifier[14:5-14:6][j]] = ListConstructor[14:9-14:39][
+		ListValue[14:10-14:18][Literal[14:10-14:18][ ¯||¯ ]]
+		ListValue[14:20-14:28][Literal[14:20-14:28][  ||  ]]
+		ListValue[14:30-14:38][Literal[14:30-14:38][|_||  ]]
 	]]
-	15: AssignmentStatement[MemberExpression[Identifier[map].Identifier[k]] = ListConstructor[
-		15: ListValue[Literal[||  / ]]
-		15: ListValue[Literal[|| /  ]]
-		15: ListValue[Literal[||¯\\\\\\\\ ]]
+	AssignmentStatement[15:1-15:39][MemberExpression[15:4-15:6][Identifier[15:1-15:4][map].Identifier[15:5-15:6][k]] = ListConstructor[15:9-15:39][
+		ListValue[15:10-15:18][Literal[15:10-15:18][||  / ]]
+		ListValue[15:20-15:28][Literal[15:20-15:28][|| /  ]]
+		ListValue[15:30-15:38][Literal[15:30-15:38][||¯\\\\\\\\ ]]
 	]]
-	16: AssignmentStatement[MemberExpression[Identifier[map].Identifier[l]] = ListConstructor[
-		16: ListValue[Literal[||  ]]
-		16: ListValue[Literal[||  ]]
-		16: ListValue[Literal[||_ ]]
+	AssignmentStatement[16:1-16:33][MemberExpression[16:4-16:6][Identifier[16:1-16:4][map].Identifier[16:5-16:6][l]] = ListConstructor[16:9-16:33][
+		ListValue[16:10-16:16][Literal[16:10-16:16][||  ]]
+		ListValue[16:18-16:24][Literal[16:18-16:24][||  ]]
+		ListValue[16:26-16:32][Literal[16:26-16:32][||_ ]]
 	]]
-	17: AssignmentStatement[MemberExpression[Identifier[map].Identifier[m]] = ListConstructor[
-		17: ListValue[Literal[||\\\\\\\\/|| ]]
-		17: ListValue[Literal[||   || ]]
-		17: ListValue[Literal[||   || ]]
+	AssignmentStatement[17:1-17:45][MemberExpression[17:4-17:6][Identifier[17:1-17:4][map].Identifier[17:5-17:6][m]] = ListConstructor[17:9-17:45][
+		ListValue[17:10-17:20][Literal[17:10-17:20][||\\\\\\\\/|| ]]
+		ListValue[17:22-17:32][Literal[17:22-17:32][||   || ]]
+		ListValue[17:34-17:44][Literal[17:34-17:44][||   || ]]
 	]]
-	18: AssignmentStatement[MemberExpression[Identifier[map].Identifier[n]] = ListConstructor[
-		18: ListValue[Literal[||\\\\\\\\ || ]]
-		18: ListValue[Literal[|| \\\\\\\\|| ]]
-		18: ListValue[Literal[||  \\\\|| ]]
+	AssignmentStatement[18:1-18:45][MemberExpression[18:4-18:6][Identifier[18:1-18:4][map].Identifier[18:5-18:6][n]] = ListConstructor[18:9-18:45][
+		ListValue[18:10-18:20][Literal[18:10-18:20][||\\\\\\\\ || ]]
+		ListValue[18:22-18:32][Literal[18:22-18:32][|| \\\\\\\\|| ]]
+		ListValue[18:34-18:44][Literal[18:34-18:44][||  \\\\|| ]]
 	]]
-	19: AssignmentStatement[MemberExpression[Identifier[map].Identifier[o]] = ListConstructor[
-		19: ListValue[Literal[||¯|| ]]
-		19: ListValue[Literal[|| || ]]
-		19: ListValue[Literal[||_|| ]]
+	AssignmentStatement[19:1-19:39][MemberExpression[19:4-19:6][Identifier[19:1-19:4][map].Identifier[19:5-19:6][o]] = ListConstructor[19:9-19:39][
+		ListValue[19:10-19:18][Literal[19:10-19:18][||¯|| ]]
+		ListValue[19:20-19:28][Literal[19:20-19:28][|| || ]]
+		ListValue[19:30-19:38][Literal[19:30-19:38][||_|| ]]
 	]]
-	20: AssignmentStatement[MemberExpression[Identifier[map].Identifier[p]] = ListConstructor[
-		20: ListValue[Literal[||¯|| ]]
-		20: ListValue[Literal[||_|| ]]
-		20: ListValue[Literal[||    ]]
+	AssignmentStatement[20:1-20:39][MemberExpression[20:4-20:6][Identifier[20:1-20:4][map].Identifier[20:5-20:6][p]] = ListConstructor[20:9-20:39][
+		ListValue[20:10-20:18][Literal[20:10-20:18][||¯|| ]]
+		ListValue[20:20-20:28][Literal[20:20-20:28][||_|| ]]
+		ListValue[20:30-20:38][Literal[20:30-20:38][||    ]]
 	]]
-	21: AssignmentStatement[MemberExpression[Identifier[map].Identifier[q]] = ListConstructor[
-		21: ListValue[Literal[||¯||  ]]
-		21: ListValue[Literal[|| ||  ]]
-		21: ListValue[Literal[||_||¬ ]]
+	AssignmentStatement[21:1-21:42][MemberExpression[21:4-21:6][Identifier[21:1-21:4][map].Identifier[21:5-21:6][q]] = ListConstructor[21:9-21:42][
+		ListValue[21:10-21:19][Literal[21:10-21:19][||¯||  ]]
+		ListValue[21:21-21:30][Literal[21:21-21:30][|| ||  ]]
+		ListValue[21:32-21:41][Literal[21:32-21:41][||_||¬ ]]
 	]]
-	22: AssignmentStatement[MemberExpression[Identifier[map].Identifier[r]] = ListConstructor[
-		22: ListValue[Literal[||¯|| ]]
-		22: ListValue[Literal[||¯\\\\\\\\ ]]
-		22: ListValue[Literal[|| || ]]
+	AssignmentStatement[22:1-22:39][MemberExpression[22:4-22:6][Identifier[22:1-22:4][map].Identifier[22:5-22:6][r]] = ListConstructor[22:9-22:39][
+		ListValue[22:10-22:18][Literal[22:10-22:18][||¯|| ]]
+		ListValue[22:20-22:28][Literal[22:20-22:28][||¯\\\\\\\\ ]]
+		ListValue[22:30-22:38][Literal[22:30-22:38][|| || ]]
 	]]
-	23: AssignmentStatement[MemberExpression[Identifier[map].Identifier[s]] = ListConstructor[
-		23: ListValue[Literal[||¯¯ ]]
-		23: ListValue[Literal[ \\\\\\\\  ]]
-		23: ListValue[Literal[__|| ]]
+	AssignmentStatement[23:1-23:36][MemberExpression[23:4-23:6][Identifier[23:1-23:4][map].Identifier[23:5-23:6][s]] = ListConstructor[23:9-23:36][
+		ListValue[23:10-23:17][Literal[23:10-23:17][||¯¯ ]]
+		ListValue[23:19-23:26][Literal[23:19-23:26][ \\\\\\\\  ]]
+		ListValue[23:28-23:35][Literal[23:28-23:35][__|| ]]
 	]]
-	24: AssignmentStatement[MemberExpression[Identifier[map].Identifier[t]] = ListConstructor[
-		24: ListValue[Literal[¯||¯ ]]
-		24: ListValue[Literal[ ||  ]]
-		24: ListValue[Literal[ ||  ]]
+	AssignmentStatement[24:1-24:36][MemberExpression[24:4-24:6][Identifier[24:1-24:4][map].Identifier[24:5-24:6][t]] = ListConstructor[24:9-24:36][
+		ListValue[24:10-24:17][Literal[24:10-24:17][¯||¯ ]]
+		ListValue[24:19-24:26][Literal[24:19-24:26][ ||  ]]
+		ListValue[24:28-24:35][Literal[24:28-24:35][ ||  ]]
 	]]
-	25: AssignmentStatement[MemberExpression[Identifier[map].Identifier[u]] = ListConstructor[
-		25: ListValue[Literal[|| || ]]
-		25: ListValue[Literal[|| || ]]
-		25: ListValue[Literal[||_|| ]]
+	AssignmentStatement[25:1-25:39][MemberExpression[25:4-25:6][Identifier[25:1-25:4][map].Identifier[25:5-25:6][u]] = ListConstructor[25:9-25:39][
+		ListValue[25:10-25:18][Literal[25:10-25:18][|| || ]]
+		ListValue[25:20-25:28][Literal[25:20-25:28][|| || ]]
+		ListValue[25:30-25:38][Literal[25:30-25:38][||_|| ]]
 	]]
-	26: AssignmentStatement[MemberExpression[Identifier[map].Identifier[v]] = ListConstructor[
-		26: ListValue[Literal[\\\\\\\\ || ]]
-		26: ListValue[Literal[ \\\\\\\\|| ]]
-		26: ListValue[Literal[  \\\\\\\\| ]]
+	AssignmentStatement[26:1-26:39][MemberExpression[26:4-26:6][Identifier[26:1-26:4][map].Identifier[26:5-26:6][v]] = ListConstructor[26:9-26:39][
+		ListValue[26:10-26:18][Literal[26:10-26:18][\\\\\\\\ || ]]
+		ListValue[26:20-26:28][Literal[26:20-26:28][ \\\\\\\\|| ]]
+		ListValue[26:30-26:38][Literal[26:30-26:38][  \\\\\\\\| ]]
 	]]
-	27: AssignmentStatement[MemberExpression[Identifier[map].Identifier[w]] = ListConstructor[
-		27: ListValue[Literal[\\\\\\\\ |\\\\\\\\ | ]]
-		27: ListValue[Literal[ \\\\\\\\| \\\\\\\\| ]]
-		27: ListValue[Literal[  \\\\\\\\  \\\\\\\\ ]]
+	AssignmentStatement[27:1-27:48][MemberExpression[27:4-27:6][Identifier[27:1-27:4][map].Identifier[27:5-27:6][w]] = ListConstructor[27:9-27:48][
+		ListValue[27:10-27:21][Literal[27:10-27:21][\\\\\\\\ |\\\\\\\\ | ]]
+		ListValue[27:23-27:34][Literal[27:23-27:34][ \\\\\\\\| \\\\\\\\| ]]
+		ListValue[27:36-27:47][Literal[27:36-27:47][  \\\\\\\\  \\\\\\\\ ]]
 	]]
-	28: AssignmentStatement[MemberExpression[Identifier[map].Identifier[x]] = ListConstructor[
-		28: ListValue[Literal[\\\\\\\\  / ]]
-		28: ListValue[Literal[ \\\\\\\\/  ]]
-		28: ListValue[Literal[ //\\\\  ]]
+	AssignmentStatement[28:1-28:39][MemberExpression[28:4-28:6][Identifier[28:1-28:4][map].Identifier[28:5-28:6][x]] = ListConstructor[28:9-28:39][
+		ListValue[28:10-28:18][Literal[28:10-28:18][\\\\\\\\  / ]]
+		ListValue[28:20-28:28][Literal[28:20-28:28][ \\\\\\\\/  ]]
+		ListValue[28:30-28:38][Literal[28:30-28:38][ //\\\\  ]]
 	]]
-	29: AssignmentStatement[MemberExpression[Identifier[map].Identifier[y]] = ListConstructor[
-		29: ListValue[Literal[\\\\\\\\  // ]]
-		29: ListValue[Literal[ \\\\\\\\//  ]]
-		29: ListValue[Literal[  ||   ]]
+	AssignmentStatement[29:1-29:42][MemberExpression[29:4-29:6][Identifier[29:1-29:4][map].Identifier[29:5-29:6][y]] = ListConstructor[29:9-29:42][
+		ListValue[29:10-29:19][Literal[29:10-29:19][\\\\\\\\  // ]]
+		ListValue[29:21-29:30][Literal[29:21-29:30][ \\\\\\\\//  ]]
+		ListValue[29:32-29:41][Literal[29:32-29:41][  ||   ]]
 	]]
-	30: AssignmentStatement[MemberExpression[Identifier[map].Identifier[z]] = ListConstructor[
-		30: ListValue[Literal[¯// ]]
-		30: ListValue[Literal[//  ]]
-		30: ListValue[Literal[||_ ]]
+	AssignmentStatement[30:1-30:33][MemberExpression[30:4-30:6][Identifier[30:1-30:4][map].Identifier[30:5-30:6][z]] = ListConstructor[30:9-30:33][
+		ListValue[30:10-30:16][Literal[30:10-30:16][¯// ]]
+		ListValue[30:18-30:24][Literal[30:18-30:24][//  ]]
+		ListValue[30:26-30:32][Literal[30:26-30:32][||_ ]]
 	]]
-	31: AssignmentStatement[IndexExpression[Identifier[map][Literal[0]]] = ListConstructor[
-		31: ListValue[Literal[||¯|| ]]
-		31: ListValue[Literal[||x|| ]]
-		31: ListValue[Literal[||_|| ]]
+	AssignmentStatement[31:1-31:42][IndexExpression[31:4-31:9][Identifier[31:1-31:4][map][Literal[31:5-31:8][0]]] = ListConstructor[31:12-31:42][
+		ListValue[31:13-31:21][Literal[31:13-31:21][||¯|| ]]
+		ListValue[31:23-31:31][Literal[31:23-31:31][||x|| ]]
+		ListValue[31:33-31:41][Literal[31:33-31:41][||_|| ]]
 	]]
-	32: AssignmentStatement[IndexExpression[Identifier[map][Literal[1]]] = ListConstructor[
-		32: ListValue[Literal['|| ]]
-		32: ListValue[Literal[ || ]]
-		32: ListValue[Literal[ || ]]
+	AssignmentStatement[32:1-32:36][IndexExpression[32:4-32:9][Identifier[32:1-32:4][map][Literal[32:5-32:8][1]]] = ListConstructor[32:12-32:36][
+		ListValue[32:13-32:19][Literal[32:13-32:19]['|| ]]
+		ListValue[32:21-32:27][Literal[32:21-32:27][ || ]]
+		ListValue[32:29-32:35][Literal[32:29-32:35][ || ]]
 	]]
-	33: AssignmentStatement[IndexExpression[Identifier[map][Literal[2]]] = ListConstructor[
-		33: ListValue[Literal[¯¯|| ]]
-		33: ListValue[Literal[||¯  ]]
-		33: ListValue[Literal[||_  ]]
+	AssignmentStatement[33:1-33:39][IndexExpression[33:4-33:9][Identifier[33:1-33:4][map][Literal[33:5-33:8][2]]] = ListConstructor[33:12-33:39][
+		ListValue[33:13-33:20][Literal[33:13-33:20][¯¯|| ]]
+		ListValue[33:22-33:29][Literal[33:22-33:29][||¯  ]]
+		ListValue[33:31-33:38][Literal[33:31-33:38][||_  ]]
 	]]
-	34: AssignmentStatement[IndexExpression[Identifier[map][Literal[3]]] = ListConstructor[
-		34: ListValue[Literal[¯|| ]]
-		34: ListValue[Literal[-|| ]]
-		34: ListValue[Literal[_|| ]]
+	AssignmentStatement[34:1-34:36][IndexExpression[34:4-34:9][Identifier[34:1-34:4][map][Literal[34:5-34:8][3]]] = ListConstructor[34:12-34:36][
+		ListValue[34:13-34:19][Literal[34:13-34:19][¯|| ]]
+		ListValue[34:21-34:27][Literal[34:21-34:27][-|| ]]
+		ListValue[34:29-34:35][Literal[34:29-34:35][_|| ]]
 	]]
-	35: AssignmentStatement[IndexExpression[Identifier[map][Literal[4]]] = ListConstructor[
-		35: ListValue[Literal[ /|| ]]
-		35: ListValue[Literal[/_|| ]]
-		35: ListValue[Literal[  || ]]
+	AssignmentStatement[35:1-35:39][IndexExpression[35:4-35:9][Identifier[35:1-35:4][map][Literal[35:5-35:8][4]]] = ListConstructor[35:12-35:39][
+		ListValue[35:13-35:20][Literal[35:13-35:20][ /|| ]]
+		ListValue[35:22-35:29][Literal[35:22-35:29][/_|| ]]
+		ListValue[35:31-35:38][Literal[35:31-35:38][  || ]]
 	]]
-	36: AssignmentStatement[IndexExpression[Identifier[map][Literal[5]]] = ListConstructor[
-		36: ListValue[Literal[||¯¯ ]]
-		36: ListValue[Literal[ ¯|| ]]
-		36: ListValue[Literal[ _|| ]]
+	AssignmentStatement[36:1-36:39][IndexExpression[36:4-36:9][Identifier[36:1-36:4][map][Literal[36:5-36:8][5]]] = ListConstructor[36:12-36:39][
+		ListValue[36:13-36:20][Literal[36:13-36:20][||¯¯ ]]
+		ListValue[36:22-36:29][Literal[36:22-36:29][ ¯|| ]]
+		ListValue[36:31-36:38][Literal[36:31-36:38][ _|| ]]
 	]]
-	37: AssignmentStatement[IndexExpression[Identifier[map][Literal[6]]] = ListConstructor[
-		37: ListValue[Literal[||¯¯  ]]
-		37: ListValue[Literal[||¯|| ]]
-		37: ListValue[Literal[||_|| ]]
+	AssignmentStatement[37:1-37:42][IndexExpression[37:4-37:9][Identifier[37:1-37:4][map][Literal[37:5-37:8][6]]] = ListConstructor[37:12-37:42][
+		ListValue[37:13-37:21][Literal[37:13-37:21][||¯¯  ]]
+		ListValue[37:23-37:31][Literal[37:23-37:31][||¯|| ]]
+		ListValue[37:33-37:41][Literal[37:33-37:41][||_|| ]]
 	]]
-	38: AssignmentStatement[IndexExpression[Identifier[map][Literal[7]]] = ListConstructor[
-		38: ListValue[Literal[¯¯// ]]
-		38: ListValue[Literal[ //  ]]
-		38: ListValue[Literal[//   ]]
+	AssignmentStatement[38:1-38:39][IndexExpression[38:4-38:9][Identifier[38:1-38:4][map][Literal[38:5-38:8][7]]] = ListConstructor[38:12-38:39][
+		ListValue[38:13-38:20][Literal[38:13-38:20][¯¯// ]]
+		ListValue[38:22-38:29][Literal[38:22-38:29][ //  ]]
+		ListValue[38:31-38:38][Literal[38:31-38:38][//   ]]
 	]]
-	39: AssignmentStatement[IndexExpression[Identifier[map][Literal[8]]] = ListConstructor[
-		39: ListValue[Literal[||¯|| ]]
-		39: ListValue[Literal[||-|| ]]
-		39: ListValue[Literal[||_|| ]]
+	AssignmentStatement[39:1-39:42][IndexExpression[39:4-39:9][Identifier[39:1-39:4][map][Literal[39:5-39:8][8]]] = ListConstructor[39:12-39:42][
+		ListValue[39:13-39:21][Literal[39:13-39:21][||¯|| ]]
+		ListValue[39:23-39:31][Literal[39:23-39:31][||-|| ]]
+		ListValue[39:33-39:41][Literal[39:33-39:41][||_|| ]]
 	]]
-	40: AssignmentStatement[IndexExpression[Identifier[map][Literal[9]]] = ListConstructor[
-		40: ListValue[Literal[||¯|| ]]
-		40: ListValue[Literal[  ¯|| ]]
-		40: ListValue[Literal[  //  ]]
+	AssignmentStatement[40:1-40:42][IndexExpression[40:4-40:9][Identifier[40:1-40:4][map][Literal[40:5-40:8][9]]] = ListConstructor[40:12-40:42][
+		ListValue[40:13-40:21][Literal[40:13-40:21][||¯|| ]]
+		ListValue[40:23-40:31][Literal[40:23-40:31][  ¯|| ]]
+		ListValue[40:33-40:41][Literal[40:33-40:41][  //  ]]
 	]]
-	41: AssignmentStatement[IndexExpression[Identifier[map][Literal[ ]]] = ListConstructor[
-		41: ListValue[Literal[  ]]
-		41: ListValue[Literal[  ]]
-		41: ListValue[Literal[  ]]
+	AssignmentStatement[41:1-41:30][IndexExpression[41:4-41:9][Identifier[41:1-41:4][map][Literal[41:5-41:8][ ]]] = ListConstructor[41:12-41:30][
+		ListValue[41:13-41:17][Literal[41:13-41:17][  ]]
+		ListValue[41:19-41:23][Literal[41:19-41:23][  ]]
+		ListValue[41:25-41:29][Literal[41:25-41:29][  ]]
 	]]
-	43: AssignmentStatement[MemberExpression[Identifier[AsciiGen].Identifier[MAP]] = Identifier[map]]
-	45: AssignmentStatement[MemberExpression[Identifier[AsciiGen].Identifier[gen]] = Function[Identifier[str], Identifier[colors] =>
-		46: AssignmentStatement[Identifier[r] = ListConstructor[
-			46: ListValue[ListConstructor[]]
-			46: ListValue[ListConstructor[]]
-			46: ListValue[ListConstructor[]]
+	AssignmentStatement[43:1-43:19][MemberExpression[43:9-43:13][Identifier[43:1-43:9][AsciiGen].Identifier[43:10-43:13][MAP]] = Identifier[43:16-43:19][map]]
+	AssignmentStatement[45:1-69:13][MemberExpression[45:9-45:13][Identifier[45:1-45:9][AsciiGen].Identifier[45:10-45:13][gen]] = Function[45:16-69:13][Identifier[45:25-45:28][str], Identifier[45:30-45:36][colors] =>
+		AssignmentStatement[46:5-46:21][Identifier[46:5-46:6][r] = ListConstructor[46:9-46:21][
+			ListValue[46:10-46:12][ListConstructor[46:10-46:12][]]
+			ListValue[46:14-46:16][ListConstructor[46:14-46:16][]]
+			ListValue[46:18-46:20][ListConstructor[46:18-46:20][]]
 		]]
-		47: AssignmentStatement[Identifier[signs] = MemberExpression[Identifier[self].Identifier[MAP]]]
-		49: For[Identifier[char] in Identifier[str]
-			50: AssignmentStatement[Identifier[char] = MemberExpression[Identifier[char].Identifier[lower]]]
-			51: IfStatement[
-				51: IfClause[CallExpression[MemberExpression[Identifier[signs].Identifier[hasIndex]](Identifier[char])]
-					52: CallStatment[CallExpression[MemberExpression[IndexExpression[Identifier[r][Literal[0]]].Identifier[push]](IndexExpression[IndexExpression[Identifier[signs][Identifier[char]]][Literal[0]]])]]
-					53: CallStatment[CallExpression[MemberExpression[IndexExpression[Identifier[r][Literal[1]]].Identifier[push]](IndexExpression[IndexExpression[Identifier[signs][Identifier[char]]][Literal[1]]])]]
-					54: CallStatment[CallExpression[MemberExpression[IndexExpression[Identifier[r][Literal[2]]].Identifier[push]](IndexExpression[IndexExpression[Identifier[signs][Identifier[char]]][Literal[2]]])]]
+		AssignmentStatement[47:5-47:21][Identifier[47:5-47:10][signs] = MemberExpression[47:17-47:21][Identifier[47:13-47:17][self].Identifier[47:18-47:21][MAP]]]
+		For[49:5-56:12][Identifier[49:9-49:13][char] in Identifier[49:17-49:20][str]
+			AssignmentStatement[50:9-50:26][Identifier[50:9-50:13][char] = MemberExpression[50:20-50:26][Identifier[50:16-50:20][char].Identifier[50:21-50:26][lower]]]
+			IfStatement[51:9-55:15][
+				IfClause[51:9-55:15][CallExpression[51:27-51:33][MemberExpression[51:18-51:27][Identifier[51:13-51:18][signs].Identifier[51:19-51:27][hasIndex]](Identifier[51:28-51:32][char])]
+					CallExpression[52:22-52:38][MemberExpression[52:17-52:22][IndexExpression[52:14-52:17][Identifier[52:13-52:14][r][Literal[52:15-52:16][0]]].Identifier[52:18-52:22][push]](IndexExpression[52:34-52:37][IndexExpression[52:28-52:34][Identifier[52:23-52:28][signs][Identifier[52:29-52:33][char]]][Literal[52:35-52:36][0]]])]
+					CallExpression[53:22-53:38][MemberExpression[53:17-53:22][IndexExpression[53:14-53:17][Identifier[53:13-53:14][r][Literal[53:15-53:16][1]]].Identifier[53:18-53:22][push]](IndexExpression[53:34-53:37][IndexExpression[53:28-53:34][Identifier[53:23-53:28][signs][Identifier[53:29-53:33][char]]][Literal[53:35-53:36][1]]])]
+					CallExpression[54:22-54:38][MemberExpression[54:17-54:22][IndexExpression[54:14-54:17][Identifier[54:13-54:14][r][Literal[54:15-54:16][2]]].Identifier[54:18-54:22][push]](IndexExpression[54:34-54:37][IndexExpression[54:28-54:34][Identifier[54:23-54:28][signs][Identifier[54:29-54:33][char]]][Literal[54:35-54:36][2]]])]
 				]
 			]
 		]
-		58: IfStatement[
-			58: IfClause[BinaryExpression[CallExpression[Identifier[typeof](Identifier[colors])] == Literal[string]]
-				59: AssignmentStatement[IndexExpression[Identifier[r][Literal[0]]] = BinaryExpression[BinaryExpression[ListConstructor[
-					59: ListValue[BinaryExpression[BinaryExpression[Literal[<color=#] + Identifier[colors]] + Literal[>]]]
-				] + IndexExpression[Identifier[r][Literal[0]]]] + ListConstructor[
-					59: ListValue[Literal[</color>]]
-				]]]
-				60: AssignmentStatement[IndexExpression[Identifier[r][Literal[1]]] = BinaryExpression[BinaryExpression[ListConstructor[
-					60: ListValue[BinaryExpression[BinaryExpression[Literal[<color=#] + Identifier[colors]] + Literal[>]]]
-				] + IndexExpression[Identifier[r][Literal[1]]]] + ListConstructor[
-					60: ListValue[Literal[</color>]]
-				]]]
-				61: AssignmentStatement[IndexExpression[Identifier[r][Literal[2]]] = BinaryExpression[BinaryExpression[ListConstructor[
-					61: ListValue[BinaryExpression[BinaryExpression[Literal[<color=#] + Identifier[colors]] + Literal[>]]]
-				] + IndexExpression[Identifier[r][Literal[2]]]] + ListConstructor[
-					61: ListValue[Literal[</color>]]
-				]]]
+		IfStatement[58:5-66:11][
+			IfClause[58:5-62:12][BinaryExpression[58:9-58:35][CallExpression[58:15-58:23][Identifier[58:9-58:15][typeof](Identifier[58:16-58:22][colors])] == Literal[58:27-58:35][string]]
+				AssignmentStatement[59:9-59:65][IndexExpression[59:10-59:13][Identifier[59:9-59:10][r][Literal[59:11-59:12][0]]] = BinaryExpression[59:16-59:65][ListConstructor[59:16-59:44][
+					ListValue[59:17-59:42][BinaryExpression[59:17-59:42][Literal[59:17-59:27][<color=#] + BinaryExpression[59:30-59:42][Identifier[59:30-59:36][colors] + Literal[59:39-59:42][>]]]]
+				] + BinaryExpression[59:46-59:65][IndexExpression[59:47-59:50][Identifier[59:46-59:47][r][Literal[59:48-59:49][0]]] + ListConstructor[59:53-59:65][
+					ListValue[59:54-59:64][Literal[59:54-59:64][</color>]]
+				]]]]
+				AssignmentStatement[60:9-60:65][IndexExpression[60:10-60:13][Identifier[60:9-60:10][r][Literal[60:11-60:12][1]]] = BinaryExpression[60:16-60:65][ListConstructor[60:16-60:44][
+					ListValue[60:17-60:42][BinaryExpression[60:17-60:42][Literal[60:17-60:27][<color=#] + BinaryExpression[60:30-60:42][Identifier[60:30-60:36][colors] + Literal[60:39-60:42][>]]]]
+				] + BinaryExpression[60:46-60:65][IndexExpression[60:47-60:50][Identifier[60:46-60:47][r][Literal[60:48-60:49][1]]] + ListConstructor[60:53-60:65][
+					ListValue[60:54-60:64][Literal[60:54-60:64][</color>]]
+				]]]]
+				AssignmentStatement[61:9-61:65][IndexExpression[61:10-61:13][Identifier[61:9-61:10][r][Literal[61:11-61:12][2]]] = BinaryExpression[61:16-61:65][ListConstructor[61:16-61:44][
+					ListValue[61:17-61:42][BinaryExpression[61:17-61:42][Literal[61:17-61:27][<color=#] + BinaryExpression[61:30-61:42][Identifier[61:30-61:36][colors] + Literal[61:39-61:42][>]]]]
+				] + BinaryExpression[61:46-61:65][IndexExpression[61:47-61:50][Identifier[61:46-61:47][r][Literal[61:48-61:49][2]]] + ListConstructor[61:53-61:65][
+					ListValue[61:54-61:64][Literal[61:54-61:64][</color>]]
+				]]]]
 			]
-			62: ElseifClause[BinaryExpression[CallExpression[Identifier[typeof](Identifier[colors])] == Literal[list]]
-				63: AssignmentStatement[IndexExpression[Identifier[r][Literal[0]]] = BinaryExpression[BinaryExpression[ListConstructor[
-					63: ListValue[BinaryExpression[BinaryExpression[Literal[<color=#] + IndexExpression[Identifier[colors][Literal[0]]]] + Literal[>]]]
-				] + IndexExpression[Identifier[r][Literal[0]]]] + ListConstructor[
-					63: ListValue[Literal[</color>]]
-				]]]
-				64: AssignmentStatement[IndexExpression[Identifier[r][Literal[1]]] = BinaryExpression[BinaryExpression[ListConstructor[
-					64: ListValue[BinaryExpression[BinaryExpression[Literal[<color=#] + IndexExpression[Identifier[colors][Literal[1]]]] + Literal[>]]]
-				] + IndexExpression[Identifier[r][Literal[1]]]] + ListConstructor[
-					64: ListValue[Literal[</color>]]
-				]]]
-				65: AssignmentStatement[IndexExpression[Identifier[r][Literal[2]]] = BinaryExpression[BinaryExpression[ListConstructor[
-					65: ListValue[BinaryExpression[BinaryExpression[Literal[<color=#] + IndexExpression[Identifier[colors][Literal[2]]]] + Literal[>]]]
-				] + IndexExpression[Identifier[r][Literal[2]]]] + ListConstructor[
-					65: ListValue[Literal[</color>]]
-				]]]
-			]
-		]
-		68: ReturnStatement[CallExpression[MemberExpression[ListConstructor[
-			68: ListValue[CallExpression[MemberExpression[IndexExpression[Identifier[r][Literal[0]]].Identifier[join]](Literal[])]]
-			68: ListValue[CallExpression[MemberExpression[IndexExpression[Identifier[r][Literal[1]]].Identifier[join]](Literal[])]]
-			68: ListValue[CallExpression[MemberExpression[IndexExpression[Identifier[r][Literal[2]]].Identifier[join]](Literal[])]]
-		].Identifier[join]](Literal[\\\\n])]]
-	]]
-	71: CallStatment[CallExpression[Identifier[print](CallExpression[MemberExpression[Identifier[AsciiGen].Identifier[gen]](Literal[Hallo])])]]
-]"
-`;
-
-exports[`parse default scripts ascii.src unsafe 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[AsciiGen] = MapConstructor[]]
-	3: AssignmentStatement[Identifier[map] = MapConstructor[]]
-	5: AssignmentStatement[MemberExpression[Identifier[map].Identifier[a]] = ListConstructor[
-		5: ListValue[Literal[||¯|| ]]
-		5: ListValue[Literal[||_|| ]]
-		5: ListValue[Literal[|| || ]]
-	]]
-	6: AssignmentStatement[MemberExpression[Identifier[map].Identifier[b]] = ListConstructor[
-		6: ListValue[Literal[||¯/ ]]
-		6: ListValue[Literal[|| \\\\ ]]
-		6: ListValue[Literal[||_/ ]]
-	]]
-	7: AssignmentStatement[MemberExpression[Identifier[map].Identifier[c]] = ListConstructor[
-		7: ListValue[Literal[||¯ ]]
-		7: ListValue[Literal[||  ]]
-		7: ListValue[Literal[||_ ]]
-	]]
-	8: AssignmentStatement[MemberExpression[Identifier[map].Identifier[d]] = ListConstructor[
-		8: ListValue[Literal[||¯\\\\\\\\ ]]
-		8: ListValue[Literal[|| // ]]
-		8: ListValue[Literal[||//  ]]
-	]]
-	9: AssignmentStatement[MemberExpression[Identifier[map].Identifier[e]] = ListConstructor[
-		9: ListValue[Literal[||¯ ]]
-		9: ListValue[Literal[||- ]]
-		9: ListValue[Literal[||_ ]]
-	]]
-	10: AssignmentStatement[MemberExpression[Identifier[map].Identifier[f]] = ListConstructor[
-		10: ListValue[Literal[||¯ ]]
-		10: ListValue[Literal[||_ ]]
-		10: ListValue[Literal[||  ]]
-	]]
-	11: AssignmentStatement[MemberExpression[Identifier[map].Identifier[g]] = ListConstructor[
-		11: ListValue[Literal[||¯¯  ]]
-		11: ListValue[Literal[|| \\\\\\\\ ]]
-		11: ListValue[Literal[||_|| ]]
-	]]
-	12: AssignmentStatement[MemberExpression[Identifier[map].Identifier[h]] = ListConstructor[
-		12: ListValue[Literal[|| || ]]
-		12: ListValue[Literal[||-|| ]]
-		12: ListValue[Literal[|| || ]]
-	]]
-	13: AssignmentStatement[MemberExpression[Identifier[map].Identifier[i]] = ListConstructor[
-		13: ListValue[Literal[|| ]]
-		13: ListValue[Literal[|| ]]
-		13: ListValue[Literal[|| ]]
-	]]
-	14: AssignmentStatement[MemberExpression[Identifier[map].Identifier[j]] = ListConstructor[
-		14: ListValue[Literal[ ¯||¯ ]]
-		14: ListValue[Literal[  ||  ]]
-		14: ListValue[Literal[|_||  ]]
-	]]
-	15: AssignmentStatement[MemberExpression[Identifier[map].Identifier[k]] = ListConstructor[
-		15: ListValue[Literal[||  / ]]
-		15: ListValue[Literal[|| /  ]]
-		15: ListValue[Literal[||¯\\\\\\\\ ]]
-	]]
-	16: AssignmentStatement[MemberExpression[Identifier[map].Identifier[l]] = ListConstructor[
-		16: ListValue[Literal[||  ]]
-		16: ListValue[Literal[||  ]]
-		16: ListValue[Literal[||_ ]]
-	]]
-	17: AssignmentStatement[MemberExpression[Identifier[map].Identifier[m]] = ListConstructor[
-		17: ListValue[Literal[||\\\\\\\\/|| ]]
-		17: ListValue[Literal[||   || ]]
-		17: ListValue[Literal[||   || ]]
-	]]
-	18: AssignmentStatement[MemberExpression[Identifier[map].Identifier[n]] = ListConstructor[
-		18: ListValue[Literal[||\\\\\\\\ || ]]
-		18: ListValue[Literal[|| \\\\\\\\|| ]]
-		18: ListValue[Literal[||  \\\\|| ]]
-	]]
-	19: AssignmentStatement[MemberExpression[Identifier[map].Identifier[o]] = ListConstructor[
-		19: ListValue[Literal[||¯|| ]]
-		19: ListValue[Literal[|| || ]]
-		19: ListValue[Literal[||_|| ]]
-	]]
-	20: AssignmentStatement[MemberExpression[Identifier[map].Identifier[p]] = ListConstructor[
-		20: ListValue[Literal[||¯|| ]]
-		20: ListValue[Literal[||_|| ]]
-		20: ListValue[Literal[||    ]]
-	]]
-	21: AssignmentStatement[MemberExpression[Identifier[map].Identifier[q]] = ListConstructor[
-		21: ListValue[Literal[||¯||  ]]
-		21: ListValue[Literal[|| ||  ]]
-		21: ListValue[Literal[||_||¬ ]]
-	]]
-	22: AssignmentStatement[MemberExpression[Identifier[map].Identifier[r]] = ListConstructor[
-		22: ListValue[Literal[||¯|| ]]
-		22: ListValue[Literal[||¯\\\\\\\\ ]]
-		22: ListValue[Literal[|| || ]]
-	]]
-	23: AssignmentStatement[MemberExpression[Identifier[map].Identifier[s]] = ListConstructor[
-		23: ListValue[Literal[||¯¯ ]]
-		23: ListValue[Literal[ \\\\\\\\  ]]
-		23: ListValue[Literal[__|| ]]
-	]]
-	24: AssignmentStatement[MemberExpression[Identifier[map].Identifier[t]] = ListConstructor[
-		24: ListValue[Literal[¯||¯ ]]
-		24: ListValue[Literal[ ||  ]]
-		24: ListValue[Literal[ ||  ]]
-	]]
-	25: AssignmentStatement[MemberExpression[Identifier[map].Identifier[u]] = ListConstructor[
-		25: ListValue[Literal[|| || ]]
-		25: ListValue[Literal[|| || ]]
-		25: ListValue[Literal[||_|| ]]
-	]]
-	26: AssignmentStatement[MemberExpression[Identifier[map].Identifier[v]] = ListConstructor[
-		26: ListValue[Literal[\\\\\\\\ || ]]
-		26: ListValue[Literal[ \\\\\\\\|| ]]
-		26: ListValue[Literal[  \\\\\\\\| ]]
-	]]
-	27: AssignmentStatement[MemberExpression[Identifier[map].Identifier[w]] = ListConstructor[
-		27: ListValue[Literal[\\\\\\\\ |\\\\\\\\ | ]]
-		27: ListValue[Literal[ \\\\\\\\| \\\\\\\\| ]]
-		27: ListValue[Literal[  \\\\\\\\  \\\\\\\\ ]]
-	]]
-	28: AssignmentStatement[MemberExpression[Identifier[map].Identifier[x]] = ListConstructor[
-		28: ListValue[Literal[\\\\\\\\  / ]]
-		28: ListValue[Literal[ \\\\\\\\/  ]]
-		28: ListValue[Literal[ //\\\\  ]]
-	]]
-	29: AssignmentStatement[MemberExpression[Identifier[map].Identifier[y]] = ListConstructor[
-		29: ListValue[Literal[\\\\\\\\  // ]]
-		29: ListValue[Literal[ \\\\\\\\//  ]]
-		29: ListValue[Literal[  ||   ]]
-	]]
-	30: AssignmentStatement[MemberExpression[Identifier[map].Identifier[z]] = ListConstructor[
-		30: ListValue[Literal[¯// ]]
-		30: ListValue[Literal[//  ]]
-		30: ListValue[Literal[||_ ]]
-	]]
-	31: AssignmentStatement[IndexExpression[Identifier[map][Literal[0]]] = ListConstructor[
-		31: ListValue[Literal[||¯|| ]]
-		31: ListValue[Literal[||x|| ]]
-		31: ListValue[Literal[||_|| ]]
-	]]
-	32: AssignmentStatement[IndexExpression[Identifier[map][Literal[1]]] = ListConstructor[
-		32: ListValue[Literal['|| ]]
-		32: ListValue[Literal[ || ]]
-		32: ListValue[Literal[ || ]]
-	]]
-	33: AssignmentStatement[IndexExpression[Identifier[map][Literal[2]]] = ListConstructor[
-		33: ListValue[Literal[¯¯|| ]]
-		33: ListValue[Literal[||¯  ]]
-		33: ListValue[Literal[||_  ]]
-	]]
-	34: AssignmentStatement[IndexExpression[Identifier[map][Literal[3]]] = ListConstructor[
-		34: ListValue[Literal[¯|| ]]
-		34: ListValue[Literal[-|| ]]
-		34: ListValue[Literal[_|| ]]
-	]]
-	35: AssignmentStatement[IndexExpression[Identifier[map][Literal[4]]] = ListConstructor[
-		35: ListValue[Literal[ /|| ]]
-		35: ListValue[Literal[/_|| ]]
-		35: ListValue[Literal[  || ]]
-	]]
-	36: AssignmentStatement[IndexExpression[Identifier[map][Literal[5]]] = ListConstructor[
-		36: ListValue[Literal[||¯¯ ]]
-		36: ListValue[Literal[ ¯|| ]]
-		36: ListValue[Literal[ _|| ]]
-	]]
-	37: AssignmentStatement[IndexExpression[Identifier[map][Literal[6]]] = ListConstructor[
-		37: ListValue[Literal[||¯¯  ]]
-		37: ListValue[Literal[||¯|| ]]
-		37: ListValue[Literal[||_|| ]]
-	]]
-	38: AssignmentStatement[IndexExpression[Identifier[map][Literal[7]]] = ListConstructor[
-		38: ListValue[Literal[¯¯// ]]
-		38: ListValue[Literal[ //  ]]
-		38: ListValue[Literal[//   ]]
-	]]
-	39: AssignmentStatement[IndexExpression[Identifier[map][Literal[8]]] = ListConstructor[
-		39: ListValue[Literal[||¯|| ]]
-		39: ListValue[Literal[||-|| ]]
-		39: ListValue[Literal[||_|| ]]
-	]]
-	40: AssignmentStatement[IndexExpression[Identifier[map][Literal[9]]] = ListConstructor[
-		40: ListValue[Literal[||¯|| ]]
-		40: ListValue[Literal[  ¯|| ]]
-		40: ListValue[Literal[  //  ]]
-	]]
-	41: AssignmentStatement[IndexExpression[Identifier[map][Literal[ ]]] = ListConstructor[
-		41: ListValue[Literal[  ]]
-		41: ListValue[Literal[  ]]
-		41: ListValue[Literal[  ]]
-	]]
-	43: AssignmentStatement[MemberExpression[Identifier[AsciiGen].Identifier[MAP]] = Identifier[map]]
-	45: AssignmentStatement[MemberExpression[Identifier[AsciiGen].Identifier[gen]] = Function[Identifier[str], Identifier[colors] =>
-		46: AssignmentStatement[Identifier[r] = ListConstructor[
-			46: ListValue[ListConstructor[]]
-			46: ListValue[ListConstructor[]]
-			46: ListValue[ListConstructor[]]
-		]]
-		47: AssignmentStatement[Identifier[signs] = MemberExpression[Identifier[self].Identifier[MAP]]]
-		49: For[Identifier[char] in Identifier[str]
-			50: AssignmentStatement[Identifier[char] = MemberExpression[Identifier[char].Identifier[lower]]]
-			51: IfStatement[
-				51: IfClause[CallExpression[MemberExpression[Identifier[signs].Identifier[hasIndex]](Identifier[char])]
-					52: CallStatment[CallExpression[MemberExpression[IndexExpression[Identifier[r][Literal[0]]].Identifier[push]](IndexExpression[IndexExpression[Identifier[signs][Identifier[char]]][Literal[0]]])]]
-					53: CallStatment[CallExpression[MemberExpression[IndexExpression[Identifier[r][Literal[1]]].Identifier[push]](IndexExpression[IndexExpression[Identifier[signs][Identifier[char]]][Literal[1]]])]]
-					54: CallStatment[CallExpression[MemberExpression[IndexExpression[Identifier[r][Literal[2]]].Identifier[push]](IndexExpression[IndexExpression[Identifier[signs][Identifier[char]]][Literal[2]]])]]
-				]
+			ElseifClause[62:13-66:11][BinaryExpression[62:14-62:38][CallExpression[62:20-62:28][Identifier[62:14-62:20][typeof](Identifier[62:21-62:27][colors])] == Literal[62:32-62:38][list]]
+				AssignmentStatement[63:9-63:68][IndexExpression[63:10-63:13][Identifier[63:9-63:10][r][Literal[63:11-63:12][0]]] = BinaryExpression[63:16-63:68][ListConstructor[63:16-63:47][
+					ListValue[63:17-63:45][BinaryExpression[63:17-63:45][Literal[63:17-63:27][<color=#] + BinaryExpression[63:30-63:45][IndexExpression[63:36-63:39][Identifier[63:30-63:36][colors][Literal[63:37-63:38][0]]] + Literal[63:42-63:45][>]]]]
+				] + BinaryExpression[63:49-63:68][IndexExpression[63:50-63:53][Identifier[63:49-63:50][r][Literal[63:51-63:52][0]]] + ListConstructor[63:56-63:68][
+					ListValue[63:57-63:67][Literal[63:57-63:67][</color>]]
+				]]]]
+				AssignmentStatement[64:9-64:68][IndexExpression[64:10-64:13][Identifier[64:9-64:10][r][Literal[64:11-64:12][1]]] = BinaryExpression[64:16-64:68][ListConstructor[64:16-64:47][
+					ListValue[64:17-64:45][BinaryExpression[64:17-64:45][Literal[64:17-64:27][<color=#] + BinaryExpression[64:30-64:45][IndexExpression[64:36-64:39][Identifier[64:30-64:36][colors][Literal[64:37-64:38][1]]] + Literal[64:42-64:45][>]]]]
+				] + BinaryExpression[64:49-64:68][IndexExpression[64:50-64:53][Identifier[64:49-64:50][r][Literal[64:51-64:52][1]]] + ListConstructor[64:56-64:68][
+					ListValue[64:57-64:67][Literal[64:57-64:67][</color>]]
+				]]]]
+				AssignmentStatement[65:9-65:68][IndexExpression[65:10-65:13][Identifier[65:9-65:10][r][Literal[65:11-65:12][2]]] = BinaryExpression[65:16-65:68][ListConstructor[65:16-65:47][
+					ListValue[65:17-65:45][BinaryExpression[65:17-65:45][Literal[65:17-65:27][<color=#] + BinaryExpression[65:30-65:45][IndexExpression[65:36-65:39][Identifier[65:30-65:36][colors][Literal[65:37-65:38][2]]] + Literal[65:42-65:45][>]]]]
+				] + BinaryExpression[65:49-65:68][IndexExpression[65:50-65:53][Identifier[65:49-65:50][r][Literal[65:51-65:52][2]]] + ListConstructor[65:56-65:68][
+					ListValue[65:57-65:67][Literal[65:57-65:67][</color>]]
+				]]]]
 			]
 		]
-		58: IfStatement[
-			58: IfClause[BinaryExpression[CallExpression[Identifier[typeof](Identifier[colors])] == Literal[string]]
-				59: AssignmentStatement[IndexExpression[Identifier[r][Literal[0]]] = BinaryExpression[BinaryExpression[ListConstructor[
-					59: ListValue[BinaryExpression[BinaryExpression[Literal[<color=#] + Identifier[colors]] + Literal[>]]]
-				] + IndexExpression[Identifier[r][Literal[0]]]] + ListConstructor[
-					59: ListValue[Literal[</color>]]
-				]]]
-				60: AssignmentStatement[IndexExpression[Identifier[r][Literal[1]]] = BinaryExpression[BinaryExpression[ListConstructor[
-					60: ListValue[BinaryExpression[BinaryExpression[Literal[<color=#] + Identifier[colors]] + Literal[>]]]
-				] + IndexExpression[Identifier[r][Literal[1]]]] + ListConstructor[
-					60: ListValue[Literal[</color>]]
-				]]]
-				61: AssignmentStatement[IndexExpression[Identifier[r][Literal[2]]] = BinaryExpression[BinaryExpression[ListConstructor[
-					61: ListValue[BinaryExpression[BinaryExpression[Literal[<color=#] + Identifier[colors]] + Literal[>]]]
-				] + IndexExpression[Identifier[r][Literal[2]]]] + ListConstructor[
-					61: ListValue[Literal[</color>]]
-				]]]
-			]
-			62: ElseifClause[BinaryExpression[CallExpression[Identifier[typeof](Identifier[colors])] == Literal[list]]
-				63: AssignmentStatement[IndexExpression[Identifier[r][Literal[0]]] = BinaryExpression[BinaryExpression[ListConstructor[
-					63: ListValue[BinaryExpression[BinaryExpression[Literal[<color=#] + IndexExpression[Identifier[colors][Literal[0]]]] + Literal[>]]]
-				] + IndexExpression[Identifier[r][Literal[0]]]] + ListConstructor[
-					63: ListValue[Literal[</color>]]
-				]]]
-				64: AssignmentStatement[IndexExpression[Identifier[r][Literal[1]]] = BinaryExpression[BinaryExpression[ListConstructor[
-					64: ListValue[BinaryExpression[BinaryExpression[Literal[<color=#] + IndexExpression[Identifier[colors][Literal[1]]]] + Literal[>]]]
-				] + IndexExpression[Identifier[r][Literal[1]]]] + ListConstructor[
-					64: ListValue[Literal[</color>]]
-				]]]
-				65: AssignmentStatement[IndexExpression[Identifier[r][Literal[2]]] = BinaryExpression[BinaryExpression[ListConstructor[
-					65: ListValue[BinaryExpression[BinaryExpression[Literal[<color=#] + IndexExpression[Identifier[colors][Literal[2]]]] + Literal[>]]]
-				] + IndexExpression[Identifier[r][Literal[2]]]] + ListConstructor[
-					65: ListValue[Literal[</color>]]
-				]]]
-			]
-		]
-		68: ReturnStatement[CallExpression[MemberExpression[ListConstructor[
-			68: ListValue[CallExpression[MemberExpression[IndexExpression[Identifier[r][Literal[0]]].Identifier[join]](Literal[])]]
-			68: ListValue[CallExpression[MemberExpression[IndexExpression[Identifier[r][Literal[1]]].Identifier[join]](Literal[])]]
-			68: ListValue[CallExpression[MemberExpression[IndexExpression[Identifier[r][Literal[2]]].Identifier[join]](Literal[])]]
-		].Identifier[join]](Literal[\\\\n])]]
+		ReturnStatement[68:5-68:68][CallExpression[68:62-68:68][MemberExpression[68:57-68:62][ListConstructor[68:12-68:57][
+			ListValue[68:22-68:26][CallExpression[68:22-68:26][MemberExpression[68:17-68:22][IndexExpression[68:14-68:17][Identifier[68:13-68:14][r][Literal[68:15-68:16][0]]].Identifier[68:18-68:22][join]](Literal[68:23-68:25][])]]
+			ListValue[68:37-68:41][CallExpression[68:37-68:41][MemberExpression[68:32-68:37][IndexExpression[68:29-68:32][Identifier[68:28-68:29][r][Literal[68:30-68:31][1]]].Identifier[68:33-68:37][join]](Literal[68:38-68:40][])]]
+			ListValue[68:52-68:56][CallExpression[68:52-68:56][MemberExpression[68:47-68:52][IndexExpression[68:44-68:47][Identifier[68:43-68:44][r][Literal[68:45-68:46][2]]].Identifier[68:48-68:52][join]](Literal[68:53-68:55][])]]
+		].Identifier[68:58-68:62][join]](Literal[68:63-68:67][\\\\n])]]
 	]]
-	71: CallStatment[CallExpression[Identifier[print](CallExpression[MemberExpression[Identifier[AsciiGen].Identifier[gen]](Literal[Hallo])])]]
+	CallExpression[71:6-71:29][Identifier[71:1-71:6][print](CallExpression[71:19-71:28][MemberExpression[71:15-71:19][Identifier[71:7-71:15][AsciiGen].Identifier[71:16-71:19][gen]](Literal[71:20-71:27][Hallo])])]
 ]"
 `;
 
 exports[`parse default scripts binary-expressions.src 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[a] = BinaryExpression[Identifier[a] / Identifier[b]]]
-	2: AssignmentStatement[Identifier[a] = BinaryExpression[Identifier[a] * Identifier[b]]]
-	3: AssignmentStatement[Identifier[a] = BinaryExpression[Identifier[a] - Identifier[b]]]
-	4: AssignmentStatement[Identifier[a] = BinaryExpression[Identifier[a] + Identifier[b]]]
-	5: CallStatment[BinaryExpression[Identifier[a] << Identifier[b]]]
-	6: CallStatment[BinaryExpression[Identifier[a] >> Identifier[b]]]
-	7: AssignmentStatement[Identifier[w] = BinaryExpression[BinaryExpression[Identifier[a] >>> BinaryExpression[Identifier[b] << Identifier[c]]] >> Identifier[a]]]
-	8: CallStatment[BinaryExpression[Identifier[a] | Identifier[b]]]
-	9: CallStatment[BinaryExpression[Identifier[a] & Identifier[b]]]
-	10: CallStatment[BinaryExpression[Identifier[a] ^ Identifier[b]]]
-	11: CallStatment[LogicalExpression[Identifier[a] and Identifier[b]]]
-	12: CallStatment[LogicalExpression[Identifier[a] or Identifier[b]]]
-]"
-`;
-
-exports[`parse default scripts binary-expressions.src unsafe 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[a] = BinaryExpression[Identifier[a] / Identifier[b]]]
-	2: AssignmentStatement[Identifier[a] = BinaryExpression[Identifier[a] * Identifier[b]]]
-	3: AssignmentStatement[Identifier[a] = BinaryExpression[Identifier[a] - Identifier[b]]]
-	4: AssignmentStatement[Identifier[a] = BinaryExpression[Identifier[a] + Identifier[b]]]
-	5: CallStatment[BinaryExpression[Identifier[a] << Identifier[b]]]
-	6: CallStatment[BinaryExpression[Identifier[a] >> Identifier[b]]]
-	7: AssignmentStatement[Identifier[w] = BinaryExpression[BinaryExpression[Identifier[a] >>> BinaryExpression[Identifier[b] << Identifier[c]]] >> Identifier[a]]]
-	8: CallStatment[BinaryExpression[Identifier[a] | Identifier[b]]]
-	9: CallStatment[BinaryExpression[Identifier[a] & Identifier[b]]]
-	10: CallStatment[BinaryExpression[Identifier[a] ^ Identifier[b]]]
-	11: CallStatment[LogicalExpression[Identifier[a] and Identifier[b]]]
-	12: CallStatment[LogicalExpression[Identifier[a] or Identifier[b]]]
+"Chunk[1:1-12:7][
+	AssignmentStatement[1:1-1:7][Identifier[1:1-1:2][a] = BinaryExpression[1:6-1:7][Identifier[1:1-1:2][a] / Identifier[1:6-1:7][b]]]
+	AssignmentStatement[2:1-2:7][Identifier[2:1-2:2][a] = BinaryExpression[2:6-2:7][Identifier[2:1-2:2][a] * Identifier[2:6-2:7][b]]]
+	AssignmentStatement[3:1-3:7][Identifier[3:1-3:2][a] = BinaryExpression[3:6-3:7][Identifier[3:1-3:2][a] - Identifier[3:6-3:7][b]]]
+	AssignmentStatement[4:1-4:7][Identifier[4:1-4:2][a] = BinaryExpression[4:6-4:7][Identifier[4:1-4:2][a] + Identifier[4:6-4:7][b]]]
+	BinaryExpression[5:1-5:7][Identifier[5:1-5:2][a] << Identifier[5:6-5:7][b]]
+	BinaryExpression[6:1-6:7][Identifier[6:1-6:2][a] >> Identifier[6:6-6:7][b]]
+	AssignmentStatement[7:1-7:24][Identifier[7:1-7:2][w] = BinaryExpression[7:5-7:24][Identifier[7:5-7:6][a] >>> BinaryExpression[7:11-7:24][BinaryExpression[7:12-7:18][Identifier[7:12-7:13][b] << Identifier[7:17-7:18][c]] >> Identifier[7:23-7:24][a]]]]
+	BinaryExpression[8:1-8:6][Identifier[8:1-8:2][a] | Identifier[8:5-8:6][b]]
+	BinaryExpression[9:1-9:6][Identifier[9:1-9:2][a] & Identifier[9:5-9:6][b]]
+	BinaryExpression[10:1-10:6][Identifier[10:1-10:2][a] ^ Identifier[10:5-10:6][b]]
+	LogicalExpression[11:1-11:8][Identifier[11:1-11:2][a] and Identifier[11:7-11:8][b]]
+	LogicalExpression[12:1-12:7][Identifier[12:1-12:2][a] or Identifier[12:6-12:7][b]]
 ]"
 `;
 
 exports[`parse default scripts greybel-utils.src 1`] = `
-"Chunk[
-	1: FeatureImportExpression[name = Identifier[foo], path = test/bar]
-	2: FeatureIncludeExpression[path = test/bar]
-	3: FeatureEnvarExpression[path = TEST_ENV]
-	4: FeatureDebuggerExpression[]
-]"
-`;
-
-exports[`parse default scripts greybel-utils.src unsafe 1`] = `
-"Chunk[
-	1: FeatureImportExpression[name = Identifier[foo], path = test/bar]
-	2: FeatureIncludeExpression[path = test/bar]
-	3: FeatureEnvarExpression[path = TEST_ENV]
-	4: FeatureDebuggerExpression[]
+"Chunk[1:1-4:10][
+	FeatureImportExpression[1:1-1:28][name = Identifier[1:9-1:12][foo], path = test/bar]
+	FeatureIncludeExpression[2:1-2:20][path = test/bar]
+	AssignmentStatement[3:1-3:23][Identifier[3:1-3:5][test] = FeatureEnvarExpression[3:8-3:23][path = TEST_ENV]]
+	FeatureDebuggerExpression[4:1-4:9][]
 ]"
 `;
 
@@ -562,1002 +283,519 @@ exports[`parse default scripts invalid code 1`] = `Array []`;
 
 exports[`parse default scripts invalid code 2`] = `
 Array [
-  [Error: Expected call expression to be closed after line 4.],
-  [Error: Unexpected assignment or call at line 8.],
-  [Error: Unexpected expression at line 17.],
-  [Error: Unexpected expression at line 18.],
-  [Error: If requires 'then' keyword at line 28.],
+  [Error: got Identifier[4:5 - 4:10: value = 'print'] where any of ",", ")" is required at line 4:5],
+  [Error: got Identifier[8:5 - 8:8: value = 'wad'] where any of ",", ")" is required at line 8:5],
+  [Error: got Identifier[8:14 - 8:18: value = 'dwad'] where any of ",", ")" is required at line 8:14],
+  [Error: got Keyword[10:12 - 10:15: value = 'not'] where any of ",", ")" is required at line 10:12],
+  [Error: got Punctuator[11:9 - 11:10: value = '+'] where number, string, or identifier is required at line 11:9],
+  [Error: got Keyword[13:5 - 13:8: value = 'not'] where any of ",", ")" is required at line 13:5],
+  [Error: got Keyword[15:5 - 15:7: value = 'if'] where number, string, or identifier is required at line 15:5],
+  [Error: got Keyword[17:5 - 17:13: value = 'function'] where any of ",", ")" is required at line 17:5],
+  [Error: got Keyword[18:5 - 18:13: value = 'end func'] where number, string, or identifier is required at line 18:5],
+  [Error: got Identifier[20:5 - 20:10: value = 'print'] where any of ",", ")" is required at line 20:5],
+  [Error: got Keyword[22:5 - 22:7: value = 'if'] where number, string, or identifier is required at line 22:5],
+  [Error: got Identifier[23:6 - 23:11: value = 'print'] where any of ",", ")" is required at line 23:6],
+  [Error: got Keyword[24:5 - 24:9: value = 'else'] where number, string, or identifier is required at line 24:5],
+  [Error: got Identifier[25:6 - 25:11: value = 'print'] where any of ",", ")" is required at line 25:6],
+  [Error: got Keyword[26:5 - 26:11: value = 'end if'] where number, string, or identifier is required at line 26:5],
+  [Error: got Keyword[28:5 - 28:7: value = 'if'] where any of ",", ")" is required at line 28:5],
+  [Error: got EOF[29:4 - 29:4: value = '<eof>'] where number, string, or identifier is required at line 29:4],
+  [Error: got EOF[29:4 - 29:4: value = '<eof>'] where any of ",", ")" is required at line 29:4],
 ]
 `;
 
 exports[`parse default scripts map.src 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[test] = MapConstructor[
-		2: MapKeyString[MapConstructor[
-			2: MapKeyString[Literal[myTest]: Literal[0]]
-			2: MapKeyString[Literal[1]: Literal[2]]
-		]: Literal[true]]
+"Chunk[1:1-15:2][
+	AssignmentStatement[1:1-3:2][Identifier[1:1-1:5][test] = MapConstructor[1:8-3:2][
+		MapKeyString[2:5-2:30][MapConstructor[2:5-2:24][
+			MapKeyString[2:6-2:17][Literal[2:6-2:14][myTest]: Literal[2:16-2:17][0]]
+			MapKeyString[2:19-2:23][Literal[2:19-2:20][1]: Literal[2:22-2:23][2]]
+		]: Literal[2:26-2:30][true]]
 	]]
-	4: AssignmentStatement[Identifier[test2] = MapConstructor[
-		5: MapKeyString[ListConstructor[
-			5: ListValue[Literal[12]]
-			5: ListValue[Literal[14]]
-		]: Literal[true]]
+	AssignmentStatement[4:1-6:2][Identifier[4:1-4:6][test2] = MapConstructor[4:9-6:2][
+		MapKeyString[5:5-5:19][ListConstructor[5:5-5:13][
+			ListValue[5:6-5:8][Literal[5:6-5:8][12]]
+			ListValue[5:10-5:12][Literal[5:10-5:12][14]]
+		]: Literal[5:15-5:19][true]]
 	]]
-	7: AssignmentStatement[Identifier[test3] = MapConstructor[
-		8: MapKeyString[Identifier[test]: Literal[234]]
+	AssignmentStatement[7:1-9:2][Identifier[7:1-7:6][test3] = MapConstructor[7:9-9:2][
+		MapKeyString[8:5-8:14][Identifier[8:5-8:9][test]: Literal[8:11-8:14][234]]
 	]]
-	10: AssignmentStatement[Identifier[test4] = MapConstructor[
-		11: MapKeyString[Literal[true]: Literal[foo]]
+	AssignmentStatement[10:1-12:2][Identifier[10:1-10:6][test4] = MapConstructor[10:9-12:2][
+		MapKeyString[11:5-11:16][Literal[11:5-11:9][true]: Literal[11:11-11:16][foo]]
 	]]
-	13: AssignmentStatement[Identifier[test5] = MapConstructor[
-		14: MapKeyString[Literal[123]: Literal[bar]]
-	]]
-]"
-`;
-
-exports[`parse default scripts map.src unsafe 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[test] = MapConstructor[
-		2: MapKeyString[MapConstructor[
-			2: MapKeyString[Literal[myTest]: Literal[0]]
-			2: MapKeyString[Literal[1]: Literal[2]]
-		]: Literal[true]]
-	]]
-	4: AssignmentStatement[Identifier[test2] = MapConstructor[
-		5: MapKeyString[ListConstructor[
-			5: ListValue[Literal[12]]
-			5: ListValue[Literal[14]]
-		]: Literal[true]]
-	]]
-	7: AssignmentStatement[Identifier[test3] = MapConstructor[
-		8: MapKeyString[Identifier[test]: Literal[234]]
-	]]
-	10: AssignmentStatement[Identifier[test4] = MapConstructor[
-		11: MapKeyString[Literal[true]: Literal[foo]]
-	]]
-	13: AssignmentStatement[Identifier[test5] = MapConstructor[
-		14: MapKeyString[Literal[123]: Literal[bar]]
+	AssignmentStatement[13:1-15:2][Identifier[13:1-13:6][test5] = MapConstructor[13:9-15:2][
+		MapKeyString[14:5-14:15][Literal[14:5-14:8][123]: Literal[14:10-14:15][bar]]
 	]]
 ]"
 `;
 
 exports[`parse default scripts negation.src 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[test] = BinaryExpression[BinaryExpression[BinaryExpression[BinaryNegatedExpression[- Literal[1]] + Literal[2]] + BinaryNegatedExpression[- Literal[2]]] + BinaryNegatedExpression[+ Literal[3]]]]
-	2: AssignmentStatement[Identifier[foo] = ListConstructor[
-		2: ListValue[BinaryNegatedExpression[- Literal[1]]]
-		2: ListValue[BinaryExpression[BinaryNegatedExpression[- Literal[2]] + Literal[4]]]
-		2: ListValue[BinaryExpression[BinaryExpression[BinaryNegatedExpression[- Literal[2]] + BinaryNegatedExpression[- Literal[4]]] + BinaryNegatedExpression[+ Literal[6]]]]
+"Chunk[1:1-5:11][
+	AssignmentStatement[1:1-1:23][Identifier[1:1-1:5][test] = BinaryExpression[1:8-1:23][BinaryNegatedExpression[1:8-1:10][- Literal[1:9-1:10][1]] + BinaryExpression[1:13-1:23][Literal[1:13-1:14][2] + BinaryExpression[1:17-1:23][BinaryNegatedExpression[1:17-1:19][- Literal[1:18-1:19][2]] + Literal[1:22-1:23][3]]]]]
+	AssignmentStatement[2:1-2:34][Identifier[2:1-2:4][foo] = ListConstructor[2:7-2:34][
+		ListValue[2:8-2:10][BinaryNegatedExpression[2:8-2:10][- Literal[2:9-2:10][1]]]
+		ListValue[2:12-2:18][BinaryExpression[2:12-2:18][BinaryNegatedExpression[2:12-2:14][- Literal[2:13-2:14][2]] + Literal[2:17-2:18][4]]]
+		ListValue[2:20-2:33][BinaryExpression[2:20-2:33][BinaryNegatedExpression[2:21-2:23][- Literal[2:22-2:23][2]] + BinaryExpression[2:27-2:33][BinaryNegatedExpression[2:27-2:29][- Literal[2:28-2:29][4]] + Literal[2:32-2:33][6]]]]
 	]]
-	4: CallStatment[CallExpression[Identifier[print](Identifier[test])]]
-	5: CallStatment[CallExpression[Identifier[print](Identifier[foo])]]
-]"
-`;
-
-exports[`parse default scripts negation.src unsafe 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[test] = BinaryExpression[BinaryExpression[BinaryExpression[BinaryNegatedExpression[- Literal[1]] + Literal[2]] + BinaryNegatedExpression[- Literal[2]]] + BinaryNegatedExpression[+ Literal[3]]]]
-	2: AssignmentStatement[Identifier[foo] = ListConstructor[
-		2: ListValue[BinaryNegatedExpression[- Literal[1]]]
-		2: ListValue[BinaryExpression[BinaryNegatedExpression[- Literal[2]] + Literal[4]]]
-		2: ListValue[BinaryExpression[BinaryExpression[BinaryNegatedExpression[- Literal[2]] + BinaryNegatedExpression[- Literal[4]]] + BinaryNegatedExpression[+ Literal[6]]]]
-	]]
-	4: CallStatment[CallExpression[Identifier[print](Identifier[test])]]
-	5: CallStatment[CallExpression[Identifier[print](Identifier[foo])]]
+	CallExpression[4:6-4:12][Identifier[4:1-4:6][print](Identifier[4:7-4:11][test])]
+	CallExpression[5:6-5:11][Identifier[5:1-5:6][print](Identifier[5:7-5:10][foo])]
 ]"
 `;
 
 exports[`parse default scripts obj-init.src 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[valueOfIdentifier] = Literal[foo]]
-	3: AssignmentStatement[Identifier[myObject] = MapConstructor[
-		4: MapKeyString[Literal[test]: MapConstructor[
-			5: MapKeyString[Literal[another]: Literal[123]]
+"Chunk[1:1-21:14][
+	AssignmentStatement[1:1-1:26][Identifier[1:1-1:18][valueOfIdentifier] = Literal[1:21-1:26][foo]]
+	AssignmentStatement[3:1-9:2][Identifier[3:1-3:9][myObject] = MapConstructor[3:12-9:2][
+		MapKeyString[4:5-6:6][Literal[4:5-4:11][test]: MapConstructor[4:13-6:6][
+			MapKeyString[5:9-5:25][Literal[5:9-5:18][another]: Literal[5:20-5:25][123]]
 		]]
-		7: MapKeyString[Literal[value]: Literal[123]]
-		8: MapKeyString[Literal[idtf]: Identifier[valueOfIdentifier]]
+		MapKeyString[7:5-7:19][Literal[7:5-7:12][value]: Literal[7:14-7:19][123]]
+		MapKeyString[8:5-8:30][Literal[8:5-8:11][idtf]: Identifier[8:13-8:30][valueOfIdentifier]]
 	]]
-	11: CallStatment[CallExpression[Identifier[print](ListConstructor[
-		11: ListValue[MemberExpression[MemberExpression[Identifier[myObject].Identifier[test]].Identifier[another]]]
-		11: ListValue[MemberExpression[Identifier[myObject].Identifier[value]]]
-		11: ListValue[MemberExpression[Identifier[myObject].Identifier[idtf]]]
-	])]]
-	13: AssignmentStatement[Identifier[myList] = ListConstructor[
-		14: ListValue[MapConstructor[
-			15: MapKeyString[Literal[another]: Literal[123]]
+	CallExpression[11:6-11:62][Identifier[11:1-11:6][print](ListConstructor[11:7-11:61][
+		ListValue[11:21-11:29][MemberExpression[11:21-11:29][MemberExpression[11:16-11:21][Identifier[11:8-11:16][myObject].Identifier[11:17-11:21][test]].Identifier[11:22-11:29][another]]]
+		ListValue[11:39-11:45][MemberExpression[11:39-11:45][Identifier[11:31-11:39][myObject].Identifier[11:40-11:45][value]]]
+		ListValue[11:55-11:60][MemberExpression[11:55-11:60][Identifier[11:47-11:55][myObject].Identifier[11:56-11:60][idtf]]]
+	])]
+	AssignmentStatement[13:1-19:2][Identifier[13:1-13:7][myList] = ListConstructor[13:10-19:2][
+		ListValue[14:5-16:6][MapConstructor[14:5-16:6][
+			MapKeyString[15:9-15:25][Literal[15:9-15:18][another]: Literal[15:20-15:25][123]]
 		]]
-		17: ListValue[Literal[123]]
-		18: ListValue[Identifier[valueOfIdentifier]]
+		ListValue[17:5-17:10][Literal[17:5-17:10][123]]
+		ListValue[18:5-18:22][Identifier[18:5-18:22][valueOfIdentifier]]
 	]]
-	21: CallStatment[CallExpression[Identifier[print](Identifier[myList])]]
-]"
-`;
-
-exports[`parse default scripts obj-init.src unsafe 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[valueOfIdentifier] = Literal[foo]]
-	3: AssignmentStatement[Identifier[myObject] = MapConstructor[
-		4: MapKeyString[Literal[test]: MapConstructor[
-			5: MapKeyString[Literal[another]: Literal[123]]
-		]]
-		7: MapKeyString[Literal[value]: Literal[123]]
-		8: MapKeyString[Literal[idtf]: Identifier[valueOfIdentifier]]
-	]]
-	11: CallStatment[CallExpression[Identifier[print](ListConstructor[
-		11: ListValue[MemberExpression[MemberExpression[Identifier[myObject].Identifier[test]].Identifier[another]]]
-		11: ListValue[MemberExpression[Identifier[myObject].Identifier[value]]]
-		11: ListValue[MemberExpression[Identifier[myObject].Identifier[idtf]]]
-	])]]
-	13: AssignmentStatement[Identifier[myList] = ListConstructor[
-		14: ListValue[MapConstructor[
-			15: MapKeyString[Literal[another]: Literal[123]]
-		]]
-		17: ListValue[Literal[123]]
-		18: ListValue[Identifier[valueOfIdentifier]]
-	]]
-	21: CallStatment[CallExpression[Identifier[print](Identifier[myList])]]
+	CallExpression[21:6-21:14][Identifier[21:1-21:6][print](Identifier[21:7-21:13][myList])]
 ]"
 `;
 
 exports[`parse default scripts password-generator.src 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[PasswordGenerator] = MapConstructor[]]
-	3: AssignmentStatement[MemberExpression[Identifier[PasswordGenerator].Identifier[MAX_PASSWORD_LENGTH]] = Literal[15]]
-	4: AssignmentStatement[MemberExpression[Identifier[PasswordGenerator].Identifier[ALPHABETIC_CHARACTERS]] = Literal[qwertzuiopasdfghjklyxcvbnm]]
-	5: AssignmentStatement[MemberExpression[Identifier[PasswordGenerator].Identifier[NUMBER_CHARACTERS]] = Literal[0123456789]]
-	6: AssignmentStatement[MemberExpression[Identifier[PasswordGenerator].Identifier[ALPHA_NUMERIC]] = BinaryExpression[BinaryExpression[MemberExpression[Identifier[PasswordGenerator].Identifier[ALPHABETIC_CHARACTERS]] + MemberExpression[MemberExpression[Identifier[PasswordGenerator].Identifier[ALPHABETIC_CHARACTERS]].Identifier[upper]]] + MemberExpression[Identifier[PasswordGenerator].Identifier[NUMBER_CHARACTERS]]]]
-	8: AssignmentStatement[MemberExpression[Identifier[PasswordGenerator].Identifier[constructor]] = Function[ =>
-		9: AssignmentStatement[Identifier[me] = Identifier[self]]
-		10: AssignmentStatement[MemberExpression[Identifier[me].Identifier[buffer]] = ListConstructor[
-			10: ListValue[Literal[0]]
+"Chunk[1:1-65:14][
+	AssignmentStatement[1:1-1:23][Identifier[1:1-1:18][PasswordGenerator] = MapConstructor[1:21-1:23][]]
+	AssignmentStatement[3:1-3:43][MemberExpression[3:18-3:38][Identifier[3:1-3:18][PasswordGenerator].Identifier[3:19-3:38][MAX_PASSWORD_LENGTH]] = Literal[3:41-3:43][15]]
+	AssignmentStatement[4:1-4:71][MemberExpression[4:18-4:40][Identifier[4:1-4:18][PasswordGenerator].Identifier[4:19-4:40][ALPHABETIC_CHARACTERS]] = Literal[4:43-4:71][qwertzuiopasdfghjklyxcvbnm]]
+	AssignmentStatement[5:1-5:51][MemberExpression[5:18-5:36][Identifier[5:1-5:18][PasswordGenerator].Identifier[5:19-5:36][NUMBER_CHARACTERS]] = Literal[5:39-5:51][0123456789]]
+	AssignmentStatement[6:1-6:160][MemberExpression[6:18-6:32][Identifier[6:1-6:18][PasswordGenerator].Identifier[6:19-6:32][ALPHA_NUMERIC]] = BinaryExpression[6:35-6:160][MemberExpression[6:52-6:74][Identifier[6:35-6:52][PasswordGenerator].Identifier[6:53-6:74][ALPHABETIC_CHARACTERS]] + BinaryExpression[6:77-6:160][MemberExpression[6:116-6:122][MemberExpression[6:94-6:116][Identifier[6:77-6:94][PasswordGenerator].Identifier[6:95-6:116][ALPHABETIC_CHARACTERS]].Identifier[6:117-6:122][upper]] + MemberExpression[6:142-6:160][Identifier[6:125-6:142][PasswordGenerator].Identifier[6:143-6:160][NUMBER_CHARACTERS]]]]]
+	AssignmentStatement[8:1-13:13][MemberExpression[8:18-8:30][Identifier[8:1-8:18][PasswordGenerator].Identifier[8:19-8:30][constructor]] = Function[8:33-13:13][ =>
+		AssignmentStatement[9:5-9:14][Identifier[9:5-9:7][me] = Identifier[9:10-9:14][self]]
+		AssignmentStatement[10:5-10:20][MemberExpression[10:7-10:14][Identifier[10:5-10:7][me].Identifier[10:8-10:14][buffer]] = ListConstructor[10:17-10:20][
+			ListValue[10:18-10:19][Literal[10:18-10:19][0]]
 		]]
-		11: AssignmentStatement[MemberExpression[Identifier[me].Identifier[characters]] = MemberExpression[Identifier[me].Identifier[ALPHA_NUMERIC]]]
-		12: ReturnStatement[Identifier[me]]
+		AssignmentStatement[11:5-11:37][MemberExpression[11:7-11:18][Identifier[11:5-11:7][me].Identifier[11:8-11:18][characters]] = MemberExpression[11:23-11:37][Identifier[11:21-11:23][me].Identifier[11:24-11:37][ALPHA_NUMERIC]]]
+		ReturnStatement[12:5-12:14][Identifier[12:12-12:14][me]]
 	]]
-	15: AssignmentStatement[MemberExpression[Identifier[PasswordGenerator].Identifier[increaseBuffer]] = Function[Identifier[i] =>
-		16: AssignmentStatement[Identifier[me] = Identifier[self]]
-		17: AssignmentStatement[Identifier[currentCharBuffer] = MemberExpression[Identifier[me].Identifier[buffer]]]
-		18: AssignmentStatement[Identifier[maxBufferSize] = MemberExpression[MemberExpression[Identifier[me].Identifier[characters]].Identifier[len]]]
-		19: IfStatement[
-			19: IfShortcutClause[BinaryExpression[Identifier[i] == Literal[null]]
-				19: AssignmentStatement[Identifier[i] = BinaryExpression[MemberExpression[Identifier[currentCharBuffer].Identifier[len]] - Literal[1]]]
+	AssignmentStatement[15:1-31:13][MemberExpression[15:18-15:33][Identifier[15:1-15:18][PasswordGenerator].Identifier[15:19-15:33][increaseBuffer]] = Function[15:36-31:13][Identifier[15:45-15:46][i] =>
+		AssignmentStatement[16:5-16:14][Identifier[16:5-16:7][me] = Identifier[16:10-16:14][self]]
+		AssignmentStatement[17:5-17:34][Identifier[17:5-17:22][currentCharBuffer] = MemberExpression[17:27-17:34][Identifier[17:25-17:27][me].Identifier[17:28-17:34][buffer]]]
+		AssignmentStatement[18:5-18:38][Identifier[18:5-18:18][maxBufferSize] = MemberExpression[18:34-18:38][MemberExpression[18:23-18:34][Identifier[18:21-18:23][me].Identifier[18:24-18:34][characters]].Identifier[18:35-18:38][len]]]
+		IfStatement[19:5-19:54][
+			IfShortcutClause[19:5-19:54][BinaryExpression[19:9-19:18][Identifier[19:9-19:10][i] == Literal[19:14-19:18][null]]
+				AssignmentStatement[19:25-19:54][Identifier[19:25-19:26][i] = BinaryExpression[19:29-19:54][MemberExpression[19:46-19:50][Identifier[19:29-19:46][currentCharBuffer].Identifier[19:47-19:50][len]] - Literal[19:53-19:54][1]]]
 			]
 		]
-		20: AssignmentStatement[Identifier[p] = IndexExpression[Identifier[currentCharBuffer][Identifier[i]]]]
-		21: AssignmentStatement[Identifier[p] = BinaryExpression[Identifier[p] + Literal[1]]]
-		22: AssignmentStatement[IndexExpression[Identifier[currentCharBuffer][Identifier[i]]] = Identifier[p]]
-		23: IfStatement[
-			23: IfClause[BinaryExpression[Identifier[p] == Identifier[maxBufferSize]]
-				24: AssignmentStatement[IndexExpression[Identifier[currentCharBuffer][Identifier[i]]] = Literal[0]]
-				25: IfStatement[
-					25: IfClause[BinaryExpression[Identifier[i] == Literal[0]]
-						26: CallStatment[CallExpression[MemberExpression[Identifier[currentCharBuffer].Identifier[push]](Literal[0])]]
+		AssignmentStatement[20:5-20:29][Identifier[20:5-20:6][p] = IndexExpression[20:26-20:29][Identifier[20:9-20:26][currentCharBuffer][Identifier[20:27-20:28][i]]]]
+		AssignmentStatement[21:5-21:14][Identifier[21:5-21:6][p] = BinaryExpression[21:9-21:14][Identifier[21:9-21:10][p] + Literal[21:13-21:14][1]]]
+		AssignmentStatement[22:5-22:29][IndexExpression[22:22-22:25][Identifier[22:5-22:22][currentCharBuffer][Identifier[22:23-22:24][i]]] = Identifier[22:28-22:29][p]]
+		IfStatement[23:5-30:11][
+			IfClause[23:5-30:11][BinaryExpression[23:9-23:27][Identifier[23:9-23:10][p] == Identifier[23:14-23:27][maxBufferSize]]
+				AssignmentStatement[24:9-24:33][IndexExpression[24:26-24:29][Identifier[24:9-24:26][currentCharBuffer][Identifier[24:27-24:28][i]]] = Literal[24:32-24:33][0]]
+				IfStatement[25:9-29:15][
+					IfClause[25:9-27:13][BinaryExpression[25:13-25:19][Identifier[25:13-25:14][i] == Literal[25:18-25:19][0]]
+						CallExpression[26:35-26:38][MemberExpression[26:30-26:35][Identifier[26:13-26:30][currentCharBuffer].Identifier[26:31-26:35][push]](Literal[26:36-26:37][0])]
 					]
-					27: ElseClause[
-						28: CallStatment[CallExpression[MemberExpression[Identifier[me].Identifier[increaseBuffer]](BinaryExpression[Identifier[i] - Literal[1]])]]
+					ElseClause[27:13-29:15][
+						CallExpression[28:30-28:37][MemberExpression[28:15-28:30][Identifier[28:13-28:15][me].Identifier[28:16-28:30][increaseBuffer]](BinaryExpression[28:31-28:36][Identifier[28:31-28:32][i] - Literal[28:35-28:36][1]])]
 					}]
 				]
 			]
 		]
 	]]
-	33: AssignmentStatement[MemberExpression[Identifier[PasswordGenerator].Identifier[gen]] = Function[ =>
-		34: AssignmentStatement[Identifier[me] = Identifier[self]]
-		35: AssignmentStatement[Identifier[currentCharBuffer] = MemberExpression[Identifier[me].Identifier[buffer]]]
-		36: AssignmentStatement[Identifier[generatorCharacters] = MemberExpression[Identifier[me].Identifier[characters]]]
-		37: AssignmentStatement[Identifier[password] = Literal[]]
-		38: AssignmentStatement[Identifier[index] = Literal[0]]
-		40: WhileStatement[BinaryExpression[Identifier[index] < MemberExpression[Identifier[currentCharBuffer].Identifier[len]]]
-			41: AssignmentStatement[Identifier[pointer] = IndexExpression[Identifier[currentCharBuffer][Identifier[index]]]]
-			42: AssignmentStatement[Identifier[password] = BinaryExpression[Identifier[password] + IndexExpression[Identifier[generatorCharacters][Identifier[pointer]]]]]
-			43: IfStatement[
-				43: IfShortcutClause[BinaryExpression[Identifier[index] == BinaryExpression[MemberExpression[Identifier[currentCharBuffer].Identifier[len]] - Literal[1]]]
-					43: CallStatment[CallExpression[MemberExpression[Identifier[self].Identifier[increaseBuffer]]()]]
+	AssignmentStatement[33:1-52:13][MemberExpression[33:18-33:22][Identifier[33:1-33:18][PasswordGenerator].Identifier[33:19-33:22][gen]] = Function[33:25-52:13][ =>
+		AssignmentStatement[34:5-34:14][Identifier[34:5-34:7][me] = Identifier[34:10-34:14][self]]
+		AssignmentStatement[35:5-35:34][Identifier[35:5-35:22][currentCharBuffer] = MemberExpression[35:27-35:34][Identifier[35:25-35:27][me].Identifier[35:28-35:34][buffer]]]
+		AssignmentStatement[36:5-36:40][Identifier[36:5-36:24][generatorCharacters] = MemberExpression[36:29-36:40][Identifier[36:27-36:29][me].Identifier[36:30-36:40][characters]]]
+		AssignmentStatement[37:5-37:18][Identifier[37:5-37:13][password] = Literal[37:16-37:18][]]
+		AssignmentStatement[38:5-38:14][Identifier[38:5-38:10][index] = Literal[38:13-38:14][0]]
+		WhileStatement[40:5-45:14][BinaryExpression[40:11-40:40][Identifier[40:11-40:16][index] < MemberExpression[40:36-40:40][Identifier[40:19-40:36][currentCharBuffer].Identifier[40:37-40:40][len]]]
+			AssignmentStatement[41:9-41:43][Identifier[41:9-41:16][pointer] = IndexExpression[41:36-41:43][Identifier[41:19-41:36][currentCharBuffer][Identifier[41:37-41:42][index]]]]
+			AssignmentStatement[42:9-42:59][Identifier[42:9-42:17][password] = BinaryExpression[42:20-42:59][Identifier[42:20-42:28][password] + IndexExpression[42:50-42:59][Identifier[42:31-42:50][generatorCharacters][Identifier[42:51-42:58][pointer]]]]]
+			IfStatement[43:9-43:75][
+				IfShortcutClause[43:9-43:75][BinaryExpression[43:13-43:47][Identifier[43:13-43:18][index] == BinaryExpression[43:22-43:47][MemberExpression[43:39-43:43][Identifier[43:22-43:39][currentCharBuffer].Identifier[43:40-43:43][len]] - Literal[43:46-43:47][1]]]
+					CallExpression[43:73-43:75][MemberExpression[43:58-43:73][Identifier[43:54-43:58][self].Identifier[43:59-43:73][increaseBuffer]]()]
 				]
 			]
-			44: AssignmentStatement[Identifier[index] = BinaryExpression[Identifier[index] + Literal[1]]]
+			AssignmentStatement[44:9-44:26][Identifier[44:9-44:14][index] = BinaryExpression[44:17-44:26][Identifier[44:17-44:22][index] + Literal[44:25-44:26][1]]]
 		]
-		47: IfStatement[
-			47: IfClause[BinaryExpression[MemberExpression[Identifier[currentCharBuffer].Identifier[len]] > MemberExpression[Identifier[me].Identifier[MAX_PASSWORD_LENGTH]]]
-				48: ReturnStatement[Literal[null]]
+		IfStatement[47:5-49:11][
+			IfClause[47:5-49:11][BinaryExpression[47:9-47:55][MemberExpression[47:26-47:30][Identifier[47:9-47:26][currentCharBuffer].Identifier[47:27-47:30][len]] > MemberExpression[47:35-47:55][Identifier[47:33-47:35][me].Identifier[47:36-47:55][MAX_PASSWORD_LENGTH]]]
+				ReturnStatement[48:9-48:20][Literal[48:16-48:20][null]]
 			]
 		]
-		51: ReturnStatement[Identifier[password]]
+		ReturnStatement[51:5-51:20][Identifier[51:12-51:20][password]]
 	]]
-	54: AssignmentStatement[Identifier[pgen] = CallExpression[MemberExpression[UnaryExpression[new Identifier[PasswordGenerator]].Identifier[constructor]]()]]
-	56: AssignmentStatement[Identifier[index] = Literal[0]]
-	57: AssignmentStatement[Identifier[max] = Literal[10]]
-	58: AssignmentStatement[Identifier[result] = ListConstructor[]]
-	60: WhileStatement[BinaryExpression[Identifier[index] < Identifier[max]]
-		61: CallStatment[CallExpression[MemberExpression[Identifier[result].Identifier[push]](CallExpression[MemberExpression[Identifier[pgen].Identifier[gen]]()])]]
-		62: AssignmentStatement[Identifier[index] = BinaryExpression[Identifier[index] + Literal[1]]]
+	AssignmentStatement[54:1-54:45][Identifier[54:1-54:5][pgen] = CallExpression[54:43-54:45][MemberExpression[54:31-54:43][UnaryExpression[54:9-54:30][new Identifier[54:13-54:30][PasswordGenerator]].Identifier[54:32-54:43][constructor]]()]]
+	AssignmentStatement[56:1-56:10][Identifier[56:1-56:6][index] = Literal[56:9-56:10][0]]
+	AssignmentStatement[57:1-57:9][Identifier[57:1-57:4][max] = Literal[57:7-57:9][10]]
+	AssignmentStatement[58:1-58:12][Identifier[58:1-58:7][result] = ListConstructor[58:10-58:12][]]
+	WhileStatement[60:1-63:10][BinaryExpression[60:8-60:19][Identifier[60:8-60:13][index] < Identifier[60:16-60:19][max]]
+		CallExpression[61:16-61:28][MemberExpression[61:11-61:16][Identifier[61:5-61:11][result].Identifier[61:12-61:16][push]](CallExpression[61:25-61:27][MemberExpression[61:21-61:25][Identifier[61:17-61:21][pgen].Identifier[61:22-61:25][gen]]()])]
+		AssignmentStatement[62:5-62:22][Identifier[62:5-62:10][index] = BinaryExpression[62:13-62:22][Identifier[62:13-62:18][index] + Literal[62:21-62:22][1]]]
 	]
-	65: CallStatment[CallExpression[Identifier[print](Identifier[result])]]
-]"
-`;
-
-exports[`parse default scripts password-generator.src unsafe 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[PasswordGenerator] = MapConstructor[]]
-	3: AssignmentStatement[MemberExpression[Identifier[PasswordGenerator].Identifier[MAX_PASSWORD_LENGTH]] = Literal[15]]
-	4: AssignmentStatement[MemberExpression[Identifier[PasswordGenerator].Identifier[ALPHABETIC_CHARACTERS]] = Literal[qwertzuiopasdfghjklyxcvbnm]]
-	5: AssignmentStatement[MemberExpression[Identifier[PasswordGenerator].Identifier[NUMBER_CHARACTERS]] = Literal[0123456789]]
-	6: AssignmentStatement[MemberExpression[Identifier[PasswordGenerator].Identifier[ALPHA_NUMERIC]] = BinaryExpression[BinaryExpression[MemberExpression[Identifier[PasswordGenerator].Identifier[ALPHABETIC_CHARACTERS]] + MemberExpression[MemberExpression[Identifier[PasswordGenerator].Identifier[ALPHABETIC_CHARACTERS]].Identifier[upper]]] + MemberExpression[Identifier[PasswordGenerator].Identifier[NUMBER_CHARACTERS]]]]
-	8: AssignmentStatement[MemberExpression[Identifier[PasswordGenerator].Identifier[constructor]] = Function[ =>
-		9: AssignmentStatement[Identifier[me] = Identifier[self]]
-		10: AssignmentStatement[MemberExpression[Identifier[me].Identifier[buffer]] = ListConstructor[
-			10: ListValue[Literal[0]]
-		]]
-		11: AssignmentStatement[MemberExpression[Identifier[me].Identifier[characters]] = MemberExpression[Identifier[me].Identifier[ALPHA_NUMERIC]]]
-		12: ReturnStatement[Identifier[me]]
-	]]
-	15: AssignmentStatement[MemberExpression[Identifier[PasswordGenerator].Identifier[increaseBuffer]] = Function[Identifier[i] =>
-		16: AssignmentStatement[Identifier[me] = Identifier[self]]
-		17: AssignmentStatement[Identifier[currentCharBuffer] = MemberExpression[Identifier[me].Identifier[buffer]]]
-		18: AssignmentStatement[Identifier[maxBufferSize] = MemberExpression[MemberExpression[Identifier[me].Identifier[characters]].Identifier[len]]]
-		19: IfStatement[
-			19: IfShortcutClause[BinaryExpression[Identifier[i] == Literal[null]]
-				19: AssignmentStatement[Identifier[i] = BinaryExpression[MemberExpression[Identifier[currentCharBuffer].Identifier[len]] - Literal[1]]]
-			]
-		]
-		20: AssignmentStatement[Identifier[p] = IndexExpression[Identifier[currentCharBuffer][Identifier[i]]]]
-		21: AssignmentStatement[Identifier[p] = BinaryExpression[Identifier[p] + Literal[1]]]
-		22: AssignmentStatement[IndexExpression[Identifier[currentCharBuffer][Identifier[i]]] = Identifier[p]]
-		23: IfStatement[
-			23: IfClause[BinaryExpression[Identifier[p] == Identifier[maxBufferSize]]
-				24: AssignmentStatement[IndexExpression[Identifier[currentCharBuffer][Identifier[i]]] = Literal[0]]
-				25: IfStatement[
-					25: IfClause[BinaryExpression[Identifier[i] == Literal[0]]
-						26: CallStatment[CallExpression[MemberExpression[Identifier[currentCharBuffer].Identifier[push]](Literal[0])]]
-					]
-					27: ElseClause[
-						28: CallStatment[CallExpression[MemberExpression[Identifier[me].Identifier[increaseBuffer]](BinaryExpression[Identifier[i] - Literal[1]])]]
-					}]
-				]
-			]
-		]
-	]]
-	33: AssignmentStatement[MemberExpression[Identifier[PasswordGenerator].Identifier[gen]] = Function[ =>
-		34: AssignmentStatement[Identifier[me] = Identifier[self]]
-		35: AssignmentStatement[Identifier[currentCharBuffer] = MemberExpression[Identifier[me].Identifier[buffer]]]
-		36: AssignmentStatement[Identifier[generatorCharacters] = MemberExpression[Identifier[me].Identifier[characters]]]
-		37: AssignmentStatement[Identifier[password] = Literal[]]
-		38: AssignmentStatement[Identifier[index] = Literal[0]]
-		40: WhileStatement[BinaryExpression[Identifier[index] < MemberExpression[Identifier[currentCharBuffer].Identifier[len]]]
-			41: AssignmentStatement[Identifier[pointer] = IndexExpression[Identifier[currentCharBuffer][Identifier[index]]]]
-			42: AssignmentStatement[Identifier[password] = BinaryExpression[Identifier[password] + IndexExpression[Identifier[generatorCharacters][Identifier[pointer]]]]]
-			43: IfStatement[
-				43: IfShortcutClause[BinaryExpression[Identifier[index] == BinaryExpression[MemberExpression[Identifier[currentCharBuffer].Identifier[len]] - Literal[1]]]
-					43: CallStatment[CallExpression[MemberExpression[Identifier[self].Identifier[increaseBuffer]]()]]
-				]
-			]
-			44: AssignmentStatement[Identifier[index] = BinaryExpression[Identifier[index] + Literal[1]]]
-		]
-		47: IfStatement[
-			47: IfClause[BinaryExpression[MemberExpression[Identifier[currentCharBuffer].Identifier[len]] > MemberExpression[Identifier[me].Identifier[MAX_PASSWORD_LENGTH]]]
-				48: ReturnStatement[Literal[null]]
-			]
-		]
-		51: ReturnStatement[Identifier[password]]
-	]]
-	54: AssignmentStatement[Identifier[pgen] = CallExpression[MemberExpression[UnaryExpression[new Identifier[PasswordGenerator]].Identifier[constructor]]()]]
-	56: AssignmentStatement[Identifier[index] = Literal[0]]
-	57: AssignmentStatement[Identifier[max] = Literal[10]]
-	58: AssignmentStatement[Identifier[result] = ListConstructor[]]
-	60: WhileStatement[BinaryExpression[Identifier[index] < Identifier[max]]
-		61: CallStatment[CallExpression[MemberExpression[Identifier[result].Identifier[push]](CallExpression[MemberExpression[Identifier[pgen].Identifier[gen]]()])]]
-		62: AssignmentStatement[Identifier[index] = BinaryExpression[Identifier[index] + Literal[1]]]
-	]
-	65: CallStatment[CallExpression[Identifier[print](Identifier[result])]]
+	CallExpression[65:6-65:14][Identifier[65:1-65:6][print](Identifier[65:7-65:13][result])]
 ]"
 `;
 
 exports[`parse default scripts pseudo-crypto.src 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[String] = MapConstructor[]]
-	3: AssignmentStatement[MemberExpression[Identifier[String].Identifier[constructor]] = Function[Identifier[str] =>
-		4: AssignmentStatement[MemberExpression[Identifier[self].Identifier[str]] = Identifier[str]]
-		5: ReturnStatement[Identifier[self]]
+"Chunk[1:1-213:1][
+	AssignmentStatement[1:1-1:12][Identifier[1:1-1:7][String] = MapConstructor[1:10-1:12][]]
+	AssignmentStatement[3:1-6:13][MemberExpression[3:7-3:19][Identifier[3:1-3:7][String].Identifier[3:8-3:19][constructor]] = Function[3:22-6:13][Identifier[3:31-3:34][str] =>
+		AssignmentStatement[4:5-4:19][MemberExpression[4:9-4:13][Identifier[4:5-4:9][self].Identifier[4:10-4:13][str]] = Identifier[4:16-4:19][str]]
+		ReturnStatement[5:5-5:16][Identifier[5:12-5:16][self]]
 	]]
-	8: AssignmentStatement[MemberExpression[Identifier[String].Identifier[parse]] = Function[Identifier[values] =>
-		9: AssignmentStatement[Identifier[result] = MemberExpression[Identifier[self].Identifier[str]]]
-		10: AssignmentStatement[Identifier[index] = Literal[0]]
-		11: AssignmentStatement[Identifier[maxIndex] = MemberExpression[Identifier[values].Identifier[len]]]
-		13: WhileStatement[BinaryExpression[Identifier[index] < Identifier[maxIndex]]
-			14: AssignmentStatement[Identifier[result] = CallExpression[MemberExpression[Identifier[result].Identifier[replace]](BinaryExpression[Literal[$] + Identifier[index]], IndexExpression[Identifier[values][Identifier[index]]])]]
-			15: AssignmentStatement[Identifier[index] = BinaryExpression[Identifier[index] + Literal[1]]]
+	AssignmentStatement[8:1-19:13][MemberExpression[8:7-8:13][Identifier[8:1-8:7][String].Identifier[8:8-8:13][parse]] = Function[8:16-19:13][Identifier[8:25-8:31][values] =>
+		AssignmentStatement[9:5-9:22][Identifier[9:5-9:11][result] = MemberExpression[9:18-9:22][Identifier[9:14-9:18][self].Identifier[9:19-9:22][str]]]
+		AssignmentStatement[10:5-10:14][Identifier[10:5-10:10][index] = Literal[10:13-10:14][0]]
+		AssignmentStatement[11:5-11:26][Identifier[11:5-11:13][maxIndex] = MemberExpression[11:22-11:26][Identifier[11:16-11:22][values].Identifier[11:23-11:26][len]]]
+		WhileStatement[13:5-16:14][BinaryExpression[13:11-13:27][Identifier[13:11-13:16][index] < Identifier[13:19-13:27][maxIndex]]
+			AssignmentStatement[14:9-14:58][Identifier[14:9-14:15][result] = CallExpression[14:32-14:58][MemberExpression[14:24-14:32][Identifier[14:18-14:24][result].Identifier[14:25-14:32][replace]](BinaryExpression[14:33-14:42][Literal[14:33-14:36][$] + Identifier[14:37-14:42][index]], IndexExpression[14:50-14:57][Identifier[14:44-14:50][values][Identifier[14:51-14:56][index]]])]]
+			AssignmentStatement[15:9-15:26][Identifier[15:9-15:14][index] = BinaryExpression[15:17-15:26][Identifier[15:17-15:22][index] + Literal[15:25-15:26][1]]]
 		]
-		18: ReturnStatement[CallExpression[MemberExpression[UnaryExpression[new Identifier[self]].Identifier[constructor]](Identifier[result])]]
+		ReturnStatement[18:5-18:42][CallExpression[18:34-18:42][MemberExpression[18:22-18:34][UnaryExpression[18:13-18:21][new Identifier[18:17-18:21][self]].Identifier[18:23-18:34][constructor]](Identifier[18:35-18:41][result])]]
 	]]
-	21: AssignmentStatement[MemberExpression[Identifier[String].Identifier[startsWith]] = Function[Identifier[str] =>
-		22: ReturnStatement[BinaryExpression[CallExpression[MemberExpression[MemberExpression[Identifier[self].Identifier[str]].Identifier[indexOf]](Identifier[str])] == Literal[0]]]
+	AssignmentStatement[21:1-23:13][MemberExpression[21:7-21:18][Identifier[21:1-21:7][String].Identifier[21:8-21:18][startsWith]] = Function[21:21-23:13][Identifier[21:30-21:33][str] =>
+		ReturnStatement[22:5-22:38][BinaryExpression[22:12-22:38][CallExpression[22:28-22:33][MemberExpression[22:20-22:28][MemberExpression[22:16-22:20][Identifier[22:12-22:16][self].Identifier[22:17-22:20][str]].Identifier[22:21-22:28][indexOf]](Identifier[22:29-22:32][str])] == Literal[22:37-22:38][0]]]
 	]]
-	25: AssignmentStatement[MemberExpression[Identifier[String].Identifier[substr]] = Function[Identifier[startIndex], Identifier[endIndex] =>
-		26: ReturnStatement[CallExpression[MemberExpression[UnaryExpression[new Identifier[self]].Identifier[constructor]](CallExpression[Identifier[slice](MemberExpression[Identifier[self].Identifier[str]], Identifier[startIndex], Identifier[endIndex])])]]
+	AssignmentStatement[25:1-27:13][MemberExpression[25:7-25:14][Identifier[25:1-25:7][String].Identifier[25:8-25:14][substr]] = Function[25:17-27:13][Identifier[25:26-25:36][startIndex], Identifier[25:38-25:46][endIndex] =>
+		ReturnStatement[26:5-26:73][CallExpression[26:34-26:73][MemberExpression[26:22-26:34][UnaryExpression[26:13-26:21][new Identifier[26:17-26:21][self]].Identifier[26:23-26:34][constructor]](CallExpression[26:40-26:72][Identifier[26:35-26:40][slice](MemberExpression[26:45-26:49][Identifier[26:41-26:45][self].Identifier[26:46-26:49][str]], Identifier[26:51-26:61][startIndex], Identifier[26:63-26:71][endIndex])])]]
 	]]
-	29: AssignmentStatement[MemberExpression[Identifier[String].Identifier[indexOf]] = Function[Identifier[str] =>
-		30: ReturnStatement[CallExpression[MemberExpression[MemberExpression[Identifier[self].Identifier[str]].Identifier[indexOf]](Identifier[str])]]
+	AssignmentStatement[29:1-31:13][MemberExpression[29:7-29:15][Identifier[29:1-29:7][String].Identifier[29:8-29:15][indexOf]] = Function[29:18-31:13][Identifier[29:27-29:30][str] =>
+		ReturnStatement[30:5-30:33][CallExpression[30:28-30:33][MemberExpression[30:20-30:28][MemberExpression[30:16-30:20][Identifier[30:12-30:16][self].Identifier[30:17-30:20][str]].Identifier[30:21-30:28][indexOf]](Identifier[30:29-30:32][str])]]
 	]]
-	33: AssignmentStatement[MemberExpression[Identifier[String].Identifier[replace]] = Function[Identifier[str], Identifier[newStr] =>
-		34: ReturnStatement[CallExpression[MemberExpression[UnaryExpression[new Identifier[self]].Identifier[constructor]](CallExpression[MemberExpression[MemberExpression[Identifier[self].Identifier[str]].Identifier[replace]](Identifier[str], Identifier[newStr])])]]
+	AssignmentStatement[33:1-35:13][MemberExpression[33:7-33:15][Identifier[33:1-33:7][String].Identifier[33:8-33:15][replace]] = Function[33:18-35:13][Identifier[33:27-33:30][str], Identifier[33:32-33:38][newStr] =>
+		ReturnStatement[34:5-34:65][CallExpression[34:34-34:65][MemberExpression[34:22-34:34][UnaryExpression[34:13-34:21][new Identifier[34:17-34:21][self]].Identifier[34:23-34:34][constructor]](CallExpression[34:51-34:64][MemberExpression[34:43-34:51][MemberExpression[34:39-34:43][Identifier[34:35-34:39][self].Identifier[34:40-34:43][str]].Identifier[34:44-34:51][replace]](Identifier[34:52-34:55][str], Identifier[34:57-34:63][newStr])])]]
 	]]
-	37: AssignmentStatement[MemberExpression[Identifier[String].Identifier[remove]] = Function[Identifier[str] =>
-		38: ReturnStatement[CallExpression[MemberExpression[UnaryExpression[new Identifier[self]].Identifier[constructor]](CallExpression[MemberExpression[MemberExpression[Identifier[self].Identifier[str]].Identifier[remove]](Identifier[str])])]]
+	AssignmentStatement[37:1-39:13][MemberExpression[37:7-37:14][Identifier[37:1-37:7][String].Identifier[37:8-37:14][remove]] = Function[37:17-39:13][Identifier[37:26-37:29][str] =>
+		ReturnStatement[38:5-38:56][CallExpression[38:34-38:56][MemberExpression[38:22-38:34][UnaryExpression[38:13-38:21][new Identifier[38:17-38:21][self]].Identifier[38:23-38:34][constructor]](CallExpression[38:50-38:55][MemberExpression[38:43-38:50][MemberExpression[38:39-38:43][Identifier[38:35-38:39][self].Identifier[38:40-38:43][str]].Identifier[38:44-38:50][remove]](Identifier[38:51-38:54][str])])]]
 	]]
-	41: AssignmentStatement[MemberExpression[Identifier[String].Identifier[toString]] = Function[ =>
-		42: ReturnStatement[MemberExpression[Identifier[self].Identifier[str]]]
+	AssignmentStatement[41:1-43:13][MemberExpression[41:7-41:16][Identifier[41:1-41:7][String].Identifier[41:8-41:16][toString]] = Function[41:19-43:13][ =>
+		ReturnStatement[42:5-42:20][MemberExpression[42:16-42:20][Identifier[42:12-42:16][self].Identifier[42:17-42:20][str]]]
 	]]
-	45: AssignmentStatement[MemberExpression[Identifier[String].Identifier[length]] = Function[ =>
-		46: ReturnStatement[MemberExpression[MemberExpression[Identifier[self].Identifier[str]].Identifier[len]]]
+	AssignmentStatement[45:1-47:13][MemberExpression[45:7-45:14][Identifier[45:1-45:7][String].Identifier[45:8-45:14][length]] = Function[45:17-47:13][ =>
+		ReturnStatement[46:5-46:24][MemberExpression[46:20-46:24][MemberExpression[46:16-46:20][Identifier[46:12-46:16][self].Identifier[46:17-46:20][str]].Identifier[46:21-46:24][len]]]
 	]]
-	49: AssignmentStatement[MemberExpression[Identifier[String].Identifier[split]] = Function[Identifier[seperator] =>
-		50: ReturnStatement[CallExpression[MemberExpression[MemberExpression[Identifier[self].Identifier[str]].Identifier[split]](Identifier[seperator])]]
+	AssignmentStatement[49:1-51:13][MemberExpression[49:7-49:13][Identifier[49:1-49:7][String].Identifier[49:8-49:13][split]] = Function[49:16-51:13][Identifier[49:25-49:34][seperator] =>
+		ReturnStatement[50:5-50:37][CallExpression[50:26-50:37][MemberExpression[50:20-50:26][MemberExpression[50:16-50:20][Identifier[50:12-50:16][self].Identifier[50:17-50:20][str]].Identifier[50:21-50:26][split]](Identifier[50:27-50:36][seperator])]]
 	]]
-	53: AssignmentStatement[MemberExpression[Identifier[String].Identifier[trim]] = Function[Identifier[seperator] =>
-		54: ReturnStatement[CallExpression[MemberExpression[UnaryExpression[new Identifier[self]].Identifier[constructor]](CallExpression[MemberExpression[MemberExpression[Identifier[self].Identifier[str]].Identifier[trim]]()])]]
+	AssignmentStatement[53:1-55:13][MemberExpression[53:7-53:12][Identifier[53:1-53:7][String].Identifier[53:8-53:12][trim]] = Function[53:15-55:13][Identifier[53:24-53:33][seperator] =>
+		ReturnStatement[54:5-54:51][CallExpression[54:34-54:51][MemberExpression[54:22-54:34][UnaryExpression[54:13-54:21][new Identifier[54:17-54:21][self]].Identifier[54:23-54:34][constructor]](CallExpression[54:48-54:50][MemberExpression[54:43-54:48][MemberExpression[54:39-54:43][Identifier[54:35-54:39][self].Identifier[54:40-54:43][str]].Identifier[54:44-54:48][trim]]()])]]
 	]]
-	57: AssignmentStatement[Identifier[Error] = MapConstructor[]]
-	59: AssignmentStatement[MemberExpression[Identifier[Error].Identifier[String]] = Identifier[String]]
-	61: AssignmentStatement[MemberExpression[Identifier[Error].Identifier[constructor]] = Function[Identifier[message], Identifier[values] =>
-		62: AssignmentStatement[Identifier[m] = Identifier[self]]
-		63: AssignmentStatement[MemberExpression[Identifier[m].Identifier[message]] = Identifier[message]]
-		64: IfStatement[
-			64: IfClause[BinaryExpression[Identifier[values] != Literal[null]]
-				65: AssignmentStatement[MemberExpression[Identifier[m].Identifier[message]] = CallExpression[MemberExpression[CallExpression[MemberExpression[CallExpression[MemberExpression[UnaryExpression[new MemberExpression[Identifier[m].Identifier[String]]].Identifier[constructor]](Identifier[message])].Identifier[parse]](Identifier[values])].Identifier[toString]]()]]
+	AssignmentStatement[57:1-57:11][Identifier[57:1-57:6][Error] = MapConstructor[57:9-57:11][]]
+	AssignmentStatement[59:1-59:22][MemberExpression[59:6-59:13][Identifier[59:1-59:6][Error].Identifier[59:7-59:13][String]] = Identifier[59:16-59:22][String]]
+	AssignmentStatement[61:1-68:13][MemberExpression[61:6-61:18][Identifier[61:1-61:6][Error].Identifier[61:7-61:18][constructor]] = Function[61:21-68:13][Identifier[61:30-61:37][message], Identifier[61:39-61:45][values] =>
+		AssignmentStatement[62:5-62:13][Identifier[62:5-62:6][m] = Identifier[62:9-62:13][self]]
+		AssignmentStatement[63:5-63:24][MemberExpression[63:6-63:14][Identifier[63:5-63:6][m].Identifier[63:7-63:14][message]] = Identifier[63:17-63:24][message]]
+		IfStatement[64:5-66:11][
+			IfClause[64:5-66:11][BinaryExpression[64:9-64:23][Identifier[64:9-64:15][values] != Literal[64:19-64:23][null]]
+				AssignmentStatement[65:9-65:81][MemberExpression[65:10-65:18][Identifier[65:9-65:10][m].Identifier[65:11-65:18][message]] = CallExpression[65:79-65:81][MemberExpression[65:70-65:79][CallExpression[65:62-65:70][MemberExpression[65:56-65:62][CallExpression[65:47-65:56][MemberExpression[65:35-65:47][UnaryExpression[65:22-65:34][new MemberExpression[65:27-65:34][Identifier[65:26-65:27][m].Identifier[65:28-65:34][String]]].Identifier[65:36-65:47][constructor]](Identifier[65:48-65:55][message])].Identifier[65:57-65:62][parse]](Identifier[65:63-65:69][values])].Identifier[65:71-65:79][toString]]()]]
 			]
 		]
-		67: ReturnStatement[Identifier[m]]
+		ReturnStatement[67:5-67:13][Identifier[67:12-67:13][m]]
 	]]
-	70: AssignmentStatement[MemberExpression[Identifier[Error].Identifier[throw]] = Function[ =>
-		71: CallStatment[CallExpression[Identifier[exit](BinaryExpression[BinaryExpression[Literal[<color=#ff0000>] + MemberExpression[Identifier[self].Identifier[message]]] + Literal[</color>]])]]
+	AssignmentStatement[70:1-72:13][MemberExpression[70:6-70:12][Identifier[70:1-70:6][Error].Identifier[70:7-70:12][throw]] = Function[70:15-72:13][ =>
+		CallExpression[71:9-71:56][Identifier[71:5-71:9][exit](BinaryExpression[71:10-71:55][Literal[71:10-71:27][<color=#ff0000>] + BinaryExpression[71:30-71:55][MemberExpression[71:34-71:42][Identifier[71:30-71:34][self].Identifier[71:35-71:42][message]] + Literal[71:45-71:55][</color>]]])]
 	]]
-	74: AssignmentStatement[Identifier[Crypto] = MapConstructor[]]
-	76: AssignmentStatement[MemberExpression[Identifier[Crypto].Identifier[defaultCharset]] = Literal[QWERTZUIOPASDFGHJKLYXCVBNMqwertzuiopasdfghjklyxcvbnm1234567890+-]]
-	77: AssignmentStatement[MemberExpression[Identifier[Crypto].Identifier[defaultSecret]] = Literal[test123]]
-	78: AssignmentStatement[MemberExpression[Identifier[Crypto].Identifier[maxCharCode]] = Literal[55295]]
-	79: AssignmentStatement[MemberExpression[Identifier[Crypto].Identifier[Error]] = Identifier[Error]]
-	81: AssignmentStatement[MemberExpression[Identifier[Crypto].Identifier[constructor]] = Function[Identifier[defaultSecret], Identifier[hashFn], Identifier[charset] =>
-		82: AssignmentStatement[Identifier[me] = Identifier[self]]
-		83: AssignmentStatement[MemberExpression[Identifier[me].Identifier[defaultSecret]] = Identifier[defaultSecret]]
-		84: AssignmentStatement[MemberExpression[Identifier[me].Identifier[table]] = Identifier[charset]]
-		85: AssignmentStatement[MemberExpression[Identifier[me].Identifier[hashFn]] = UnaryExpression[@ Identifier[hashFn]]]
-		86: IfStatement[
-			86: IfShortcutClause[BinaryExpression[UnaryExpression[@ Identifier[hashFn]] == Literal[null]]
-				86: AssignmentStatement[MemberExpression[Identifier[me].Identifier[hashFn]] = UnaryExpression[@ Identifier[md5]]]
+	AssignmentStatement[74:1-74:12][Identifier[74:1-74:7][Crypto] = MapConstructor[74:10-74:12][]]
+	AssignmentStatement[76:1-76:91][MemberExpression[76:7-76:22][Identifier[76:1-76:7][Crypto].Identifier[76:8-76:22][defaultCharset]] = Literal[76:25-76:91][QWERTZUIOPASDFGHJKLYXCVBNMqwertzuiopasdfghjklyxcvbnm1234567890+-]]
+	AssignmentStatement[77:1-77:33][MemberExpression[77:7-77:21][Identifier[77:1-77:7][Crypto].Identifier[77:8-77:21][defaultSecret]] = Literal[77:24-77:33][test123]]
+	AssignmentStatement[78:1-78:27][MemberExpression[78:7-78:19][Identifier[78:1-78:7][Crypto].Identifier[78:8-78:19][maxCharCode]] = Literal[78:22-78:27][55295]]
+	AssignmentStatement[79:1-79:21][MemberExpression[79:7-79:13][Identifier[79:1-79:7][Crypto].Identifier[79:8-79:13][Error]] = Identifier[79:16-79:21][Error]]
+	AssignmentStatement[81:1-90:13][MemberExpression[81:7-81:19][Identifier[81:1-81:7][Crypto].Identifier[81:8-81:19][constructor]] = Function[81:22-90:13][Identifier[81:31-81:44][defaultSecret], Identifier[81:46-81:52][hashFn], Identifier[81:54-81:61][charset] =>
+		AssignmentStatement[82:5-82:14][Identifier[82:5-82:7][me] = Identifier[82:10-82:14][self]]
+		AssignmentStatement[83:5-83:37][MemberExpression[83:7-83:21][Identifier[83:5-83:7][me].Identifier[83:8-83:21][defaultSecret]] = Identifier[83:24-83:37][defaultSecret]]
+		AssignmentStatement[84:5-84:23][MemberExpression[84:7-84:13][Identifier[84:5-84:7][me].Identifier[84:8-84:13][table]] = Identifier[84:16-84:23][charset]]
+		AssignmentStatement[85:5-85:24][MemberExpression[85:7-85:14][Identifier[85:5-85:7][me].Identifier[85:8-85:14][hashFn]] = UnaryExpression[85:17-85:24][@ Identifier[85:18-85:24][hashFn]]]
+		IfStatement[86:5-86:47][
+			IfShortcutClause[86:5-86:47][BinaryExpression[86:9-86:24][UnaryExpression[86:9-86:16][@ Identifier[86:10-86:16][hashFn]] == Literal[86:20-86:24][null]]
+				AssignmentStatement[86:31-86:47][MemberExpression[86:33-86:40][Identifier[86:31-86:33][me].Identifier[86:34-86:40][hashFn]] = UnaryExpression[86:43-86:47][@ Identifier[86:44-86:47][md5]]]
 			]
 		]
-		87: IfStatement[
-			87: IfShortcutClause[BinaryExpression[Identifier[charset] == Literal[null]]
-				87: AssignmentStatement[MemberExpression[Identifier[me].Identifier[table]] = MemberExpression[Identifier[me].Identifier[defaultCharset]]]
+		IfStatement[87:5-87:57][
+			IfShortcutClause[87:5-87:57][BinaryExpression[87:8-87:23][Identifier[87:8-87:15][charset] == Literal[87:19-87:23][null]]
+				AssignmentStatement[87:29-87:57][MemberExpression[87:31-87:37][Identifier[87:29-87:31][me].Identifier[87:32-87:37][table]] = MemberExpression[87:42-87:57][Identifier[87:40-87:42][me].Identifier[87:43-87:57][defaultCharset]]]
 			]
 		]
-		88: IfStatement[
-			88: IfShortcutClause[BinaryExpression[MemberExpression[MemberExpression[Identifier[me].Identifier[table]].Identifier[len]] != Literal[64]]
-				88: CallStatment[CallExpression[MemberExpression[CallExpression[MemberExpression[UnaryExpression[new MemberExpression[Identifier[me].Identifier[Error]]].Identifier[constructor]](Literal[Invalid charset $0...], ListConstructor[
-					88: ListValue[MemberExpression[Identifier[me].Identifier[table]]]
-				])].Identifier[throw]]()]]
+		IfStatement[88:5-88:103][
+			IfShortcutClause[88:5-88:103][BinaryExpression[88:8-88:26][MemberExpression[88:16-88:20][MemberExpression[88:10-88:16][Identifier[88:8-88:10][me].Identifier[88:11-88:16][table]].Identifier[88:17-88:20][len]] != Literal[88:24-88:26][64]]
+				CallExpression[88:101-88:103][MemberExpression[88:95-88:101][CallExpression[88:58-88:95][MemberExpression[88:46-88:58][UnaryExpression[88:33-88:45][new MemberExpression[88:39-88:45][Identifier[88:37-88:39][me].Identifier[88:40-88:45][Error]]].Identifier[88:47-88:58][constructor]](Literal[88:59-88:82][Invalid charset $0...], ListConstructor[88:84-88:94][
+					ListValue[88:87-88:93][MemberExpression[88:87-88:93][Identifier[88:85-88:87][me].Identifier[88:88-88:93][table]]]
+				])].Identifier[88:96-88:101][throw]]()]
 			]
 		]
-		89: ReturnStatement[Identifier[me]]
+		ReturnStatement[89:5-89:14][Identifier[89:12-89:14][me]]
 	]]
-	92: AssignmentStatement[MemberExpression[Identifier[Crypto].Identifier[getHash]] = Function[Identifier[pw] =>
-		93: AssignmentStatement[Identifier[me] = Identifier[self]]
-		94: AssignmentStatement[Identifier[hash] = ListConstructor[]]
-		95: AssignmentStatement[Identifier[x] = CallExpression[MemberExpression[Identifier[me].Identifier[hashFn]](Identifier[pw])]]
-		96: For[Identifier[char] in Identifier[x]
-			97: CallStatment[CallExpression[MemberExpression[Identifier[hash].Identifier[push]](MemberExpression[Identifier[char].Identifier[code]])]]
+	AssignmentStatement[92:1-101:13][MemberExpression[92:7-92:15][Identifier[92:1-92:7][Crypto].Identifier[92:8-92:15][getHash]] = Function[92:18-101:13][Identifier[92:27-92:29][pw] =>
+		AssignmentStatement[93:5-93:14][Identifier[93:5-93:7][me] = Identifier[93:10-93:14][self]]
+		AssignmentStatement[94:5-94:14][Identifier[94:5-94:9][hash] = ListConstructor[94:12-94:14][]]
+		AssignmentStatement[95:5-95:22][Identifier[95:5-95:6][x] = CallExpression[95:18-95:22][MemberExpression[95:11-95:18][Identifier[95:9-95:11][me].Identifier[95:12-95:18][hashFn]](Identifier[95:19-95:21][pw])]]
+		For[96:5-98:12][Identifier[96:9-96:13][char] in Identifier[96:17-96:18][x]
+			CallExpression[97:18-97:29][MemberExpression[97:13-97:18][Identifier[97:9-97:13][hash].Identifier[97:14-97:18][push]](MemberExpression[97:23-97:28][Identifier[97:19-97:23][char].Identifier[97:24-97:28][code]])]
 		]
-		99: CallStatment[MemberExpression[Identifier[hash].Identifier[reverse]]]
-		100: ReturnStatement[Identifier[hash]]
+		MemberExpression[99:9-99:17][Identifier[99:5-99:9][hash].Identifier[99:10-99:17][reverse]]
+		ReturnStatement[100:5-100:16][Identifier[100:12-100:16][hash]]
 	]]
-	103: AssignmentStatement[MemberExpression[Identifier[Crypto].Identifier[encrypt]] = Function[Identifier[str], Identifier[pw] =>
-		104: AssignmentStatement[Identifier[me] = Identifier[self]]
-		105: IfStatement[
-			105: IfShortcutClause[BinaryExpression[Identifier[pw] == Literal[null]]
-				105: AssignmentStatement[Identifier[pw] = MemberExpression[Identifier[me].Identifier[defaultSecret]]]
+	AssignmentStatement[103:1-156:13][MemberExpression[103:7-103:15][Identifier[103:1-103:7][Crypto].Identifier[103:8-103:15][encrypt]] = Function[103:18-156:13][Identifier[103:27-103:30][str], Identifier[103:32-103:34][pw] =>
+		AssignmentStatement[104:5-104:14][Identifier[104:5-104:7][me] = Identifier[104:10-104:14][self]]
+		IfStatement[105:5-105:47][
+			IfShortcutClause[105:5-105:47][BinaryExpression[105:9-105:19][Identifier[105:9-105:11][pw] == Literal[105:15-105:19][null]]
+				AssignmentStatement[105:26-105:47][Identifier[105:26-105:28][pw] = MemberExpression[105:33-105:47][Identifier[105:31-105:33][me].Identifier[105:34-105:47][defaultSecret]]]
 			]
 		]
-		106: AssignmentStatement[Identifier[hash] = CallExpression[MemberExpression[Identifier[me].Identifier[getHash]](Identifier[pw])]]
-		107: AssignmentStatement[Identifier[hashPointer] = Literal[0]]
-		108: AssignmentStatement[Identifier[output] = ListConstructor[]]
-		109: AssignmentStatement[Identifier[position] = Literal[0]]
-		110: AssignmentStatement[Identifier[padding] = BinaryExpression[MemberExpression[Identifier[str].Identifier[len]] % Literal[3]]]
-		111: AssignmentStatement[Identifier[max] = BinaryExpression[MemberExpression[Identifier[str].Identifier[len]] - Identifier[padding]]]
-		112: AssignmentStatement[Identifier[get] = Function[Identifier[v] =>
-			113: IfStatement[
-				113: IfClause[NegationExpression[not CallExpression[MemberExpression[MemberExpression[Identifier[me].Identifier[table]].Identifier[hasIndex]](Identifier[v])]]
-					114: CallStatment[CallExpression[MemberExpression[CallExpression[MemberExpression[UnaryExpression[new MemberExpression[Identifier[me].Identifier[Error]]].Identifier[constructor]](Literal[Invalid index $0...], ListConstructor[
-						114: ListValue[Identifier[v]]
-					])].Identifier[throw]]()]]
+		AssignmentStatement[106:5-106:26][Identifier[106:5-106:9][hash] = CallExpression[106:22-106:26][MemberExpression[106:14-106:22][Identifier[106:12-106:14][me].Identifier[106:15-106:22][getHash]](Identifier[106:23-106:25][pw])]]
+		AssignmentStatement[107:5-107:20][Identifier[107:5-107:16][hashPointer] = Literal[107:19-107:20][0]]
+		AssignmentStatement[108:5-108:16][Identifier[108:5-108:11][output] = ListConstructor[108:14-108:16][]]
+		AssignmentStatement[109:5-109:17][Identifier[109:5-109:13][position] = Literal[109:16-109:17][0]]
+		AssignmentStatement[110:5-110:26][Identifier[110:5-110:12][padding] = BinaryExpression[110:15-110:26][MemberExpression[110:18-110:22][Identifier[110:15-110:18][str].Identifier[110:19-110:22][len]] % Literal[110:25-110:26][3]]]
+		AssignmentStatement[111:5-111:28][Identifier[111:5-111:8][max] = BinaryExpression[111:11-111:28][MemberExpression[111:14-111:18][Identifier[111:11-111:14][str].Identifier[111:15-111:18][len]] - Identifier[111:21-111:28][padding]]]
+		AssignmentStatement[112:5-117:17][Identifier[112:5-112:8][get] = Function[112:11-117:17][Identifier[112:20-112:21][v] =>
+			IfStatement[113:9-115:15][
+				IfClause[113:9-115:15][NegationExpression[113:13-113:37][not CallExpression[113:34-113:37][MemberExpression[113:25-113:34][MemberExpression[113:19-113:25][Identifier[113:17-113:19][me].Identifier[113:20-113:25][table]].Identifier[113:26-113:34][hasIndex]](Identifier[113:35-113:36][v])]]
+					CallExpression[114:73-114:75][MemberExpression[114:67-114:73][CallExpression[114:39-114:67][MemberExpression[114:27-114:39][UnaryExpression[114:14-114:26][new MemberExpression[114:20-114:26][Identifier[114:18-114:20][me].Identifier[114:21-114:26][Error]]].Identifier[114:28-114:39][constructor]](Literal[114:40-114:61][Invalid index $0...], ListConstructor[114:63-114:66][
+						ListValue[114:64-114:65][Identifier[114:64-114:65][v]]
+					])].Identifier[114:68-114:73][throw]]()]
 				]
 			]
-			116: ReturnStatement[IndexExpression[MemberExpression[Identifier[me].Identifier[table]][Identifier[v]]]]
+			ReturnStatement[116:9-116:27][IndexExpression[116:24-116:27][MemberExpression[116:18-116:24][Identifier[116:16-116:18][me].Identifier[116:19-116:24][table]][Identifier[116:25-116:26][v]]]]
 		]]
-		118: AssignmentStatement[Identifier[AND] = Function[Identifier[a], Identifier[b] =>
-			119: ReturnStatement[CallExpression[Identifier[bitwise](Literal[&], Identifier[a], Identifier[b])]]
+		AssignmentStatement[118:5-120:17][Identifier[118:5-118:8][AND] = Function[118:11-120:17][Identifier[118:20-118:21][a], Identifier[118:23-118:24][b] =>
+			ReturnStatement[119:9-119:34][CallExpression[119:23-119:34][Identifier[119:16-119:23][bitwise](Literal[119:24-119:27][&], Identifier[119:29-119:30][a], Identifier[119:32-119:33][b])]]
 		]]
-		121: AssignmentStatement[Identifier[LSHIFT] = Function[Identifier[a], Identifier[b] =>
-			122: ReturnStatement[CallExpression[Identifier[bitwise](Literal[<<], Identifier[a], Identifier[b])]]
+		AssignmentStatement[121:5-123:17][Identifier[121:5-121:11][LSHIFT] = Function[121:14-123:17][Identifier[121:23-121:24][a], Identifier[121:26-121:27][b] =>
+			ReturnStatement[122:9-122:35][CallExpression[122:23-122:35][Identifier[122:16-122:23][bitwise](Literal[122:24-122:28][<<], Identifier[122:30-122:31][a], Identifier[122:33-122:34][b])]]
 		]]
-		124: AssignmentStatement[Identifier[RSHIFT] = Function[Identifier[a], Identifier[b] =>
-			125: ReturnStatement[CallExpression[Identifier[bitwise](Literal[>>], Identifier[a], Identifier[b])]]
+		AssignmentStatement[124:5-126:17][Identifier[124:5-124:11][RSHIFT] = Function[124:14-126:17][Identifier[124:23-124:24][a], Identifier[124:26-124:27][b] =>
+			ReturnStatement[125:9-125:35][CallExpression[125:23-125:35][Identifier[125:16-125:23][bitwise](Literal[125:24-125:28][>>], Identifier[125:30-125:31][a], Identifier[125:33-125:34][b])]]
 		]]
-		127: WhileStatement[BinaryExpression[Identifier[position] < Identifier[max]]
-			128: AssignmentStatement[Identifier[m] = IndexExpression[Identifier[hash][BinaryExpression[BinaryExpression[Identifier[position] % MemberExpression[Identifier[hash].Identifier[len]]] - Literal[1]]]]]
-			129: AssignmentStatement[Identifier[a] = CallExpression[Identifier[LSHIFT](BinaryExpression[MemberExpression[IndexExpression[Identifier[str][Identifier[position]]].Identifier[code]] + Identifier[m]], Literal[16])]]
-			130: AssignmentStatement[Identifier[b] = CallExpression[Identifier[LSHIFT](BinaryExpression[MemberExpression[IndexExpression[Identifier[str][BinaryExpression[Identifier[position] + Literal[1]]]].Identifier[code]] + Identifier[m]], Literal[8])]]
-			131: AssignmentStatement[Identifier[c] = BinaryExpression[MemberExpression[IndexExpression[Identifier[str][BinaryExpression[Identifier[position] + Literal[2]]]].Identifier[code]] + Identifier[m]]]
-			132: AssignmentStatement[Identifier[buffer] = BinaryExpression[BinaryExpression[Identifier[a] + Identifier[b]] + Identifier[c]]]
-			133: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[AND](CallExpression[Identifier[RSHIFT](Identifier[buffer], Literal[18])], Literal[63])])])]]
-			134: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[AND](CallExpression[Identifier[RSHIFT](Identifier[buffer], Literal[12])], Literal[63])])])]]
-			135: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[AND](CallExpression[Identifier[RSHIFT](Identifier[buffer], Literal[6])], Literal[63])])])]]
-			136: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[AND](Identifier[buffer], Literal[63])])])]]
-			137: AssignmentStatement[Identifier[position] = BinaryExpression[Identifier[position] + Literal[3]]]
+		WhileStatement[127:5-138:14][BinaryExpression[127:11-127:25][Identifier[127:11-127:19][position] < Identifier[127:22-127:25][max]]
+			AssignmentStatement[128:9-128:42][Identifier[128:9-128:10][m] = IndexExpression[128:17-128:42][Identifier[128:13-128:17][hash][BinaryExpression[128:18-128:41][BinaryExpression[128:18-128:37][Identifier[128:18-128:26][position] % MemberExpression[128:33-128:37][Identifier[128:29-128:33][hash].Identifier[128:34-128:37][len]]] - Literal[128:40-128:41][1]]]]]
+			AssignmentStatement[129:9-129:47][Identifier[129:9-129:10][a] = CallExpression[129:19-129:47][Identifier[129:13-129:19][LSHIFT](BinaryExpression[129:20-129:42][MemberExpression[129:33-129:38][IndexExpression[129:23-129:33][Identifier[129:20-129:23][str][Identifier[129:24-129:32][position]]].Identifier[129:34-129:38][code]] + Identifier[129:41-129:42][m]], Literal[129:44-129:46][16])]]
+			AssignmentStatement[130:9-130:50][Identifier[130:9-130:10][b] = CallExpression[130:19-130:50][Identifier[130:13-130:19][LSHIFT](BinaryExpression[130:20-130:46][MemberExpression[130:37-130:42][IndexExpression[130:23-130:37][Identifier[130:20-130:23][str][BinaryExpression[130:24-130:36][Identifier[130:24-130:32][position] + Literal[130:35-130:36][1]]]].Identifier[130:38-130:42][code]] + Identifier[130:45-130:46][m]], Literal[130:48-130:49][8])]]
+			AssignmentStatement[131:9-131:39][Identifier[131:9-131:10][c] = BinaryExpression[131:13-131:39][MemberExpression[131:30-131:35][IndexExpression[131:16-131:30][Identifier[131:13-131:16][str][BinaryExpression[131:17-131:29][Identifier[131:17-131:25][position] + Literal[131:28-131:29][2]]]].Identifier[131:31-131:35][code]] + Identifier[131:38-131:39][m]]]
+			AssignmentStatement[132:9-132:27][Identifier[132:9-132:15][buffer] = BinaryExpression[132:18-132:27][Identifier[132:18-132:19][a] + BinaryExpression[132:22-132:27][Identifier[132:22-132:23][b] + Identifier[132:26-132:27][c]]]]
+			CallExpression[133:20-133:54][MemberExpression[133:15-133:20][Identifier[133:9-133:15][output].Identifier[133:16-133:20][push]](CallExpression[133:24-133:53][Identifier[133:21-133:24][get](CallExpression[133:28-133:52][Identifier[133:25-133:28][AND](CallExpression[133:35-133:47][Identifier[133:29-133:35][RSHIFT](Identifier[133:36-133:42][buffer], Literal[133:44-133:46][18])], Literal[133:49-133:51][63])])])]
+			CallExpression[134:20-134:54][MemberExpression[134:15-134:20][Identifier[134:9-134:15][output].Identifier[134:16-134:20][push]](CallExpression[134:24-134:53][Identifier[134:21-134:24][get](CallExpression[134:28-134:52][Identifier[134:25-134:28][AND](CallExpression[134:35-134:47][Identifier[134:29-134:35][RSHIFT](Identifier[134:36-134:42][buffer], Literal[134:44-134:46][12])], Literal[134:49-134:51][63])])])]
+			CallExpression[135:20-135:53][MemberExpression[135:15-135:20][Identifier[135:9-135:15][output].Identifier[135:16-135:20][push]](CallExpression[135:24-135:52][Identifier[135:21-135:24][get](CallExpression[135:28-135:51][Identifier[135:25-135:28][AND](CallExpression[135:35-135:46][Identifier[135:29-135:35][RSHIFT](Identifier[135:36-135:42][buffer], Literal[135:44-135:45][6])], Literal[135:48-135:50][63])])])]
+			CallExpression[136:20-136:42][MemberExpression[136:15-136:20][Identifier[136:9-136:15][output].Identifier[136:16-136:20][push]](CallExpression[136:24-136:41][Identifier[136:21-136:24][get](CallExpression[136:28-136:40][Identifier[136:25-136:28][AND](Identifier[136:29-136:35][buffer], Literal[136:37-136:39][63])])])]
+			AssignmentStatement[137:9-137:32][Identifier[137:9-137:17][position] = BinaryExpression[137:20-137:32][Identifier[137:20-137:28][position] + Literal[137:31-137:32][3]]]
 		]
-		139: IfStatement[
-			139: IfClause[BinaryExpression[Identifier[padding] == Literal[2]]
-				140: AssignmentStatement[Identifier[m] = IndexExpression[Identifier[hash][BinaryExpression[BinaryExpression[Identifier[position] % MemberExpression[Identifier[hash].Identifier[len]]] - Literal[1]]]]]
-				141: AssignmentStatement[Identifier[a] = CallExpression[Identifier[LSHIFT](BinaryExpression[MemberExpression[IndexExpression[Identifier[str][Identifier[position]]].Identifier[code]] + Identifier[m]], Literal[8])]]
-				142: AssignmentStatement[Identifier[b] = BinaryExpression[MemberExpression[IndexExpression[Identifier[str][BinaryExpression[Identifier[position] + Literal[1]]]].Identifier[code]] + Identifier[m]]]
-				143: AssignmentStatement[Identifier[buffer] = BinaryExpression[Identifier[a] + Identifier[b]]]
-				144: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[RSHIFT](Identifier[buffer], Literal[10])])])]]
-				145: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[AND](CallExpression[Identifier[RSHIFT](Identifier[buffer], Literal[4])], Literal[63])])])]]
-				146: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[AND](CallExpression[Identifier[LSHIFT](Identifier[buffer], Literal[2])], Literal[63])])])]]
-				147: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](Literal[=])]]
+		IfStatement[139:5-154:11][
+			IfClause[139:5-148:12][BinaryExpression[139:9-139:21][Identifier[139:9-139:16][padding] == Literal[139:20-139:21][2]]
+				AssignmentStatement[140:9-140:42][Identifier[140:9-140:10][m] = IndexExpression[140:17-140:42][Identifier[140:13-140:17][hash][BinaryExpression[140:18-140:41][BinaryExpression[140:18-140:37][Identifier[140:18-140:26][position] % MemberExpression[140:33-140:37][Identifier[140:29-140:33][hash].Identifier[140:34-140:37][len]]] - Literal[140:40-140:41][1]]]]]
+				AssignmentStatement[141:9-141:46][Identifier[141:9-141:10][a] = CallExpression[141:19-141:46][Identifier[141:13-141:19][LSHIFT](BinaryExpression[141:20-141:42][MemberExpression[141:33-141:38][IndexExpression[141:23-141:33][Identifier[141:20-141:23][str][Identifier[141:24-141:32][position]]].Identifier[141:34-141:38][code]] + Identifier[141:41-141:42][m]], Literal[141:44-141:45][8])]]
+				AssignmentStatement[142:9-142:39][Identifier[142:9-142:10][b] = BinaryExpression[142:13-142:39][MemberExpression[142:30-142:35][IndexExpression[142:16-142:30][Identifier[142:13-142:16][str][BinaryExpression[142:17-142:29][Identifier[142:17-142:25][position] + Literal[142:28-142:29][1]]]].Identifier[142:31-142:35][code]] + Identifier[142:38-142:39][m]]]
+				AssignmentStatement[143:9-143:23][Identifier[143:9-143:15][buffer] = BinaryExpression[143:18-143:23][Identifier[143:18-143:19][a] + Identifier[143:22-143:23][b]]]
+				CallExpression[144:20-144:45][MemberExpression[144:15-144:20][Identifier[144:9-144:15][output].Identifier[144:16-144:20][push]](CallExpression[144:24-144:44][Identifier[144:21-144:24][get](CallExpression[144:31-144:43][Identifier[144:25-144:31][RSHIFT](Identifier[144:32-144:38][buffer], Literal[144:40-144:42][10])])])]
+				CallExpression[145:20-145:53][MemberExpression[145:15-145:20][Identifier[145:9-145:15][output].Identifier[145:16-145:20][push]](CallExpression[145:24-145:52][Identifier[145:21-145:24][get](CallExpression[145:28-145:51][Identifier[145:25-145:28][AND](CallExpression[145:35-145:46][Identifier[145:29-145:35][RSHIFT](Identifier[145:36-145:42][buffer], Literal[145:44-145:45][4])], Literal[145:48-145:50][63])])])]
+				CallExpression[146:20-146:53][MemberExpression[146:15-146:20][Identifier[146:9-146:15][output].Identifier[146:16-146:20][push]](CallExpression[146:24-146:52][Identifier[146:21-146:24][get](CallExpression[146:28-146:51][Identifier[146:25-146:28][AND](CallExpression[146:35-146:46][Identifier[146:29-146:35][LSHIFT](Identifier[146:36-146:42][buffer], Literal[146:44-146:45][2])], Literal[146:48-146:50][63])])])]
+				CallExpression[147:20-147:25][MemberExpression[147:15-147:20][Identifier[147:9-147:15][output].Identifier[147:16-147:20][push]](Literal[147:21-147:24][=])]
 			]
-			148: ElseifClause[BinaryExpression[Identifier[padding] == Literal[1]]
-				149: AssignmentStatement[Identifier[m] = IndexExpression[Identifier[hash][BinaryExpression[BinaryExpression[Identifier[position] % MemberExpression[Identifier[hash].Identifier[len]]] - Literal[1]]]]]
-				150: AssignmentStatement[Identifier[buffer] = BinaryExpression[MemberExpression[IndexExpression[Identifier[str][Identifier[position]]].Identifier[code]] + Identifier[m]]]
-				151: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[RSHIFT](Identifier[buffer], Literal[2])])])]]
-				152: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[AND](CallExpression[Identifier[LSHIFT](Identifier[buffer], Literal[4])], Literal[63])])])]]
-				153: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](Literal[==])]]
+			ElseifClause[148:13-154:11][BinaryExpression[148:14-148:26][Identifier[148:14-148:21][padding] == Literal[148:25-148:26][1]]
+				AssignmentStatement[149:9-149:42][Identifier[149:9-149:10][m] = IndexExpression[149:17-149:42][Identifier[149:13-149:17][hash][BinaryExpression[149:18-149:41][BinaryExpression[149:18-149:37][Identifier[149:18-149:26][position] % MemberExpression[149:33-149:37][Identifier[149:29-149:33][hash].Identifier[149:34-149:37][len]]] - Literal[149:40-149:41][1]]]]]
+				AssignmentStatement[150:9-150:40][Identifier[150:9-150:15][buffer] = BinaryExpression[150:18-150:40][MemberExpression[150:31-150:36][IndexExpression[150:21-150:31][Identifier[150:18-150:21][str][Identifier[150:22-150:30][position]]].Identifier[150:32-150:36][code]] + Identifier[150:39-150:40][m]]]
+				CallExpression[151:20-151:44][MemberExpression[151:15-151:20][Identifier[151:9-151:15][output].Identifier[151:16-151:20][push]](CallExpression[151:24-151:43][Identifier[151:21-151:24][get](CallExpression[151:31-151:42][Identifier[151:25-151:31][RSHIFT](Identifier[151:32-151:38][buffer], Literal[151:40-151:41][2])])])]
+				CallExpression[152:20-152:53][MemberExpression[152:15-152:20][Identifier[152:9-152:15][output].Identifier[152:16-152:20][push]](CallExpression[152:24-152:52][Identifier[152:21-152:24][get](CallExpression[152:28-152:51][Identifier[152:25-152:28][AND](CallExpression[152:35-152:46][Identifier[152:29-152:35][LSHIFT](Identifier[152:36-152:42][buffer], Literal[152:44-152:45][4])], Literal[152:48-152:50][63])])])]
+				CallExpression[153:20-153:26][MemberExpression[153:15-153:20][Identifier[153:9-153:15][output].Identifier[153:16-153:20][push]](Literal[153:21-153:25][==])]
 			]
 		]
-		155: ReturnStatement[CallExpression[MemberExpression[Identifier[output].Identifier[join]](Literal[])]]
+		ReturnStatement[155:5-155:27][CallExpression[155:23-155:27][MemberExpression[155:18-155:23][Identifier[155:12-155:18][output].Identifier[155:19-155:23][join]](Literal[155:24-155:26][])]]
 	]]
-	158: AssignmentStatement[MemberExpression[Identifier[Crypto].Identifier[decrypt]] = Function[Identifier[str], Identifier[pw] =>
-		159: AssignmentStatement[Identifier[me] = Identifier[self]]
-		160: IfStatement[
-			160: IfShortcutClause[BinaryExpression[Identifier[pw] == Literal[null]]
-				160: AssignmentStatement[Identifier[pw] = MemberExpression[Identifier[me].Identifier[defaultSecret]]]
+	AssignmentStatement[158:1-202:13][MemberExpression[158:7-158:15][Identifier[158:1-158:7][Crypto].Identifier[158:8-158:15][decrypt]] = Function[158:18-202:13][Identifier[158:27-158:30][str], Identifier[158:32-158:34][pw] =>
+		AssignmentStatement[159:5-159:14][Identifier[159:5-159:7][me] = Identifier[159:10-159:14][self]]
+		IfStatement[160:5-160:47][
+			IfShortcutClause[160:5-160:47][BinaryExpression[160:9-160:19][Identifier[160:9-160:11][pw] == Literal[160:15-160:19][null]]
+				AssignmentStatement[160:26-160:47][Identifier[160:26-160:28][pw] = MemberExpression[160:33-160:47][Identifier[160:31-160:33][me].Identifier[160:34-160:47][defaultSecret]]]
 			]
 		]
-		161: AssignmentStatement[Identifier[hash] = CallExpression[MemberExpression[Identifier[me].Identifier[getHash]](Identifier[pw])]]
-		162: AssignmentStatement[Identifier[hashPointer] = Literal[0]]
-		163: AssignmentStatement[Identifier[hashLength] = MemberExpression[Identifier[hash].Identifier[len]]]
-		164: AssignmentStatement[Identifier[output] = ListConstructor[]]
-		165: AssignmentStatement[Identifier[bitCounter] = Literal[0]]
-		166: AssignmentStatement[Identifier[bitStorage] = Literal[0]]
-		167: AssignmentStatement[Identifier[position] = Literal[0]]
-		168: AssignmentStatement[Identifier[hashPointer] = Literal[0]]
-		169: AssignmentStatement[Identifier[max] = MemberExpression[Identifier[str].Identifier[len]]]
-		170: AssignmentStatement[Identifier[AND] = Function[Identifier[a], Identifier[b] =>
-			171: ReturnStatement[CallExpression[Identifier[bitwise](Literal[&], Identifier[a], Identifier[b])]]
+		AssignmentStatement[161:5-161:26][Identifier[161:5-161:9][hash] = CallExpression[161:22-161:26][MemberExpression[161:14-161:22][Identifier[161:12-161:14][me].Identifier[161:15-161:22][getHash]](Identifier[161:23-161:25][pw])]]
+		AssignmentStatement[162:5-162:20][Identifier[162:5-162:16][hashPointer] = Literal[162:19-162:20][0]]
+		AssignmentStatement[163:5-163:26][Identifier[163:5-163:15][hashLength] = MemberExpression[163:22-163:26][Identifier[163:18-163:22][hash].Identifier[163:23-163:26][len]]]
+		AssignmentStatement[164:5-164:16][Identifier[164:5-164:11][output] = ListConstructor[164:14-164:16][]]
+		AssignmentStatement[165:5-165:19][Identifier[165:5-165:15][bitCounter] = Literal[165:18-165:19][0]]
+		AssignmentStatement[166:5-166:19][Identifier[166:5-166:15][bitStorage] = Literal[166:18-166:19][0]]
+		AssignmentStatement[167:5-167:17][Identifier[167:5-167:13][position] = Literal[167:16-167:17][0]]
+		AssignmentStatement[168:5-168:20][Identifier[168:5-168:16][hashPointer] = Literal[168:19-168:20][0]]
+		AssignmentStatement[169:5-169:18][Identifier[169:5-169:8][max] = MemberExpression[169:14-169:18][Identifier[169:11-169:14][str].Identifier[169:15-169:18][len]]]
+		AssignmentStatement[170:5-172:17][Identifier[170:5-170:8][AND] = Function[170:11-172:17][Identifier[170:20-170:21][a], Identifier[170:23-170:24][b] =>
+			ReturnStatement[171:9-171:34][CallExpression[171:23-171:34][Identifier[171:16-171:23][bitwise](Literal[171:24-171:27][&], Identifier[171:29-171:30][a], Identifier[171:32-171:33][b])]]
 		]]
-		173: AssignmentStatement[Identifier[RSHIFT] = Function[Identifier[a], Identifier[b] =>
-			174: ReturnStatement[CallExpression[Identifier[bitwise](Literal[>>], Identifier[a], Identifier[b])]]
+		AssignmentStatement[173:5-175:17][Identifier[173:5-173:11][RSHIFT] = Function[173:14-175:17][Identifier[173:23-173:24][a], Identifier[173:26-173:27][b] =>
+			ReturnStatement[174:9-174:35][CallExpression[174:23-174:35][Identifier[174:16-174:23][bitwise](Literal[174:24-174:28][>>], Identifier[174:30-174:31][a], Identifier[174:33-174:34][b])]]
 		]]
-		176: WhileStatement[BinaryExpression[Identifier[position] < Identifier[max]]
-			177: AssignmentStatement[Identifier[buffer] = CallExpression[MemberExpression[MemberExpression[Identifier[me].Identifier[table]].Identifier[indexOf]](IndexExpression[Identifier[str][Identifier[position]]])]]
-			178: AssignmentStatement[Identifier[currentBit] = Identifier[bitCounter]]
-			179: AssignmentStatement[Identifier[bitCounter] = BinaryExpression[Identifier[bitCounter] + Literal[1]]]
-			180: IfStatement[
-				180: IfClause[BinaryExpression[Identifier[currentBit] % Literal[4]]
-					181: AssignmentStatement[Identifier[bitStorage] = BinaryExpression[BinaryExpression[Identifier[bitStorage] * Literal[64]] + Identifier[buffer]]]
+		WhileStatement[176:5-200:14][BinaryExpression[176:11-176:25][Identifier[176:11-176:19][position] < Identifier[176:22-176:25][max]]
+			AssignmentStatement[177:9-177:49][Identifier[177:9-177:15][buffer] = CallExpression[177:34-177:49][MemberExpression[177:26-177:34][MemberExpression[177:20-177:26][Identifier[177:18-177:20][me].Identifier[177:21-177:26][table]].Identifier[177:27-177:34][indexOf]](IndexExpression[177:38-177:48][Identifier[177:35-177:38][str][Identifier[177:39-177:47][position]]])]]
+			AssignmentStatement[178:9-178:32][Identifier[178:9-178:19][currentBit] = Identifier[178:22-178:32][bitCounter]]
+			AssignmentStatement[179:9-179:36][Identifier[179:9-179:19][bitCounter] = BinaryExpression[179:22-179:36][Identifier[179:22-179:32][bitCounter] + Literal[179:35-179:36][1]]]
+			IfStatement[180:9-184:15][
+				IfClause[180:9-182:13][BinaryExpression[180:13-180:27][Identifier[180:13-180:23][currentBit] % Literal[180:26-180:27][4]]
+					AssignmentStatement[181:13-181:50][Identifier[181:13-181:23][bitStorage] = BinaryExpression[181:26-181:50][BinaryExpression[181:26-181:41][Identifier[181:26-181:36][bitStorage] * Literal[181:39-181:41][64]] + Identifier[181:44-181:50][buffer]]]
 				]
-				182: ElseClause[
-					183: AssignmentStatement[Identifier[bitStorage] = Identifier[buffer]]
+				ElseClause[182:13-184:15][
+					AssignmentStatement[183:13-183:32][Identifier[183:13-183:23][bitStorage] = Identifier[183:26-183:32][buffer]]
 				}]
 			]
-			185: IfStatement[
-				185: IfClause[BinaryExpression[Identifier[currentBit] % Literal[4]]
-					186: AssignmentStatement[Identifier[expectedHashIndex] = BinaryExpression[BinaryExpression[BinaryExpression[CallExpression[Identifier[floor](BinaryExpression[Identifier[hashPointer] / Literal[3]])] * Literal[3]] % Identifier[hashLength]] - Literal[1]]]
-					187: IfStatement[
-						187: IfShortcutClause[NegationExpression[not CallExpression[MemberExpression[Identifier[hash].Identifier[hasIndex]](Identifier[expectedHashIndex])]]
-							187: BreakStatement[]
+			IfStatement[185:9-198:15][
+				IfClause[185:9-198:15][BinaryExpression[185:13-185:27][Identifier[185:13-185:23][currentBit] % Literal[185:26-185:27][4]]
+					AssignmentStatement[186:13-186:78][Identifier[186:13-186:30][expectedHashIndex] = BinaryExpression[186:33-186:78][BinaryExpression[186:33-186:74][BinaryExpression[186:34-186:60][CallExpression[186:39-186:56][Identifier[186:34-186:39][floor](BinaryExpression[186:40-186:55][Identifier[186:40-186:51][hashPointer] / Literal[186:54-186:55][3]])] * Literal[186:59-186:60][3]] % Identifier[186:64-186:74][hashLength]] - Literal[186:77-186:78][1]]]
+					IfStatement[187:13-187:65][
+						IfShortcutClause[187:13-187:65][NegationExpression[187:17-187:53][not CallExpression[187:34-187:53][MemberExpression[187:25-187:34][Identifier[187:21-187:25][hash].Identifier[187:26-187:34][hasIndex]](Identifier[187:35-187:52][expectedHashIndex])]]
+							BreakStatement[187:60-187:65][]
 						]
 					]
-					188: AssignmentStatement[Identifier[m] = IndexExpression[Identifier[hash][Identifier[expectedHashIndex]]]]
-					189: AssignmentStatement[Identifier[operation] = CallExpression[Identifier[AND](BinaryExpression[BinaryNegatedExpression[- Literal[2]] * Identifier[bitCounter]], Literal[6])]]
-					190: AssignmentStatement[Identifier[operation] = CallExpression[Identifier[RSHIFT](Identifier[bitStorage], Identifier[operation])]]
-					191: AssignmentStatement[Identifier[operation] = CallExpression[Identifier[AND](Literal[255], Identifier[operation])]]
-					192: IfStatement[
-						192: IfClause[BinaryExpression[Identifier[operation] != Literal[0]]
-							193: AssignmentStatement[Identifier[charCode] = BinaryExpression[Identifier[operation] - Identifier[m]]]
-							194: IfStatement[
-								194: IfShortcutClause[BinaryExpression[Identifier[charCode] > MemberExpression[Identifier[me].Identifier[maxCharCode]]]
-									194: BreakStatement[]
+					AssignmentStatement[188:13-188:40][Identifier[188:13-188:14][m] = IndexExpression[188:21-188:40][Identifier[188:17-188:21][hash][Identifier[188:22-188:39][expectedHashIndex]]]]
+					AssignmentStatement[189:13-189:48][Identifier[189:13-189:22][operation] = CallExpression[189:28-189:48][Identifier[189:25-189:28][AND](BinaryExpression[189:29-189:44][BinaryNegatedExpression[189:29-189:31][- Literal[189:30-189:31][2]] * Identifier[189:34-189:44][bitCounter]], Literal[189:46-189:47][6])]]
+					AssignmentStatement[190:13-190:54][Identifier[190:13-190:22][operation] = CallExpression[190:31-190:54][Identifier[190:25-190:31][RSHIFT](Identifier[190:32-190:42][bitStorage], Identifier[190:44-190:53][operation])]]
+					AssignmentStatement[191:13-191:44][Identifier[191:13-191:22][operation] = CallExpression[191:28-191:44][Identifier[191:25-191:28][AND](Literal[191:29-191:32][255], Identifier[191:34-191:43][operation])]]
+					IfStatement[192:13-196:19][
+						IfClause[192:13-196:19][BinaryExpression[192:17-192:31][Identifier[192:17-192:26][operation] != Literal[192:30-192:31][0]]
+							AssignmentStatement[193:17-193:41][Identifier[193:17-193:25][charCode] = BinaryExpression[193:28-193:41][Identifier[193:28-193:37][operation] - Identifier[193:40-193:41][m]]]
+							IfStatement[194:17-194:58][
+								IfShortcutClause[194:17-194:58][BinaryExpression[194:21-194:46][Identifier[194:21-194:29][charCode] > MemberExpression[194:34-194:46][Identifier[194:32-194:34][me].Identifier[194:35-194:46][maxCharCode]]]
+									BreakStatement[194:53-194:58][]
 								]
 							]
-							195: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[char](Identifier[charCode])])]]
+							CallExpression[195:28-195:44][MemberExpression[195:23-195:28][Identifier[195:17-195:23][output].Identifier[195:24-195:28][push]](CallExpression[195:33-195:43][Identifier[195:29-195:33][char](Identifier[195:34-195:42][charCode])])]
 						]
 					]
-					197: AssignmentStatement[Identifier[hashPointer] = BinaryExpression[Identifier[hashPointer] + Literal[1]]]
+					AssignmentStatement[197:13-197:42][Identifier[197:13-197:24][hashPointer] = BinaryExpression[197:27-197:42][Identifier[197:27-197:38][hashPointer] + Literal[197:41-197:42][1]]]
 				]
 			]
-			199: AssignmentStatement[Identifier[position] = BinaryExpression[Identifier[position] + Literal[1]]]
+			AssignmentStatement[199:9-199:32][Identifier[199:9-199:17][position] = BinaryExpression[199:20-199:32][Identifier[199:20-199:28][position] + Literal[199:31-199:32][1]]]
 		]
-		201: ReturnStatement[CallExpression[MemberExpression[Identifier[output].Identifier[join]](Literal[])]]
+		ReturnStatement[201:5-201:27][CallExpression[201:23-201:27][MemberExpression[201:18-201:23][Identifier[201:12-201:18][output].Identifier[201:19-201:23][join]](Literal[201:24-201:26][])]]
 	]]
-	204: AssignmentStatement[Identifier[test] = CallExpression[MemberExpression[UnaryExpression[new Identifier[Crypto]].Identifier[constructor]](Literal[test])]]
-	206: AssignmentStatement[Identifier[pwd] = Literal[abcde]]
-	208: AssignmentStatement[Identifier[foo] = CallExpression[MemberExpression[Identifier[test].Identifier[encrypt]](Identifier[pwd])]]
-	209: AssignmentStatement[Identifier[decrypted] = CallExpression[MemberExpression[Identifier[test].Identifier[decrypt]](Identifier[foo])]]
-	211: CallStatment[CallExpression[Identifier[print](Identifier[foo])]]
-	212: CallStatment[CallExpression[Identifier[print](Identifier[decrypted])]]
-]"
-`;
-
-exports[`parse default scripts pseudo-crypto.src unsafe 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[String] = MapConstructor[]]
-	3: AssignmentStatement[MemberExpression[Identifier[String].Identifier[constructor]] = Function[Identifier[str] =>
-		4: AssignmentStatement[MemberExpression[Identifier[self].Identifier[str]] = Identifier[str]]
-		5: ReturnStatement[Identifier[self]]
-	]]
-	8: AssignmentStatement[MemberExpression[Identifier[String].Identifier[parse]] = Function[Identifier[values] =>
-		9: AssignmentStatement[Identifier[result] = MemberExpression[Identifier[self].Identifier[str]]]
-		10: AssignmentStatement[Identifier[index] = Literal[0]]
-		11: AssignmentStatement[Identifier[maxIndex] = MemberExpression[Identifier[values].Identifier[len]]]
-		13: WhileStatement[BinaryExpression[Identifier[index] < Identifier[maxIndex]]
-			14: AssignmentStatement[Identifier[result] = CallExpression[MemberExpression[Identifier[result].Identifier[replace]](BinaryExpression[Literal[$] + Identifier[index]], IndexExpression[Identifier[values][Identifier[index]]])]]
-			15: AssignmentStatement[Identifier[index] = BinaryExpression[Identifier[index] + Literal[1]]]
-		]
-		18: ReturnStatement[CallExpression[MemberExpression[UnaryExpression[new Identifier[self]].Identifier[constructor]](Identifier[result])]]
-	]]
-	21: AssignmentStatement[MemberExpression[Identifier[String].Identifier[startsWith]] = Function[Identifier[str] =>
-		22: ReturnStatement[BinaryExpression[CallExpression[MemberExpression[MemberExpression[Identifier[self].Identifier[str]].Identifier[indexOf]](Identifier[str])] == Literal[0]]]
-	]]
-	25: AssignmentStatement[MemberExpression[Identifier[String].Identifier[substr]] = Function[Identifier[startIndex], Identifier[endIndex] =>
-		26: ReturnStatement[CallExpression[MemberExpression[UnaryExpression[new Identifier[self]].Identifier[constructor]](CallExpression[Identifier[slice](MemberExpression[Identifier[self].Identifier[str]], Identifier[startIndex], Identifier[endIndex])])]]
-	]]
-	29: AssignmentStatement[MemberExpression[Identifier[String].Identifier[indexOf]] = Function[Identifier[str] =>
-		30: ReturnStatement[CallExpression[MemberExpression[MemberExpression[Identifier[self].Identifier[str]].Identifier[indexOf]](Identifier[str])]]
-	]]
-	33: AssignmentStatement[MemberExpression[Identifier[String].Identifier[replace]] = Function[Identifier[str], Identifier[newStr] =>
-		34: ReturnStatement[CallExpression[MemberExpression[UnaryExpression[new Identifier[self]].Identifier[constructor]](CallExpression[MemberExpression[MemberExpression[Identifier[self].Identifier[str]].Identifier[replace]](Identifier[str], Identifier[newStr])])]]
-	]]
-	37: AssignmentStatement[MemberExpression[Identifier[String].Identifier[remove]] = Function[Identifier[str] =>
-		38: ReturnStatement[CallExpression[MemberExpression[UnaryExpression[new Identifier[self]].Identifier[constructor]](CallExpression[MemberExpression[MemberExpression[Identifier[self].Identifier[str]].Identifier[remove]](Identifier[str])])]]
-	]]
-	41: AssignmentStatement[MemberExpression[Identifier[String].Identifier[toString]] = Function[ =>
-		42: ReturnStatement[MemberExpression[Identifier[self].Identifier[str]]]
-	]]
-	45: AssignmentStatement[MemberExpression[Identifier[String].Identifier[length]] = Function[ =>
-		46: ReturnStatement[MemberExpression[MemberExpression[Identifier[self].Identifier[str]].Identifier[len]]]
-	]]
-	49: AssignmentStatement[MemberExpression[Identifier[String].Identifier[split]] = Function[Identifier[seperator] =>
-		50: ReturnStatement[CallExpression[MemberExpression[MemberExpression[Identifier[self].Identifier[str]].Identifier[split]](Identifier[seperator])]]
-	]]
-	53: AssignmentStatement[MemberExpression[Identifier[String].Identifier[trim]] = Function[Identifier[seperator] =>
-		54: ReturnStatement[CallExpression[MemberExpression[UnaryExpression[new Identifier[self]].Identifier[constructor]](CallExpression[MemberExpression[MemberExpression[Identifier[self].Identifier[str]].Identifier[trim]]()])]]
-	]]
-	57: AssignmentStatement[Identifier[Error] = MapConstructor[]]
-	59: AssignmentStatement[MemberExpression[Identifier[Error].Identifier[String]] = Identifier[String]]
-	61: AssignmentStatement[MemberExpression[Identifier[Error].Identifier[constructor]] = Function[Identifier[message], Identifier[values] =>
-		62: AssignmentStatement[Identifier[m] = Identifier[self]]
-		63: AssignmentStatement[MemberExpression[Identifier[m].Identifier[message]] = Identifier[message]]
-		64: IfStatement[
-			64: IfClause[BinaryExpression[Identifier[values] != Literal[null]]
-				65: AssignmentStatement[MemberExpression[Identifier[m].Identifier[message]] = CallExpression[MemberExpression[CallExpression[MemberExpression[CallExpression[MemberExpression[UnaryExpression[new MemberExpression[Identifier[m].Identifier[String]]].Identifier[constructor]](Identifier[message])].Identifier[parse]](Identifier[values])].Identifier[toString]]()]]
-			]
-		]
-		67: ReturnStatement[Identifier[m]]
-	]]
-	70: AssignmentStatement[MemberExpression[Identifier[Error].Identifier[throw]] = Function[ =>
-		71: CallStatment[CallExpression[Identifier[exit](BinaryExpression[BinaryExpression[Literal[<color=#ff0000>] + MemberExpression[Identifier[self].Identifier[message]]] + Literal[</color>]])]]
-	]]
-	74: AssignmentStatement[Identifier[Crypto] = MapConstructor[]]
-	76: AssignmentStatement[MemberExpression[Identifier[Crypto].Identifier[defaultCharset]] = Literal[QWERTZUIOPASDFGHJKLYXCVBNMqwertzuiopasdfghjklyxcvbnm1234567890+-]]
-	77: AssignmentStatement[MemberExpression[Identifier[Crypto].Identifier[defaultSecret]] = Literal[test123]]
-	78: AssignmentStatement[MemberExpression[Identifier[Crypto].Identifier[maxCharCode]] = Literal[55295]]
-	79: AssignmentStatement[MemberExpression[Identifier[Crypto].Identifier[Error]] = Identifier[Error]]
-	81: AssignmentStatement[MemberExpression[Identifier[Crypto].Identifier[constructor]] = Function[Identifier[defaultSecret], Identifier[hashFn], Identifier[charset] =>
-		82: AssignmentStatement[Identifier[me] = Identifier[self]]
-		83: AssignmentStatement[MemberExpression[Identifier[me].Identifier[defaultSecret]] = Identifier[defaultSecret]]
-		84: AssignmentStatement[MemberExpression[Identifier[me].Identifier[table]] = Identifier[charset]]
-		85: AssignmentStatement[MemberExpression[Identifier[me].Identifier[hashFn]] = UnaryExpression[@ Identifier[hashFn]]]
-		86: IfStatement[
-			86: IfShortcutClause[BinaryExpression[UnaryExpression[@ Identifier[hashFn]] == Literal[null]]
-				86: AssignmentStatement[MemberExpression[Identifier[me].Identifier[hashFn]] = UnaryExpression[@ Identifier[md5]]]
-			]
-		]
-		87: IfStatement[
-			87: IfShortcutClause[BinaryExpression[Identifier[charset] == Literal[null]]
-				87: AssignmentStatement[MemberExpression[Identifier[me].Identifier[table]] = MemberExpression[Identifier[me].Identifier[defaultCharset]]]
-			]
-		]
-		88: IfStatement[
-			88: IfShortcutClause[BinaryExpression[MemberExpression[MemberExpression[Identifier[me].Identifier[table]].Identifier[len]] != Literal[64]]
-				88: CallStatment[CallExpression[MemberExpression[CallExpression[MemberExpression[UnaryExpression[new MemberExpression[Identifier[me].Identifier[Error]]].Identifier[constructor]](Literal[Invalid charset $0...], ListConstructor[
-					88: ListValue[MemberExpression[Identifier[me].Identifier[table]]]
-				])].Identifier[throw]]()]]
-			]
-		]
-		89: ReturnStatement[Identifier[me]]
-	]]
-	92: AssignmentStatement[MemberExpression[Identifier[Crypto].Identifier[getHash]] = Function[Identifier[pw] =>
-		93: AssignmentStatement[Identifier[me] = Identifier[self]]
-		94: AssignmentStatement[Identifier[hash] = ListConstructor[]]
-		95: AssignmentStatement[Identifier[x] = CallExpression[MemberExpression[Identifier[me].Identifier[hashFn]](Identifier[pw])]]
-		96: For[Identifier[char] in Identifier[x]
-			97: CallStatment[CallExpression[MemberExpression[Identifier[hash].Identifier[push]](MemberExpression[Identifier[char].Identifier[code]])]]
-		]
-		99: CallStatment[MemberExpression[Identifier[hash].Identifier[reverse]]]
-		100: ReturnStatement[Identifier[hash]]
-	]]
-	103: AssignmentStatement[MemberExpression[Identifier[Crypto].Identifier[encrypt]] = Function[Identifier[str], Identifier[pw] =>
-		104: AssignmentStatement[Identifier[me] = Identifier[self]]
-		105: IfStatement[
-			105: IfShortcutClause[BinaryExpression[Identifier[pw] == Literal[null]]
-				105: AssignmentStatement[Identifier[pw] = MemberExpression[Identifier[me].Identifier[defaultSecret]]]
-			]
-		]
-		106: AssignmentStatement[Identifier[hash] = CallExpression[MemberExpression[Identifier[me].Identifier[getHash]](Identifier[pw])]]
-		107: AssignmentStatement[Identifier[hashPointer] = Literal[0]]
-		108: AssignmentStatement[Identifier[output] = ListConstructor[]]
-		109: AssignmentStatement[Identifier[position] = Literal[0]]
-		110: AssignmentStatement[Identifier[padding] = BinaryExpression[MemberExpression[Identifier[str].Identifier[len]] % Literal[3]]]
-		111: AssignmentStatement[Identifier[max] = BinaryExpression[MemberExpression[Identifier[str].Identifier[len]] - Identifier[padding]]]
-		112: AssignmentStatement[Identifier[get] = Function[Identifier[v] =>
-			113: IfStatement[
-				113: IfClause[NegationExpression[not CallExpression[MemberExpression[MemberExpression[Identifier[me].Identifier[table]].Identifier[hasIndex]](Identifier[v])]]
-					114: CallStatment[CallExpression[MemberExpression[CallExpression[MemberExpression[UnaryExpression[new MemberExpression[Identifier[me].Identifier[Error]]].Identifier[constructor]](Literal[Invalid index $0...], ListConstructor[
-						114: ListValue[Identifier[v]]
-					])].Identifier[throw]]()]]
-				]
-			]
-			116: ReturnStatement[IndexExpression[MemberExpression[Identifier[me].Identifier[table]][Identifier[v]]]]
-		]]
-		118: AssignmentStatement[Identifier[AND] = Function[Identifier[a], Identifier[b] =>
-			119: ReturnStatement[CallExpression[Identifier[bitwise](Literal[&], Identifier[a], Identifier[b])]]
-		]]
-		121: AssignmentStatement[Identifier[LSHIFT] = Function[Identifier[a], Identifier[b] =>
-			122: ReturnStatement[CallExpression[Identifier[bitwise](Literal[<<], Identifier[a], Identifier[b])]]
-		]]
-		124: AssignmentStatement[Identifier[RSHIFT] = Function[Identifier[a], Identifier[b] =>
-			125: ReturnStatement[CallExpression[Identifier[bitwise](Literal[>>], Identifier[a], Identifier[b])]]
-		]]
-		127: WhileStatement[BinaryExpression[Identifier[position] < Identifier[max]]
-			128: AssignmentStatement[Identifier[m] = IndexExpression[Identifier[hash][BinaryExpression[BinaryExpression[Identifier[position] % MemberExpression[Identifier[hash].Identifier[len]]] - Literal[1]]]]]
-			129: AssignmentStatement[Identifier[a] = CallExpression[Identifier[LSHIFT](BinaryExpression[MemberExpression[IndexExpression[Identifier[str][Identifier[position]]].Identifier[code]] + Identifier[m]], Literal[16])]]
-			130: AssignmentStatement[Identifier[b] = CallExpression[Identifier[LSHIFT](BinaryExpression[MemberExpression[IndexExpression[Identifier[str][BinaryExpression[Identifier[position] + Literal[1]]]].Identifier[code]] + Identifier[m]], Literal[8])]]
-			131: AssignmentStatement[Identifier[c] = BinaryExpression[MemberExpression[IndexExpression[Identifier[str][BinaryExpression[Identifier[position] + Literal[2]]]].Identifier[code]] + Identifier[m]]]
-			132: AssignmentStatement[Identifier[buffer] = BinaryExpression[BinaryExpression[Identifier[a] + Identifier[b]] + Identifier[c]]]
-			133: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[AND](CallExpression[Identifier[RSHIFT](Identifier[buffer], Literal[18])], Literal[63])])])]]
-			134: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[AND](CallExpression[Identifier[RSHIFT](Identifier[buffer], Literal[12])], Literal[63])])])]]
-			135: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[AND](CallExpression[Identifier[RSHIFT](Identifier[buffer], Literal[6])], Literal[63])])])]]
-			136: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[AND](Identifier[buffer], Literal[63])])])]]
-			137: AssignmentStatement[Identifier[position] = BinaryExpression[Identifier[position] + Literal[3]]]
-		]
-		139: IfStatement[
-			139: IfClause[BinaryExpression[Identifier[padding] == Literal[2]]
-				140: AssignmentStatement[Identifier[m] = IndexExpression[Identifier[hash][BinaryExpression[BinaryExpression[Identifier[position] % MemberExpression[Identifier[hash].Identifier[len]]] - Literal[1]]]]]
-				141: AssignmentStatement[Identifier[a] = CallExpression[Identifier[LSHIFT](BinaryExpression[MemberExpression[IndexExpression[Identifier[str][Identifier[position]]].Identifier[code]] + Identifier[m]], Literal[8])]]
-				142: AssignmentStatement[Identifier[b] = BinaryExpression[MemberExpression[IndexExpression[Identifier[str][BinaryExpression[Identifier[position] + Literal[1]]]].Identifier[code]] + Identifier[m]]]
-				143: AssignmentStatement[Identifier[buffer] = BinaryExpression[Identifier[a] + Identifier[b]]]
-				144: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[RSHIFT](Identifier[buffer], Literal[10])])])]]
-				145: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[AND](CallExpression[Identifier[RSHIFT](Identifier[buffer], Literal[4])], Literal[63])])])]]
-				146: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[AND](CallExpression[Identifier[LSHIFT](Identifier[buffer], Literal[2])], Literal[63])])])]]
-				147: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](Literal[=])]]
-			]
-			148: ElseifClause[BinaryExpression[Identifier[padding] == Literal[1]]
-				149: AssignmentStatement[Identifier[m] = IndexExpression[Identifier[hash][BinaryExpression[BinaryExpression[Identifier[position] % MemberExpression[Identifier[hash].Identifier[len]]] - Literal[1]]]]]
-				150: AssignmentStatement[Identifier[buffer] = BinaryExpression[MemberExpression[IndexExpression[Identifier[str][Identifier[position]]].Identifier[code]] + Identifier[m]]]
-				151: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[RSHIFT](Identifier[buffer], Literal[2])])])]]
-				152: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[get](CallExpression[Identifier[AND](CallExpression[Identifier[LSHIFT](Identifier[buffer], Literal[4])], Literal[63])])])]]
-				153: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](Literal[==])]]
-			]
-		]
-		155: ReturnStatement[CallExpression[MemberExpression[Identifier[output].Identifier[join]](Literal[])]]
-	]]
-	158: AssignmentStatement[MemberExpression[Identifier[Crypto].Identifier[decrypt]] = Function[Identifier[str], Identifier[pw] =>
-		159: AssignmentStatement[Identifier[me] = Identifier[self]]
-		160: IfStatement[
-			160: IfShortcutClause[BinaryExpression[Identifier[pw] == Literal[null]]
-				160: AssignmentStatement[Identifier[pw] = MemberExpression[Identifier[me].Identifier[defaultSecret]]]
-			]
-		]
-		161: AssignmentStatement[Identifier[hash] = CallExpression[MemberExpression[Identifier[me].Identifier[getHash]](Identifier[pw])]]
-		162: AssignmentStatement[Identifier[hashPointer] = Literal[0]]
-		163: AssignmentStatement[Identifier[hashLength] = MemberExpression[Identifier[hash].Identifier[len]]]
-		164: AssignmentStatement[Identifier[output] = ListConstructor[]]
-		165: AssignmentStatement[Identifier[bitCounter] = Literal[0]]
-		166: AssignmentStatement[Identifier[bitStorage] = Literal[0]]
-		167: AssignmentStatement[Identifier[position] = Literal[0]]
-		168: AssignmentStatement[Identifier[hashPointer] = Literal[0]]
-		169: AssignmentStatement[Identifier[max] = MemberExpression[Identifier[str].Identifier[len]]]
-		170: AssignmentStatement[Identifier[AND] = Function[Identifier[a], Identifier[b] =>
-			171: ReturnStatement[CallExpression[Identifier[bitwise](Literal[&], Identifier[a], Identifier[b])]]
-		]]
-		173: AssignmentStatement[Identifier[RSHIFT] = Function[Identifier[a], Identifier[b] =>
-			174: ReturnStatement[CallExpression[Identifier[bitwise](Literal[>>], Identifier[a], Identifier[b])]]
-		]]
-		176: WhileStatement[BinaryExpression[Identifier[position] < Identifier[max]]
-			177: AssignmentStatement[Identifier[buffer] = CallExpression[MemberExpression[MemberExpression[Identifier[me].Identifier[table]].Identifier[indexOf]](IndexExpression[Identifier[str][Identifier[position]]])]]
-			178: AssignmentStatement[Identifier[currentBit] = Identifier[bitCounter]]
-			179: AssignmentStatement[Identifier[bitCounter] = BinaryExpression[Identifier[bitCounter] + Literal[1]]]
-			180: IfStatement[
-				180: IfClause[BinaryExpression[Identifier[currentBit] % Literal[4]]
-					181: AssignmentStatement[Identifier[bitStorage] = BinaryExpression[BinaryExpression[Identifier[bitStorage] * Literal[64]] + Identifier[buffer]]]
-				]
-				182: ElseClause[
-					183: AssignmentStatement[Identifier[bitStorage] = Identifier[buffer]]
-				}]
-			]
-			185: IfStatement[
-				185: IfClause[BinaryExpression[Identifier[currentBit] % Literal[4]]
-					186: AssignmentStatement[Identifier[expectedHashIndex] = BinaryExpression[BinaryExpression[BinaryExpression[CallExpression[Identifier[floor](BinaryExpression[Identifier[hashPointer] / Literal[3]])] * Literal[3]] % Identifier[hashLength]] - Literal[1]]]
-					187: IfStatement[
-						187: IfShortcutClause[NegationExpression[not CallExpression[MemberExpression[Identifier[hash].Identifier[hasIndex]](Identifier[expectedHashIndex])]]
-							187: BreakStatement[]
-						]
-					]
-					188: AssignmentStatement[Identifier[m] = IndexExpression[Identifier[hash][Identifier[expectedHashIndex]]]]
-					189: AssignmentStatement[Identifier[operation] = CallExpression[Identifier[AND](BinaryExpression[BinaryNegatedExpression[- Literal[2]] * Identifier[bitCounter]], Literal[6])]]
-					190: AssignmentStatement[Identifier[operation] = CallExpression[Identifier[RSHIFT](Identifier[bitStorage], Identifier[operation])]]
-					191: AssignmentStatement[Identifier[operation] = CallExpression[Identifier[AND](Literal[255], Identifier[operation])]]
-					192: IfStatement[
-						192: IfClause[BinaryExpression[Identifier[operation] != Literal[0]]
-							193: AssignmentStatement[Identifier[charCode] = BinaryExpression[Identifier[operation] - Identifier[m]]]
-							194: IfStatement[
-								194: IfShortcutClause[BinaryExpression[Identifier[charCode] > MemberExpression[Identifier[me].Identifier[maxCharCode]]]
-									194: BreakStatement[]
-								]
-							]
-							195: CallStatment[CallExpression[MemberExpression[Identifier[output].Identifier[push]](CallExpression[Identifier[char](Identifier[charCode])])]]
-						]
-					]
-					197: AssignmentStatement[Identifier[hashPointer] = BinaryExpression[Identifier[hashPointer] + Literal[1]]]
-				]
-			]
-			199: AssignmentStatement[Identifier[position] = BinaryExpression[Identifier[position] + Literal[1]]]
-		]
-		201: ReturnStatement[CallExpression[MemberExpression[Identifier[output].Identifier[join]](Literal[])]]
-	]]
-	204: AssignmentStatement[Identifier[test] = CallExpression[MemberExpression[UnaryExpression[new Identifier[Crypto]].Identifier[constructor]](Literal[test])]]
-	206: AssignmentStatement[Identifier[pwd] = Literal[abcde]]
-	208: AssignmentStatement[Identifier[foo] = CallExpression[MemberExpression[Identifier[test].Identifier[encrypt]](Identifier[pwd])]]
-	209: AssignmentStatement[Identifier[decrypted] = CallExpression[MemberExpression[Identifier[test].Identifier[decrypt]](Identifier[foo])]]
-	211: CallStatment[CallExpression[Identifier[print](Identifier[foo])]]
-	212: CallStatment[CallExpression[Identifier[print](Identifier[decrypted])]]
+	AssignmentStatement[204:1-204:40][Identifier[204:1-204:5][test] = CallExpression[204:32-204:40][MemberExpression[204:20-204:32][UnaryExpression[204:9-204:19][new Identifier[204:13-204:19][Crypto]].Identifier[204:21-204:32][constructor]](Literal[204:33-204:39][test])]]
+	AssignmentStatement[206:1-206:14][Identifier[206:1-206:4][pwd] = Literal[206:7-206:14][abcde]]
+	AssignmentStatement[208:1-208:24][Identifier[208:1-208:4][foo] = CallExpression[208:19-208:24][MemberExpression[208:11-208:19][Identifier[208:7-208:11][test].Identifier[208:12-208:19][encrypt]](Identifier[208:20-208:23][pwd])]]
+	AssignmentStatement[209:1-209:30][Identifier[209:1-209:10][decrypted] = CallExpression[209:25-209:30][MemberExpression[209:17-209:25][Identifier[209:13-209:17][test].Identifier[209:18-209:25][decrypt]](Identifier[209:26-209:29][foo])]]
+	CallExpression[211:6-211:11][Identifier[211:1-211:6][print](Identifier[211:7-211:10][foo])]
+	CallExpression[212:6-212:17][Identifier[212:1-212:6][print](Identifier[212:7-212:16][decrypted])]
 ]"
 `;
 
 exports[`parse default scripts random.src 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[Random] = MapConstructor[]]
-	3: AssignmentStatement[MemberExpression[Identifier[Random].Identifier[pool]] = MapConstructor[]]
-	4: AssignmentStatement[MemberExpression[Identifier[Random].Identifier[defaultSeed]] = Literal[random]]
-	6: AssignmentStatement[MemberExpression[Identifier[Random].Identifier[createPool]] = Function[Identifier[seed], Identifier[val] =>
-		7: ReturnStatement[MapConstructor[
-			7: MapKeyString[Literal[seed]: Identifier[seed]]
-			7: MapKeyString[Literal[value]: Identifier[val]]
-			7: MapKeyString[Literal[generation]: Literal[0]]
+"Chunk[1:1-62:39][
+	AssignmentStatement[1:1-1:12][Identifier[1:1-1:7][Random] = MapConstructor[1:10-1:12][]]
+	AssignmentStatement[3:1-3:17][MemberExpression[3:7-3:12][Identifier[3:1-3:7][Random].Identifier[3:8-3:12][pool]] = MapConstructor[3:15-3:17][]]
+	AssignmentStatement[4:1-4:30][MemberExpression[4:7-4:19][Identifier[4:1-4:7][Random].Identifier[4:8-4:19][defaultSeed]] = Literal[4:22-4:30][random]]
+	AssignmentStatement[6:1-8:13][MemberExpression[6:7-6:18][Identifier[6:1-6:7][Random].Identifier[6:8-6:18][createPool]] = Function[6:21-8:13][Identifier[6:30-6:34][seed], Identifier[6:36-6:39][val] =>
+		ReturnStatement[7:5-7:59][MapConstructor[7:12-7:59][
+			MapKeyString[7:14-7:26][Literal[7:14-7:20][seed]: Identifier[7:22-7:26][seed]]
+			MapKeyString[7:28-7:40][Literal[7:28-7:35][value]: Identifier[7:37-7:40][val]]
+			MapKeyString[7:42-7:57][Literal[7:42-7:54][generation]: Literal[7:56-7:57][0]]
 		]]
 	]]
-	10: AssignmentStatement[MemberExpression[Identifier[Random].Identifier[calcSeed]] = Function[Identifier[seed] =>
-		11: AssignmentStatement[Identifier[seedVal] = Literal[0]]
-		12: AssignmentStatement[Identifier[pos] = MemberExpression[Identifier[seed].Identifier[len]]]
-		14: For[Identifier[char] in Identifier[seed]
-			15: AssignmentStatement[Identifier[seedVal] = BinaryExpression[BinaryExpression[Identifier[seedVal] + MemberExpression[Identifier[char].Identifier[code]]] + Identifier[pos]]]
-			16: AssignmentStatement[Identifier[pos] = BinaryExpression[Identifier[pos] - Literal[1]]]
+	AssignmentStatement[10:1-20:13][MemberExpression[10:7-10:16][Identifier[10:1-10:7][Random].Identifier[10:8-10:16][calcSeed]] = Function[10:19-20:13][Identifier[10:28-10:32][seed] =>
+		AssignmentStatement[11:5-11:16][Identifier[11:5-11:12][seedVal] = Literal[11:15-11:16][0]]
+		AssignmentStatement[12:5-12:19][Identifier[12:5-12:8][pos] = MemberExpression[12:15-12:19][Identifier[12:11-12:15][seed].Identifier[12:16-12:19][len]]]
+		For[14:5-17:12][Identifier[14:9-14:13][char] in Identifier[14:17-14:21][seed]
+			AssignmentStatement[15:9-15:44][Identifier[15:9-15:16][seedVal] = BinaryExpression[15:19-15:44][Identifier[15:19-15:26][seedVal] + BinaryExpression[15:29-15:44][MemberExpression[15:33-15:38][Identifier[15:29-15:33][char].Identifier[15:34-15:38][code]] + Identifier[15:41-15:44][pos]]]]
+			AssignmentStatement[16:9-16:22][Identifier[16:9-16:12][pos] = BinaryExpression[16:15-16:22][Identifier[16:15-16:18][pos] - Literal[16:21-16:22][1]]]
 		]
-		19: ReturnStatement[Identifier[seedVal]]
+		ReturnStatement[19:5-19:19][Identifier[19:12-19:19][seedVal]]
 	]]
-	22: AssignmentStatement[MemberExpression[Identifier[Random].Identifier[gen]] = Function[Identifier[min], Identifier[max], Identifier[seed], Identifier[inc] =>
-		23: AssignmentStatement[Identifier[me] = Identifier[self]]
-		24: AssignmentStatement[Identifier[pool] = MemberExpression[Identifier[me].Identifier[pool]]]
-		25: IfStatement[
-			25: IfShortcutClause[BinaryExpression[Identifier[inc] == Literal[null]]
-				25: AssignmentStatement[Identifier[inc] = Literal[true]]
+	AssignmentStatement[22:1-42:13][MemberExpression[22:7-22:11][Identifier[22:1-22:7][Random].Identifier[22:8-22:11][gen]] = Function[22:14-42:13][Identifier[22:23-22:26][min], Identifier[22:28-22:31][max], Identifier[22:33-22:37][seed], Identifier[22:39-22:42][inc] =>
+		AssignmentStatement[23:5-23:14][Identifier[23:5-23:7][me] = Identifier[23:10-23:14][self]]
+		AssignmentStatement[24:5-24:19][Identifier[24:5-24:9][pool] = MemberExpression[24:14-24:19][Identifier[24:12-24:14][me].Identifier[24:15-24:19][pool]]]
+		IfStatement[25:5-25:37][
+			IfShortcutClause[25:5-25:37][BinaryExpression[25:9-25:20][Identifier[25:9-25:12][inc] == Literal[25:16-25:20][null]]
+				AssignmentStatement[25:27-25:37][Identifier[25:27-25:30][inc] = Literal[25:33-25:37][true]]
 			]
 		]
-		26: IfStatement[
-			26: IfShortcutClause[BinaryExpression[Identifier[seed] == Literal[null]]
-				26: AssignmentStatement[Identifier[seed] = MemberExpression[Identifier[me].Identifier[defaultSeed]]]
+		IfStatement[26:5-26:49][
+			IfShortcutClause[26:5-26:49][BinaryExpression[26:9-26:21][Identifier[26:9-26:13][seed] == Literal[26:17-26:21][null]]
+				AssignmentStatement[26:28-26:49][Identifier[26:28-26:32][seed] = MemberExpression[26:37-26:49][Identifier[26:35-26:37][me].Identifier[26:38-26:49][defaultSeed]]]
 			]
 		]
-		27: IfStatement[
-			27: IfClause[CallExpression[MemberExpression[Identifier[pool].Identifier[hasIndex]](Identifier[seed])]
-				28: AssignmentStatement[Identifier[ps] = IndexExpression[Identifier[pool][Identifier[seed]]]]
-				29: IfStatement[
-					29: IfShortcutClause[NegationExpression[not Identifier[inc]]
-						29: ReturnStatement[MemberExpression[Identifier[ps].Identifier[value]]]
+		IfStatement[27:5-34:11][
+			IfClause[27:5-34:11][CallExpression[27:22-27:28][MemberExpression[27:13-27:22][Identifier[27:9-27:13][pool].Identifier[27:14-27:22][hasIndex]](Identifier[27:23-27:27][seed])]
+				AssignmentStatement[28:9-28:24][Identifier[28:9-28:11][ps] = IndexExpression[28:18-28:24][Identifier[28:14-28:18][pool][Identifier[28:19-28:23][seed]]]]
+				IfStatement[29:9-29:42][
+					IfShortcutClause[29:9-29:42][NegationExpression[29:13-29:20][not Identifier[29:17-29:20][inc]]
+						ReturnStatement[29:27-29:42][MemberExpression[29:36-29:42][Identifier[29:34-29:36][ps].Identifier[29:37-29:42][value]]]
 					]
 				]
-				30: AssignmentStatement[MemberExpression[Identifier[ps].Identifier[generation]] = BinaryExpression[MemberExpression[Identifier[ps].Identifier[generation]] + Literal[1]]]
-				31: AssignmentStatement[Identifier[val] = CallExpression[Identifier[floor](BinaryExpression[BinaryExpression[CallExpression[Identifier[rnd](BinaryExpression[MemberExpression[Identifier[ps].Identifier[value]] + MemberExpression[Identifier[ps].Identifier[generation]]])] * BinaryExpression[Identifier[max] - Identifier[min]]] + Identifier[min]])]]
-				32: AssignmentStatement[MemberExpression[Identifier[ps].Identifier[value]] = Identifier[val]]
-				33: ReturnStatement[Identifier[val]]
+				AssignmentStatement[30:9-30:42][MemberExpression[30:11-30:22][Identifier[30:9-30:11][ps].Identifier[30:12-30:22][generation]] = BinaryExpression[30:25-30:42][MemberExpression[30:27-30:38][Identifier[30:25-30:27][ps].Identifier[30:28-30:38][generation]] + Literal[30:41-30:42][1]]]
+				AssignmentStatement[31:9-31:73][Identifier[31:9-31:12][val] = CallExpression[31:20-31:73][Identifier[31:15-31:20][floor](BinaryExpression[31:21-31:72][BinaryExpression[31:22-31:65][CallExpression[31:25-31:51][Identifier[31:22-31:25][rnd](BinaryExpression[31:26-31:50][MemberExpression[31:28-31:34][Identifier[31:26-31:28][ps].Identifier[31:29-31:34][value]] + MemberExpression[31:39-31:50][Identifier[31:37-31:39][ps].Identifier[31:40-31:50][generation]]])] * BinaryExpression[31:55-31:64][Identifier[31:55-31:58][max] - Identifier[31:61-31:64][min]]] + Identifier[31:69-31:72][min]])]]
+				AssignmentStatement[32:9-32:23][MemberExpression[32:11-32:17][Identifier[32:9-32:11][ps].Identifier[32:12-32:17][value]] = Identifier[32:20-32:23][val]]
+				ReturnStatement[33:9-33:19][Identifier[33:16-33:19][val]]
 			]
 		]
-		36: AssignmentStatement[Identifier[seedVal] = CallExpression[MemberExpression[Identifier[me].Identifier[calcSeed]](Identifier[seed])]]
-		38: AssignmentStatement[Identifier[val] = CallExpression[Identifier[floor](BinaryExpression[BinaryExpression[CallExpression[Identifier[rnd](Identifier[seedVal])] * BinaryExpression[Identifier[max] - Identifier[min]]] + Identifier[min]])]]
-		39: AssignmentStatement[IndexExpression[Identifier[pool][Identifier[seed]]] = CallExpression[MemberExpression[Identifier[me].Identifier[createPool]](Identifier[seedVal], Identifier[val])]]
-		41: ReturnStatement[Identifier[val]]
+		AssignmentStatement[36:5-36:32][Identifier[36:5-36:12][seedVal] = CallExpression[36:26-36:32][MemberExpression[36:17-36:26][Identifier[36:15-36:17][me].Identifier[36:18-36:26][calcSeed]](Identifier[36:27-36:31][seed])]]
+		AssignmentStatement[38:5-38:52][Identifier[38:5-38:8][val] = CallExpression[38:16-38:52][Identifier[38:11-38:16][floor](BinaryExpression[38:17-38:51][BinaryExpression[38:18-38:44][CallExpression[38:21-38:30][Identifier[38:18-38:21][rnd](Identifier[38:22-38:29][seedVal])] * BinaryExpression[38:34-38:43][Identifier[38:34-38:37][max] - Identifier[38:40-38:43][min]]] + Identifier[38:48-38:51][min]])]]
+		AssignmentStatement[39:5-39:45][IndexExpression[39:9-39:15][Identifier[39:5-39:9][pool][Identifier[39:10-39:14][seed]]] = CallExpression[39:31-39:45][MemberExpression[39:20-39:31][Identifier[39:18-39:20][me].Identifier[39:21-39:31][createPool]](Identifier[39:32-39:39][seedVal], Identifier[39:41-39:44][val])]]
+		ReturnStatement[41:5-41:15][Identifier[41:12-41:15][val]]
 	]]
-	44: AssignmentStatement[MemberExpression[Identifier[Random].Identifier[seq]] = Function[Identifier[min], Identifier[max], Identifier[seed], Identifier[amount], Identifier[keepPool] =>
-		45: AssignmentStatement[Identifier[me] = Identifier[self]]
-		46: AssignmentStatement[Identifier[index] = Literal[0]]
-		47: AssignmentStatement[Identifier[result] = ListConstructor[]]
-		48: WhileStatement[BinaryExpression[Identifier[index] < Identifier[amount]]
-			49: AssignmentStatement[Identifier[temp] = CallExpression[MemberExpression[Identifier[me].Identifier[gen]](Identifier[min], Identifier[max], Identifier[seed])]]
-			50: CallStatment[CallExpression[MemberExpression[Identifier[result].Identifier[push]](Identifier[temp])]]
-			51: AssignmentStatement[Identifier[index] = BinaryExpression[Identifier[index] + Literal[1]]]
+	AssignmentStatement[44:1-55:13][MemberExpression[44:7-44:11][Identifier[44:1-44:7][Random].Identifier[44:8-44:11][seq]] = Function[44:14-55:13][Identifier[44:23-44:26][min], Identifier[44:28-44:31][max], Identifier[44:33-44:37][seed], Identifier[44:39-44:45][amount], Identifier[44:47-44:55][keepPool] =>
+		AssignmentStatement[45:5-45:14][Identifier[45:5-45:7][me] = Identifier[45:10-45:14][self]]
+		AssignmentStatement[46:5-46:14][Identifier[46:5-46:10][index] = Literal[46:13-46:14][0]]
+		AssignmentStatement[47:5-47:16][Identifier[47:5-47:11][result] = ListConstructor[47:14-47:16][]]
+		WhileStatement[48:5-52:14][BinaryExpression[48:11-48:25][Identifier[48:11-48:16][index] < Identifier[48:19-48:25][amount]]
+			AssignmentStatement[49:9-49:38][Identifier[49:9-49:13][temp] = CallExpression[49:22-49:38][MemberExpression[49:18-49:22][Identifier[49:16-49:18][me].Identifier[49:19-49:22][gen]](Identifier[49:23-49:26][min], Identifier[49:28-49:31][max], Identifier[49:33-49:37][seed])]]
+			CallExpression[50:20-50:27][MemberExpression[50:15-50:20][Identifier[50:9-50:15][result].Identifier[50:16-50:20][push]](Identifier[50:21-50:25][temp])]
+			AssignmentStatement[51:9-51:26][Identifier[51:9-51:14][index] = BinaryExpression[51:17-51:26][Identifier[51:17-51:22][index] + Literal[51:25-51:26][1]]]
 		]
-		53: IfStatement[
-			53: IfShortcutClause[BinaryExpression[Identifier[keepPool] != Literal[true]]
-				53: CallStatment[CallExpression[MemberExpression[MemberExpression[Identifier[me].Identifier[pool]].Identifier[remove]](Identifier[seed])]]
+		IfStatement[53:5-53:52][
+			IfShortcutClause[53:5-53:52][BinaryExpression[53:9-53:25][Identifier[53:9-53:17][keepPool] != Literal[53:21-53:25][true]]
+				CallExpression[53:46-53:52][MemberExpression[53:39-53:46][MemberExpression[53:34-53:39][Identifier[53:32-53:34][me].Identifier[53:35-53:39][pool]].Identifier[53:40-53:46][remove]](Identifier[53:47-53:51][seed])]
 			]
 		]
-		54: ReturnStatement[Identifier[result]]
+		ReturnStatement[54:5-54:18][Identifier[54:12-54:18][result]]
 	]]
-	57: AssignmentStatement[MemberExpression[Identifier[Random].Identifier[get]] = Function[Identifier[min], Identifier[max] =>
-		58: ReturnStatement[CallExpression[MemberExpression[Identifier[self].Identifier[gen]](Identifier[min], Identifier[max])]]
+	AssignmentStatement[57:1-59:13][MemberExpression[57:7-57:11][Identifier[57:1-57:7][Random].Identifier[57:8-57:11][get]] = Function[57:14-59:13][Identifier[57:23-57:26][min], Identifier[57:28-57:31][max] =>
+		ReturnStatement[58:5-58:30][CallExpression[58:20-58:30][MemberExpression[58:16-58:20][Identifier[58:12-58:16][self].Identifier[58:17-58:20][gen]](Identifier[58:21-58:24][min], Identifier[58:26-58:29][max])]]
 	]]
-	61: CallStatment[CallExpression[Identifier[print](CallExpression[MemberExpression[Identifier[Random].Identifier[get]](Literal[100], Literal[500])])]]
-	62: CallStatment[CallExpression[Identifier[print](CallExpression[MemberExpression[Identifier[Random].Identifier[seq]](Literal[100], Literal[500], Literal[test], Literal[10])])]]
-]"
-`;
-
-exports[`parse default scripts random.src unsafe 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[Random] = MapConstructor[]]
-	3: AssignmentStatement[MemberExpression[Identifier[Random].Identifier[pool]] = MapConstructor[]]
-	4: AssignmentStatement[MemberExpression[Identifier[Random].Identifier[defaultSeed]] = Literal[random]]
-	6: AssignmentStatement[MemberExpression[Identifier[Random].Identifier[createPool]] = Function[Identifier[seed], Identifier[val] =>
-		7: ReturnStatement[MapConstructor[
-			7: MapKeyString[Literal[seed]: Identifier[seed]]
-			7: MapKeyString[Literal[value]: Identifier[val]]
-			7: MapKeyString[Literal[generation]: Literal[0]]
-		]]
-	]]
-	10: AssignmentStatement[MemberExpression[Identifier[Random].Identifier[calcSeed]] = Function[Identifier[seed] =>
-		11: AssignmentStatement[Identifier[seedVal] = Literal[0]]
-		12: AssignmentStatement[Identifier[pos] = MemberExpression[Identifier[seed].Identifier[len]]]
-		14: For[Identifier[char] in Identifier[seed]
-			15: AssignmentStatement[Identifier[seedVal] = BinaryExpression[BinaryExpression[Identifier[seedVal] + MemberExpression[Identifier[char].Identifier[code]]] + Identifier[pos]]]
-			16: AssignmentStatement[Identifier[pos] = BinaryExpression[Identifier[pos] - Literal[1]]]
-		]
-		19: ReturnStatement[Identifier[seedVal]]
-	]]
-	22: AssignmentStatement[MemberExpression[Identifier[Random].Identifier[gen]] = Function[Identifier[min], Identifier[max], Identifier[seed], Identifier[inc] =>
-		23: AssignmentStatement[Identifier[me] = Identifier[self]]
-		24: AssignmentStatement[Identifier[pool] = MemberExpression[Identifier[me].Identifier[pool]]]
-		25: IfStatement[
-			25: IfShortcutClause[BinaryExpression[Identifier[inc] == Literal[null]]
-				25: AssignmentStatement[Identifier[inc] = Literal[true]]
-			]
-		]
-		26: IfStatement[
-			26: IfShortcutClause[BinaryExpression[Identifier[seed] == Literal[null]]
-				26: AssignmentStatement[Identifier[seed] = MemberExpression[Identifier[me].Identifier[defaultSeed]]]
-			]
-		]
-		27: IfStatement[
-			27: IfClause[CallExpression[MemberExpression[Identifier[pool].Identifier[hasIndex]](Identifier[seed])]
-				28: AssignmentStatement[Identifier[ps] = IndexExpression[Identifier[pool][Identifier[seed]]]]
-				29: IfStatement[
-					29: IfShortcutClause[NegationExpression[not Identifier[inc]]
-						29: ReturnStatement[MemberExpression[Identifier[ps].Identifier[value]]]
-					]
-				]
-				30: AssignmentStatement[MemberExpression[Identifier[ps].Identifier[generation]] = BinaryExpression[MemberExpression[Identifier[ps].Identifier[generation]] + Literal[1]]]
-				31: AssignmentStatement[Identifier[val] = CallExpression[Identifier[floor](BinaryExpression[BinaryExpression[CallExpression[Identifier[rnd](BinaryExpression[MemberExpression[Identifier[ps].Identifier[value]] + MemberExpression[Identifier[ps].Identifier[generation]]])] * BinaryExpression[Identifier[max] - Identifier[min]]] + Identifier[min]])]]
-				32: AssignmentStatement[MemberExpression[Identifier[ps].Identifier[value]] = Identifier[val]]
-				33: ReturnStatement[Identifier[val]]
-			]
-		]
-		36: AssignmentStatement[Identifier[seedVal] = CallExpression[MemberExpression[Identifier[me].Identifier[calcSeed]](Identifier[seed])]]
-		38: AssignmentStatement[Identifier[val] = CallExpression[Identifier[floor](BinaryExpression[BinaryExpression[CallExpression[Identifier[rnd](Identifier[seedVal])] * BinaryExpression[Identifier[max] - Identifier[min]]] + Identifier[min]])]]
-		39: AssignmentStatement[IndexExpression[Identifier[pool][Identifier[seed]]] = CallExpression[MemberExpression[Identifier[me].Identifier[createPool]](Identifier[seedVal], Identifier[val])]]
-		41: ReturnStatement[Identifier[val]]
-	]]
-	44: AssignmentStatement[MemberExpression[Identifier[Random].Identifier[seq]] = Function[Identifier[min], Identifier[max], Identifier[seed], Identifier[amount], Identifier[keepPool] =>
-		45: AssignmentStatement[Identifier[me] = Identifier[self]]
-		46: AssignmentStatement[Identifier[index] = Literal[0]]
-		47: AssignmentStatement[Identifier[result] = ListConstructor[]]
-		48: WhileStatement[BinaryExpression[Identifier[index] < Identifier[amount]]
-			49: AssignmentStatement[Identifier[temp] = CallExpression[MemberExpression[Identifier[me].Identifier[gen]](Identifier[min], Identifier[max], Identifier[seed])]]
-			50: CallStatment[CallExpression[MemberExpression[Identifier[result].Identifier[push]](Identifier[temp])]]
-			51: AssignmentStatement[Identifier[index] = BinaryExpression[Identifier[index] + Literal[1]]]
-		]
-		53: IfStatement[
-			53: IfShortcutClause[BinaryExpression[Identifier[keepPool] != Literal[true]]
-				53: CallStatment[CallExpression[MemberExpression[MemberExpression[Identifier[me].Identifier[pool]].Identifier[remove]](Identifier[seed])]]
-			]
-		]
-		54: ReturnStatement[Identifier[result]]
-	]]
-	57: AssignmentStatement[MemberExpression[Identifier[Random].Identifier[get]] = Function[Identifier[min], Identifier[max] =>
-		58: ReturnStatement[CallExpression[MemberExpression[Identifier[self].Identifier[gen]](Identifier[min], Identifier[max])]]
-	]]
-	61: CallStatment[CallExpression[Identifier[print](CallExpression[MemberExpression[Identifier[Random].Identifier[get]](Literal[100], Literal[500])])]]
-	62: CallStatment[CallExpression[Identifier[print](CallExpression[MemberExpression[Identifier[Random].Identifier[seq]](Literal[100], Literal[500], Literal[test], Literal[10])])]]
+	CallExpression[61:6-61:27][Identifier[61:1-61:6][print](CallExpression[61:17-61:26][MemberExpression[61:13-61:17][Identifier[61:7-61:13][Random].Identifier[61:14-61:17][get]](Literal[61:18-61:21][100], Literal[61:22-61:25][500])])]
+	CallExpression[62:6-62:39][Identifier[62:1-62:6][print](CallExpression[62:17-62:38][MemberExpression[62:13-62:17][Identifier[62:7-62:13][Random].Identifier[62:14-62:17][seq]](Literal[62:18-62:21][100], Literal[62:22-62:25][500], Literal[62:27-62:33][test], Literal[62:35-62:37][10])])]
 ]"
 `;
 
 exports[`parse default scripts simple-object.src 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[test] = MapConstructor[]]
-	3: AssignmentStatement[MemberExpression[Identifier[test].Identifier[here]] = Literal[was]]
-	5: AssignmentStatement[MemberExpression[Identifier[test].Identifier[was]] = Function[ =>
-		6: CallStatment[CallExpression[Identifier[print](MemberExpression[Identifier[self].Identifier[here]])]]
+"Chunk[1:1-9:18][
+	AssignmentStatement[1:1-1:10][Identifier[1:1-1:5][test] = MapConstructor[1:8-1:10][]]
+	AssignmentStatement[3:1-3:18][MemberExpression[3:5-3:10][Identifier[3:1-3:5][test].Identifier[3:6-3:10][here]] = Literal[3:13-3:18][was]]
+	AssignmentStatement[5:1-7:13][MemberExpression[5:5-5:9][Identifier[5:1-5:5][test].Identifier[5:6-5:9][was]] = Function[5:12-7:13][ =>
+		CallExpression[6:10-6:21][Identifier[6:5-6:10][print](MemberExpression[6:15-6:20][Identifier[6:11-6:15][self].Identifier[6:16-6:20][here]])]
 	]]
-	9: CallStatment[CallExpression[Identifier[print](CallExpression[MemberExpression[Identifier[test].Identifier[was]]()])]]
-]"
-`;
-
-exports[`parse default scripts simple-object.src unsafe 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[test] = MapConstructor[]]
-	3: AssignmentStatement[MemberExpression[Identifier[test].Identifier[here]] = Literal[was]]
-	5: AssignmentStatement[MemberExpression[Identifier[test].Identifier[was]] = Function[ =>
-		6: CallStatment[CallExpression[Identifier[print](MemberExpression[Identifier[self].Identifier[here]])]]
-	]]
-	9: CallStatment[CallExpression[Identifier[print](CallExpression[MemberExpression[Identifier[test].Identifier[was]]()])]]
+	CallExpression[9:6-9:18][Identifier[9:1-9:6][print](CallExpression[9:15-9:17][MemberExpression[9:11-9:15][Identifier[9:7-9:11][test].Identifier[9:12-9:15][was]]()])]
 ]"
 `;
 
 exports[`parse default scripts slice.src 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[divideString] = Function[Identifier[str], Identifier[limit] =>
-		2: AssignmentStatement[Identifier[offset] = Literal[0]]
-		3: AssignmentStatement[Identifier[maxLen] = MemberExpression[Identifier[str].Identifier[len]]]
-		4: AssignmentStatement[Identifier[frags] = ListConstructor[]]
-		6: WhileStatement[BinaryExpression[Identifier[offset] < Identifier[maxLen]]
-			7: AssignmentStatement[Identifier[next] = BinaryExpression[Identifier[offset] + Identifier[limit]]]
-			8: CallStatment[CallExpression[MemberExpression[Identifier[frags].Identifier[push]](IndexExpression[Identifier[str][SliceExpression[Identifier[offset]:Identifier[next]]]])]]
-			9: AssignmentStatement[Identifier[offset] = Identifier[next]]
+"Chunk[1:1-15:59][
+	AssignmentStatement[1:1-13:13][Identifier[1:1-1:13][divideString] = Function[1:16-13:13][Identifier[1:25-1:28][str], Identifier[1:29-1:34][limit] =>
+		AssignmentStatement[2:5-2:15][Identifier[2:5-2:11][offset] = Literal[2:14-2:15][0]]
+		AssignmentStatement[3:5-3:21][Identifier[3:5-3:11][maxLen] = MemberExpression[3:17-3:21][Identifier[3:14-3:17][str].Identifier[3:18-3:21][len]]]
+		AssignmentStatement[4:5-4:15][Identifier[4:5-4:10][frags] = ListConstructor[4:13-4:15][]]
+		WhileStatement[6:5-10:14][BinaryExpression[6:11-6:26][Identifier[6:11-6:17][offset] < Identifier[6:20-6:26][maxLen]]
+			AssignmentStatement[7:9-7:30][Identifier[7:9-7:13][next] = BinaryExpression[7:16-7:30][Identifier[7:16-7:22][offset] + Identifier[7:25-7:30][limit]]]
+			CallExpression[8:19-8:37][MemberExpression[8:14-8:19][Identifier[8:9-8:14][frags].Identifier[8:15-8:19][push]](IndexExpression[8:23-8:36][Identifier[8:20-8:23][str][SliceExpression[8:23-8:36][Identifier[8:24-8:30][offset]:Identifier[8:31-8:35][next]]]])]
+			AssignmentStatement[9:9-9:22][Identifier[9:9-9:15][offset] = Identifier[9:18-9:22][next]]
 		]
-		12: ReturnStatement[Identifier[frags]]
+		ReturnStatement[12:5-12:17][Identifier[12:12-12:17][frags]]
 	]]
-	15: CallStatment[CallExpression[Identifier[print](CallExpression[Identifier[divideString](Literal[blahhblahhblahhblahhblahhblahhgad], Literal[5])])]]
-]"
-`;
-
-exports[`parse default scripts slice.src unsafe 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[divideString] = Function[Identifier[str], Identifier[limit] =>
-		2: AssignmentStatement[Identifier[offset] = Literal[0]]
-		3: AssignmentStatement[Identifier[maxLen] = MemberExpression[Identifier[str].Identifier[len]]]
-		4: AssignmentStatement[Identifier[frags] = ListConstructor[]]
-		6: WhileStatement[BinaryExpression[Identifier[offset] < Identifier[maxLen]]
-			7: AssignmentStatement[Identifier[next] = BinaryExpression[Identifier[offset] + Identifier[limit]]]
-			8: CallStatment[CallExpression[MemberExpression[Identifier[frags].Identifier[push]](IndexExpression[Identifier[str][SliceExpression[Identifier[offset]:Identifier[next]]]])]]
-			9: AssignmentStatement[Identifier[offset] = Identifier[next]]
-		]
-		12: ReturnStatement[Identifier[frags]]
-	]]
-	15: CallStatment[CallExpression[Identifier[print](CallExpression[Identifier[divideString](Literal[blahhblahhblahhblahhblahhblahhgad], Literal[5])])]]
+	CallExpression[15:6-15:59][Identifier[15:1-15:6][print](CallExpression[15:19-15:58][Identifier[15:7-15:19][divideString](Literal[15:20-15:55][blahhblahhblahhblahhblahhblahhgad], Literal[15:56-15:57][5])])]
 ]"
 `;
 
 exports[`parse default scripts unary.src 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[test] = Function[ =>
-		2: ReturnStatement[Literal[null]]
+"Chunk[1:1-11:1][
+	AssignmentStatement[1:1-3:13][Identifier[1:1-1:5][test] = Function[1:8-3:13][ =>
+		ReturnStatement[2:5-2:16][Literal[2:12-2:16][null]]
 	]]
-	5: CallStatment[CallExpression[Identifier[print](LogicalExpression[UnaryExpression[@ MemberExpression[Literal[was].Identifier[split]]] and LogicalExpression[Literal[false] or NegationExpression[not Literal[false]]]])]]
-	6: CallStatment[CallExpression[Identifier[print](UnaryExpression[@ LogicalExpression[MemberExpression[Literal[was].Identifier[split]] and LogicalExpression[Literal[false] or NegationExpression[not Literal[false]]]]])]]
-	7: CallStatment[CallExpression[Identifier[print](LogicalExpression[NegationExpression[not MemberExpression[Literal[was].Identifier[split]]] and LogicalExpression[Literal[false] or NegationExpression[not Literal[false]]]])]]
-	8: CallStatment[CallExpression[Identifier[print](NegationExpression[not LogicalExpression[MemberExpression[Literal[was].Identifier[split]] and LogicalExpression[Literal[false] or NegationExpression[not Literal[false]]]]])]]
-	9: CallStatment[CallExpression[Identifier[print](BinaryExpression[BinaryNegatedExpression[- Literal[1]] + Literal[2]])]]
-	10: CallStatment[CallExpression[Identifier[print](BinaryNegatedExpression[- BinaryExpression[Literal[1] + Literal[2]]])]]
-]"
-`;
-
-exports[`parse default scripts unary.src unsafe 1`] = `
-"Chunk[
-	1: AssignmentStatement[Identifier[test] = Function[ =>
-		2: ReturnStatement[Literal[null]]
-	]]
-	5: CallStatment[CallExpression[Identifier[print](LogicalExpression[UnaryExpression[@ MemberExpression[Literal[was].Identifier[split]]] and LogicalExpression[Literal[false] or NegationExpression[not Literal[false]]]])]]
-	6: CallStatment[CallExpression[Identifier[print](UnaryExpression[@ LogicalExpression[MemberExpression[Literal[was].Identifier[split]] and LogicalExpression[Literal[false] or NegationExpression[not Literal[false]]]]])]]
-	7: CallStatment[CallExpression[Identifier[print](LogicalExpression[NegationExpression[not MemberExpression[Literal[was].Identifier[split]]] and LogicalExpression[Literal[false] or NegationExpression[not Literal[false]]]])]]
-	8: CallStatment[CallExpression[Identifier[print](NegationExpression[not LogicalExpression[MemberExpression[Literal[was].Identifier[split]] and LogicalExpression[Literal[false] or NegationExpression[not Literal[false]]]]])]]
-	9: CallStatment[CallExpression[Identifier[print](BinaryExpression[BinaryNegatedExpression[- Literal[1]] + Literal[2]])]]
-	10: CallStatment[CallExpression[Identifier[print](BinaryNegatedExpression[- BinaryExpression[Literal[1] + Literal[2]]])]]
+	CallExpression[5:6-5:45][Identifier[5:1-5:6][print](LogicalExpression[5:7-5:44][UnaryExpression[5:7-5:19][@ MemberExpression[5:13-5:19][Literal[5:8-5:13][was].Identifier[5:14-5:19][split]]] and LogicalExpression[5:25-5:43][Literal[5:25-5:30][false] or NegationExpression[5:34-5:43][not Literal[5:38-5:43][false]]]])]
+	CallExpression[6:6-6:47][Identifier[6:1-6:6][print](UnaryExpression[6:7-6:46][@ LogicalExpression[6:9-6:45][MemberExpression[6:14-6:20][Literal[6:9-6:14][was].Identifier[6:15-6:20][split]] and LogicalExpression[6:26-6:44][Literal[6:26-6:31][false] or NegationExpression[6:35-6:44][not Literal[6:39-6:44][false]]]]])]
+	CallExpression[7:6-7:48][Identifier[7:1-7:6][print](LogicalExpression[7:7-7:47][NegationExpression[7:7-7:22][not MemberExpression[7:16-7:22][Literal[7:11-7:16][was].Identifier[7:17-7:22][split]]] and LogicalExpression[7:28-7:46][Literal[7:28-7:33][false] or NegationExpression[7:37-7:46][not Literal[7:41-7:46][false]]]])]
+	CallExpression[8:6-8:50][Identifier[8:1-8:6][print](NegationExpression[8:7-8:49][not LogicalExpression[8:12-8:48][MemberExpression[8:17-8:23][Literal[8:12-8:17][was].Identifier[8:18-8:23][split]] and LogicalExpression[8:29-8:47][Literal[8:29-8:34][false] or NegationExpression[8:38-8:47][not Literal[8:42-8:47][false]]]]])]
+	CallExpression[9:6-9:14][Identifier[9:1-9:6][print](BinaryExpression[9:7-9:13][BinaryNegatedExpression[9:7-9:9][- Literal[9:8-9:9][1]] + Literal[9:12-9:13][2]])]
+	CallExpression[10:6-10:16][Identifier[10:1-10:6][print](BinaryNegatedExpression[10:7-10:15][- BinaryExpression[10:9-10:14][Literal[10:9-10:10][1] + Literal[10:13-10:14][2]]])]
 ]"
 `;
