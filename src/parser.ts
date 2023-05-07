@@ -82,7 +82,7 @@ export default class Parser extends ParserBase {
     const name = me.parseIdentifier();
 
     if (!me.consume(Selectors.From)) {
-      return me.raise(`expected from keyword`, me.token);
+      return me.raise(`expected from keyword`, me.token, false);
     }
 
     const path = me.parseFeaturePath();
