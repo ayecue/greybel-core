@@ -945,6 +945,25 @@ EOL[14:15 - 14:15: value = ';']
 Punctuator[15:1 - 15:2: value = '}']"
 `;
 
+exports[`parse default scripts multiline-comment.src 1`] = `
+"Comment[1:1 - 6:7: value = '
+
+
+my Test
+
+  **']
+Identifier[6:8 - 6:13: value = 'print']
+Punctuator[6:13 - 6:14: value = '(']
+StringLiteral[6:14 - 6:20: value = \\"test\\"]
+Punctuator[6:20 - 6:21: value = ')']
+Comment[6:22 - 10:5: value = '
+
+  another comment
+
+  ']
+Comment[10:6 - 10:28: value = ' one line comment ']"
+`;
+
 exports[`parse default scripts negation.src 1`] = `
 "Identifier[1:1 - 1:5: value = 'test']
 Punctuator[1:6 - 1:7: value = '=']

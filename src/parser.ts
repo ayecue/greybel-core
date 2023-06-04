@@ -43,6 +43,25 @@ export default class Parser extends ParserBase {
     me.includes = [];
   }
 
+  skipNewlines() {
+    const me = this;
+    while (me.isOneOf(Selectors.EndOfLine, Selectors.Comment)) {
+      if (me.is(Selectors.Comment)) {
+        const comment = me.astProvider.comment({
+          value: me.token.value,
+          isMultiline: me.token.value.indexOf('\n') !== -1,
+          start: me.token.getStart(),
+          end: me.token.getEnd(),
+          scope: me.currentScope
+        });
+
+        me.currentBlock.push(comment);
+      }
+
+      me.next();
+    }
+  }
+
   parseFeaturePath(): string {
     const me = this;
     let path = '';

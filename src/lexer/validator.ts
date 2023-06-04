@@ -27,4 +27,16 @@ export default class Validator extends LexerValidator {
   isIdentifierStart(code: number): boolean {
     return super.isIdentifierStart(code) || code === CharacterCode.HASH;
   }
+
+  isMultilineComment(code: CharacterCode, nextCode: CharacterCode): boolean {
+    return CharacterCode.SLASH === code && CharacterCode.ASTERISK === nextCode;
+  }
+
+  isMultilineCommentEnd(code: CharacterCode, nextCode: CharacterCode): boolean {
+    return CharacterCode.ASTERISK === code && CharacterCode.SLASH === nextCode;
+  }
+
+  isComment(code: CharacterCode, nextCode: CharacterCode): boolean {
+    return super.isComment(code, nextCode) || this.isMultilineComment(code, nextCode);
+  }
 }
