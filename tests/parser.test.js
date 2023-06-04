@@ -15,9 +15,13 @@ describe('parse', function() {
 					const parser = new Parser(content, {
 						tabWidth: 4
 					});
-					const payload = parser.parseChunk().toString();
+					const payload = parser.parseChunk();
 
-					expect(payload).toMatchSnapshot();
+					expect(payload.toString()).toMatchSnapshot();
+					expect(payload.namespaces.length).toMatchSnapshot();
+					expect(payload.literals.length).toMatchSnapshot();
+					expect(payload.nativeImports.length).toMatchSnapshot();
+					expect(payload.assignments.length).toMatchSnapshot();
 				});
 			});
 
