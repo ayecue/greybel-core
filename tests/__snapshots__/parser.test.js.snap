@@ -726,7 +726,7 @@ exports[`parse default scripts obj-init.src 3`] = `10`;
 
 exports[`parse default scripts obj-init.src 4`] = `0`;
 
-exports[`parse default scripts obj-init.src 5`] = `14`;
+exports[`parse default scripts obj-init.src 5`] = `11`;
 
 exports[`parse default scripts obj-init.src unsafe 1`] = `
 "Chunk[1:1-21:14][
