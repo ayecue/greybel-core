@@ -97,6 +97,22 @@ export default class Parser extends ParserBase {
 
     me.imports.push(base);
 
+    const assign = me.astProvider.assignmentStatement({
+      variable: name,
+      init: me.astProvider.literal(TokenType.NilLiteral, {
+        value: null,
+        raw: 'null',
+        start: name.start,
+        end: name.end,
+        scope: me.currentScope
+      }),
+      start: name.start,
+      end: name.end,
+      scope: me.currentScope
+    });
+
+    me.currentScope.assignments.push(assign);
+
     return base;
   }
 
