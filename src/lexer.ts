@@ -35,11 +35,16 @@ export default class Lexer extends LexerBase {
         me.nextLine();
         tempOffset = me.index + 1 - me.offset;
         endOffset = me.index + 1;
-      } else if (me.validator.isMultilineCommentEnd(me.codeAt(), me.codeAt(1))) {
+      } else if (
+        me.validator.isMultilineCommentEnd(me.codeAt(), me.codeAt(1))
+      ) {
         break;
       } else if (!me.isNotEOF()) {
         const line = beginLine;
-        return me.raise(`Unexpected multiline comment ending at line ${line}.`, line);
+        return me.raise(
+          `Unexpected multiline comment ending at line ${line}.`,
+          line
+        );
       }
 
       me.nextIndex();

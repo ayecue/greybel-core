@@ -37,6 +37,8 @@ export default class Validator extends LexerValidator {
   }
 
   isComment(code: CharacterCode, nextCode: CharacterCode): boolean {
-    return super.isComment(code, nextCode) || this.isMultilineComment(code, nextCode);
+    return (
+      super.isComment(code, nextCode) || this.isMultilineComment(code, nextCode)
+    );
   }
 }

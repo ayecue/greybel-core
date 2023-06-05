@@ -1,6 +1,5 @@
 import {
   ASTBase,
-  ASTChunk,
   ASTPosition,
   Parser as ParserBase,
   ParserOptions as ParserOptionsBase,
@@ -56,6 +55,7 @@ export default class Parser extends ParserBase {
         });
 
         me.currentBlock.push(comment);
+        me.addLine(comment);
       }
 
       me.next();
