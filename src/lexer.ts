@@ -1,4 +1,6 @@
 import {
+  ASTPosition,
+  ASTRange,
   Lexer as LexerBase,
   LexerOptions as LexerOptionsBase,
   Token,
@@ -40,10 +42,12 @@ export default class Lexer extends LexerBase {
       ) {
         break;
       } else if (!me.isNotEOF()) {
-        const line = beginLine;
         return me.raise(
-          `Unexpected multiline comment ending at line ${line}.`,
-          line
+          `Unexpected end of file in multiline comment.`,
+          new ASTRange(
+            new ASTPosition(beginLine, beginLineStart - endOffset),
+            new ASTPosition(me.line, me.index - endOffset)
+          )
         );
       }
 

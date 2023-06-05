@@ -15,6 +15,8 @@ import {
 } from './parser/ast';
 import { GreybelKeyword } from './types/keywords';
 import { Selectors } from './types/selector';
+import { Range } from 'greyscript-core/dist/types/range';
+import { Position } from 'greyscript-core/dist/types/position';
 
 export interface ParserOptions extends ParserOptionsBase {
   astProvider?: ASTProvider;
@@ -101,7 +103,13 @@ export default class Parser extends ParserBase {
     const name = me.parseIdentifier();
 
     if (!me.consume(Selectors.From)) {
-      return me.raise(`expected from keyword`, me.token, false);
+      return me.raise(`expected from keyword`, new Range(
+        start,
+        new Position(
+          me.token.lastLine ?? me.token.line,
+          me.token.lineRange[1]
+        )
+      ), false);
     }
 
     const path = me.parseFeaturePath();
