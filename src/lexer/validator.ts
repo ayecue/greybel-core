@@ -7,8 +7,6 @@ export default class Validator extends LexerValidator {
     const baseKeywords = super.getKeywords(index);
 
     switch (index) {
-      case 4:
-        return [...baseKeywords, GreybelKeyword.From];
       case 6:
         return [...baseKeywords, GreybelKeyword.Envar];
       case 7:

@@ -5,7 +5,6 @@ export enum GreybelKeyword {
   Import = '#import',
   Include = '#include',
   Debugger = 'debugger',
-  From = 'from'
 }
 
 export type Keyword = CoreKeyword | GreybelKeyword;

@@ -861,7 +861,7 @@ Identifier[12:6 - 12:7: value = 'b']"
 exports[`parse default scripts greybel-utils.src 1`] = `
 "Keyword[1:1 - 1:8: value = '#import']
 Identifier[1:9 - 1:12: value = 'foo']
-Keyword[1:13 - 1:17: value = 'from']
+Identifier[1:13 - 1:17: value = 'from']
 StringLiteral[1:18 - 1:28: value = \\"test/bar\\"]
 EOL[1:28 - 1:29: value = ';']
 EOL[1:29 - 1:29: value = ';']
@@ -876,7 +876,11 @@ Identifier[3:15 - 3:23: value = 'TEST_ENV']
 EOL[3:23 - 3:24: value = ';']
 EOL[3:24 - 3:24: value = ';']
 Keyword[4:1 - 4:9: value = 'debugger']
-EOL[4:9 - 4:10: value = ';']"
+EOL[4:9 - 4:10: value = ';']
+EOL[4:10 - 4:10: value = ';']
+Identifier[5:1 - 5:5: value = 'from']
+Punctuator[5:6 - 5:7: value = '=']
+StringLiteral[5:8 - 5:14: value = \\"test\\"]"
 `;
 
 exports[`parse default scripts invalid code 1`] = `Array []`;

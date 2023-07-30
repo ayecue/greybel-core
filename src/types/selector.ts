@@ -12,8 +12,8 @@ export const Selectors: typeof CoreSelectors & {
 } = {
   ...CoreSelectors,
   From: new Selector({
-    type: TokenType.Keyword,
-    value: GreybelKeyword.From
+    type: TokenType.Identifier,
+    value: 'from'
   }),
   Envar: new Selector({
     type: TokenType.Keyword,

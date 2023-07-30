@@ -2,3 +2,4 @@
 #include "test/bar";
 test = #envar TEST_ENV;
 debugger;
+from = "test"
