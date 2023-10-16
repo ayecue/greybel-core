@@ -8,6 +8,7 @@ import {
 } from 'greyscript-core';
 
 import Validator from './lexer/validator';
+import { GreybelKeyword } from './types/keywords';
 
 export interface LexerOptions extends LexerOptionsBase {
   validator?: Validator;
@@ -78,6 +79,14 @@ export default class Lexer extends LexerBase {
   scanComment(afterSpace: boolean): Token {
     const me = this;
     const validator = me.validator;
+
+    if (
+      me.content.startsWith(GreybelKeyword.ImportWithComment, me.index) ||
+      me.content.startsWith(GreybelKeyword.IncludeWithComment, me.index)
+    ) {
+      me.nextIndex();
+      return me.scanIdentifierOrKeyword(afterSpace);
+    }
 
     if (validator.isMultilineComment(me.codeAt(), me.codeAt(1))) {
       return me.scanMultilineComment(afterSpace);

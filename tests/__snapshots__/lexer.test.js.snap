@@ -880,7 +880,18 @@ EOL[4:9 - 4:10: value = ';']
 EOL[4:10 - 4:10: value = ';']
 Identifier[5:1 - 5:5: value = 'from']
 Punctuator[5:6 - 5:7: value = '=']
-StringLiteral[5:8 - 5:14: value = \\"test\\"]"
+StringLiteral[5:8 - 5:14: value = \\"test\\"]
+EOL[5:14 - 5:14: value = ';']
+EOL[6:1 - 6:1: value = ';']
+Keyword[7:1 - 7:9: value = '//import']
+Identifier[7:10 - 7:13: value = 'foo']
+Identifier[7:14 - 7:18: value = 'from']
+StringLiteral[7:19 - 7:29: value = \\"test/bar\\"]
+EOL[7:29 - 7:30: value = ';']
+EOL[7:30 - 7:30: value = ';']
+Keyword[8:1 - 8:10: value = '//include']
+StringLiteral[8:11 - 8:21: value = \\"test/bar\\"]
+EOL[8:21 - 8:22: value = ';']"
 `;
 
 exports[`parse default scripts invalid code 1`] = `Array []`;

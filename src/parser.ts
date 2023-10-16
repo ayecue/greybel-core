@@ -5,6 +5,8 @@ import {
   ParserOptions as ParserOptionsBase,
   TokenType
 } from 'greyscript-core';
+import { Position } from 'greyscript-core/dist/types/position';
+import { Range } from 'greyscript-core/dist/types/range';
 
 import Lexer from './lexer';
 import {
@@ -15,8 +17,6 @@ import {
 } from './parser/ast';
 import { GreybelKeyword } from './types/keywords';
 import { Selectors } from './types/selector';
-import { Range } from 'greyscript-core/dist/types/range';
-import { Position } from 'greyscript-core/dist/types/position';
 
 export interface ParserOptions extends ParserOptionsBase {
   astProvider?: ASTProvider;
@@ -103,13 +103,17 @@ export default class Parser extends ParserBase {
     const name = me.parseIdentifier();
 
     if (!me.consume(Selectors.From)) {
-      return me.raise(`expected from keyword`, new Range(
-        start,
-        new Position(
-          me.token.lastLine ?? me.token.line,
-          me.token.lineRange[1]
-        )
-      ), false);
+      return me.raise(
+        `expected from keyword`,
+        new Range(
+          start,
+          new Position(
+            me.token.lastLine ?? me.token.line,
+            me.token.lineRange[1]
+          )
+        ),
+        false
+      );
     }
 
     const path = me.parseFeaturePath();
@@ -179,9 +183,11 @@ export default class Parser extends ParserBase {
 
       switch (value) {
         case GreybelKeyword.Include:
+        case GreybelKeyword.IncludeWithComment:
           me.next();
           return me.parseFeatureIncludeStatement();
         case GreybelKeyword.Import:
+        case GreybelKeyword.ImportWithComment:
           me.next();
           return me.parseFeatureImportStatement();
         case GreybelKeyword.Envar:

@@ -15,8 +15,11 @@ export default class Validator extends LexerValidator {
         return [
           ...baseKeywords,
           GreybelKeyword.Include,
-          GreybelKeyword.Debugger
+          GreybelKeyword.Debugger,
+          GreybelKeyword.ImportWithComment
         ];
+      case 9:
+        return [...baseKeywords, GreybelKeyword.IncludeWithComment];
       default:
         return baseKeywords;
     }
