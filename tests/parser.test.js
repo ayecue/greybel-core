@@ -20,7 +20,6 @@ describe('parse', function() {
 					expect(payload.toString()).toMatchSnapshot();
 					expect(payload.namespaces.length).toMatchSnapshot();
 					expect(payload.literals.length).toMatchSnapshot();
-					expect(payload.nativeImports.length).toMatchSnapshot();
 					expect(payload.assignments.length).toMatchSnapshot();
 				});
 			});

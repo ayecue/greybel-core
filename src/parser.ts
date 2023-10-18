@@ -4,9 +4,9 @@ import {
   Parser as ParserBase,
   ParserOptions as ParserOptionsBase,
   TokenType
-} from 'greyscript-core';
-import { Position } from 'greyscript-core/dist/types/position';
-import { Range } from 'greyscript-core/dist/types/range';
+} from 'miniscript-core';
+import { Position } from 'miniscript-core/dist/types/position';
+import { Range } from 'miniscript-core/dist/types/range';
 
 import Lexer from './lexer';
 import {
@@ -243,7 +243,6 @@ export default class Parser extends ParserBase {
     me.popScope();
 
     chunk.body = block;
-    chunk.nativeImports = me.nativeImports;
     chunk.literals = me.literals;
     chunk.scopes = me.scopes;
     chunk.lines = me.lines;

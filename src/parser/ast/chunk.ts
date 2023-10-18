@@ -1,4 +1,4 @@
-import { ASTChunk, ASTChunkOptions } from 'greyscript-core';
+import { ASTChunk, ASTChunkOptions } from 'miniscript-core';
 
 import {
   ASTFeatureImportExpression,

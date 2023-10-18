@@ -2,7 +2,7 @@ import {
   Selector,
   Selectors as CoreSelectors,
   TokenType
-} from 'greyscript-core';
+} from 'miniscript-core';
 
 import { GreybelKeyword } from './keywords';
 

@@ -5,7 +5,7 @@ import {
   LexerOptions as LexerOptionsBase,
   Token,
   TokenType
-} from 'greyscript-core';
+} from 'miniscript-core';
 
 import Validator from './lexer/validator';
 import { GreybelKeyword } from './types/keywords';
