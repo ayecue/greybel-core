@@ -1,6 +1,6 @@
 {
     "name": "greybel-core",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Core lexer/parser for Greybel",
     "main": "dist/index",
     "typings": "dist/index",
@@ -50,7 +50,6 @@
         "miniscript-core": "^0.1.2"
     },
     "keywords": [
-        "greyscript",
-        "greyhack"
+        "miniscript"
     ]
 }
