@@ -19,4 +19,18 @@ export class ASTChunkAdvanced extends ASTChunk {
     this.imports = options.imports || [];
     this.includes = options.includes || [];
   }
+
+  clone(): ASTChunkAdvanced {
+    return new ASTChunkAdvanced({
+      nativeImports: this.nativeImports.map((it) => it.clone()),
+      literals: this.literals.map((it) => it.clone()),
+      scopes: this.scopes.map((it) => it.clone()),
+      imports: this.imports.map((it) => it.clone()),
+      includes: this.includes.map((it) => it.clone()),
+      lines: this.lines,
+      start: this.start,
+      end: this.end,
+      scope: this.scope
+    });
+  }
 }

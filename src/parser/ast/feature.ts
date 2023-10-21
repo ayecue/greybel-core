@@ -26,6 +26,18 @@ export class ASTFeatureImportExpression extends ASTBase {
   toString(): string {
     return `FeatureImportExpression[${this.start}-${this.end}][name = ${this.name}, path = ${this.path}]`;
   }
+
+  clone(): ASTFeatureImportExpression {
+    return new ASTFeatureImportExpression({
+      name: this.name.clone(),
+      path: this.path,
+      chunk: this.chunk.clone(),
+      namespace: this.namespace,
+      start: this.start,
+      end: this.end,
+      scope: this.scope
+    });
+  }
 }
 
 export interface ASTFeatureIncludeExpressionOptions extends ASTBaseOptions {
@@ -49,6 +61,17 @@ export class ASTFeatureIncludeExpression extends ASTBase {
   toString(): string {
     return `FeatureIncludeExpression[${this.start}-${this.end}][path = ${this.path}]`;
   }
+
+  clone(): ASTFeatureIncludeExpression {
+    return new ASTFeatureIncludeExpression({
+      path: this.path,
+      chunk: this.chunk.clone(),
+      namespace: this.namespace,
+      start: this.start,
+      end: this.end,
+      scope: this.scope
+    });
+  }
 }
 
 export interface ASTFeatureEnvarExpressionOptions extends ASTBaseOptions {
@@ -65,5 +88,14 @@ export class ASTFeatureEnvarExpression extends ASTBase {
 
   toString(): string {
     return `FeatureEnvarExpression[${this.start}-${this.end}][path = ${this.name}]`;
+  }
+
+  clone(): ASTFeatureEnvarExpression {
+    return new ASTFeatureEnvarExpression({
+      name: this.name,
+      start: this.start,
+      end: this.end,
+      scope: this.scope
+    });
   }
 }
