@@ -1,4 +1,4 @@
-import { CharacterCode, LexerValidator } from 'greyscript-core';
+import { CharacterCode, LexerValidator } from 'miniscript-core';
 
 import { GreybelKeyword } from '../types/keywords';
 

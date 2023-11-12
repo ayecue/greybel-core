@@ -2,7 +2,7 @@ import {
   ASTBase,
   ASTBaseOptions,
   ASTProvider as ASTProviderBase
-} from 'greyscript-core';
+} from 'miniscript-core';
 
 import { ASTType } from './ast/base';
 import { ASTChunkAdvanced, ASTChunkAdvancedOptions } from './ast/chunk';

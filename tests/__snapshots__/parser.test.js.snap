@@ -257,9 +257,7 @@ exports[`parse default scripts ascii.src 2`] = `undefined`;
 
 exports[`parse default scripts ascii.src 3`] = `171`;
 
-exports[`parse default scripts ascii.src 4`] = `0`;
-
-exports[`parse default scripts ascii.src 5`] = `152`;
+exports[`parse default scripts ascii.src 4`] = `152`;
 
 exports[`parse default scripts ascii.src unsafe 1`] = `
 "Chunk[1:1-71:29][
@@ -535,9 +533,7 @@ exports[`parse default scripts binary-expressions.src 2`] = `undefined`;
 
 exports[`parse default scripts binary-expressions.src 3`] = `0`;
 
-exports[`parse default scripts binary-expressions.src 4`] = `0`;
-
-exports[`parse default scripts binary-expressions.src 5`] = `5`;
+exports[`parse default scripts binary-expressions.src 4`] = `5`;
 
 exports[`parse default scripts binary-expressions.src unsafe 1`] = `
 "Chunk[1:1-12:7][
@@ -572,9 +568,7 @@ exports[`parse default scripts greybel-utils.src 2`] = `undefined`;
 
 exports[`parse default scripts greybel-utils.src 3`] = `1`;
 
-exports[`parse default scripts greybel-utils.src 4`] = `0`;
-
-exports[`parse default scripts greybel-utils.src 5`] = `4`;
+exports[`parse default scripts greybel-utils.src 4`] = `4`;
 
 exports[`parse default scripts greybel-utils.src unsafe 1`] = `
 "Chunk[1:1-8:22][
@@ -636,9 +630,7 @@ exports[`parse default scripts map.src 2`] = `undefined`;
 
 exports[`parse default scripts map.src 3`] = `13`;
 
-exports[`parse default scripts map.src 4`] = `0`;
-
-exports[`parse default scripts map.src 5`] = `14`;
+exports[`parse default scripts map.src 4`] = `14`;
 
 exports[`parse default scripts map.src unsafe 1`] = `
 "Chunk[1:1-15:2][
@@ -690,8 +682,6 @@ exports[`parse default scripts multiline-comment.src 3`] = `1`;
 
 exports[`parse default scripts multiline-comment.src 4`] = `0`;
 
-exports[`parse default scripts multiline-comment.src 5`] = `0`;
-
 exports[`parse default scripts multiline-comment.src unsafe 1`] = `
 "Chunk[1:1-10:28][
 	Comment[1:1-6:7][
@@ -727,9 +717,7 @@ exports[`parse default scripts negation.src 2`] = `undefined`;
 
 exports[`parse default scripts negation.src 3`] = `10`;
 
-exports[`parse default scripts negation.src 4`] = `0`;
-
-exports[`parse default scripts negation.src 5`] = `5`;
+exports[`parse default scripts negation.src 4`] = `5`;
 
 exports[`parse default scripts negation.src unsafe 1`] = `
 "Chunk[1:1-5:11][
@@ -774,9 +762,7 @@ exports[`parse default scripts obj-init.src 2`] = `undefined`;
 
 exports[`parse default scripts obj-init.src 3`] = `10`;
 
-exports[`parse default scripts obj-init.src 4`] = `0`;
-
-exports[`parse default scripts obj-init.src 5`] = `11`;
+exports[`parse default scripts obj-init.src 4`] = `11`;
 
 exports[`parse default scripts obj-init.src unsafe 1`] = `
 "Chunk[1:1-21:14][
@@ -884,9 +870,7 @@ exports[`parse default scripts password-generator.src 2`] = `undefined`;
 
 exports[`parse default scripts password-generator.src 3`] = `19`;
 
-exports[`parse default scripts password-generator.src 4`] = `0`;
-
-exports[`parse default scripts password-generator.src 5`] = `13`;
+exports[`parse default scripts password-generator.src 4`] = `13`;
 
 exports[`parse default scripts password-generator.src unsafe 1`] = `
 "Chunk[1:1-65:14][
@@ -1204,9 +1188,7 @@ exports[`parse default scripts pseudo-crypto.src 2`] = `undefined`;
 
 exports[`parse default scripts pseudo-crypto.src 3`] = `76`;
 
-exports[`parse default scripts pseudo-crypto.src 4`] = `0`;
-
-exports[`parse default scripts pseudo-crypto.src 5`] = `29`;
+exports[`parse default scripts pseudo-crypto.src 4`] = `29`;
 
 exports[`parse default scripts pseudo-crypto.src unsafe 1`] = `
 "Chunk[1:1-213:1][
@@ -1525,9 +1507,7 @@ exports[`parse default scripts random.src 2`] = `undefined`;
 
 exports[`parse default scripts random.src 3`] = `20`;
 
-exports[`parse default scripts random.src 4`] = `0`;
-
-exports[`parse default scripts random.src 5`] = `8`;
+exports[`parse default scripts random.src 4`] = `8`;
 
 exports[`parse default scripts random.src unsafe 1`] = `
 "Chunk[1:1-62:39][
@@ -1621,9 +1601,7 @@ exports[`parse default scripts simple-object.src 2`] = `undefined`;
 
 exports[`parse default scripts simple-object.src 3`] = `1`;
 
-exports[`parse default scripts simple-object.src 4`] = `0`;
-
-exports[`parse default scripts simple-object.src 5`] = `3`;
+exports[`parse default scripts simple-object.src 4`] = `3`;
 
 exports[`parse default scripts simple-object.src unsafe 1`] = `
 "Chunk[1:1-9:18][
@@ -1657,9 +1635,7 @@ exports[`parse default scripts slice.src 2`] = `undefined`;
 
 exports[`parse default scripts slice.src 3`] = `3`;
 
-exports[`parse default scripts slice.src 4`] = `0`;
-
-exports[`parse default scripts slice.src 5`] = `1`;
+exports[`parse default scripts slice.src 4`] = `1`;
 
 exports[`parse default scripts slice.src unsafe 1`] = `
 "Chunk[1:1-15:59][
@@ -1696,9 +1672,7 @@ exports[`parse default scripts unary.src 2`] = `undefined`;
 
 exports[`parse default scripts unary.src 3`] = `17`;
 
-exports[`parse default scripts unary.src 4`] = `0`;
-
-exports[`parse default scripts unary.src 5`] = `1`;
+exports[`parse default scripts unary.src 4`] = `1`;
 
 exports[`parse default scripts unary.src unsafe 1`] = `
 "Chunk[1:1-11:1][

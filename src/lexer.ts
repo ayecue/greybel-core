@@ -1,14 +1,18 @@
 import {
   ASTPosition,
   ASTRange,
+  BaseToken,
+  CharacterCode as CharacterCodeBase,
   Lexer as LexerBase,
   LexerOptions as LexerOptionsBase,
   Token,
   TokenType
-} from 'greyscript-core';
+} from 'miniscript-core';
 
 import Validator from './lexer/validator';
+import { CharacterCode } from './types/codes';
 import { GreybelKeyword } from './types/keywords';
+import { Operator } from './types/operators';
 
 export interface LexerOptions extends LexerOptionsBase {
   validator?: Validator;
@@ -20,6 +24,34 @@ export default class Lexer extends LexerBase {
   constructor(content: string, options: LexerOptions = {}) {
     options.validator = options.validator || new Validator();
     super(content, options);
+  }
+
+  scan(
+    code: number,
+    nextCode: number | undefined,
+    lastCode: number | undefined,
+    afterSpace: boolean
+  ): BaseToken<any> | null {
+    const me = this;
+
+    switch (code) {
+      case CharacterCodeBase.ARROW_LEFT:
+        if (CharacterCodeBase.ARROW_LEFT === nextCode)
+          return me.scanPunctuator(Operator.LeftShift, afterSpace);
+        break;
+      case CharacterCodeBase.ARROW_RIGHT:
+        if (CharacterCodeBase.ARROW_RIGHT === nextCode) {
+          if (CharacterCodeBase.ARROW_RIGHT === lastCode)
+            return me.scanPunctuator(Operator.UnsignedRightShift, afterSpace);
+          return me.scanPunctuator(Operator.RightShift, afterSpace);
+        }
+        break;
+      case CharacterCode.AMPERSAND:
+      case CharacterCode.VERTICAL_LINE:
+        return me.scanPunctuator(String.fromCharCode(code), afterSpace);
+    }
+
+    return super.scan(code, nextCode, lastCode, afterSpace);
   }
 
   scanMultilineComment(afterSpace: boolean) {

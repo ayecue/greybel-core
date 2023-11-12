@@ -1,4 +1,4 @@
-import { ASTBase, ASTBaseOptions, ASTChunk } from 'greyscript-core';
+import { ASTBase, ASTBaseOptions, ASTChunk } from 'miniscript-core';
 
 import { ASTType } from './base';
 
