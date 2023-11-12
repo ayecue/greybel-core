@@ -1,5 +1,7 @@
 import {
   ASTBase,
+  ASTListValue,
+  ASTMapKeyString,
   ASTPosition,
   Operator as OperatorBase,
   Parser as ParserBase,
@@ -46,8 +48,9 @@ export default class Parser extends ParserBase {
     me.includes = [];
   }
 
-  skipNewlines() {
+  skipNewlines(): number {
     const me = this;
+    let lines = 0;
     while (me.isOneOf(Selectors.EndOfLine, Selectors.Comment)) {
       if (me.is(Selectors.Comment)) {
         const comment = me.astProvider.comment({
@@ -60,10 +63,202 @@ export default class Parser extends ParserBase {
 
         me.currentBlock.push(comment);
         me.addLine(comment);
+      } else {
+        lines++;
       }
 
       me.next();
     }
+
+    return lines;
+  }
+
+  parseMap(asLval: boolean = false, statementStart: boolean = false): ASTBase {
+    const me = this;
+
+    if (!me.is(Selectors.CLBracket)) {
+      return me.parseList(asLval, statementStart);
+    }
+
+    const start = me.token.getStart();
+    const fields: ASTMapKeyString[] = [];
+    const mapConstructorExpr = me.astProvider.mapConstructorExpression({
+      fields,
+      start,
+      end: null,
+      scope: me.currentScope
+    });
+
+    me.next();
+
+    if (me.is(Selectors.CRBracket)) {
+      me.next();
+    } else {
+      while (!me.is(Selectors.EndOfFile)) {
+        me.skipNewlines();
+
+        if (me.is(Selectors.CRBracket)) {
+          me.next();
+          break;
+        }
+
+        const key = me.parseExpr();
+        let value: ASTBase = null;
+
+        me.requireToken(Selectors.MapKeyValueSeperator);
+        me.skipNewlines();
+
+        if (me.currentAssignment) {
+          const assign = me.astProvider.assignmentStatement({
+            variable: me.astProvider.indexExpression({
+              index: key,
+              base: me.currentAssignment.variable,
+              start: key.start,
+              end: key.end,
+              scope: me.currentScope
+            }),
+            init: null,
+            start: key.start,
+            end: null
+          });
+          const previousAssignment = me.currentAssignment;
+
+          me.currentAssignment = assign;
+          value = me.parseExpr();
+          me.currentAssignment = previousAssignment;
+
+          assign.init = value;
+          assign.end = value.end;
+
+          me.currentScope.assignments.push(assign);
+        } else {
+          value = me.parseExpr();
+        }
+
+        fields.push(
+          me.astProvider.mapKeyString({
+            key,
+            value,
+            start: key.start,
+            end: value.end,
+            scope: me.currentScope
+          })
+        );
+
+        me.skipNewlines();
+
+        if (
+          Selectors.CRBracket.is(
+            me.requireTokenOfAny(
+              [Selectors.MapSeperator, Selectors.CRBracket],
+              start
+            )
+          )
+        )
+          break;
+      }
+    }
+
+    mapConstructorExpr.end = me.token.getStart();
+
+    return mapConstructorExpr;
+  }
+
+  parseList(asLval: boolean = false, statementStart: boolean = false): ASTBase {
+    const me = this;
+
+    if (!me.is(Selectors.SLBracket)) {
+      return me.parseQuantity(asLval, statementStart);
+    }
+
+    const start = me.token.getStart();
+    const fields: ASTListValue[] = [];
+    const listConstructorExpr = me.astProvider.listConstructorExpression({
+      fields,
+      start,
+      end: null,
+      scope: me.currentScope
+    });
+
+    me.next();
+
+    if (me.is(Selectors.SRBracket)) {
+      me.next();
+    } else {
+      while (!me.is(Selectors.EndOfFile)) {
+        me.skipNewlines();
+
+        if (me.is(Selectors.SRBracket)) {
+          me.next();
+          break;
+        }
+
+        let value: ASTBase = null;
+
+        if (me.currentAssignment) {
+          const assign = me.astProvider.assignmentStatement({
+            variable: me.astProvider.indexExpression({
+              index: me.astProvider.literal(TokenType.NumericLiteral, {
+                value: fields.length,
+                raw: `${fields.length}`,
+                start,
+                end: me.token.getEnd(),
+                scope: me.currentScope
+              }),
+              base: me.currentAssignment.variable,
+              start: null,
+              end: null,
+              scope: me.currentScope
+            }),
+            init: null,
+            start: null,
+            end: null
+          });
+          const previousAssignment = me.currentAssignment;
+
+          me.currentAssignment = previousAssignment;
+
+          value = me.parseExpr();
+
+          me.currentAssignment = previousAssignment;
+
+          assign.variable.start = value.start;
+          assign.variable.end = value.end;
+          assign.init = value;
+          assign.start = value.start;
+          assign.end = value.end;
+
+          me.currentScope.assignments.push(assign);
+        } else {
+          value = me.parseExpr();
+        }
+
+        fields.push(
+          me.astProvider.listValue({
+            value,
+            start: value.start,
+            end: value.end,
+            scope: me.currentScope
+          })
+        );
+
+        me.skipNewlines();
+
+        if (
+          Selectors.SRBracket.is(
+            me.requireTokenOfAny(
+              [Selectors.ListSeperator, Selectors.SRBracket],
+              start
+            )
+          )
+        )
+          break;
+      }
+    }
+
+    listConstructorExpr.end = me.token.getStart();
+
+    return listConstructorExpr;
   }
 
   parseFeaturePath(): string {
