@@ -22,7 +22,6 @@ export class ASTChunkAdvanced extends ASTChunk {
 
   clone(): ASTChunkAdvanced {
     return new ASTChunkAdvanced({
-      nativeImports: this.nativeImports.map((it) => it.clone()),
       literals: this.literals.map((it) => it.clone()),
       scopes: this.scopes.map((it) => it.clone()),
       imports: this.imports.map((it) => it.clone()),
