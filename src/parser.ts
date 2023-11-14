@@ -449,7 +449,10 @@ export default class Parser extends ParserBase {
     const val = me.parseBitwise(asLval, statementStart);
     let base = val;
 
-    while (me.isOneOf(Selectors.Plus, Selectors.Minus)) {
+    while (
+      me.isOneOf(Selectors.Plus, Selectors.Minus) &&
+      (!statementStart || !this.token.afterSpace)
+    ) {
       const token = me.token;
 
       me.next();
