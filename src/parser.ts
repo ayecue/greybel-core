@@ -527,6 +527,7 @@ export default class Parser extends ParserBase {
 
   parseStatement(): void {
     const me = this;
+    const pendingBlock = me.backpatches.peek();
 
     if (me.isType(TokenType.Keyword)) {
       const value = me.token.value;
@@ -537,7 +538,7 @@ export default class Parser extends ParserBase {
           me.next();
           const item = me.parseFeatureIncludeStatement();
           me.addLine(item);
-          me.backpatches.peek().body.push(item);
+          pendingBlock.body.push(item);
           return;
         }
         case GreybelKeyword.Import:
@@ -545,14 +546,14 @@ export default class Parser extends ParserBase {
           me.next();
           const item = me.parseFeatureImportStatement();
           me.addLine(item);
-          me.backpatches.peek().body.push(item);
+          pendingBlock.body.push(item);
           return;
         }
         case GreybelKeyword.Envar: {
           me.next();
           const item = me.parseFeatureEnvarStatement();
           me.addLine(item);
-          me.backpatches.peek().body.push(item);
+          pendingBlock.body.push(item);
           return;
         }
         case GreybelKeyword.Debugger: {
@@ -569,7 +570,7 @@ export default class Parser extends ParserBase {
             scope: me.currentScope
           });
           me.addLine(item);
-          me.backpatches.peek().body.push(item);
+          pendingBlock.body.push(item);
           return;
         }
         default:
@@ -603,7 +604,7 @@ export default class Parser extends ParserBase {
       me.parseStatement();
 
       if (me.statementErrors.length > 0) {
-        me.errors.push(...me.statementErrors);
+        me.errors.push(me.statementErrors[0]);
 
         if (!me.unsafe) {
           me.lexer.clearSnapshot();
