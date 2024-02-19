@@ -104,6 +104,7 @@ export default class Lexer extends LexerBase {
     });
 
     me.offset = endOffset;
+    me.snapshot?.push(token);
 
     return token;
   }

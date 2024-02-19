@@ -3,9 +3,11 @@ import {
   ASTListValue,
   ASTMapKeyString,
   ASTPosition,
+  isPendingChunk,
   Operator as OperatorBase,
   Parser as ParserBase,
   ParserOptions as ParserOptionsBase,
+  PendingChunk,
   TokenType
 } from 'miniscript-core';
 import { Position } from 'miniscript-core/dist/types/position';
@@ -61,8 +63,8 @@ export default class Parser extends ParserBase {
           scope: me.currentScope
         });
 
-        me.currentBlock.push(comment);
         me.addLine(comment);
+        me.backpatches.peek().body.push(comment);
       } else {
         lines++;
       }
@@ -80,13 +82,14 @@ export default class Parser extends ParserBase {
       return me.parseList(asLval, statementStart);
     }
 
+    const scope = me.currentScope;
     const start = me.token.getStart();
     const fields: ASTMapKeyString[] = [];
     const mapConstructorExpr = me.astProvider.mapConstructorExpression({
       fields,
       start,
       end: null,
-      scope: me.currentScope
+      scope
     });
 
     me.next();
@@ -115,7 +118,7 @@ export default class Parser extends ParserBase {
               base: me.currentAssignment.variable,
               start: key.start,
               end: key.end,
-              scope: me.currentScope
+              scope
             }),
             init: null,
             start: key.start,
@@ -130,7 +133,7 @@ export default class Parser extends ParserBase {
           assign.init = value;
           assign.end = value.end;
 
-          me.currentScope.assignments.push(assign);
+          scope.assignments.push(assign);
         } else {
           value = me.parseExpr();
         }
@@ -141,7 +144,7 @@ export default class Parser extends ParserBase {
             value,
             start: key.start,
             end: value.end,
-            scope: me.currentScope
+            scope
           })
         );
 
@@ -171,13 +174,14 @@ export default class Parser extends ParserBase {
       return me.parseQuantity(asLval, statementStart);
     }
 
+    const scope = me.currentScope;
     const start = me.token.getStart();
     const fields: ASTListValue[] = [];
     const listConstructorExpr = me.astProvider.listConstructorExpression({
       fields,
       start,
       end: null,
-      scope: me.currentScope
+      scope
     });
 
     me.next();
@@ -203,12 +207,12 @@ export default class Parser extends ParserBase {
                 raw: `${fields.length}`,
                 start,
                 end: me.token.getEnd(),
-                scope: me.currentScope
+                scope
               }),
               base: me.currentAssignment.variable,
               start: null,
               end: null,
-              scope: me.currentScope
+              scope
             }),
             init: null,
             start: null,
@@ -228,7 +232,7 @@ export default class Parser extends ParserBase {
           assign.start = value.start;
           assign.end = value.end;
 
-          me.currentScope.assignments.push(assign);
+          scope.assignments.push(assign);
         } else {
           value = me.parseExpr();
         }
@@ -238,7 +242,7 @@ export default class Parser extends ParserBase {
             value,
             start: value.start,
             end: value.end,
-            scope: me.currentScope
+            scope
           })
         );
 
@@ -300,7 +304,7 @@ export default class Parser extends ParserBase {
     const name = me.parseIdentifier();
 
     if (!me.consume(Selectors.From)) {
-      return me.raise(
+      me.raise(
         `expected from keyword`,
         new Range(
           start,
@@ -308,9 +312,10 @@ export default class Parser extends ParserBase {
             me.token.lastLine ?? me.token.line,
             me.token.lineRange[1]
           )
-        ),
-        false
+        )
       );
+
+      return me.parseInvalidCode();
     }
 
     const path = me.parseFeaturePath();
@@ -520,7 +525,7 @@ export default class Parser extends ParserBase {
     return super.parseAtom();
   }
 
-  parseStatement(): ASTBase | null {
+  parseStatement(): void {
     const me = this;
 
     if (me.isType(TokenType.Keyword)) {
@@ -528,19 +533,31 @@ export default class Parser extends ParserBase {
 
       switch (value) {
         case GreybelKeyword.Include:
-        case GreybelKeyword.IncludeWithComment:
+        case GreybelKeyword.IncludeWithComment: {
           me.next();
-          return me.parseFeatureIncludeStatement();
+          const item = me.parseFeatureIncludeStatement();
+          me.addLine(item);
+          me.backpatches.peek().body.push(item);
+          return;
+        }
         case GreybelKeyword.Import:
-        case GreybelKeyword.ImportWithComment:
+        case GreybelKeyword.ImportWithComment: {
           me.next();
-          return me.parseFeatureImportStatement();
-        case GreybelKeyword.Envar:
+          const item = me.parseFeatureImportStatement();
+          me.addLine(item);
+          me.backpatches.peek().body.push(item);
+          return;
+        }
+        case GreybelKeyword.Envar: {
           me.next();
-          return me.parseFeatureEnvarStatement();
-        case GreybelKeyword.Debugger:
+          const item = me.parseFeatureEnvarStatement();
+          me.addLine(item);
+          me.backpatches.peek().body.push(item);
+          return;
+        }
+        case GreybelKeyword.Debugger: {
           me.next();
-          return me.astProvider.featureDebuggerExpression({
+          const item = me.astProvider.featureDebuggerExpression({
             start: new ASTPosition(
               me.previousToken.line,
               me.previousToken.lineRange[0]
@@ -551,12 +568,16 @@ export default class Parser extends ParserBase {
             ),
             scope: me.currentScope
           });
+          me.addLine(item);
+          me.backpatches.peek().body.push(item);
+          return;
+        }
         default:
           break;
       }
     }
 
-    return super.parseStatement();
+    super.parseStatement();
   }
 
   parseChunk(): ASTChunkAdvanced | ASTBase {
@@ -566,10 +587,9 @@ export default class Parser extends ParserBase {
 
     const start = me.token.getStart();
     const chunk = me.astProvider.chunkAdvanced({ start, end: null });
-    const block: ASTBase[] = [];
+    const pending = new PendingChunk(chunk);
 
-    me.currentBlock = block;
-
+    me.backpatches.push(pending);
     me.pushScope(chunk);
 
     while (!me.is(Selectors.EndOfFile)) {
@@ -577,17 +597,53 @@ export default class Parser extends ParserBase {
 
       if (me.is(Selectors.EndOfFile)) break;
 
-      const statement = me.parseStatement();
+      me.lexer.recordSnapshot();
+      me.statementErrors = [];
 
-      if (statement) {
-        me.addLine(statement);
-        block.push(statement);
+      me.parseStatement();
+
+      if (me.statementErrors.length > 0) {
+        me.errors.push(...me.statementErrors);
+
+        if (!me.unsafe) {
+          me.lexer.clearSnapshot();
+          throw me.statementErrors[0];
+        }
+
+        me.lexer.recoverFromSnapshot();
+
+        me.next();
+
+        while (
+          me.token.type !== TokenType.EOL &&
+          me.token.type !== TokenType.EOF
+        ) {
+          me.next();
+        }
       }
     }
 
+    let last = me.backpatches.pop();
+
+    while (!isPendingChunk(last)) {
+      const exception = me.raise(
+        `found open block ${last.block.type}`,
+        new Range(last.block.start, last.block.start)
+      );
+
+      last.complete(me.previousToken);
+
+      me.errors.push(exception);
+
+      if (!me.unsafe) {
+        throw exception;
+      }
+
+      last = me.backpatches.pop();
+    }
     me.popScope();
 
-    chunk.body = block;
+    chunk.body = last.body;
     chunk.literals = me.literals;
     chunk.scopes = me.scopes;
     chunk.lines = me.lines;
@@ -595,7 +651,7 @@ export default class Parser extends ParserBase {
     chunk.imports = me.imports;
     chunk.includes = me.includes;
 
-    me.currentBlock = null;
+    me.backpatches.pop();
 
     return chunk;
   }
