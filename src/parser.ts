@@ -105,7 +105,7 @@ export default class Parser extends ParserBase {
           break;
         }
 
-        const key = me.parseExpr();
+        const key = me.parseExpr(null);
         let value: ASTBase = null;
 
         me.requireToken(Selectors.MapKeyValueSeperator);
@@ -127,7 +127,7 @@ export default class Parser extends ParserBase {
           const previousAssignment = me.currentAssignment;
 
           me.currentAssignment = assign;
-          value = me.parseExpr();
+          value = me.parseExpr(null);
           me.currentAssignment = previousAssignment;
 
           assign.init = value;
@@ -135,7 +135,7 @@ export default class Parser extends ParserBase {
 
           scope.assignments.push(assign);
         } else {
-          value = me.parseExpr();
+          value = me.parseExpr(null);
         }
 
         fields.push(
@@ -222,7 +222,7 @@ export default class Parser extends ParserBase {
 
           me.currentAssignment = previousAssignment;
 
-          value = me.parseExpr();
+          value = me.parseExpr(null);
 
           me.currentAssignment = previousAssignment;
 
@@ -234,7 +234,7 @@ export default class Parser extends ParserBase {
 
           scope.assignments.push(assign);
         } else {
-          value = me.parseExpr();
+          value = me.parseExpr(null);
         }
 
         fields.push(
