@@ -105,8 +105,14 @@ export default class Parser extends ParserBase {
           break;
         }
 
-        const key = me.parseExpr(null);
-        let value: ASTBase = null;
+        const keyValueItem = me.astProvider.mapKeyString({
+          key: null,
+          value: null,
+          start: me.token.getStart(),
+          end: null,
+          scope
+        });
+        keyValueItem.key = me.parseExpr(null);
 
         me.requireToken(Selectors.MapKeyValueSeperator);
         me.skipNewlines();
@@ -114,39 +120,32 @@ export default class Parser extends ParserBase {
         if (me.currentAssignment) {
           const assign = me.astProvider.assignmentStatement({
             variable: me.astProvider.indexExpression({
-              index: key,
+              index: keyValueItem.key,
               base: me.currentAssignment.variable,
-              start: key.start,
-              end: key.end,
+              start: keyValueItem.start,
+              end: me.token.getEnd(),
               scope
             }),
             init: null,
-            start: key.start,
+            start: keyValueItem.start,
             end: null
           });
           const previousAssignment = me.currentAssignment;
 
           me.currentAssignment = assign;
-          value = me.parseExpr(null);
+          keyValueItem.value = me.parseExpr(keyValueItem);
           me.currentAssignment = previousAssignment;
 
-          assign.init = value;
-          assign.end = value.end;
+          assign.init = keyValueItem.value;
+          assign.end = me.previousToken.getEnd();
 
           scope.assignments.push(assign);
         } else {
-          value = me.parseExpr(null);
+          keyValueItem.value = me.parseExpr(keyValueItem);
         }
 
-        fields.push(
-          me.astProvider.mapKeyString({
-            key,
-            value,
-            start: key.start,
-            end: value.end,
-            scope
-          })
-        );
+        keyValueItem.end = me.previousToken.getEnd();
+        fields.push(keyValueItem);
 
         me.skipNewlines();
 
@@ -197,7 +196,12 @@ export default class Parser extends ParserBase {
           break;
         }
 
-        let value: ASTBase = null;
+        const listValue = me.astProvider.listValue({
+          value: null,
+          start: me.token.getStart(),
+          end: null,
+          scope
+        });
 
         if (me.currentAssignment) {
           const assign = me.astProvider.assignmentStatement({
@@ -219,32 +223,27 @@ export default class Parser extends ParserBase {
             end: null
           });
           const previousAssignment = me.currentAssignment;
+          const startToken = me.token;
 
           me.currentAssignment = previousAssignment;
 
-          value = me.parseExpr(null);
+          listValue.value = me.parseExpr(listValue);
 
           me.currentAssignment = previousAssignment;
 
-          assign.variable.start = value.start;
-          assign.variable.end = value.end;
-          assign.init = value;
-          assign.start = value.start;
-          assign.end = value.end;
+          assign.variable.start = startToken.getStart();
+          assign.variable.end = me.previousToken.getEnd();
+          assign.init = listValue.value;
+          assign.start = listValue.start;
+          assign.end = me.previousToken.getEnd();
 
           scope.assignments.push(assign);
         } else {
-          value = me.parseExpr(null);
+          listValue.value = me.parseExpr(listValue);
         }
 
-        fields.push(
-          me.astProvider.listValue({
-            value,
-            start: value.start,
-            end: value.end,
-            scope
-          })
-        );
+        listValue.end = me.previousToken.getEnd();
+        fields.push(listValue);
 
         me.skipNewlines();
 
