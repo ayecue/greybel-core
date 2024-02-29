@@ -1173,6 +1173,15 @@ Keyword[13:1 - 13:8: value = 'end for']
 EOL[13:8 - 13:9: value = ';']"
 `;
 
+exports[`parse default scripts file-expression.src 1`] = `
+"Identifier[1:1 - 1:6: value = 'print']
+Keyword[1:7 - 1:16: value = '#filename']
+EOL[1:16 - 1:16: value = ';']
+Identifier[2:1 - 2:5: value = 'test']
+Punctuator[2:6 - 2:7: value = '=']
+Keyword[2:8 - 2:17: value = '#filename']"
+`;
+
 exports[`parse default scripts float.ms 1`] = `
 "Identifier[1:1 - 1:10: value = 'integer_1']
 Punctuator[1:11 - 1:12: value = '=']
@@ -1318,6 +1327,15 @@ EOL[8:21 - 8:22: value = ';']"
 `;
 
 exports[`parse default scripts invalid code 1`] = `Array []`;
+
+exports[`parse default scripts line-expression.src 1`] = `
+"Identifier[1:1 - 1:6: value = 'print']
+Keyword[1:7 - 1:12: value = '#line']
+EOL[1:12 - 1:12: value = ';']
+Identifier[2:1 - 2:5: value = 'test']
+Punctuator[2:6 - 2:7: value = '=']
+Keyword[2:8 - 2:13: value = '#line']"
+`;
 
 exports[`parse default scripts list.ms 1`] = `
 "Identifier[1:1 - 1:5: value = 'test']

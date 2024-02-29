@@ -6,7 +6,9 @@ export enum GreybelKeyword {
   Include = '#include',
   ImportWithComment = '//import',
   IncludeWithComment = '//include',
-  Debugger = 'debugger'
+  Debugger = 'debugger',
+  Line = '#line',
+  File = '#filename'
 }
 
 export type Keyword = CoreKeyword | GreybelKeyword;

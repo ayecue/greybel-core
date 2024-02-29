@@ -519,6 +519,33 @@ export default class Parser extends ParserBase {
     if (me.is(Selectors.Envar)) {
       me.next();
       return me.parseFeatureEnvarStatement();
+    } else if (me.is(Selectors.Line)) {
+      me.next();
+      return me.astProvider.featureLineExpression({
+        start: new ASTPosition(
+          me.previousToken.line,
+          me.previousToken.lineRange[0]
+        ),
+        end: new ASTPosition(
+          me.previousToken.line,
+          me.previousToken.lineRange[1]
+        ),
+        scope: me.currentScope
+      });
+    }
+    if (me.is(Selectors.File)) {
+      me.next();
+      return me.astProvider.featureFileExpression({
+        start: new ASTPosition(
+          me.previousToken.line,
+          me.previousToken.lineRange[0]
+        ),
+        end: new ASTPosition(
+          me.previousToken.line,
+          me.previousToken.lineRange[1]
+        ),
+        scope: me.currentScope
+      });
     }
 
     return super.parseAtom();
