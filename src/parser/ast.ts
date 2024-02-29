@@ -38,6 +38,14 @@ export class ASTProvider extends ASTProviderBase {
     return new ASTBase(ASTType.FeatureDebuggerExpression, options);
   }
 
+  featureLineExpression(options: ASTBaseOptions): ASTBase {
+    return new ASTBase(ASTType.FeatureLineExpression, options);
+  }
+
+  featureFileExpression(options: ASTBaseOptions): ASTBase {
+    return new ASTBase(ASTType.FeatureFileExpression, options);
+  }
+
   chunkAdvanced(options: ASTChunkAdvancedOptions): ASTChunkAdvanced {
     return new ASTChunkAdvanced(options);
   }

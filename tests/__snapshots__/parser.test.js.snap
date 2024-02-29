@@ -808,6 +808,26 @@ exports[`parse default scripts eol.ms unsafe 1`] = `
 ]"
 `;
 
+exports[`parse default scripts file-expression.src 1`] = `
+"Chunk[1:1-2:17][
+	CallExpression[1:1-1:16][Identifier[1:1-1:6][print](FeatureFileExpression[1:7-1:16][])]
+	AssignmentStatement[2:1-2:17][Identifier[2:1-2:5][test] = FeatureFileExpression[2:8-2:17][]]
+]"
+`;
+
+exports[`parse default scripts file-expression.src 2`] = `undefined`;
+
+exports[`parse default scripts file-expression.src 3`] = `0`;
+
+exports[`parse default scripts file-expression.src 4`] = `1`;
+
+exports[`parse default scripts file-expression.src unsafe 1`] = `
+"Chunk[1:1-2:17][
+	CallExpression[1:1-1:16][Identifier[1:1-1:6][print](FeatureFileExpression[1:7-1:16][])]
+	AssignmentStatement[2:1-2:17][Identifier[2:1-2:5][test] = FeatureFileExpression[2:8-2:17][]]
+]"
+`;
+
 exports[`parse default scripts float.ms 1`] = `
 "Chunk[1:1-19:25][
 	AssignmentStatement[1:1-1:14][Identifier[1:1-1:10][integer_1] = Literal[1:13-1:14][1]]
@@ -923,6 +943,26 @@ Array [
   [Error: unexpected keyword Keyword[18:5 - 18:13: value = 'end func'] at start of line],
   [Error: got Identifier[28:16 - 28:21: value = 'print'] where "then" is required],
 ]
+`;
+
+exports[`parse default scripts line-expression.src 1`] = `
+"Chunk[1:1-2:13][
+	CallExpression[1:1-1:12][Identifier[1:1-1:6][print](FeatureLineExpression[1:7-1:12][])]
+	AssignmentStatement[2:1-2:13][Identifier[2:1-2:5][test] = FeatureLineExpression[2:8-2:13][]]
+]"
+`;
+
+exports[`parse default scripts line-expression.src 2`] = `undefined`;
+
+exports[`parse default scripts line-expression.src 3`] = `0`;
+
+exports[`parse default scripts line-expression.src 4`] = `1`;
+
+exports[`parse default scripts line-expression.src unsafe 1`] = `
+"Chunk[1:1-2:13][
+	CallExpression[1:1-1:12][Identifier[1:1-1:6][print](FeatureLineExpression[1:7-1:12][])]
+	AssignmentStatement[2:1-2:13][Identifier[2:1-2:5][test] = FeatureLineExpression[2:8-2:13][]]
+]"
 `;
 
 exports[`parse default scripts list.ms 1`] = `

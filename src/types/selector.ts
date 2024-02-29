@@ -10,6 +10,8 @@ import { Operator } from './operators';
 export const Selectors: typeof CoreSelectors & {
   From: Selector;
   Envar: Selector;
+  Line: Selector;
+  File: Selector;
   LeftShift: Selector;
   RightShift: Selector;
   UnsignedRightShift: Selector;
@@ -24,6 +26,14 @@ export const Selectors: typeof CoreSelectors & {
   Envar: new Selector({
     type: TokenType.Keyword,
     value: GreybelKeyword.Envar
+  }),
+  Line: new Selector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.Line
+  }),
+  File: new Selector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.File
   }),
   LeftShift: new Selector({
     type: TokenType.Punctuator,
