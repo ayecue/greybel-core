@@ -27,9 +27,11 @@ import { Selectors } from './types/selector';
 export interface ParserOptions extends ParserOptionsBase {
   astProvider?: ASTProvider;
   lexer?: Lexer;
+  filename?: string;
 }
 
 export default class Parser extends ParserBase {
+  filename: string;
   imports: ASTFeatureImportExpression[];
   includes: ASTFeatureIncludeExpression[];
   astProvider: ASTProvider;
@@ -46,6 +48,7 @@ export default class Parser extends ParserBase {
 
     const me = this;
 
+    me.filename = options.filename ?? 'unknown';
     me.imports = [];
     me.includes = [];
   }
@@ -536,6 +539,7 @@ export default class Parser extends ParserBase {
     if (me.is(Selectors.File)) {
       me.next();
       return me.astProvider.featureFileExpression({
+        filename: me.filename,
         start: new ASTPosition(
           me.previousToken.line,
           me.previousToken.lineRange[0]

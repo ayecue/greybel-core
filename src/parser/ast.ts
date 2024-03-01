@@ -9,6 +9,8 @@ import { ASTChunkAdvanced, ASTChunkAdvancedOptions } from './ast/chunk';
 import {
   ASTFeatureEnvarExpression,
   ASTFeatureEnvarExpressionOptions,
+  ASTFeatureFileExpression,
+  ASTFeatureFileExpressionOptions,
   ASTFeatureImportExpression,
   ASTFeatureImportExpressionOptions,
   ASTFeatureIncludeExpression,
@@ -42,8 +44,10 @@ export class ASTProvider extends ASTProviderBase {
     return new ASTBase(ASTType.FeatureLineExpression, options);
   }
 
-  featureFileExpression(options: ASTBaseOptions): ASTBase {
-    return new ASTBase(ASTType.FeatureFileExpression, options);
+  featureFileExpression(
+    options: ASTFeatureFileExpressionOptions
+  ): ASTFeatureFileExpression {
+    return new ASTFeatureFileExpression(options);
   }
 
   chunkAdvanced(options: ASTChunkAdvancedOptions): ASTChunkAdvanced {
@@ -56,6 +60,8 @@ export { ASTChunkAdvanced, ASTChunkAdvancedOptions } from './ast/chunk';
 export {
   ASTFeatureEnvarExpression,
   ASTFeatureEnvarExpressionOptions,
+  ASTFeatureFileExpression,
+  ASTFeatureFileExpressionOptions,
   ASTFeatureImportExpression,
   ASTFeatureImportExpressionOptions,
   ASTFeatureIncludeExpression,

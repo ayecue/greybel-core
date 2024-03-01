@@ -810,8 +810,8 @@ exports[`parse default scripts eol.ms unsafe 1`] = `
 
 exports[`parse default scripts file-expression.src 1`] = `
 "Chunk[1:1-2:17][
-	CallExpression[1:1-1:16][Identifier[1:1-1:6][print](FeatureFileExpression[1:7-1:16][])]
-	AssignmentStatement[2:1-2:17][Identifier[2:1-2:5][test] = FeatureFileExpression[2:8-2:17][]]
+	CallExpression[1:1-1:16][Identifier[1:1-1:6][print](FeatureFileExpression[1:7-1:16][path = unknown])]
+	AssignmentStatement[2:1-2:17][Identifier[2:1-2:5][test] = FeatureFileExpression[2:8-2:17][path = unknown]]
 ]"
 `;
 
@@ -823,8 +823,8 @@ exports[`parse default scripts file-expression.src 4`] = `1`;
 
 exports[`parse default scripts file-expression.src unsafe 1`] = `
 "Chunk[1:1-2:17][
-	CallExpression[1:1-1:16][Identifier[1:1-1:6][print](FeatureFileExpression[1:7-1:16][])]
-	AssignmentStatement[2:1-2:17][Identifier[2:1-2:5][test] = FeatureFileExpression[2:8-2:17][]]
+	CallExpression[1:1-1:16][Identifier[1:1-1:6][print](FeatureFileExpression[1:7-1:16][path = unknown])]
+	AssignmentStatement[2:1-2:17][Identifier[2:1-2:5][test] = FeatureFileExpression[2:8-2:17][path = unknown]]
 ]"
 `;
 

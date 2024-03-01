@@ -99,3 +99,29 @@ export class ASTFeatureEnvarExpression extends ASTBase {
     });
   }
 }
+
+export interface ASTFeatureFileExpressionOptions extends ASTBaseOptions {
+  filename: string;
+}
+
+export class ASTFeatureFileExpression extends ASTBase {
+  filename: string;
+
+  constructor(options: ASTFeatureFileExpressionOptions) {
+    super(ASTType.FeatureFileExpression, options);
+    this.filename = options.filename;
+  }
+
+  toString(): string {
+    return `FeatureFileExpression[${this.start}-${this.end}][path = ${this.filename}]`;
+  }
+
+  clone(): ASTFeatureFileExpression {
+    return new ASTFeatureFileExpression({
+      filename: this.filename,
+      start: this.start,
+      end: this.end,
+      scope: this.scope
+    });
+  }
+}
