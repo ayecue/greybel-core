@@ -620,7 +620,7 @@ export default class Parser extends ParserBase {
     const chunk = me.astProvider.chunkAdvanced({ start, end: null });
     const pending = new PendingChunk(chunk);
 
-    me.backpatches.push(pending);
+    me.backpatches.setDefault(pending);
     me.pushScope(chunk);
 
     while (!me.is(Selectors.EndOfFile)) {
@@ -681,8 +681,6 @@ export default class Parser extends ParserBase {
     chunk.end = me.token.getEnd();
     chunk.imports = me.imports;
     chunk.includes = me.includes;
-
-    me.backpatches.pop();
 
     return chunk;
   }
