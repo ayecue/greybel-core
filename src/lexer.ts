@@ -78,8 +78,8 @@ export default class Lexer extends LexerBase {
         return me.raise(
           `Unexpected end of file in multiline comment.`,
           new ASTRange(
-            new ASTPosition(beginLine, beginLineStart - endOffset),
-            new ASTPosition(me.line, me.index - endOffset)
+            new ASTPosition(beginLine, beginLineStart - endOffset + 1),
+            new ASTPosition(me.line, me.index - endOffset + 1)
           )
         );
       }
