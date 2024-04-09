@@ -457,8 +457,9 @@ export default class Parser extends ParserBase {
     let base = val;
 
     while (
-      me.isOneOf(Selectors.Plus, Selectors.Minus) &&
-      (!statementStart || !this.token.afterSpace)
+      me.is(Selectors.Plus) ||
+      (me.is(Selectors.Minus) &&
+        (!statementStart || !me.token.afterSpace || me.lexer.isAtWhitespace()))
     ) {
       const token = me.token;
 
