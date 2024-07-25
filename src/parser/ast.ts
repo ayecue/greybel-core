@@ -73,5 +73,7 @@ export {
   ASTFeatureImportExpression,
   ASTFeatureImportExpressionOptions,
   ASTFeatureIncludeExpression,
-  ASTFeatureIncludeExpressionOptions
+  ASTFeatureIncludeExpressionOptions,
+  ASTFeatureInjectExpression,
+  ASTFeatureInjectExpressionOptions
 } from './ast/feature';
