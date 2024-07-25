@@ -14,7 +14,9 @@ import {
   ASTFeatureImportExpression,
   ASTFeatureImportExpressionOptions,
   ASTFeatureIncludeExpression,
-  ASTFeatureIncludeExpressionOptions
+  ASTFeatureIncludeExpressionOptions,
+  ASTFeatureInjectExpression,
+  ASTFeatureInjectExpressionOptions
 } from './ast/feature';
 
 export class ASTProvider extends ASTProviderBase {
@@ -34,6 +36,12 @@ export class ASTProvider extends ASTProviderBase {
     options: ASTFeatureEnvarExpressionOptions
   ): ASTFeatureEnvarExpression {
     return new ASTFeatureEnvarExpression(options);
+  }
+
+  featureInjectExpression(
+    options: ASTFeatureInjectExpressionOptions
+  ): ASTFeatureInjectExpression {
+    return new ASTFeatureInjectExpression(options);
   }
 
   featureDebuggerExpression(options: ASTBaseOptions): ASTBase {

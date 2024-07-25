@@ -1347,7 +1347,14 @@ EOL[7:29 - 7:30: value = ';']
 EOL[7:30 - 7:30: value = ';']
 Keyword[8:1 - 8:10: value = '//include']
 StringLiteral[8:11 - 8:21: value = \\"test/bar\\"]
-EOL[8:21 - 8:22: value = ';']"
+EOL[8:21 - 8:22: value = ';']
+EOL[8:22 - 8:22: value = ';']
+EOL[9:1 - 9:1: value = ';']
+Identifier[10:1 - 10:5: value = 'test']
+Punctuator[10:6 - 10:7: value = '=']
+Keyword[10:8 - 10:15: value = '#inject']
+StringLiteral[10:16 - 10:26: value = \\"test/bar\\"]
+EOL[10:26 - 10:27: value = ';']"
 `;
 
 exports[`parse default scripts invalid code 1`] = `Array []`;

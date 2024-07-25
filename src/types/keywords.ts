@@ -8,7 +8,8 @@ export enum GreybelKeyword {
   IncludeWithComment = '//include',
   Debugger = 'debugger',
   Line = '#line',
-  File = '#filename'
+  File = '#filename',
+  Inject = '#inject'
 }
 
 export type Keyword = CoreKeyword | GreybelKeyword;

@@ -12,7 +12,7 @@ export default class Validator extends LexerValidator {
       case 6:
         return [...baseKeywords, GreybelKeyword.Envar];
       case 7:
-        return [...baseKeywords, GreybelKeyword.Import];
+        return [...baseKeywords, GreybelKeyword.Import, GreybelKeyword.Inject];
       case 8:
         return [
           ...baseKeywords,

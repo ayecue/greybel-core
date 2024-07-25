@@ -3,6 +3,7 @@ import {
   ASTListValue,
   ASTMapKeyString,
   ASTPosition,
+  ASTType,
   isPendingChunk,
   Operator as OperatorBase,
   Parser as ParserBase,
@@ -267,18 +268,25 @@ export default class Parser extends ParserBase {
     return listConstructorExpr;
   }
 
-  parseFeaturePath(): string {
+  parsePathSegment(): string {
     const me = this;
-    let path = '';
 
-    while (true) {
+    if (this.token.type === ASTType.StringLiteral) {
+      const path = this.token.value;
+      this.next();
+      return path;
+    }
+
+    let path: string = '';
+
+    while (
+      me.isOneOf(Selectors.EndOfLine, Selectors.Comment, Selectors.EndOfFile)
+    ) {
       path = path + me.token.value;
       me.next();
-      if (
-        me.isOneOf(Selectors.EndOfLine, Selectors.Comment, Selectors.EndOfFile)
-      )
-        break;
     }
+
+    me.consumeMany(Selectors.EndOfLine, Selectors.Comment, Selectors.EndOfFile);
 
     return path;
   }
@@ -286,7 +294,7 @@ export default class Parser extends ParserBase {
   parseFeatureIncludeStatement(): ASTFeatureIncludeExpression {
     const me = this;
     const start = me.previousToken.getStart();
-    const path = me.parseFeaturePath();
+    const path = me.parsePathSegment();
 
     const base = me.astProvider.featureIncludeExpression({
       path,
@@ -320,7 +328,7 @@ export default class Parser extends ParserBase {
       return me.parseInvalidCode();
     }
 
-    const path = me.parseFeaturePath();
+    const path = me.parsePathSegment();
 
     const base = me.astProvider.featureImportExpression({
       name,
@@ -351,7 +359,7 @@ export default class Parser extends ParserBase {
     return base;
   }
 
-  parseFeatureEnvarStatement(): ASTBase {
+  parseFeatureEnvarExpression(): ASTBase {
     const me = this;
     const start = me.previousToken.getStart();
     const name = me.token.value;
@@ -360,6 +368,23 @@ export default class Parser extends ParserBase {
 
     const base: ASTBase = me.astProvider.featureEnvarExpression({
       name,
+      start,
+      end: me.previousToken.getEnd(),
+      scope: me.currentScope
+    });
+
+    return base;
+  }
+
+  parseFeatureInjectExpression(): ASTBase {
+    const me = this;
+    const start = me.previousToken.getStart();
+    const path = this.parsePathSegment();
+
+    me.next();
+
+    const base: ASTBase = me.astProvider.featureInjectExpression({
+      path,
       start,
       end: me.previousToken.getEnd(),
       scope: me.currentScope
@@ -522,7 +547,10 @@ export default class Parser extends ParserBase {
 
     if (me.is(Selectors.Envar)) {
       me.next();
-      return me.parseFeatureEnvarStatement();
+      return me.parseFeatureEnvarExpression();
+    } else if (me.is(Selectors.Inject)) {
+      me.next();
+      return me.parseFeatureInjectExpression();
     } else if (me.is(Selectors.Line)) {
       me.next();
       return me.astProvider.featureLineExpression({
@@ -582,7 +610,14 @@ export default class Parser extends ParserBase {
         }
         case GreybelKeyword.Envar: {
           me.next();
-          const item = me.parseFeatureEnvarStatement();
+          const item = me.parseFeatureEnvarExpression();
+          me.addLine(item);
+          pendingBlock.body.push(item);
+          return;
+        }
+        case GreybelKeyword.Inject: {
+          me.next();
+          const item = me.parseFeatureInjectExpression();
           me.addLine(item);
           pendingBlock.body.push(item);
           return;

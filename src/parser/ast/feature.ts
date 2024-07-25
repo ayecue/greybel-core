@@ -87,12 +87,38 @@ export class ASTFeatureEnvarExpression extends ASTBase {
   }
 
   toString(): string {
-    return `FeatureEnvarExpression[${this.start}-${this.end}][path = ${this.name}]`;
+    return `FeatureEnvarExpression[${this.start}-${this.end}][name = ${this.name}]`;
   }
 
   clone(): ASTFeatureEnvarExpression {
     return new ASTFeatureEnvarExpression({
       name: this.name,
+      start: this.start,
+      end: this.end,
+      scope: this.scope
+    });
+  }
+}
+
+export interface ASTFeatureInjectExpressionOptions extends ASTBaseOptions {
+  path: string;
+}
+
+export class ASTFeatureInjectExpression extends ASTBase {
+  path: string;
+
+  constructor(options: ASTFeatureInjectExpressionOptions) {
+    super(ASTType.FeatureEnvarExpression, options);
+    this.path = options.path;
+  }
+
+  toString(): string {
+    return `FeatureInjectExpression[${this.start}-${this.end}][path = ${this.path}]`;
+  }
+
+  clone(): ASTFeatureInjectExpression {
+    return new ASTFeatureInjectExpression({
+      path: this.path,
       start: this.start,
       end: this.end,
       scope: this.scope

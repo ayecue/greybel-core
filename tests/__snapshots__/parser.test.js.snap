@@ -925,14 +925,15 @@ exports[`parse default scripts function.ms unsafe 1`] = `
 `;
 
 exports[`parse default scripts greybel-utils.src 1`] = `
-"Chunk[1:1-8:22][
+"Chunk[1:1-10:27][
 	FeatureImportExpression[1:1-1:28][name = Identifier[1:9-1:12][foo], path = test/bar]
 	FeatureIncludeExpression[2:1-2:20][path = test/bar]
-	AssignmentStatement[3:1-3:23][Identifier[3:1-3:5][test] = FeatureEnvarExpression[3:8-3:23][path = TEST_ENV]]
+	AssignmentStatement[3:1-3:23][Identifier[3:1-3:5][test] = FeatureEnvarExpression[3:8-3:23][name = TEST_ENV]]
 	FeatureDebuggerExpression[4:1-4:9][]
 	AssignmentStatement[5:1-5:14][Identifier[5:1-5:5][from] = Literal[5:8-5:14][test]]
 	FeatureImportExpression[7:1-7:29][name = Identifier[7:10-7:13][foo], path = test/bar]
 	FeatureIncludeExpression[8:1-8:21][path = test/bar]
+	AssignmentStatement[10:1-10:27][Identifier[10:1-10:5][test] = FeatureInjectExpression[10:8-10:27][path = test/bar]]
 ]"
 `;
 
@@ -940,17 +941,18 @@ exports[`parse default scripts greybel-utils.src 2`] = `undefined`;
 
 exports[`parse default scripts greybel-utils.src 3`] = `1`;
 
-exports[`parse default scripts greybel-utils.src 4`] = `4`;
+exports[`parse default scripts greybel-utils.src 4`] = `5`;
 
 exports[`parse default scripts greybel-utils.src unsafe 1`] = `
-"Chunk[1:1-8:22][
+"Chunk[1:1-10:27][
 	FeatureImportExpression[1:1-1:28][name = Identifier[1:9-1:12][foo], path = test/bar]
 	FeatureIncludeExpression[2:1-2:20][path = test/bar]
-	AssignmentStatement[3:1-3:23][Identifier[3:1-3:5][test] = FeatureEnvarExpression[3:8-3:23][path = TEST_ENV]]
+	AssignmentStatement[3:1-3:23][Identifier[3:1-3:5][test] = FeatureEnvarExpression[3:8-3:23][name = TEST_ENV]]
 	FeatureDebuggerExpression[4:1-4:9][]
 	AssignmentStatement[5:1-5:14][Identifier[5:1-5:5][from] = Literal[5:8-5:14][test]]
 	FeatureImportExpression[7:1-7:29][name = Identifier[7:10-7:13][foo], path = test/bar]
 	FeatureIncludeExpression[8:1-8:21][path = test/bar]
+	AssignmentStatement[10:1-10:27][Identifier[10:1-10:5][test] = FeatureInjectExpression[10:8-10:27][path = test/bar]]
 ]"
 `;
 

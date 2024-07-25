@@ -6,3 +6,5 @@ from = "test"
 
 //import foo from "test/bar";
 //include "test/bar";
+
+test = #inject "test/bar";
