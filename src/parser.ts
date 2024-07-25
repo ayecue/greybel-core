@@ -24,6 +24,7 @@ import {
 import { GreybelKeyword } from './types/keywords';
 import { Operator } from './types/operators';
 import { Selectors } from './types/selector';
+import { ASTFeatureEnvarExpression, ASTFeatureInjectExpression } from './parser/ast/feature';
 
 export interface ParserOptions extends ParserOptionsBase {
   astProvider?: ASTProvider;
@@ -35,6 +36,7 @@ export default class Parser extends ParserBase {
   filename: string;
   imports: ASTFeatureImportExpression[];
   includes: ASTFeatureIncludeExpression[];
+  injects: ASTFeatureInjectExpression[];
   astProvider: ASTProvider;
 
   constructor(content: string, options: ParserOptions = {}) {
@@ -52,6 +54,7 @@ export default class Parser extends ParserBase {
     me.filename = options.filename ?? 'unknown';
     me.imports = [];
     me.includes = [];
+    me.injects = [];
   }
 
   skipNewlines(): number {
@@ -359,38 +362,38 @@ export default class Parser extends ParserBase {
     return base;
   }
 
-  parseFeatureEnvarExpression(): ASTBase {
+  parseFeatureEnvarExpression(): ASTFeatureEnvarExpression {
     const me = this;
     const start = me.previousToken.getStart();
     const name = me.token.value;
 
     me.next();
 
-    const base: ASTBase = me.astProvider.featureEnvarExpression({
+    return me.astProvider.featureEnvarExpression({
       name,
       start,
       end: me.previousToken.getEnd(),
       scope: me.currentScope
     });
-
-    return base;
   }
 
-  parseFeatureInjectExpression(): ASTBase {
+  parseFeatureInjectExpression(): ASTFeatureInjectExpression {
     const me = this;
     const start = me.previousToken.getStart();
     const path = this.parsePathSegment();
 
     me.next();
 
-    const base: ASTBase = me.astProvider.featureInjectExpression({
+    const expr = me.astProvider.featureInjectExpression({
       path,
       start,
       end: me.previousToken.getEnd(),
       scope: me.currentScope
     });
 
-    return base;
+    me.injects.push(expr);
+
+    return expr;
   }
 
   parseIsa(asLval: boolean = false, statementStart: boolean = false): ASTBase {
@@ -717,6 +720,7 @@ export default class Parser extends ParserBase {
     chunk.end = me.token.getEnd();
     chunk.imports = me.imports;
     chunk.includes = me.includes;
+    chunk.injects = me.injects;
 
     return chunk;
   }
