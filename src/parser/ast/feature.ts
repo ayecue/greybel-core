@@ -108,7 +108,7 @@ export class ASTFeatureInjectExpression extends ASTBase {
   path: string;
 
   constructor(options: ASTFeatureInjectExpressionOptions) {
-    super(ASTType.FeatureEnvarExpression, options);
+    super(ASTType.FeatureInjectExpression, options);
     this.path = options.path;
   }
 
