@@ -21,10 +21,13 @@ import {
   ASTFeatureIncludeExpression,
   ASTProvider
 } from './parser/ast';
+import {
+  ASTFeatureEnvarExpression,
+  ASTFeatureInjectExpression
+} from './parser/ast/feature';
 import { GreybelKeyword } from './types/keywords';
 import { Operator } from './types/operators';
 import { Selectors } from './types/selector';
-import { ASTFeatureEnvarExpression, ASTFeatureInjectExpression } from './parser/ast/feature';
 
 export interface ParserOptions extends ParserOptionsBase {
   astProvider?: ASTProvider;
@@ -283,7 +286,7 @@ export default class Parser extends ParserBase {
     let path: string = '';
 
     while (
-      me.isOneOf(Selectors.EndOfLine, Selectors.Comment, Selectors.EndOfFile)
+      !me.isOneOf(Selectors.EndOfLine, Selectors.Comment, Selectors.EndOfFile)
     ) {
       path = path + me.token.value;
       me.next();

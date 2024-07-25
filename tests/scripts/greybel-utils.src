@@ -8,3 +8,5 @@ from = "test"
 //include "test/bar";
 
 test = #inject "test/bar";
+
+#include ./test/bar;

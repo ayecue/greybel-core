@@ -1,6 +1,6 @@
 {
   "name": "greybel-core",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "description": "Core lexer/parser for Greybel",
   "main": "dist/index",
   "typings": "dist/index",
