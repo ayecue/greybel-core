@@ -161,15 +161,9 @@ export default class Parser extends ParserBase {
 
         me.skipNewlines();
 
-        const token = me.requireTokenOfAny(
-          SelectorGroups.MapSeparator,
-          start
-        );
+        const token = me.requireTokenOfAny(SelectorGroups.MapSeparator, start);
 
-        if (
-          Selectors.CRBracket(token)
-        )
-          break;
+        if (Selectors.CRBracket(token)) break;
       }
     }
 
@@ -259,15 +253,9 @@ export default class Parser extends ParserBase {
 
         me.skipNewlines();
 
-        const token = me.requireTokenOfAny(
-          SelectorGroups.ListSeparator,
-          start
-        );
+        const token = me.requireTokenOfAny(SelectorGroups.ListSeparator, start);
 
-        if (
-          Selectors.SRBracket(token)
-        )
-          break;
+        if (Selectors.SRBracket(token)) break;
       }
     }
 
@@ -287,9 +275,7 @@ export default class Parser extends ParserBase {
 
     let path: string = '';
 
-    while (
-      !SelectorGroups.PathSegmentEnd(me.token)
-    ) {
+    while (!SelectorGroups.PathSegmentEnd(me.token)) {
       path = path + me.token.value;
       me.next();
     }
@@ -523,9 +509,7 @@ export default class Parser extends ParserBase {
     const val = me.parseMultDiv(asLval, statementStart);
     let base = val;
 
-    while (
-      SelectorGroups.BitwiseOperators(me.token)
-    ) {
+    while (SelectorGroups.BitwiseOperators(me.token)) {
       const token = me.token;
 
       me.next();

@@ -3,10 +3,9 @@ import { CharacterCode, Keyword, LexerValidator } from 'miniscript-core';
 import { GreybelKeyword } from '../types/keywords';
 
 export default class Validator extends LexerValidator {
-  isKeyword = Set.prototype.has.bind(new Set([
-    ...Object.values(Keyword),
-    ...Object.values(GreybelKeyword)
-  ]));
+  isKeyword = Set.prototype.has.bind(
+    new Set([...Object.values(Keyword), ...Object.values(GreybelKeyword)])
+  );
 
   isIdentifierStart(code: number): boolean {
     return super.isIdentifierStart(code) || code === CharacterCode.HASH;

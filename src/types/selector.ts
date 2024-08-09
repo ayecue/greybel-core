@@ -1,12 +1,14 @@
 import {
+  createSelector,
+  createSelectorGroup,
   Operator as CoreOperator,
   Selector,
-  Selectors as CoreSelectors,
-  TokenType,
-  createSelector,
-  SelectorGroups as CoreSelectorGroups,
   SelectorGroup,
-  createSelectorGroup
+  SelectorGroups as CoreSelectorGroups,
+  SelectorGroupType as CoreSelectorGroupType,
+  Selectors as CoreSelectors,
+  SelectorType as CoreSelectorType,
+  TokenType
 } from 'miniscript-core';
 
 import { GreybelKeyword } from './keywords';
@@ -26,8 +28,8 @@ export enum SelectorTypes {
   Escape = 'Escape'
 }
 
-export const Selectors: typeof CoreSelectors & Record<SelectorTypes, Selector> =
-{
+export const Selectors: typeof CoreSelectors &
+  Record<SelectorTypes | CoreSelectorType, Selector> = {
   ...CoreSelectors,
   From: createSelector({
     type: TokenType.Identifier,
@@ -82,24 +84,25 @@ export enum SelectorGroupType {
   BitwiseOperators = 'BitwiseOperators'
 }
 
-export const SelectorGroups: Record<SelectorGroupType, SelectorGroup> = {
+export const SelectorGroups: Record<
+  SelectorGroupType | CoreSelectorGroupType,
+  SelectorGroup
+> = {
   ...CoreSelectorGroups,
-  [SelectorGroupType.MapSeparator]: createSelectorGroup(SelectorGroupType.MapSeparator, [
-    Selectors.MapSeperator,
-    Selectors.CRBracket
-  ]),
-  [SelectorGroupType.ListSeparator]: createSelectorGroup(SelectorGroupType.ListSeparator, [
-    Selectors.MapSeperator,
-    Selectors.SRBracket
-  ]),
-  [SelectorGroupType.PathSegmentEnd]: createSelectorGroup(SelectorGroupType.PathSegmentEnd, [
-    Selectors.EndOfLine,
-    Selectors.Comment,
-    Selectors.EndOfFile
-  ]),
-  [SelectorGroupType.BitwiseOperators]: createSelectorGroup(SelectorGroupType.BitwiseOperators, [
-    Selectors.LeftShift,
-    Selectors.RightShift,
-    Selectors.UnsignedRightShift
-  ]),
+  [SelectorGroupType.MapSeparator]: createSelectorGroup(
+    SelectorGroupType.MapSeparator,
+    [Selectors.MapSeperator, Selectors.CRBracket]
+  ),
+  [SelectorGroupType.ListSeparator]: createSelectorGroup(
+    SelectorGroupType.ListSeparator,
+    [Selectors.MapSeperator, Selectors.SRBracket]
+  ),
+  [SelectorGroupType.PathSegmentEnd]: createSelectorGroup(
+    SelectorGroupType.PathSegmentEnd,
+    [Selectors.EndOfLine, Selectors.Comment, Selectors.EndOfFile]
+  ),
+  [SelectorGroupType.BitwiseOperators]: createSelectorGroup(
+    SelectorGroupType.BitwiseOperators,
+    [Selectors.LeftShift, Selectors.RightShift, Selectors.UnsignedRightShift]
+  )
 };

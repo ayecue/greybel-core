@@ -32,12 +32,21 @@ export default class Lexer extends LexerBase {
     super(content, options);
   }
 
-  private static greybelScanHandlers: Record<string, (this: Lexer, afterSpace: boolean) => BaseToken<any> | null> = {
-    [CharacterCodeBase.ARROW_LEFT]: function arrowLeftHandler(this, afterSpace) {
+  private static greybelScanHandlers: Record<
+    string,
+    (this: Lexer, afterSpace: boolean) => BaseToken<any> | null
+  > = {
+    [CharacterCodeBase.ARROW_LEFT]: function arrowLeftHandler(
+      this,
+      afterSpace
+    ) {
       if (CharacterCodeBase.ARROW_LEFT === this.codeAt(1))
         return this.scanPunctuator(Operator.LeftShift, afterSpace);
     },
-    [CharacterCodeBase.ARROW_RIGHT]: function arrowRightHandler(this, afterSpace) {
+    [CharacterCodeBase.ARROW_RIGHT]: function arrowRightHandler(
+      this,
+      afterSpace
+    ) {
       if (CharacterCodeBase.ARROW_RIGHT === this.codeAt(1)) {
         if (CharacterCodeBase.ARROW_RIGHT === this.codeAt(2))
           return this.scanPunctuator(Operator.UnsignedRightShift, afterSpace);
@@ -45,18 +54,14 @@ export default class Lexer extends LexerBase {
       }
     },
     [CharacterCode.AMPERSAND]: defaultScanHandler,
-    [CharacterCode.VERTICAL_LINE]: defaultScanHandler,
+    [CharacterCode.VERTICAL_LINE]: defaultScanHandler
   };
 
-  scan(
-    code: number,
-    afterSpace: boolean
-  ): BaseToken<any> | null {
-    const me = this;
-
+  scan(code: number, afterSpace: boolean): BaseToken<any> | null {
     const handler = Lexer.greybelScanHandlers[code];
 
-    if (handler) return handler.call(this, afterSpace) || super.scan(code, afterSpace);
+    if (handler)
+      return handler.call(this, afterSpace) || super.scan(code, afterSpace);
 
     return super.scan(code, afterSpace);
   }
