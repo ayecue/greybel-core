@@ -27,7 +27,7 @@ import {
 } from './parser/ast/feature';
 import { GreybelKeyword } from './types/keywords';
 import { Operator } from './types/operators';
-import { Selectors } from './types/selector';
+import { SelectorGroups, Selectors } from './types/selector';
 
 export interface ParserOptions extends ParserOptionsBase {
   astProvider?: ASTProvider;
@@ -63,20 +63,22 @@ export default class Parser extends ParserBase {
   skipNewlines(): number {
     const me = this;
     let lines = 0;
-    while (me.isOneOf(Selectors.EndOfLine, Selectors.Comment)) {
-      if (me.is(Selectors.Comment)) {
+    while (true) {
+      if (Selectors.Comment(me.token)) {
         const comment = me.astProvider.comment({
           value: me.token.value,
           isMultiline: me.token.value.indexOf('\n') !== -1,
-          start: me.token.getStart(),
-          end: me.token.getEnd(),
+          start: me.token.start,
+          end: me.token.end,
           scope: me.currentScope
         });
 
-        me.addLine(comment);
+        me.addItemToLines(comment);
         me.backpatches.peek().body.push(comment);
-      } else {
+      } else if (Selectors.EndOfLine(me.token)) {
         lines++;
+      } else {
+        break;
       }
 
       me.next();
@@ -88,12 +90,12 @@ export default class Parser extends ParserBase {
   parseMap(asLval: boolean = false, statementStart: boolean = false): ASTBase {
     const me = this;
 
-    if (!me.is(Selectors.CLBracket)) {
+    if (!Selectors.CLBracket(me.token)) {
       return me.parseList(asLval, statementStart);
     }
 
     const scope = me.currentScope;
-    const start = me.token.getStart();
+    const start = me.token.start;
     const fields: ASTMapKeyString[] = [];
     const mapConstructorExpr = me.astProvider.mapConstructorExpression({
       fields,
@@ -104,13 +106,13 @@ export default class Parser extends ParserBase {
 
     me.next();
 
-    if (me.is(Selectors.CRBracket)) {
+    if (Selectors.CRBracket(me.token)) {
       me.next();
     } else {
-      while (!me.is(Selectors.EndOfFile)) {
+      while (!Selectors.EndOfFile(me.token)) {
         me.skipNewlines();
 
-        if (me.is(Selectors.CRBracket)) {
+        if (Selectors.CRBracket(me.token)) {
           me.next();
           break;
         }
@@ -118,7 +120,7 @@ export default class Parser extends ParserBase {
         const keyValueItem = me.astProvider.mapKeyString({
           key: null,
           value: null,
-          start: me.token.getStart(),
+          start: me.token.start,
           end: null,
           scope
         });
@@ -133,7 +135,7 @@ export default class Parser extends ParserBase {
               index: keyValueItem.key,
               base: me.currentAssignment.variable,
               start: keyValueItem.start,
-              end: me.token.getEnd(),
+              end: me.token.end,
               scope
             }),
             init: null,
@@ -147,31 +149,31 @@ export default class Parser extends ParserBase {
           me.currentAssignment = previousAssignment;
 
           assign.init = keyValueItem.value;
-          assign.end = me.previousToken.getEnd();
+          assign.end = me.previousToken.end;
 
           scope.assignments.push(assign);
         } else {
           keyValueItem.value = me.parseExpr(keyValueItem);
         }
 
-        keyValueItem.end = me.previousToken.getEnd();
+        keyValueItem.end = me.previousToken.end;
         fields.push(keyValueItem);
 
         me.skipNewlines();
 
+        const token = me.requireTokenOfAny(
+          SelectorGroups.MapSeparator,
+          start
+        );
+
         if (
-          Selectors.CRBracket.is(
-            me.requireTokenOfAny(
-              [Selectors.MapSeperator, Selectors.CRBracket],
-              start
-            )
-          )
+          Selectors.CRBracket(token)
         )
           break;
       }
     }
 
-    mapConstructorExpr.end = me.token.getStart();
+    mapConstructorExpr.end = me.token.start;
 
     return mapConstructorExpr;
   }
@@ -179,12 +181,12 @@ export default class Parser extends ParserBase {
   parseList(asLval: boolean = false, statementStart: boolean = false): ASTBase {
     const me = this;
 
-    if (!me.is(Selectors.SLBracket)) {
+    if (!Selectors.SLBracket(me.token)) {
       return me.parseQuantity(asLval, statementStart);
     }
 
     const scope = me.currentScope;
-    const start = me.token.getStart();
+    const start = me.token.start;
     const fields: ASTListValue[] = [];
     const listConstructorExpr = me.astProvider.listConstructorExpression({
       fields,
@@ -195,20 +197,20 @@ export default class Parser extends ParserBase {
 
     me.next();
 
-    if (me.is(Selectors.SRBracket)) {
+    if (Selectors.SRBracket(me.token)) {
       me.next();
     } else {
-      while (!me.is(Selectors.EndOfFile)) {
+      while (!Selectors.EndOfFile(me.token)) {
         me.skipNewlines();
 
-        if (me.is(Selectors.SRBracket)) {
+        if (Selectors.SRBracket(me.token)) {
           me.next();
           break;
         }
 
         const listValue = me.astProvider.listValue({
           value: null,
-          start: me.token.getStart(),
+          start: me.token.start,
           end: null,
           scope
         });
@@ -220,7 +222,7 @@ export default class Parser extends ParserBase {
                 value: fields.length,
                 raw: `${fields.length}`,
                 start,
-                end: me.token.getEnd(),
+                end: me.token.end,
                 scope
               }),
               base: me.currentAssignment.variable,
@@ -241,35 +243,35 @@ export default class Parser extends ParserBase {
 
           me.currentAssignment = previousAssignment;
 
-          assign.variable.start = startToken.getStart();
-          assign.variable.end = me.previousToken.getEnd();
+          assign.variable.start = startToken.start;
+          assign.variable.end = me.previousToken.end;
           assign.init = listValue.value;
           assign.start = listValue.start;
-          assign.end = me.previousToken.getEnd();
+          assign.end = me.previousToken.end;
 
           scope.assignments.push(assign);
         } else {
           listValue.value = me.parseExpr(listValue);
         }
 
-        listValue.end = me.previousToken.getEnd();
+        listValue.end = me.previousToken.end;
         fields.push(listValue);
 
         me.skipNewlines();
 
+        const token = me.requireTokenOfAny(
+          SelectorGroups.ListSeparator,
+          start
+        );
+
         if (
-          Selectors.SRBracket.is(
-            me.requireTokenOfAny(
-              [Selectors.ListSeperator, Selectors.SRBracket],
-              start
-            )
-          )
+          Selectors.SRBracket(token)
         )
           break;
       }
     }
 
-    listConstructorExpr.end = me.token.getStart();
+    listConstructorExpr.end = me.token.start;
 
     return listConstructorExpr;
   }
@@ -286,26 +288,26 @@ export default class Parser extends ParserBase {
     let path: string = '';
 
     while (
-      !me.isOneOf(Selectors.EndOfLine, Selectors.Comment, Selectors.EndOfFile)
+      !SelectorGroups.PathSegmentEnd(me.token)
     ) {
       path = path + me.token.value;
       me.next();
     }
 
-    me.consumeMany(Selectors.EndOfLine, Selectors.Comment, Selectors.EndOfFile);
+    me.consumeMany(SelectorGroups.PathSegmentEnd);
 
     return path;
   }
 
   parseFeatureIncludeStatement(): ASTFeatureIncludeExpression {
     const me = this;
-    const start = me.previousToken.getStart();
+    const start = me.previousToken.start;
     const path = me.parsePathSegment();
 
     const base = me.astProvider.featureIncludeExpression({
       path,
       start,
-      end: me.previousToken.getEnd(),
+      end: me.previousToken.end,
       scope: me.currentScope
     });
 
@@ -316,7 +318,7 @@ export default class Parser extends ParserBase {
 
   parseFeatureImportStatement(): ASTFeatureImportExpression | ASTBase {
     const me = this;
-    const start = me.previousToken.getStart();
+    const start = me.previousToken.start;
     const name = me.parseIdentifier();
 
     if (!me.consume(Selectors.From)) {
@@ -326,7 +328,7 @@ export default class Parser extends ParserBase {
           start,
           new Position(
             me.token.lastLine ?? me.token.line,
-            me.token.lineRange[1]
+            me.token.end.character
           )
         )
       );
@@ -340,7 +342,7 @@ export default class Parser extends ParserBase {
       name,
       path,
       start,
-      end: me.previousToken.getEnd(),
+      end: me.previousToken.end,
       scope: me.currentScope
     });
 
@@ -367,7 +369,7 @@ export default class Parser extends ParserBase {
 
   parseFeatureEnvarExpression(): ASTFeatureEnvarExpression {
     const me = this;
-    const start = me.previousToken.getStart();
+    const start = me.previousToken.start;
     const name = me.token.value;
 
     me.next();
@@ -375,14 +377,14 @@ export default class Parser extends ParserBase {
     return me.astProvider.featureEnvarExpression({
       name,
       start,
-      end: me.previousToken.getEnd(),
+      end: me.previousToken.end,
       scope: me.currentScope
     });
   }
 
   parseFeatureInjectExpression(): ASTFeatureInjectExpression {
     const me = this;
-    const start = me.previousToken.getStart();
+    const start = me.previousToken.start;
     const path = this.parsePathSegment();
 
     me.next();
@@ -390,7 +392,7 @@ export default class Parser extends ParserBase {
     const expr = me.astProvider.featureInjectExpression({
       path,
       start,
-      end: me.previousToken.getEnd(),
+      end: me.previousToken.end,
       scope: me.currentScope
     });
 
@@ -401,22 +403,22 @@ export default class Parser extends ParserBase {
 
   parseIsa(asLval: boolean = false, statementStart: boolean = false): ASTBase {
     const me = this;
-    const start = me.token.getStart();
+    const start = me.token.start;
     const val = me.parseBitwiseOr(asLval, statementStart);
 
-    if (me.is(Selectors.Isa)) {
+    if (Selectors.Isa(me.token)) {
       me.next();
 
       me.skipNewlines();
 
       const opB = me.parseBitwiseOr();
 
-      return me.astProvider.binaryExpression({
+      return me.astProvider.isaExpression({
         operator: OperatorBase.Isa,
         left: val,
         right: opB,
         start,
-        end: me.previousToken.getEnd(),
+        end: me.previousToken.end,
         scope: me.currentScope
       });
     }
@@ -429,11 +431,11 @@ export default class Parser extends ParserBase {
     statementStart: boolean = false
   ): ASTBase {
     const me = this;
-    const start = me.token.getStart();
+    const start = me.token.start;
     const val = me.parseBitwiseAnd(asLval, statementStart);
     let base = val;
 
-    while (me.is(Selectors.BitwiseOr)) {
+    while (Selectors.BitwiseOr(me.token)) {
       me.next();
 
       const opB = me.parseBitwiseAnd();
@@ -443,7 +445,7 @@ export default class Parser extends ParserBase {
         left: base,
         right: opB,
         start,
-        end: me.previousToken.getEnd(),
+        end: me.previousToken.end,
         scope: me.currentScope
       });
     }
@@ -456,11 +458,11 @@ export default class Parser extends ParserBase {
     statementStart: boolean = false
   ): ASTBase {
     const me = this;
-    const start = me.token.getStart();
+    const start = me.token.start;
     const val = me.parseComparisons(asLval, statementStart);
     let base = val;
 
-    while (me.is(Selectors.BitwiseAnd)) {
+    while (Selectors.BitwiseAnd(me.token)) {
       me.next();
 
       const opB = me.parseComparisons();
@@ -470,7 +472,7 @@ export default class Parser extends ParserBase {
         left: base,
         right: opB,
         start,
-        end: me.previousToken.getEnd(),
+        end: me.previousToken.end,
         scope: me.currentScope
       });
     }
@@ -483,13 +485,13 @@ export default class Parser extends ParserBase {
     statementStart: boolean = false
   ): ASTBase {
     const me = this;
-    const start = me.token.getStart();
+    const start = me.token.start;
     const val = me.parseBitwise(asLval, statementStart);
     let base = val;
 
     while (
-      me.is(Selectors.Plus) ||
-      (me.is(Selectors.Minus) &&
+      Selectors.Plus(me.token) ||
+      (Selectors.Minus(me.token) &&
         (!statementStart || !me.token.afterSpace || me.lexer.isAtWhitespace()))
     ) {
       const token = me.token;
@@ -504,7 +506,7 @@ export default class Parser extends ParserBase {
         left: base,
         right: opB,
         start,
-        end: me.previousToken.getEnd(),
+        end: me.previousToken.end,
         scope: me.currentScope
       });
     }
@@ -517,16 +519,12 @@ export default class Parser extends ParserBase {
     statementStart: boolean = false
   ): ASTBase {
     const me = this;
-    const start = me.token.getStart();
+    const start = me.token.start;
     const val = me.parseMultDiv(asLval, statementStart);
     let base = val;
 
     while (
-      me.isOneOf(
-        Selectors.LeftShift,
-        Selectors.RightShift,
-        Selectors.UnsignedRightShift
-      )
+      SelectorGroups.BitwiseOperators(me.token)
     ) {
       const token = me.token;
 
@@ -540,7 +538,7 @@ export default class Parser extends ParserBase {
         left: base,
         right: opB,
         start,
-        end: me.previousToken.getEnd(),
+        end: me.previousToken.end,
         scope: me.currentScope
       });
     }
@@ -551,37 +549,37 @@ export default class Parser extends ParserBase {
   parseAtom(): ASTBase | null {
     const me = this;
 
-    if (me.is(Selectors.Envar)) {
+    if (Selectors.Envar(me.token)) {
       me.next();
       return me.parseFeatureEnvarExpression();
-    } else if (me.is(Selectors.Inject)) {
+    } else if (Selectors.Inject(me.token)) {
       me.next();
       return me.parseFeatureInjectExpression();
-    } else if (me.is(Selectors.Line)) {
+    } else if (Selectors.Line(me.token)) {
       me.next();
       return me.astProvider.featureLineExpression({
         start: new ASTPosition(
           me.previousToken.line,
-          me.previousToken.lineRange[0]
+          me.previousToken.start.character
         ),
         end: new ASTPosition(
           me.previousToken.line,
-          me.previousToken.lineRange[1]
+          me.previousToken.end.character
         ),
         scope: me.currentScope
       });
     }
-    if (me.is(Selectors.File)) {
+    if (Selectors.File(me.token)) {
       me.next();
       return me.astProvider.featureFileExpression({
         filename: me.filename,
         start: new ASTPosition(
           me.previousToken.line,
-          me.previousToken.lineRange[0]
+          me.previousToken.start.character
         ),
         end: new ASTPosition(
           me.previousToken.line,
-          me.previousToken.lineRange[1]
+          me.previousToken.end.character
         ),
         scope: me.currentScope
       });
@@ -602,7 +600,7 @@ export default class Parser extends ParserBase {
         case GreybelKeyword.IncludeWithComment: {
           me.next();
           const item = me.parseFeatureIncludeStatement();
-          me.addLine(item);
+          me.addItemToLines(item);
           pendingBlock.body.push(item);
           return;
         }
@@ -610,21 +608,21 @@ export default class Parser extends ParserBase {
         case GreybelKeyword.ImportWithComment: {
           me.next();
           const item = me.parseFeatureImportStatement();
-          me.addLine(item);
+          me.addItemToLines(item);
           pendingBlock.body.push(item);
           return;
         }
         case GreybelKeyword.Envar: {
           me.next();
           const item = me.parseFeatureEnvarExpression();
-          me.addLine(item);
+          me.addItemToLines(item);
           pendingBlock.body.push(item);
           return;
         }
         case GreybelKeyword.Inject: {
           me.next();
           const item = me.parseFeatureInjectExpression();
-          me.addLine(item);
+          me.addItemToLines(item);
           pendingBlock.body.push(item);
           return;
         }
@@ -633,15 +631,15 @@ export default class Parser extends ParserBase {
           const item = me.astProvider.featureDebuggerExpression({
             start: new ASTPosition(
               me.previousToken.line,
-              me.previousToken.lineRange[0]
+              me.previousToken.start.character
             ),
             end: new ASTPosition(
               me.previousToken.line,
-              me.previousToken.lineRange[1]
+              me.previousToken.end.character
             ),
             scope: me.currentScope
           });
-          me.addLine(item);
+          me.addItemToLines(item);
           pendingBlock.body.push(item);
           return;
         }
@@ -658,17 +656,17 @@ export default class Parser extends ParserBase {
 
     me.next();
 
-    const start = me.token.getStart();
+    const start = me.token.start;
     const chunk = me.astProvider.chunkAdvanced({ start, end: null });
     const pending = new PendingChunk(chunk);
 
     me.backpatches.setDefault(pending);
     me.pushScope(chunk);
 
-    while (!me.is(Selectors.EndOfFile)) {
+    while (!Selectors.EndOfFile(me.token)) {
       me.skipNewlines();
 
-      if (me.is(Selectors.EndOfFile)) break;
+      if (Selectors.EndOfFile(me.token)) break;
 
       me.lexer.recordSnapshot();
       me.statementErrors = [];
@@ -676,23 +674,7 @@ export default class Parser extends ParserBase {
       me.parseStatement();
 
       if (me.statementErrors.length > 0) {
-        me.errors.push(me.statementErrors[0]);
-
-        if (!me.unsafe) {
-          me.lexer.clearSnapshot();
-          throw me.statementErrors[0];
-        }
-
-        me.lexer.recoverFromSnapshot();
-
-        me.next();
-
-        while (
-          me.token.type !== TokenType.EOL &&
-          me.token.type !== TokenType.EOF
-        ) {
-          me.next();
-        }
+        me.tryToRecover();
       }
     }
 
@@ -714,13 +696,14 @@ export default class Parser extends ParserBase {
 
       last = me.backpatches.pop();
     }
-    me.popScope();
 
-    chunk.body = last.body;
+    me.finishRemaingScopes();
+    me.popScope();
+    pending.complete(me.token);
+
     chunk.literals = me.literals;
     chunk.scopes = me.scopes;
     chunk.lines = me.lines;
-    chunk.end = me.token.getEnd();
     chunk.imports = me.imports;
     chunk.includes = me.includes;
     chunk.injects = me.injects;

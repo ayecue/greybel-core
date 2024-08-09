@@ -2,7 +2,11 @@ import {
   Operator as CoreOperator,
   Selector,
   Selectors as CoreSelectors,
-  TokenType
+  TokenType,
+  createSelector,
+  SelectorGroups as CoreSelectorGroups,
+  SelectorGroup,
+  createSelectorGroup
 } from 'miniscript-core';
 
 import { GreybelKeyword } from './keywords';
@@ -23,50 +27,79 @@ export enum SelectorTypes {
 }
 
 export const Selectors: typeof CoreSelectors & Record<SelectorTypes, Selector> =
-  {
-    ...CoreSelectors,
-    From: new Selector({
-      type: TokenType.Identifier,
-      value: 'from'
-    }),
-    Envar: new Selector({
-      type: TokenType.Keyword,
-      value: GreybelKeyword.Envar
-    }),
-    Inject: new Selector({
-      type: TokenType.Keyword,
-      value: GreybelKeyword.Inject
-    }),
-    Line: new Selector({
-      type: TokenType.Keyword,
-      value: GreybelKeyword.Line
-    }),
-    File: new Selector({
-      type: TokenType.Keyword,
-      value: GreybelKeyword.File
-    }),
-    LeftShift: new Selector({
-      type: TokenType.Punctuator,
-      value: Operator.LeftShift
-    }),
-    RightShift: new Selector({
-      type: TokenType.Punctuator,
-      value: Operator.RightShift
-    }),
-    UnsignedRightShift: new Selector({
-      type: TokenType.Punctuator,
-      value: Operator.UnsignedRightShift
-    }),
-    BitwiseOr: new Selector({
-      type: TokenType.Punctuator,
-      value: Operator.BitwiseOr
-    }),
-    BitwiseAnd: new Selector({
-      type: TokenType.Punctuator,
-      value: Operator.BitwiseAnd
-    }),
-    Escape: new Selector({
-      type: TokenType.Punctuator,
-      value: CoreOperator.Escape
-    })
-  };
+{
+  ...CoreSelectors,
+  From: createSelector({
+    type: TokenType.Identifier,
+    value: 'from'
+  }),
+  Envar: createSelector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.Envar
+  }),
+  Inject: createSelector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.Inject
+  }),
+  Line: createSelector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.Line
+  }),
+  File: createSelector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.File
+  }),
+  LeftShift: createSelector({
+    type: TokenType.Punctuator,
+    value: Operator.LeftShift
+  }),
+  RightShift: createSelector({
+    type: TokenType.Punctuator,
+    value: Operator.RightShift
+  }),
+  UnsignedRightShift: createSelector({
+    type: TokenType.Punctuator,
+    value: Operator.UnsignedRightShift
+  }),
+  BitwiseOr: createSelector({
+    type: TokenType.Punctuator,
+    value: Operator.BitwiseOr
+  }),
+  BitwiseAnd: createSelector({
+    type: TokenType.Punctuator,
+    value: Operator.BitwiseAnd
+  }),
+  Escape: createSelector({
+    type: TokenType.Punctuator,
+    value: CoreOperator.Escape
+  })
+};
+
+export enum SelectorGroupType {
+  MapSeparator = 'MapSeparator',
+  ListSeparator = 'ListSeparator',
+  PathSegmentEnd = 'PathSegmentEnd',
+  BitwiseOperators = 'BitwiseOperators'
+}
+
+export const SelectorGroups: Record<SelectorGroupType, SelectorGroup> = {
+  ...CoreSelectorGroups,
+  [SelectorGroupType.MapSeparator]: createSelectorGroup(SelectorGroupType.MapSeparator, [
+    Selectors.MapSeperator,
+    Selectors.CRBracket
+  ]),
+  [SelectorGroupType.ListSeparator]: createSelectorGroup(SelectorGroupType.ListSeparator, [
+    Selectors.MapSeperator,
+    Selectors.SRBracket
+  ]),
+  [SelectorGroupType.PathSegmentEnd]: createSelectorGroup(SelectorGroupType.PathSegmentEnd, [
+    Selectors.EndOfLine,
+    Selectors.Comment,
+    Selectors.EndOfFile
+  ]),
+  [SelectorGroupType.BitwiseOperators]: createSelectorGroup(SelectorGroupType.BitwiseOperators, [
+    Selectors.LeftShift,
+    Selectors.RightShift,
+    Selectors.UnsignedRightShift
+  ]),
+};

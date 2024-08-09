@@ -18,6 +18,12 @@ export interface LexerOptions extends LexerOptionsBase {
   validator?: Validator;
 }
 
+function defaultScanHandler(this: Lexer, afterSpace: boolean) {
+  const value = this.content[this.index];
+  this.index += value.length;
+  return this.createPunctuator(value, afterSpace);
+}
+
 export default class Lexer extends LexerBase {
   validator: Validator;
 
@@ -26,32 +32,33 @@ export default class Lexer extends LexerBase {
     super(content, options);
   }
 
+  private static greybelScanHandlers: Record<string, (this: Lexer, afterSpace: boolean) => BaseToken<any> | null> = {
+    [CharacterCodeBase.ARROW_LEFT]: function arrowLeftHandler(this, afterSpace) {
+      if (CharacterCodeBase.ARROW_LEFT === this.codeAt(1))
+        return this.scanPunctuator(Operator.LeftShift, afterSpace);
+    },
+    [CharacterCodeBase.ARROW_RIGHT]: function arrowRightHandler(this, afterSpace) {
+      if (CharacterCodeBase.ARROW_RIGHT === this.codeAt(1)) {
+        if (CharacterCodeBase.ARROW_RIGHT === this.codeAt(2))
+          return this.scanPunctuator(Operator.UnsignedRightShift, afterSpace);
+        return this.scanPunctuator(Operator.RightShift, afterSpace);
+      }
+    },
+    [CharacterCode.AMPERSAND]: defaultScanHandler,
+    [CharacterCode.VERTICAL_LINE]: defaultScanHandler,
+  };
+
   scan(
     code: number,
-    nextCode: number | undefined,
-    lastCode: number | undefined,
     afterSpace: boolean
   ): BaseToken<any> | null {
     const me = this;
 
-    switch (code) {
-      case CharacterCodeBase.ARROW_LEFT:
-        if (CharacterCodeBase.ARROW_LEFT === nextCode)
-          return me.scanPunctuator(Operator.LeftShift, afterSpace);
-        break;
-      case CharacterCodeBase.ARROW_RIGHT:
-        if (CharacterCodeBase.ARROW_RIGHT === nextCode) {
-          if (CharacterCodeBase.ARROW_RIGHT === lastCode)
-            return me.scanPunctuator(Operator.UnsignedRightShift, afterSpace);
-          return me.scanPunctuator(Operator.RightShift, afterSpace);
-        }
-        break;
-      case CharacterCode.AMPERSAND:
-      case CharacterCode.VERTICAL_LINE:
-        return me.scanPunctuator(String.fromCharCode(code), afterSpace);
-    }
+    const handler = Lexer.greybelScanHandlers[code];
 
-    return super.scan(code, nextCode, lastCode, afterSpace);
+    if (handler) return handler.call(this, afterSpace) || super.scan(code, afterSpace);
+
+    return super.scan(code, afterSpace);
   }
 
   scanMultilineComment(afterSpace: boolean) {
@@ -61,35 +68,39 @@ export default class Lexer extends LexerBase {
     const commentStart = me.index + 2;
     let tempOffset = 0;
     let endOffset = me.offset;
+    let closed = false;
 
-    while (true) {
+    while (me.index < me.length) {
       const code = me.codeAt();
 
       if (me.validator.isEndOfLine(code)) {
-        if (me.isWinNewline()) me.nextIndex();
-        me.nextLine();
+        if (me.validator.isWinNewline(code, me.codeAt(1))) me.index++;
+        me.line++;
         tempOffset = me.index + 1 - me.offset;
         endOffset = me.index + 1;
       } else if (
         me.validator.isMultilineCommentEnd(me.codeAt(), me.codeAt(1))
       ) {
+        closed = true;
         break;
-      } else if (!me.isNotEOF()) {
-        return me.raise(
-          `Unexpected end of file in multiline comment.`,
-          new ASTRange(
-            new ASTPosition(beginLine, beginLineStart - endOffset + 1),
-            new ASTPosition(me.line, me.index - endOffset + 1)
-          )
-        );
       }
 
-      me.nextIndex();
+      me.index++;
     }
 
-    me.nextIndex(2);
+    if (!closed) {
+      return me.raise(
+        `Unexpected end of file in multiline comment.`,
+        new ASTRange(
+          new ASTPosition(beginLine, beginLineStart - endOffset + 1),
+          new ASTPosition(me.line, me.index - endOffset + 1)
+        )
+      );
+    }
 
-    const content = me.content.slice(commentStart, me.index - 2);
+    const content = me.content.slice(commentStart, me.index);
+
+    me.index += 2;
 
     const token = new Token({
       type: TokenType.Comment,
@@ -104,7 +115,7 @@ export default class Lexer extends LexerBase {
     });
 
     me.offset = endOffset;
-    me.snapshot?.push(token);
+    me.snapshot.enqueue(token);
 
     return token;
   }
@@ -117,7 +128,7 @@ export default class Lexer extends LexerBase {
       me.content.startsWith(GreybelKeyword.ImportWithComment, me.index) ||
       me.content.startsWith(GreybelKeyword.IncludeWithComment, me.index)
     ) {
-      me.nextIndex();
+      me.index++;
       return me.scanIdentifierOrKeyword(afterSpace);
     }
 
