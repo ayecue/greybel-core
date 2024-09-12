@@ -35,6 +35,7 @@ export class ASTFeatureImportExpression extends ASTBase {
       namespace: this.namespace,
       start: this.start,
       end: this.end,
+      range: this.range,
       scope: this.scope
     });
   }
@@ -69,6 +70,7 @@ export class ASTFeatureIncludeExpression extends ASTBase {
       namespace: this.namespace,
       start: this.start,
       end: this.end,
+      range: this.range,
       scope: this.scope
     });
   }
@@ -95,6 +97,7 @@ export class ASTFeatureEnvarExpression extends ASTBase {
       name: this.name,
       start: this.start,
       end: this.end,
+      range: this.range,
       scope: this.scope
     });
   }
@@ -121,6 +124,7 @@ export class ASTFeatureInjectExpression extends ASTBase {
       path: this.path,
       start: this.start,
       end: this.end,
+      range: this.range,
       scope: this.scope
     });
   }
@@ -147,6 +151,7 @@ export class ASTFeatureFileExpression extends ASTBase {
       filename: this.filename,
       start: this.start,
       end: this.end,
+      range: this.range,
       scope: this.scope
     });
   }

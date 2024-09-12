@@ -34,6 +34,7 @@ export class ASTChunkAdvanced extends ASTChunk {
       lines: this.lines,
       start: this.start,
       end: this.end,
+      range: this.range,
       scope: this.scope
     });
   }

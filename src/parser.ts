@@ -70,6 +70,7 @@ export default class Parser extends ParserBase {
           isMultiline: me.token.value.indexOf('\n') !== -1,
           start: me.token.start,
           end: me.token.end,
+          range: me.token.range,
           scope: me.currentScope
         });
 
@@ -95,12 +96,13 @@ export default class Parser extends ParserBase {
     }
 
     const scope = me.currentScope;
-    const start = me.token.start;
+    const startToken = me.token;
     const fields: ASTMapKeyString[] = [];
     const mapConstructorExpr = me.astProvider.mapConstructorExpression({
       fields,
-      start,
+      start: startToken.start,
       end: null,
+      range: [startToken.range[0], null],
       scope
     });
 
@@ -122,6 +124,7 @@ export default class Parser extends ParserBase {
           value: null,
           start: me.token.start,
           end: null,
+          range: [me.token.range[0], null],
           scope
         });
         keyValueItem.key = me.parseExpr(null);
@@ -136,11 +139,13 @@ export default class Parser extends ParserBase {
               base: me.currentAssignment.variable,
               start: keyValueItem.start,
               end: me.token.end,
+              range: [keyValueItem.range[0], me.token.range[1]],
               scope
             }),
             init: null,
             start: keyValueItem.start,
-            end: null
+            end: null,
+            range: [keyValueItem.range[0], null]
           });
           const previousAssignment = me.currentAssignment;
 
@@ -150,6 +155,7 @@ export default class Parser extends ParserBase {
 
           assign.init = keyValueItem.value;
           assign.end = me.previousToken.end;
+          assign.range[1] = me.previousToken.range[1];
 
           scope.assignments.push(assign);
         } else {
@@ -157,17 +163,22 @@ export default class Parser extends ParserBase {
         }
 
         keyValueItem.end = me.previousToken.end;
+        keyValueItem.range[1] = me.previousToken.range[1];
         fields.push(keyValueItem);
 
         me.skipNewlines();
 
-        const token = me.requireTokenOfAny(SelectorGroups.MapSeparator, start);
+        const token = me.requireTokenOfAny(
+          SelectorGroups.MapSeparator,
+          startToken.start
+        );
 
         if (Selectors.CRBracket(token)) break;
       }
     }
 
     mapConstructorExpr.end = me.token.start;
+    mapConstructorExpr.range[1] = me.token.range[1];
 
     return mapConstructorExpr;
   }
@@ -180,12 +191,13 @@ export default class Parser extends ParserBase {
     }
 
     const scope = me.currentScope;
-    const start = me.token.start;
+    const startToken = me.token;
     const fields: ASTListValue[] = [];
     const listConstructorExpr = me.astProvider.listConstructorExpression({
       fields,
-      start,
+      start: startToken.start,
       end: null,
+      range: [startToken.range[0], null],
       scope
     });
 
@@ -206,6 +218,7 @@ export default class Parser extends ParserBase {
           value: null,
           start: me.token.start,
           end: null,
+          range: [me.token.range[0], null],
           scope
         });
 
@@ -215,21 +228,24 @@ export default class Parser extends ParserBase {
               index: me.astProvider.literal(TokenType.NumericLiteral, {
                 value: fields.length,
                 raw: `${fields.length}`,
-                start,
+                start: startToken.start,
                 end: me.token.end,
+                range: [startToken.range[0], me.token.range[1]],
                 scope
               }),
               base: me.currentAssignment.variable,
               start: null,
               end: null,
+              range: [null, null],
               scope
             }),
             init: null,
             start: null,
-            end: null
+            end: null,
+            range: [null, null]
           });
           const previousAssignment = me.currentAssignment;
-          const startToken = me.token;
+          const assignStartToken = me.token;
 
           me.currentAssignment = previousAssignment;
 
@@ -237,11 +253,16 @@ export default class Parser extends ParserBase {
 
           me.currentAssignment = previousAssignment;
 
-          assign.variable.start = startToken.start;
+          assign.variable.start = assignStartToken.start;
           assign.variable.end = me.previousToken.end;
+          assign.variable.range = [
+            assignStartToken.range[0],
+            me.previousToken.range[1]
+          ];
           assign.init = listValue.value;
           assign.start = listValue.start;
           assign.end = me.previousToken.end;
+          assign.range = [listValue.range[0], me.previousToken.range[1]];
 
           scope.assignments.push(assign);
         } else {
@@ -249,17 +270,22 @@ export default class Parser extends ParserBase {
         }
 
         listValue.end = me.previousToken.end;
+        listValue.range[1] = me.previousToken.range[1];
         fields.push(listValue);
 
         me.skipNewlines();
 
-        const token = me.requireTokenOfAny(SelectorGroups.ListSeparator, start);
+        const token = me.requireTokenOfAny(
+          SelectorGroups.ListSeparator,
+          startToken.start
+        );
 
         if (Selectors.SRBracket(token)) break;
       }
     }
 
     listConstructorExpr.end = me.token.start;
+    listConstructorExpr.range[1] = me.token.range[1];
 
     return listConstructorExpr;
   }
@@ -287,13 +313,14 @@ export default class Parser extends ParserBase {
 
   parseFeatureIncludeStatement(): ASTFeatureIncludeExpression {
     const me = this;
-    const start = me.previousToken.start;
+    const startToken = me.previousToken;
     const path = me.parsePathSegment();
 
     const base = me.astProvider.featureIncludeExpression({
       path,
-      start,
+      start: startToken.start,
       end: me.previousToken.end,
+      range: [startToken.range[0], me.previousToken.range[1]],
       scope: me.currentScope
     });
 
@@ -304,14 +331,14 @@ export default class Parser extends ParserBase {
 
   parseFeatureImportStatement(): ASTFeatureImportExpression | ASTBase {
     const me = this;
-    const start = me.previousToken.start;
+    const startToken = me.previousToken;
     const name = me.parseIdentifier();
 
     if (!me.consume(Selectors.From)) {
       me.raise(
         `expected from keyword`,
         new Range(
-          start,
+          startToken.start,
           new Position(
             me.token.lastLine ?? me.token.line,
             me.token.end.character
@@ -327,8 +354,9 @@ export default class Parser extends ParserBase {
     const base = me.astProvider.featureImportExpression({
       name,
       path,
-      start,
+      start: startToken.start,
       end: me.previousToken.end,
+      range: [startToken.range[0], me.previousToken.range[1]],
       scope: me.currentScope
     });
 
@@ -341,10 +369,12 @@ export default class Parser extends ParserBase {
         raw: 'null',
         start: name.start,
         end: name.end,
+        range: name.range,
         scope: me.currentScope
       }),
       start: name.start,
       end: name.end,
+      range: name.range,
       scope: me.currentScope
     });
 
@@ -355,30 +385,32 @@ export default class Parser extends ParserBase {
 
   parseFeatureEnvarExpression(): ASTFeatureEnvarExpression {
     const me = this;
-    const start = me.previousToken.start;
+    const startToken = me.previousToken;
     const name = me.token.value;
 
     me.next();
 
     return me.astProvider.featureEnvarExpression({
       name,
-      start,
+      start: startToken.start,
       end: me.previousToken.end,
+      range: [startToken.range[0], me.previousToken.range[1]],
       scope: me.currentScope
     });
   }
 
   parseFeatureInjectExpression(): ASTFeatureInjectExpression {
     const me = this;
-    const start = me.previousToken.start;
+    const startToken = me.previousToken;
     const path = this.parsePathSegment();
 
     me.next();
 
     const expr = me.astProvider.featureInjectExpression({
       path,
-      start,
+      start: startToken.start,
       end: me.previousToken.end,
+      range: [startToken.range[0], me.previousToken.range[1]],
       scope: me.currentScope
     });
 
@@ -389,7 +421,7 @@ export default class Parser extends ParserBase {
 
   parseIsa(asLval: boolean = false, statementStart: boolean = false): ASTBase {
     const me = this;
-    const start = me.token.start;
+    const startToken = me.token;
     const val = me.parseBitwiseOr(asLval, statementStart);
 
     if (Selectors.Isa(me.token)) {
@@ -403,8 +435,9 @@ export default class Parser extends ParserBase {
         operator: OperatorBase.Isa,
         left: val,
         right: opB,
-        start,
+        start: startToken.start,
         end: me.previousToken.end,
+        range: [startToken.range[0], me.previousToken.range[1]],
         scope: me.currentScope
       });
     }
@@ -417,7 +450,7 @@ export default class Parser extends ParserBase {
     statementStart: boolean = false
   ): ASTBase {
     const me = this;
-    const start = me.token.start;
+    const startToken = me.token;
     const val = me.parseBitwiseAnd(asLval, statementStart);
     let base = val;
 
@@ -430,8 +463,9 @@ export default class Parser extends ParserBase {
         operator: Operator.BitwiseOr as unknown as OperatorBase,
         left: base,
         right: opB,
-        start,
+        start: startToken.start,
         end: me.previousToken.end,
+        range: [startToken.range[0], me.previousToken.range[1]],
         scope: me.currentScope
       });
     }
@@ -444,7 +478,7 @@ export default class Parser extends ParserBase {
     statementStart: boolean = false
   ): ASTBase {
     const me = this;
-    const start = me.token.start;
+    const startToken = me.token;
     const val = me.parseComparisons(asLval, statementStart);
     let base = val;
 
@@ -457,8 +491,9 @@ export default class Parser extends ParserBase {
         operator: Operator.BitwiseAnd,
         left: base,
         right: opB,
-        start,
+        start: startToken.start,
         end: me.previousToken.end,
+        range: [startToken.range[0], me.previousToken.range[1]],
         scope: me.currentScope
       });
     }
@@ -471,7 +506,7 @@ export default class Parser extends ParserBase {
     statementStart: boolean = false
   ): ASTBase {
     const me = this;
-    const start = me.token.start;
+    const startToken = me.token;
     const val = me.parseBitwise(asLval, statementStart);
     let base = val;
 
@@ -491,8 +526,9 @@ export default class Parser extends ParserBase {
         operator: <Operator>token.value,
         left: base,
         right: opB,
-        start,
+        start: startToken.start,
         end: me.previousToken.end,
+        range: [startToken.range[0], me.previousToken.range[1]],
         scope: me.currentScope
       });
     }
@@ -505,7 +541,7 @@ export default class Parser extends ParserBase {
     statementStart: boolean = false
   ): ASTBase {
     const me = this;
-    const start = me.token.start;
+    const startToken = me.token;
     const val = me.parseMultDiv(asLval, statementStart);
     let base = val;
 
@@ -521,8 +557,9 @@ export default class Parser extends ParserBase {
         operator: <Operator>token.value,
         left: base,
         right: opB,
-        start,
+        start: startToken.start,
         end: me.previousToken.end,
+        range: [startToken.range[0], me.previousToken.range[1]],
         scope: me.currentScope
       });
     }
@@ -550,6 +587,7 @@ export default class Parser extends ParserBase {
           me.previousToken.line,
           me.previousToken.end.character
         ),
+        range: me.previousToken.range,
         scope: me.currentScope
       });
     }
@@ -565,6 +603,7 @@ export default class Parser extends ParserBase {
           me.previousToken.line,
           me.previousToken.end.character
         ),
+        range: me.previousToken.range,
         scope: me.currentScope
       });
     }
@@ -621,6 +660,7 @@ export default class Parser extends ParserBase {
               me.previousToken.line,
               me.previousToken.end.character
             ),
+            range: me.previousToken.range,
             scope: me.currentScope
           });
           me.addItemToLines(item);
@@ -640,8 +680,12 @@ export default class Parser extends ParserBase {
 
     me.next();
 
-    const start = me.token.start;
-    const chunk = me.astProvider.chunkAdvanced({ start, end: null });
+    const startToken = me.token;
+    const chunk = me.astProvider.chunkAdvanced({
+      start: startToken.start,
+      end: null,
+      range: [startToken.range[0], null]
+    });
     const pending = new PendingChunk(chunk);
 
     me.backpatches.setDefault(pending);
