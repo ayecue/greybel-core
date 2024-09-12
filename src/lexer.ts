@@ -70,8 +70,8 @@ export default class Lexer extends LexerBase {
     const me = this;
     const beginLine = me.line;
     const beginLineStart = me.lineStart;
-    const commentStart = me.index + 2;
-    let tempOffset = 0;
+    const commentStart = me.index;
+    const commentStartOffset = me.offset;
     let endOffset = me.offset;
     let closed = false;
 
@@ -79,9 +79,10 @@ export default class Lexer extends LexerBase {
       const code = me.codeAt();
 
       if (me.validator.isEndOfLine(code)) {
-        if (me.validator.isWinNewline(code, me.codeAt(1))) me.index++;
+        if (me.validator.isWinNewline(code, me.codeAt(1))) {
+          me.index++;
+        }
         me.line++;
-        tempOffset = me.index + 1 - me.offset;
         endOffset = me.index + 1;
       } else if (
         me.validator.isMultilineCommentEnd(me.codeAt(), me.codeAt(1))
@@ -97,13 +98,13 @@ export default class Lexer extends LexerBase {
       return me.raise(
         `Unexpected end of file in multiline comment.`,
         new ASTRange(
-          new ASTPosition(beginLine, beginLineStart - endOffset + 1),
-          new ASTPosition(me.line, me.index - endOffset + 1)
+          new ASTPosition(beginLine, commentStart - commentStartOffset + 1),
+          new ASTPosition(me.line, me.index - endOffset + 3)
         )
       );
     }
 
-    const content = me.content.slice(commentStart, me.index);
+    const content = me.content.slice(commentStart + 2, me.index);
 
     me.index += 2;
 
@@ -112,8 +113,8 @@ export default class Lexer extends LexerBase {
       value: content,
       line: beginLine,
       lineStart: beginLineStart,
-      range: [me.tokenStart, me.index - tempOffset],
-      offset: me.offset,
+      range: [me.tokenStart, me.index],
+      offsetRange: [commentStartOffset, endOffset],
       afterSpace,
       lastLine: me.line,
       lastLineStart: me.lineStart
