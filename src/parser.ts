@@ -1,5 +1,6 @@
 import {
   ASTBase,
+  ASTIdentifierKind,
   ASTListValue,
   ASTMapKeyString,
   ASTPosition,
@@ -132,36 +133,7 @@ export default class Parser extends ParserBase {
         me.requireToken(Selectors.MapKeyValueSeperator);
         me.skipNewlines();
 
-        if (me.currentAssignment) {
-          const assign = me.astProvider.assignmentStatement({
-            variable: me.astProvider.indexExpression({
-              index: keyValueItem.key,
-              base: me.currentAssignment.variable,
-              start: keyValueItem.start,
-              end: me.token.end,
-              range: [keyValueItem.range[0], me.token.range[1]],
-              scope
-            }),
-            init: null,
-            start: keyValueItem.start,
-            end: null,
-            range: [keyValueItem.range[0], null]
-          });
-          const previousAssignment = me.currentAssignment;
-
-          me.currentAssignment = assign;
-          keyValueItem.value = me.parseExpr(keyValueItem);
-          me.currentAssignment = previousAssignment;
-
-          assign.init = keyValueItem.value;
-          assign.end = me.previousToken.end;
-          assign.range[1] = me.previousToken.range[1];
-
-          scope.assignments.push(assign);
-        } else {
-          keyValueItem.value = me.parseExpr(keyValueItem);
-        }
-
+        keyValueItem.value = me.parseExpr(keyValueItem);
         keyValueItem.end = me.previousToken.end;
         keyValueItem.range[1] = me.previousToken.range[1];
         fields.push(keyValueItem);
@@ -222,53 +194,7 @@ export default class Parser extends ParserBase {
           scope
         });
 
-        if (me.currentAssignment) {
-          const assign = me.astProvider.assignmentStatement({
-            variable: me.astProvider.indexExpression({
-              index: me.astProvider.literal(TokenType.NumericLiteral, {
-                value: fields.length,
-                raw: `${fields.length}`,
-                start: startToken.start,
-                end: me.token.end,
-                range: [startToken.range[0], me.token.range[1]],
-                scope
-              }),
-              base: me.currentAssignment.variable,
-              start: null,
-              end: null,
-              range: [null, null],
-              scope
-            }),
-            init: null,
-            start: null,
-            end: null,
-            range: [null, null]
-          });
-          const previousAssignment = me.currentAssignment;
-          const assignStartToken = me.token;
-
-          me.currentAssignment = previousAssignment;
-
-          listValue.value = me.parseExpr(listValue);
-
-          me.currentAssignment = previousAssignment;
-
-          assign.variable.start = assignStartToken.start;
-          assign.variable.end = me.previousToken.end;
-          assign.variable.range = [
-            assignStartToken.range[0],
-            me.previousToken.range[1]
-          ];
-          assign.init = listValue.value;
-          assign.start = listValue.start;
-          assign.end = me.previousToken.end;
-          assign.range = [listValue.range[0], me.previousToken.range[1]];
-
-          scope.assignments.push(assign);
-        } else {
-          listValue.value = me.parseExpr(listValue);
-        }
-
+        listValue.value = me.parseExpr(listValue);
         listValue.end = me.previousToken.end;
         listValue.range[1] = me.previousToken.range[1];
         fields.push(listValue);
@@ -332,7 +258,7 @@ export default class Parser extends ParserBase {
   parseFeatureImportStatement(): ASTFeatureImportExpression | ASTBase {
     const me = this;
     const startToken = me.previousToken;
-    const name = me.parseIdentifier();
+    const name = me.parseIdentifier(ASTIdentifierKind.Variable);
 
     if (!me.consume(Selectors.From)) {
       me.raise(
