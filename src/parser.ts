@@ -66,17 +66,22 @@ export default class Parser extends ParserBase {
     let lines = 0;
     while (true) {
       if (Selectors.Comment(me.token)) {
+        const isStatement = me.previousToken?.line !== me.token.line;
         const comment = me.astProvider.comment({
           value: me.token.value,
           isMultiline: me.token.value.indexOf('\n') !== -1,
           start: me.token.start,
           end: me.token.end,
           range: me.token.range,
-          scope: me.currentScope
+          scope: me.currentScope,
+          isStatement
         });
 
         me.addItemToLines(comment);
-        me.backpatches.peek().body.push(comment);
+        
+        if (isStatement) {
+          me.backpatches.peek().body.push(comment);
+        }
       } else if (Selectors.EndOfLine(me.token)) {
         lines++;
       } else {
