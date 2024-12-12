@@ -77,7 +77,7 @@ export default class Parser extends ParserBase {
           isStatement
         });
 
-        me.addItemToLines(comment);
+        me.lineRegistry.addItemToLines(comment);
         
         if (isStatement) {
           me.backpatches.peek().body.push(comment);
@@ -554,7 +554,7 @@ export default class Parser extends ParserBase {
         case GreybelKeyword.IncludeWithComment: {
           me.next();
           const item = me.parseFeatureIncludeStatement();
-          me.addItemToLines(item);
+          me.lineRegistry.addItemToLines(item);
           pendingBlock.body.push(item);
           return;
         }
@@ -562,21 +562,21 @@ export default class Parser extends ParserBase {
         case GreybelKeyword.ImportWithComment: {
           me.next();
           const item = me.parseFeatureImportStatement();
-          me.addItemToLines(item);
+          me.lineRegistry.addItemToLines(item);
           pendingBlock.body.push(item);
           return;
         }
         case GreybelKeyword.Envar: {
           me.next();
           const item = me.parseFeatureEnvarExpression();
-          me.addItemToLines(item);
+          me.lineRegistry.addItemToLines(item);
           pendingBlock.body.push(item);
           return;
         }
         case GreybelKeyword.Inject: {
           me.next();
           const item = me.parseFeatureInjectExpression();
-          me.addItemToLines(item);
+          me.lineRegistry.addItemToLines(item);
           pendingBlock.body.push(item);
           return;
         }
@@ -594,7 +594,7 @@ export default class Parser extends ParserBase {
             range: me.previousToken.range,
             scope: me.currentScope
           });
-          me.addItemToLines(item);
+          me.lineRegistry.addItemToLines(item);
           pendingBlock.body.push(item);
           return;
         }
@@ -617,7 +617,7 @@ export default class Parser extends ParserBase {
       end: null,
       range: [startToken.range[0], null]
     });
-    const pending = new PendingChunk(chunk);
+    const pending = new PendingChunk(chunk, me.lineRegistry);
 
     me.backpatches.setDefault(pending);
     me.pushScope(chunk);
@@ -662,7 +662,7 @@ export default class Parser extends ParserBase {
 
     chunk.literals = me.literals;
     chunk.scopes = me.scopes;
-    chunk.lines = me.lines;
+    chunk.lines = me.lineRegistry.lines;
     chunk.imports = me.imports;
     chunk.includes = me.includes;
     chunk.injects = me.injects;
