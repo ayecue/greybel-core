@@ -78,10 +78,6 @@ export default class Parser extends ParserBase {
         });
 
         me.lineRegistry.addItemToLines(comment);
-        
-        if (isStatement) {
-          me.backpatches.peek().body.push(comment);
-        }
       } else if (Selectors.EndOfLine(me.token)) {
         lines++;
       } else {
