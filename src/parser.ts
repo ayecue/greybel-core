@@ -17,7 +17,7 @@ import { Range } from 'miniscript-core/dist/types/range';
 
 import Lexer from './lexer';
 import {
-  ASTChunkAdvanced,
+  ASTChunkGreybel,
   ASTFeatureImportExpression,
   ASTFeatureIncludeExpression,
   ASTProvider
@@ -289,23 +289,7 @@ export default class Parser extends ParserBase {
 
     me.imports.push(base);
 
-    const assign = me.astProvider.assignmentStatement({
-      variable: name,
-      init: me.astProvider.literal(TokenType.NilLiteral, {
-        value: null,
-        raw: 'null',
-        start: name.start,
-        end: name.end,
-        range: name.range,
-        scope: me.currentScope
-      }),
-      start: name.start,
-      end: name.end,
-      range: name.range,
-      scope: me.currentScope
-    });
-
-    me.currentScope.assignments.push(assign);
+    me.currentScope.definitions.push(base);
 
     return base;
   }
@@ -602,17 +586,17 @@ export default class Parser extends ParserBase {
     super.parseStatement();
   }
 
-  parseChunk(): ASTChunkAdvanced | ASTBase {
+  parseChunk(): ASTChunkGreybel | ASTBase {
     const me = this;
 
     me.next();
 
     const startToken = me.token;
-    const chunk = me.astProvider.chunkAdvanced({
+    const chunk = me.astProvider.chunk({
       start: startToken.start,
       end: null,
       range: [startToken.range[0], null]
-    });
+    }) as ASTChunkGreybel;
     const pending = new PendingChunk(chunk, me.lineRegistry);
 
     me.backpatches.setDefault(pending);

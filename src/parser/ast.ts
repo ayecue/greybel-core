@@ -5,7 +5,7 @@ import {
 } from 'miniscript-core';
 
 import { ASTType } from './ast/base';
-import { ASTChunkAdvanced, ASTChunkAdvancedOptions } from './ast/chunk';
+import { ASTChunkGreybel, ASTChunkGreybelOptions } from './ast/chunk';
 import {
   ASTFeatureEnvarExpression,
   ASTFeatureEnvarExpressionOptions,
@@ -58,13 +58,13 @@ export class ASTProvider extends ASTProviderBase {
     return new ASTFeatureFileExpression(options);
   }
 
-  chunkAdvanced(options: ASTChunkAdvancedOptions): ASTChunkAdvanced {
-    return new ASTChunkAdvanced(options);
+  chunk(options: ASTChunkGreybelOptions): ASTChunkGreybel {
+    return new ASTChunkGreybel(options);
   }
 }
 
 export { ASTType } from './ast/base';
-export { ASTChunkAdvanced, ASTChunkAdvancedOptions } from './ast/chunk';
+export { ASTChunkGreybel, ASTChunkGreybelOptions } from './ast/chunk';
 export {
   ASTFeatureEnvarExpression,
   ASTFeatureEnvarExpressionOptions,

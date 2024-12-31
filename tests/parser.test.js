@@ -29,7 +29,7 @@ describe('parse', function () {
             return result;
           }, {})).toMatchSnapshot();
           expect(payload.literals.length).toMatchSnapshot();
-          expect(payload.assignments.length).toMatchSnapshot();
+          expect(payload.definitions.length).toMatchSnapshot();
         });
       });
 

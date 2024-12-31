@@ -819,7 +819,7 @@ Object {
 
 exports[`parse default scripts eol.ms 3`] = `6`;
 
-exports[`parse default scripts eol.ms 4`] = `2`;
+exports[`parse default scripts eol.ms 4`] = `1`;
 
 exports[`parse default scripts eol.ms unsafe 1`] = `
 "Chunk[1:1-13:9][
@@ -2724,7 +2724,7 @@ Object {
 
 exports[`parse default scripts shorthand.ms 3`] = `25`;
 
-exports[`parse default scripts shorthand.ms 4`] = `11`;
+exports[`parse default scripts shorthand.ms 4`] = `8`;
 
 exports[`parse default scripts shorthand.ms unsafe 1`] = `
 "Chunk[1:1-51:34][
@@ -2893,7 +2893,7 @@ Object {
 
 exports[`parse default scripts slice.ms 3`] = `21`;
 
-exports[`parse default scripts slice.ms 4`] = `6`;
+exports[`parse default scripts slice.ms 4`] = `5`;
 
 exports[`parse default scripts slice.ms unsafe 1`] = `
 "Chunk[1:1-27:21][

@@ -6,26 +6,26 @@ import {
   ASTFeatureInjectExpression
 } from './feature';
 
-export interface ASTChunkAdvancedOptions extends ASTChunkOptions {
+export interface ASTChunkGreybelOptions extends ASTChunkOptions {
   imports?: ASTFeatureImportExpression[];
   includes?: ASTFeatureIncludeExpression[];
   injects?: ASTFeatureInjectExpression[];
 }
 
-export class ASTChunkAdvanced extends ASTChunk {
+export class ASTChunkGreybel extends ASTChunk {
   imports: ASTFeatureImportExpression[];
   includes: ASTFeatureIncludeExpression[];
   injects: ASTFeatureInjectExpression[];
 
-  constructor(options: ASTChunkAdvancedOptions) {
+  constructor(options: ASTChunkGreybelOptions) {
     super(options);
     this.imports = options.imports || [];
     this.includes = options.includes || [];
     this.injects = options.injects || [];
   }
 
-  clone(): ASTChunkAdvanced {
-    return new ASTChunkAdvanced({
+  clone(): ASTChunkGreybel {
+    return new ASTChunkGreybel({
       literals: this.literals.map((it) => it.clone()),
       scopes: this.scopes.map((it) => it.clone()),
       imports: this.imports.map((it) => it.clone()),
