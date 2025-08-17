@@ -77,6 +77,7 @@ export default class Parser extends ParserBase {
           isStatement
         });
 
+        me.comments.push(comment);
         me.lineRegistry.addItemToLines(comment);
       } else if (Selectors.EndOfLine(me.token)) {
         lines++;
@@ -641,6 +642,7 @@ export default class Parser extends ParserBase {
     pending.complete(me.token);
 
     chunk.literals = me.literals;
+    chunk.comments = me.comments;
     chunk.scopes = me.scopes;
     chunk.lines = me.lineRegistry.lines;
     chunk.imports = me.imports;
