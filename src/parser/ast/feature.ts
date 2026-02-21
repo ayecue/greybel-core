@@ -1,4 +1,8 @@
-import { ASTBase, ASTBaseOptions, ASTChunk } from 'miniscript-core';
+import {
+  ASTBase,
+  ASTBaseOptions,
+  ASTChunk
+} from 'miniscript-core/dist/parser/ast';
 
 import { ASTType } from './base';
 
@@ -24,18 +28,21 @@ export class ASTFeatureImportExpression extends ASTBase {
   }
 
   toString(): string {
-    return `FeatureImportExpression[${this.start}-${this.end}][name = ${this.name}, path = ${this.path}]`;
+    return `FeatureImportExpression[${this.startLine}:${this.startChar}-${this.endLine}:${this.endChar}][name = ${this.name}, path = ${this.path}]`;
   }
 
   clone(): ASTFeatureImportExpression {
     return new ASTFeatureImportExpression({
       name: this.name.clone(),
       path: this.path,
-      chunk: this.chunk.clone(),
+      chunk: this.chunk?.clone() as ASTChunk,
       namespace: this.namespace,
-      start: this.start,
-      end: this.end,
-      range: this.range,
+      startLine: this.startLine,
+      startChar: this.startChar,
+      endLine: this.endLine,
+      endChar: this.endChar,
+      rangeStart: this.rangeStart,
+      rangeEnd: this.rangeEnd,
       scope: this.scope
     });
   }
@@ -60,17 +67,20 @@ export class ASTFeatureIncludeExpression extends ASTBase {
   }
 
   toString(): string {
-    return `FeatureIncludeExpression[${this.start}-${this.end}][path = ${this.path}]`;
+    return `FeatureIncludeExpression[${this.startLine}:${this.startChar}-${this.endLine}:${this.endChar}][path = ${this.path}]`;
   }
 
   clone(): ASTFeatureIncludeExpression {
     return new ASTFeatureIncludeExpression({
       path: this.path,
-      chunk: this.chunk.clone(),
+      chunk: this.chunk?.clone() as ASTChunk,
       namespace: this.namespace,
-      start: this.start,
-      end: this.end,
-      range: this.range,
+      startLine: this.startLine,
+      startChar: this.startChar,
+      endLine: this.endLine,
+      endChar: this.endChar,
+      rangeStart: this.rangeStart,
+      rangeEnd: this.rangeEnd,
       scope: this.scope
     });
   }
@@ -89,15 +99,18 @@ export class ASTFeatureEnvarExpression extends ASTBase {
   }
 
   toString(): string {
-    return `FeatureEnvarExpression[${this.start}-${this.end}][name = ${this.name}]`;
+    return `FeatureEnvarExpression[${this.startLine}:${this.startChar}-${this.endLine}:${this.endChar}][name = ${this.name}]`;
   }
 
   clone(): ASTFeatureEnvarExpression {
     return new ASTFeatureEnvarExpression({
       name: this.name,
-      start: this.start,
-      end: this.end,
-      range: this.range,
+      startLine: this.startLine,
+      startChar: this.startChar,
+      endLine: this.endLine,
+      endChar: this.endChar,
+      rangeStart: this.rangeStart,
+      rangeEnd: this.rangeEnd,
       scope: this.scope
     });
   }
@@ -116,15 +129,18 @@ export class ASTFeatureInjectExpression extends ASTBase {
   }
 
   toString(): string {
-    return `FeatureInjectExpression[${this.start}-${this.end}][path = ${this.path}]`;
+    return `FeatureInjectExpression[${this.startLine}:${this.startChar}-${this.endLine}:${this.endChar}][path = ${this.path}]`;
   }
 
   clone(): ASTFeatureInjectExpression {
     return new ASTFeatureInjectExpression({
       path: this.path,
-      start: this.start,
-      end: this.end,
-      range: this.range,
+      startLine: this.startLine,
+      startChar: this.startChar,
+      endLine: this.endLine,
+      endChar: this.endChar,
+      rangeStart: this.rangeStart,
+      rangeEnd: this.rangeEnd,
       scope: this.scope
     });
   }
@@ -143,15 +159,18 @@ export class ASTFeatureFileExpression extends ASTBase {
   }
 
   toString(): string {
-    return `FeatureFileExpression[${this.start}-${this.end}][path = ${this.filename}]`;
+    return `FeatureFileExpression[${this.startLine}:${this.startChar}-${this.endLine}:${this.endChar}][path = ${this.filename}]`;
   }
 
   clone(): ASTFeatureFileExpression {
     return new ASTFeatureFileExpression({
       filename: this.filename,
-      start: this.start,
-      end: this.end,
-      range: this.range,
+      startLine: this.startLine,
+      startChar: this.startChar,
+      endLine: this.endLine,
+      endChar: this.endChar,
+      rangeStart: this.rangeStart,
+      rangeEnd: this.rangeEnd,
       scope: this.scope
     });
   }

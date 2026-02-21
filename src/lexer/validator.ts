@@ -1,4 +1,6 @@
-import { CharacterCode, Keyword, LexerValidator } from 'miniscript-core';
+import LexerValidator from 'miniscript-core/dist/lexer/validator';
+import { CharacterCode } from 'miniscript-core/dist/types/codes';
+import { Keyword } from 'miniscript-core/dist/types/keywords';
 
 import { GreybelKeyword } from '../types/keywords';
 

@@ -1,4 +1,4 @@
-import { Keyword as CoreKeyword } from 'miniscript-core';
+import { Keyword as CoreKeyword } from 'miniscript-core/dist/types/keywords';
 
 export enum GreybelKeyword {
   Envar = '#envar',
