@@ -90,8 +90,6 @@ export function greybelInfixOpBuilder() {
     });
 }
 
-// ── Atom op builder ──────────────────────────────────────────────
-
 function greybelParseMap(p: ParserBase): ASTBase {
   const me = p;
   const scope = me.currentScope;
@@ -308,8 +306,6 @@ export function greybelAtomOpBuilder() {
     });
 }
 
-// ── Path segment parsing (shared by keyword handlers) ────────────
-
 function parsePathSegment(me: ParserBase): string {
   if (me.token.type === TokenType.StringLiteral) {
     const path = me.token.value;
@@ -328,8 +324,6 @@ function parsePathSegment(me: ParserBase): string {
 
   return path;
 }
-
-// ── Keyword handler builder ──────────────────────────────────────
 
 function handleInclude(parser: ParserBase): void {
   const me = parser as Parser;
