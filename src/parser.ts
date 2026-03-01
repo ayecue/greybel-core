@@ -23,7 +23,6 @@ export interface ParserOptions extends ParserOptionsBase {
   astProvider?: ASTProvider;
   lexer?: Lexer;
   filename?: string;
-  strictMode?: boolean;
   environmentVariables?: Map<string, string>;
 }
 
@@ -31,7 +30,6 @@ export default class Parser extends ParserBase {
   filename: string;
   declare state: GreybelParserState;
   astProvider: ASTProvider;
-  strictMode: boolean;
   environmentVariables: Map<string, string>;
   protected _stateStack: Stack<GreybelParserState> = new Stack();
 
@@ -55,7 +53,6 @@ export default class Parser extends ParserBase {
 
     me.filename = options.filename ?? 'unknown';
     me._stateStack.setDefault(me.state);
-    me.strictMode = options.strictMode ?? false;
     me.environmentVariables = options.environmentVariables ?? new Map();
   }
 
