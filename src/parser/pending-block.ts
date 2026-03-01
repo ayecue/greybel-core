@@ -1,9 +1,16 @@
 import { Token } from 'miniscript-core/dist/lexer/token';
-import { ASTBase } from 'miniscript-core/dist/parser/ast';
+import { ASTBase, ASTBaseBlock } from 'miniscript-core/dist/parser/ast';
+import { ParserState } from 'miniscript-core/dist/parser/state';
 import { PendingBlock } from 'miniscript-core/dist/parser/pending-block';
+import { GreybelKeyword } from '../types/keywords';
 
 export enum PendingBlockType {
   PendingEnvCondition = 100
+}
+
+export interface StateBranch {
+  body: ASTBase[];
+  state: ParserState;
 }
 
 export function isPendingEnvCondition(
@@ -14,16 +21,20 @@ export function isPendingEnvCondition(
 
 export class PendingEnvCondition implements PendingBlock {
   block: ASTBase;
-  body: ASTBase[];
   type: number;
   onComplete: ((pendingBlock: PendingBlock) => void) | null;
 
+  // runtime
   isTruthy: boolean;
-  ifBody: ASTBase[] | null;
-  elseBody: ASTBase[] | null;
+  body: ASTBase[] | null = null;
+  state: ParserState | null = null;
 
-  constructor(isTruthy: boolean, startToken: Token) {
-    this.block = new ASTBase('#if', {
+  // branches
+  thruthyBranch: StateBranch;
+  falselyBranch: StateBranch;
+
+  constructor(isTruthy: boolean, startToken: Token, emptyCollections: ParserState) {
+    this.block = new ASTBaseBlock(GreybelKeyword.IfEnv, {
       startLine: startToken.line,
       startChar: startToken.startChar,
       endLine: startToken.endLine,
@@ -31,26 +42,35 @@ export class PendingEnvCondition implements PendingBlock {
       rangeStart: startToken.rangeStart,
       rangeEnd: startToken.rangeEnd
     });
-    this.body = [];
+    this.thruthyBranch = {
+      body: [],
+      state: emptyCollections.createEmpty()
+    };
+    this.falselyBranch = {
+      body: [],
+      state: emptyCollections.createEmpty()
+    };
     this.type = PendingBlockType.PendingEnvCondition;
     this.onComplete = null;
     this.isTruthy = isTruthy;
-    this.ifBody = null;
-    this.elseBody = null;
   }
 
-  next(): void {
-    this.ifBody = this.body;
-    this.body = [];
+  enableTruthlyBranch() {
+    this.body = this.thruthyBranch.body;
+    this.state = this.thruthyBranch.state;
+  }
+
+  enableFalselyBranch() {
+    this.body = this.falselyBranch.body;
+    this.state = this.falselyBranch.state;
+  }
+
+  resetBranch() {
+    this.body = null;
+    this.state = null;
   }
 
   complete(endToken: Token): void {
-    if (this.ifBody === null) {
-      this.ifBody = this.body;
-    } else {
-      this.elseBody = this.body;
-    }
-
     this.block.endLine = endToken.endLine;
     this.block.endChar = endToken.endChar;
     this.block.rangeEnd = endToken.rangeEnd;
@@ -59,9 +79,10 @@ export class PendingEnvCondition implements PendingBlock {
   }
 
   resolve(): ASTBase[] {
-    if (this.isTruthy) {
-      return this.ifBody ?? [];
-    }
-    return this.elseBody ?? [];
+    return this.isTruthy ? this.thruthyBranch.body : this.falselyBranch.body;
+  }
+
+  resolveState(): ParserState {
+    return this.isTruthy ? this.thruthyBranch.state : this.falselyBranch.state;
   }
 }

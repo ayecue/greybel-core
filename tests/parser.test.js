@@ -385,6 +385,68 @@ print("done")
 
       expect(chunk.toString()).toMatchSnapshot();
     });
+
+    test('#if truthy branch - dropped else includes are filtered', () => {
+      const content = `
+#include "always.src"
+#if DEBUG
+#include "debug.src"
+#import DebugLib from "debug-lib.src"
+#else
+#include "release.src"
+#import ReleaseLib from "release-lib.src"
+#endif
+      `;
+      const parser = new Parser(content, {
+        environmentVariables: new Map([['DEBUG', '1']])
+      });
+      const chunk = parser.parseChunk();
+
+      expect(parser.state.includes.length).toBe(2);
+      expect(parser.state.includes[0].path).toBe('always.src');
+      expect(parser.state.includes[1].path).toBe('debug.src');
+      expect(parser.state.imports.length).toBe(1);
+      expect(parser.state.imports[0].path).toBe('debug-lib.src');
+    });
+
+    test('#if falsy branch - dropped if includes are filtered', () => {
+      const content = `
+#include "always.src"
+#if DEBUG
+#include "debug.src"
+#import DebugLib from "debug-lib.src"
+#else
+#include "release.src"
+#import ReleaseLib from "release-lib.src"
+#endif
+      `;
+      const parser = new Parser(content, {
+        environmentVariables: new Map()
+      });
+      const chunk = parser.parseChunk();
+
+      expect(parser.state.includes.length).toBe(2);
+      expect(parser.state.includes[0].path).toBe('always.src');
+      expect(parser.state.includes[1].path).toBe('release.src');
+      expect(parser.state.imports.length).toBe(1);
+      expect(parser.state.imports[0].path).toBe('release-lib.src');
+    });
+
+    test('#if without else - dropped if includes are filtered', () => {
+      const content = `
+#include "always.src"
+#if FEATURE
+#include "feature.src"
+#endif
+      `;
+      const parser = new Parser(content, {
+        environmentVariables: new Map()
+      });
+      const chunk = parser.parseChunk();
+
+      expect(parser.state.includes.length).toBe(1);
+      expect(parser.state.includes[0].path).toBe('always.src');
+    });
   });
 
   describe('#include type', function () {
@@ -394,7 +456,7 @@ print("done")
       const chunk = parser.parseChunk();
 
       expect(chunk.toString()).toMatchSnapshot();
-      expect(parser.includes[0].typeOnly).toBe(false);
+      expect(parser.state.includes[0].typeOnly).toBe(false);
     });
 
     test('#include type sets typeOnly true', () => {
@@ -403,7 +465,7 @@ print("done")
       const chunk = parser.parseChunk();
 
       expect(chunk.toString()).toMatchSnapshot();
-      expect(parser.includes[0].typeOnly).toBe(true);
+      expect(parser.state.includes[0].typeOnly).toBe(true);
     });
 
     test('#include type with bare path', () => {
@@ -412,7 +474,7 @@ print("done")
       const chunk = parser.parseChunk();
 
       expect(chunk.toString()).toMatchSnapshot();
-      expect(parser.includes[0].typeOnly).toBe(true);
+      expect(parser.state.includes[0].typeOnly).toBe(true);
     });
 
     test('mixed includes', () => {
@@ -425,9 +487,9 @@ print("done")
       const chunk = parser.parseChunk();
 
       expect(chunk.toString()).toMatchSnapshot();
-      expect(parser.includes[0].typeOnly).toBe(false);
-      expect(parser.includes[1].typeOnly).toBe(true);
-      expect(parser.includes[2].typeOnly).toBe(false);
+      expect(parser.state.includes[0].typeOnly).toBe(false);
+      expect(parser.state.includes[1].typeOnly).toBe(true);
+      expect(parser.state.includes[2].typeOnly).toBe(false);
     });
   });
 });

@@ -5,15 +5,14 @@ import ParserBase, {
 import { ASTBase } from 'miniscript-core/dist/parser/ast';
 import { Comment } from 'miniscript-core/dist/types/comment';
 import { Selectors as BaseSelectors } from 'miniscript-core/dist/types/selector';
+import { Stack } from 'miniscript-core/dist/utils/stack';
 
 import Lexer, { UnsafeLexer } from './lexer';
 import {
   ASTChunkGreybel,
-  ASTFeatureImportExpression,
-  ASTFeatureIncludeExpression,
   ASTProvider
 } from './parser/ast';
-import { ASTFeatureInjectExpression } from './parser/ast/feature';
+import { GreybelParserState } from './parser/state';
 import {
   greybelAtomOps,
   greybelInfixOps,
@@ -30,12 +29,11 @@ export interface ParserOptions extends ParserOptionsBase {
 
 export default class Parser extends ParserBase {
   filename: string;
-  imports: ASTFeatureImportExpression[];
-  includes: ASTFeatureIncludeExpression[];
-  injects: ASTFeatureInjectExpression[];
+  declare state: GreybelParserState;
   astProvider: ASTProvider;
   strictMode: boolean;
   environmentVariables: Map<string, string>;
+  protected _stateStack: Stack<GreybelParserState> = new Stack();
 
   constructor(content: string, options: ParserOptions = {}) {
     options.lexer =
@@ -49,17 +47,28 @@ export default class Parser extends ParserBase {
     options.infixOps = options.infixOps || greybelInfixOps;
     options.atomOps = options.atomOps || greybelAtomOps;
     options.keywordOps = options.keywordOps || greybelKeywordOps;
+    options.state = options.state || new GreybelParserState();
 
     super(content, options);
 
     const me = this;
 
     me.filename = options.filename ?? 'unknown';
-    me.imports = [];
-    me.includes = [];
-    me.injects = [];
+    me._stateStack.setDefault(me.state);
     me.strictMode = options.strictMode ?? false;
     me.environmentVariables = options.environmentVariables ?? new Map();
+  }
+
+  pushState(state: GreybelParserState): void {
+    this._stateStack.push(state);
+  }
+
+  popState(): GreybelParserState {
+    return this._stateStack.pop();
+  }
+
+  getState(): GreybelParserState {
+    return this._stateStack.peek();
   }
 
   consumeNoop(): number {
@@ -73,7 +82,7 @@ export default class Parser extends ParserBase {
           isMultiline: me.token.value.indexOf('\n') !== -1
         };
 
-        me.comments.push(comment);
+        me.getState().comments.push(comment);
         me.noopConsumer?.onComment(me, comment, isStatement);
         lines = 0;
       } else if (BaseSelectors.EndOfLine(me.token)) {
@@ -93,9 +102,9 @@ export default class Parser extends ParserBase {
     const me = this;
 
     const c = chunk as ASTChunkGreybel;
-    c.imports = me.imports;
-    c.includes = me.includes;
-    c.injects = me.injects;
+    c.imports = me.state.imports;
+    c.includes = me.state.includes;
+    c.injects = me.state.injects;
     return c;
   }
 }

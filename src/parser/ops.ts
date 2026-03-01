@@ -35,6 +35,7 @@ import {
   isPendingEnvCondition,
   PendingEnvCondition
 } from './pending-block';
+import { GreybelParserState } from './state';
 
 export const GreybelPrecedence = {
   BitwiseOr: Precedence.Isa + 2,
@@ -99,8 +100,8 @@ function greybelParseCallArgs(me: Parser): ASTBase[] {
 
 export function greybelInfixOpBuilder() {
   return defaultInfixOpBuilder()
-    .override(BaseSelectors.LParenthesis.selectorId, (p, left, startToken) => {
-      const expressions = greybelParseCallArgs(p as Parser);
+    .override(BaseSelectors.LParenthesis.selectorId, (p: Parser, left, startToken) => {
+      const expressions = greybelParseCallArgs(p);
       return p.astProvider.callExpression({
         base: left,
         arguments: expressions,
@@ -313,7 +314,7 @@ export function greybelAtomOpBuilder() {
     .add({
       match: (p) => Selectors.Inject(p.token),
       selectorId: Selectors.Inject.selectorId,
-      parse: (p) => {
+      parse: (p: Parser) => {
         const startToken = p.token;
         p.next();
         const path = parsePathSegment(p);
@@ -328,16 +329,16 @@ export function greybelAtomOpBuilder() {
           rangeEnd: p.previousToken.rangeEnd,
           scope: p.currentScope
         });
-        (p as Parser).injects.push(expr);
+        p.getState().injects.push(expr);
         return expr;
       }
     })
     .add({
       match: (p) => Selectors.Line(p.token),
       selectorId: Selectors.Line.selectorId,
-      parse: (p) => {
+      parse: (p: Parser) => {
         p.next();
-        return (p as Parser).astProvider.featureLineExpression({
+        return p.astProvider.featureLineExpression({
           startLine: p.previousToken.line,
           startChar: p.previousToken.startChar,
           endLine: p.previousToken.endLine,
@@ -351,10 +352,10 @@ export function greybelAtomOpBuilder() {
     .add({
       match: (p) => Selectors.File(p.token),
       selectorId: Selectors.File.selectorId,
-      parse: (p) => {
+      parse: (p: Parser) => {
         p.next();
-        return (p as Parser).astProvider.featureFileExpression({
-          filename: (p as Parser).filename,
+        return p.astProvider.featureFileExpression({
+          filename: p.filename,
           startLine: p.previousToken.line,
           startChar: p.previousToken.startChar,
           endLine: p.previousToken.endLine,
@@ -410,7 +411,7 @@ function handleInclude(me: Parser): void {
     scope: me.currentScope
   });
 
-  me.includes.push(item);
+  me.getState().includes.push(item);
   me.lineRegistry.register(item);
   me.attachPendingComments(item);
   pendingBlock.body.push(item);
@@ -451,7 +452,7 @@ function handleImport(me: Parser): void {
     scope: me.currentScope
   });
 
-  me.imports.push(item);
+  me.getState().imports.push(item);
   me.currentScope.definitions.push(item);
   me.lineRegistry.register(item);
   me.attachPendingComments(item);
@@ -501,7 +502,7 @@ function handleInject(me: Parser): void {
     scope: me.currentScope
   });
 
-  me.injects.push(item);
+  me.getState().injects.push(item);
   me.lineRegistry.register(item);
   me.attachPendingComments(item);
   pendingBlock.body.push(item);
@@ -534,8 +535,10 @@ function handleIfEnv(me: Parser): void {
   const envValue = me.environmentVariables.get(key);
   const isTruthy = envValue !== undefined && envValue !== '' && envValue !== '0' && envValue !== 'false';
 
-  const pendingBlock = new PendingEnvCondition(isTruthy, startToken);
+  const pendingBlock = new PendingEnvCondition(isTruthy, startToken, me.state.createEmpty());
+  pendingBlock.enableTruthlyBranch();
   me.backpatches.push(pendingBlock);
+  me.pushState(pendingBlock.state as GreybelParserState);
 }
 
 function handleElseEnv(me: Parser): void {
@@ -554,7 +557,7 @@ function handleElseEnv(me: Parser): void {
     return;
   }
 
-  pendingBlock.next();
+  pendingBlock.enableFalselyBranch();
 }
 
 function handleEndIfEnv(me: Parser): void {
@@ -575,12 +578,9 @@ function handleEndIfEnv(me: Parser): void {
 
   pendingBlock.complete(me.previousToken);
   me.backpatches.pop();
-
-  const parent = me.backpatches.peek();
-  const resolved = pendingBlock.resolve();
-  for (const item of resolved) {
-    parent.body.push(item);
-  }
+  me.popState();
+  me.backpatches.peek().body.push(...pendingBlock.resolve());
+  me.getState().merge(pendingBlock.resolveState());
 }
 
 export function greybelKeywordHandlerBuilder(): KeywordHandlerBuilder {
