@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#include type #include type sets typeOnly true 1`] = `
+"Chunk[1:1-1:26][
+	FeatureIncludeExpression[1:1-1:26][path = mylib.src, typeOnly]
+]"
+`;
+
+exports[`#include type #include type with bare path 1`] = `
+"Chunk[1:1-1:24][
+	FeatureIncludeExpression[1:1-1:24][path = mylib.src, typeOnly]
+]"
+`;
+
+exports[`#include type mixed includes 1`] = `
+"Chunk[1:1-5:5][
+	FeatureIncludeExpression[2:1-2:20][path = real.src]
+	FeatureIncludeExpression[3:1-3:31][path = types-only.src, typeOnly]
+	FeatureIncludeExpression[4:1-4:23][path = another.src]
+]"
+`;
+
+exports[`#include type regular #include has typeOnly false 1`] = `
+"Chunk[1:1-1:21][
+	FeatureIncludeExpression[1:1-1:21][path = mylib.src]
+]"
+`;
