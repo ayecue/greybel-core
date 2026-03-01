@@ -4,7 +4,6 @@ import ParserBase, {
 } from 'miniscript-core/dist/parser';
 import { ASTBase } from 'miniscript-core/dist/parser/ast';
 import { Comment } from 'miniscript-core/dist/types/comment';
-import { Selectors as BaseSelectors } from 'miniscript-core/dist/types/selector';
 import { Stack } from 'miniscript-core/dist/utils/stack';
 
 import Lexer, { UnsafeLexer } from './lexer';
@@ -68,30 +67,11 @@ export default class Parser extends ParserBase {
     return this._stateStack.peek();
   }
 
-  consumeNoop(): number {
-    const me = this;
-    let lines = 0;
-    while (true) {
-      if (BaseSelectors.Comment(me.token)) {
-        const isStatement = me.previousToken?.line !== me.token.line;
-        const comment: Comment = {
-          value: me.token.value,
-          isMultiline: me.token.value.indexOf('\n') !== -1
-        };
-
-        me.getState().comments.push(comment);
-        me.noopConsumer?.onComment(me, comment, isStatement);
-        lines = 0;
-      } else if (BaseSelectors.EndOfLine(me.token)) {
-        me.noopConsumer?.onEmptyLine(me);
-      } else {
-        break;
-      }
-
-      me.next();
-    }
-
-    return lines;
+  protected createComment(token: any): Comment {
+    return {
+      value: token.value,
+      isMultiline: token.value.indexOf('\n') !== -1
+    };
   }
 
   parseChunk(): ASTChunkGreybel | ASTBase {
