@@ -13,8 +13,7 @@ import {
 import {
   buildInfixOpIndex,
   defaultInfixOpBuilder,
-  groupInfixOps,
-  parseCallArgs
+  groupInfixOps
 } from 'miniscript-core/dist/parser/ops/infix';
 import {
   buildKeywordOpIndex,
@@ -75,6 +74,10 @@ function greybelParseCallArgs(me: Parser): ASTBase[] {
     } else {
       while (!BaseSelectors.EndOfFile(me.token)) {
         me.consumeNoop();
+        if (Selectors.RParenthesis(me.token)) {
+          me.next();
+          break;
+        }
         const arg = me.parseExpr(null);
         expressions.push(arg);
         if (!me.strictMode) me.consumeNoop();
@@ -82,7 +85,8 @@ function greybelParseCallArgs(me: Parser): ASTBase[] {
           BaseSelectors.RParenthesis(me.requireTokenOfAny(
             SelectorGroups.CallArgsEnd,
             arg.startLine,
-            arg.startChar
+            arg.startChar,
+            'call arguments'
           ))
         )
           break;
@@ -183,7 +187,7 @@ function greybelParseMap(p: Parser): ASTBase {
       });
       keyValueItem.key = me.parseExpr(null);
 
-      me.requireToken(BaseSelectors.MapKeyValueSeparator);
+      me.requireToken(BaseSelectors.MapKeyValueSeparator, null, null, 'map literal');
       me.consumeNoop();
 
       keyValueItem.value = me.parseExpr(keyValueItem);
@@ -197,7 +201,8 @@ function greybelParseMap(p: Parser): ASTBase {
       const token = me.requireTokenOfAny(
         SelectorGroups.MapSeparator,
         startToken.line,
-        startToken.startChar
+        startToken.startChar,
+        'map literal'
       );
 
       if (BaseSelectors.CRBracket(token)) break;
@@ -264,7 +269,8 @@ function greybelParseList(p: Parser): ASTBase {
       const token = me.requireTokenOfAny(
         SelectorGroups.ListSeparator,
         startToken.line,
-        startToken.startChar
+        startToken.startChar,
+        'list literal'
       );
 
       if (BaseSelectors.SRBracket(token)) break;
