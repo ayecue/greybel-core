@@ -865,24 +865,28 @@ exports[`parse default scripts call-with-spaces.ms unsafe 1`] = `
 `;
 
 exports[`parse default scripts callexpr-with-nl.ms 1`] = `
-"Chunk[1:1-6:7][
+"Chunk[1:1-22:2][
 	CallExpression[1:1-6:7][Identifier[1:1-1:2][x](Literal[2:5-2:6][1], Literal[3:5-3:6][2], Literal[4:5-4:6][3], Literal[5:5-5:6][4], Literal[6:5-6:6][5])]
+	CallExpression[8:1-14:2][Identifier[8:1-8:2][x](Literal[9:5-9:6][1], Literal[10:5-10:6][2], Literal[11:5-11:6][3], Literal[12:5-12:6][4], Literal[13:5-13:6][5])]
+	CallExpression[16:1-22:2][Identifier[16:1-16:2][x](Literal[17:5-17:6][1], Literal[18:5-18:6][2], Literal[19:5-19:6][3], Literal[20:5-20:6][4], Literal[21:5-21:6][5])]
 ]"
 `;
 
 exports[`parse default scripts callexpr-with-nl.ms 2`] = `
 Object {
-  "variable": 1,
+  "variable": 3,
 }
 `;
 
-exports[`parse default scripts callexpr-with-nl.ms 3`] = `5`;
+exports[`parse default scripts callexpr-with-nl.ms 3`] = `15`;
 
 exports[`parse default scripts callexpr-with-nl.ms 4`] = `0`;
 
 exports[`parse default scripts callexpr-with-nl.ms unsafe 1`] = `
-"Chunk[1:1-6:7][
+"Chunk[1:1-22:2][
 	CallExpression[1:1-6:7][Identifier[1:1-1:2][x](Literal[2:5-2:6][1], Literal[3:5-3:6][2], Literal[4:5-4:6][3], Literal[5:5-5:6][4], Literal[6:5-6:6][5])]
+	CallExpression[8:1-14:2][Identifier[8:1-8:2][x](Literal[9:5-9:6][1], Literal[10:5-10:6][2], Literal[11:5-11:6][3], Literal[12:5-12:6][4], Literal[13:5-13:6][5])]
+	CallExpression[16:1-22:2][Identifier[16:1-16:2][x](Literal[17:5-17:6][1], Literal[18:5-18:6][2], Literal[19:5-19:6][3], Literal[20:5-20:6][4], Literal[21:5-21:6][5])]
 ]"
 `;
 
