@@ -558,6 +558,8 @@ function handleElseEnv(me: Parser): void {
   }
 
   pendingBlock.enableFalselyBranch();
+  me.popState();
+  me.pushState(pendingBlock.state as GreybelParserState);
 }
 
 function handleEndIfEnv(me: Parser): void {
