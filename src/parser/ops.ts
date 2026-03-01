@@ -13,7 +13,8 @@ import {
 import {
   buildInfixOpIndex,
   defaultInfixOpBuilder,
-  groupInfixOps
+  groupInfixOps,
+  parseCallArgs
 } from 'miniscript-core/dist/parser/ops/infix';
 import {
   buildKeywordOpIndex,
@@ -23,7 +24,10 @@ import {
 import { KeywordOp } from 'miniscript-core/dist/types/ops';
 import { Precedence } from 'miniscript-core/dist/types/precedence';
 import { Range as ASTRange } from 'miniscript-core/dist/types/range';
-import { Selectors as BaseSelectors } from 'miniscript-core/dist/types/selector';
+import {
+  SelectorGroups as BaseSelectorGroups,
+  Selectors as BaseSelectors
+} from 'miniscript-core/dist/types/selector';
 
 import type Parser from '../parser';
 import { SelectorGroups, Selectors } from '../types/selector';
@@ -60,8 +64,51 @@ function greybelBinaryParse(precedence: number) {
   };
 }
 
+function greybelParseCallArgs(me: Parser): ASTBase[] {
+  const expressions: ASTBase[] = [];
+
+  if (BaseSelectors.LParenthesis(me.token)) {
+    me.next();
+
+    if (BaseSelectors.RParenthesis(me.token)) {
+      me.next();
+    } else {
+      while (!BaseSelectors.EndOfFile(me.token)) {
+        me.consumeNoop();
+        const arg = me.parseExpr(null);
+        expressions.push(arg);
+        if (!me.strictMode) me.consumeNoop();
+        if (
+          BaseSelectors.RParenthesis(me.requireTokenOfAny(
+            SelectorGroups.CallArgsEnd,
+            arg.startLine,
+            arg.startChar
+          ))
+        )
+          break;
+      }
+    }
+  }
+
+  return expressions;
+}
+
 export function greybelInfixOpBuilder() {
   return defaultInfixOpBuilder()
+    .override(BaseSelectors.LParenthesis.selectorId, (p, left, startToken) => {
+      const expressions = greybelParseCallArgs(p as Parser);
+      return p.astProvider.callExpression({
+        base: left,
+        arguments: expressions,
+        startLine: startToken.line,
+        startChar: startToken.startChar,
+        endLine: p.previousToken.endLine,
+        endChar: p.previousToken.endChar,
+        rangeStart: startToken.rangeStart,
+        rangeEnd: p.previousToken.rangeEnd,
+        scope: p.currentScope
+      });
+    })
     .add({
       match: (p) => Selectors.BitwiseOr(p.token),
       selectorId: Selectors.BitwiseOr.selectorId,
@@ -145,24 +192,15 @@ function greybelParseMap(p: Parser): ASTBase {
       keyValueItem.rangeEnd = me.previousToken.rangeEnd;
       fields.push(keyValueItem);
 
-      if (me.strictMode) {
-        const token = me.requireTokenOfAny(
-          SelectorGroups.MapSeparator,
-          startToken.line,
-          startToken.startChar
-        );
+      if (!me.strictMode) me.consumeNoop();
 
-        if (BaseSelectors.CRBracket(token)) break;
-      } else {
-        if (BaseSelectors.MapSeparator(me.token)) {
-          me.next();
-        }
+      const token = me.requireTokenOfAny(
+        SelectorGroups.MapSeparator,
+        startToken.line,
+        startToken.startChar
+      );
 
-        if (BaseSelectors.CRBracket(me.token)) {
-          me.next();
-          break;
-        }
-      }
+      if (BaseSelectors.CRBracket(token)) break;
 
       me.consumeNoop();
     }
@@ -221,24 +259,15 @@ function greybelParseList(p: Parser): ASTBase {
       listValue.rangeEnd = me.previousToken.rangeEnd;
       fields.push(listValue);
 
-      if (me.strictMode) {
-        const token = me.requireTokenOfAny(
-          SelectorGroups.ListSeparator,
-          startToken.line,
-          startToken.startChar
-        );
+      if (!me.strictMode) me.consumeNoop();
 
-        if (BaseSelectors.SRBracket(token)) break;
-      } else {
-        if (BaseSelectors.MapSeparator(me.token)) {
-          me.next();
-        }
+      const token = me.requireTokenOfAny(
+        SelectorGroups.ListSeparator,
+        startToken.line,
+        startToken.startChar
+      );
 
-        if (BaseSelectors.SRBracket(me.token)) {
-          me.next();
-          break;
-        }
-      }
+      if (BaseSelectors.SRBracket(token)) break;
 
       me.consumeNoop();
     }
