@@ -385,9 +385,16 @@ function handleInclude(me: Parser): void {
   me.next();
   const startToken = me.previousToken;
 
+  let typeOnly = false;
+  if (Selectors.IncludeType(me.token)) {
+    typeOnly = true;
+    me.next();
+  }
+
   const path = parsePathSegment(me);
   const item = (me.astProvider as ASTProvider).featureIncludeExpression({
     path,
+    typeOnly,
     startLine: startToken.line,
     startChar: startToken.startChar,
     endLine: me.previousToken.endLine,
@@ -581,7 +588,16 @@ export function greybelKeywordHandlerBuilder(): KeywordHandlerBuilder {
     .add(Selectors.Debugger.selectorId, handleDebugger)
     .add(Selectors.IfEnv.selectorId, handleIfEnv)
     .add(Selectors.ElseEnv.selectorId, handleElseEnv)
-    .add(Selectors.EndIfEnv.selectorId, handleEndIfEnv);
+    .add(Selectors.EndIfEnv.selectorId, handleEndIfEnv)
+    .add(Selectors.IncludeType.selectorId, (me: Parser) => {
+      me.raise(
+        `Keyword('type') can only be used after '#include'`,
+        new ASTRange(
+          [me.token.line, me.token.startChar],
+          [me.token.endLine, me.token.endChar]
+        )
+      );
+    });
 }
 
 export const greybelInfixOps = buildInfixOpIndex(

@@ -52,22 +52,26 @@ export interface ASTFeatureIncludeExpressionOptions extends ASTBaseOptions {
   path: string;
   chunk?: ASTChunk;
   namespace?: string;
+  typeOnly?: boolean;
 }
 
 export class ASTFeatureIncludeExpression extends ASTBase {
   path: string;
   chunk?: ASTChunk;
   namespace?: string;
+  typeOnly: boolean;
 
   constructor(options: ASTFeatureIncludeExpressionOptions) {
     super(ASTType.FeatureIncludeExpression, options);
     this.path = options.path;
     this.chunk = options.chunk;
     this.namespace = options.namespace;
+    this.typeOnly = options.typeOnly ?? false;
   }
 
   toString(): string {
-    return `FeatureIncludeExpression[${this.startLine}:${this.startChar}-${this.endLine}:${this.endChar}][path = ${this.path}]`;
+    const typeTag = this.typeOnly ? ', typeOnly' : '';
+    return `FeatureIncludeExpression[${this.startLine}:${this.startChar}-${this.endLine}:${this.endChar}][path = ${this.path}${typeTag}]`;
   }
 
   clone(): ASTFeatureIncludeExpression {
@@ -75,6 +79,7 @@ export class ASTFeatureIncludeExpression extends ASTBase {
       path: this.path,
       chunk: this.chunk?.clone() as ASTChunk,
       namespace: this.namespace,
+      typeOnly: this.typeOnly,
       startLine: this.startLine,
       startChar: this.startChar,
       endLine: this.endLine,

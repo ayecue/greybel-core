@@ -12,7 +12,8 @@ export enum GreybelKeyword {
   Inject = '#inject',
   IfEnv = '#if',
   ElseEnv = '#else',
-  EndIfEnv = '#endif'
+  EndIfEnv = '#endif',
+  IncludeType = 'type'
 }
 
 export type Keyword = CoreKeyword | GreybelKeyword;
