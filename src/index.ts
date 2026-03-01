@@ -3,6 +3,7 @@ export { default as LexerValidator } from './lexer/validator';
 export { default as Parser, ParserOptions, UnsafeParser } from './parser';
 export * from './parser/ast';
 export * from './parser/ops';
+export * from './parser/pending-block';
 export * from './types/codes';
 export * from './types/keywords';
 export * from './types/operators';

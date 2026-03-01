@@ -28,6 +28,10 @@ import { Selectors as BaseSelectors } from 'miniscript-core/dist/types/selector'
 import type Parser from '../parser';
 import { SelectorGroups, Selectors } from '../types/selector';
 import { ASTProvider } from './ast';
+import {
+  isPendingEnvCondition,
+  PendingEnvCondition
+} from './pending-block';
 
 export const GreybelPrecedence = {
   BitwiseOr: Precedence.Isa + 2,
@@ -90,7 +94,7 @@ export function greybelInfixOpBuilder() {
     });
 }
 
-function greybelParseMap(p: ParserBase): ASTBase {
+function greybelParseMap(p: Parser): ASTBase {
   const me = p;
   const scope = me.currentScope;
   const startToken = me.token;
@@ -141,15 +145,26 @@ function greybelParseMap(p: ParserBase): ASTBase {
       keyValueItem.rangeEnd = me.previousToken.rangeEnd;
       fields.push(keyValueItem);
 
+      if (me.strictMode) {
+        const token = me.requireTokenOfAny(
+          SelectorGroups.MapSeparator,
+          startToken.line,
+          startToken.startChar
+        );
+
+        if (BaseSelectors.CRBracket(token)) break;
+      } else {
+        if (BaseSelectors.MapSeparator(me.token)) {
+          me.next();
+        }
+
+        if (BaseSelectors.CRBracket(me.token)) {
+          me.next();
+          break;
+        }
+      }
+
       me.consumeNoop();
-
-      const token = me.requireTokenOfAny(
-        SelectorGroups.MapSeparator,
-        startToken.line,
-        startToken.startChar
-      );
-
-      if (BaseSelectors.CRBracket(token)) break;
     }
   }
 
@@ -160,7 +175,7 @@ function greybelParseMap(p: ParserBase): ASTBase {
   return mapConstructorExpr;
 }
 
-function greybelParseList(p: ParserBase): ASTBase {
+function greybelParseList(p: Parser): ASTBase {
   const me = p;
   const scope = me.currentScope;
   const startToken = me.token;
@@ -206,15 +221,26 @@ function greybelParseList(p: ParserBase): ASTBase {
       listValue.rangeEnd = me.previousToken.rangeEnd;
       fields.push(listValue);
 
+      if (me.strictMode) {
+        const token = me.requireTokenOfAny(
+          SelectorGroups.ListSeparator,
+          startToken.line,
+          startToken.startChar
+        );
+
+        if (BaseSelectors.SRBracket(token)) break;
+      } else {
+        if (BaseSelectors.MapSeparator(me.token)) {
+          me.next();
+        }
+
+        if (BaseSelectors.SRBracket(me.token)) {
+          me.next();
+          break;
+        }
+      }
+
       me.consumeNoop();
-
-      const token = me.requireTokenOfAny(
-        SelectorGroups.ListSeparator,
-        startToken.line,
-        startToken.startChar
-      );
-
-      if (BaseSelectors.SRBracket(token)) break;
     }
   }
 
@@ -325,8 +351,7 @@ function parsePathSegment(me: ParserBase): string {
   return path;
 }
 
-function handleInclude(parser: ParserBase): void {
-  const me = parser as Parser;
+function handleInclude(me: Parser): void {
   const pendingBlock = me.backpatches.peek();
   me.next();
   const startToken = me.previousToken;
@@ -349,8 +374,7 @@ function handleInclude(parser: ParserBase): void {
   pendingBlock.body.push(item);
 }
 
-function handleImport(parser: ParserBase): void {
-  const me = parser as Parser;
+function handleImport(me: Parser): void {
   const pendingBlock = me.backpatches.peek();
   me.next();
   const startToken = me.previousToken;
@@ -392,8 +416,7 @@ function handleImport(parser: ParserBase): void {
   pendingBlock.body.push(item);
 }
 
-function handleEnvar(parser: ParserBase): void {
-  const me = parser as Parser;
+function handleEnvar(me: Parser): void {
   const pendingBlock = me.backpatches.peek();
   me.next();
   const startToken = me.previousToken;
@@ -417,8 +440,7 @@ function handleEnvar(parser: ParserBase): void {
   pendingBlock.body.push(item);
 }
 
-function handleInject(parser: ParserBase): void {
-  const me = parser as Parser;
+function handleInject(me: Parser): void {
   const pendingBlock = me.backpatches.peek();
   me.next();
   const startToken = me.previousToken;
@@ -443,8 +465,7 @@ function handleInject(parser: ParserBase): void {
   pendingBlock.body.push(item);
 }
 
-function handleDebugger(parser: ParserBase): void {
-  const me = parser as Parser;
+function handleDebugger(me: Parser): void {
   const pendingBlock = me.backpatches.peek();
   me.next();
   const item = (me.astProvider as ASTProvider).featureDebuggerExpression({
@@ -461,6 +482,65 @@ function handleDebugger(parser: ParserBase): void {
   pendingBlock.body.push(item);
 }
 
+function handleIfEnv(me: Parser): void {
+  const startToken = me.token;
+  me.next();
+
+  const key = me.token.value;
+  me.next();
+
+  const envValue = me.environmentVariables.get(key);
+  const isTruthy = envValue !== undefined && envValue !== '' && envValue !== '0' && envValue !== 'false';
+
+  const pendingBlock = new PendingEnvCondition(isTruthy, startToken);
+  me.backpatches.push(pendingBlock);
+}
+
+function handleElseEnv(me: Parser): void {
+  me.next();
+
+  const pendingBlock = me.backpatches.peek();
+
+  if (!isPendingEnvCondition(pendingBlock)) {
+    me.raise(
+      `'#else' without matching '#if'`,
+      new ASTRange(
+        [me.previousToken.line, me.previousToken.startChar],
+        [me.previousToken.endLine, me.previousToken.endChar]
+      )
+    );
+    return;
+  }
+
+  pendingBlock.next();
+}
+
+function handleEndIfEnv(me: Parser): void {
+  me.next();
+
+  const pendingBlock = me.backpatches.peek();
+
+  if (!isPendingEnvCondition(pendingBlock)) {
+    me.raise(
+      `'#endif' without matching '#if'`,
+      new ASTRange(
+        [me.previousToken.line, me.previousToken.startChar],
+        [me.previousToken.endLine, me.previousToken.endChar]
+      )
+    );
+    return;
+  }
+
+  pendingBlock.complete(me.previousToken);
+  me.backpatches.pop();
+
+  const parent = me.backpatches.peek();
+  const resolved = pendingBlock.resolve();
+  for (const item of resolved) {
+    parent.body.push(item);
+  }
+}
+
 export function greybelKeywordHandlerBuilder(): KeywordHandlerBuilder {
   return defaultKeywordHandlerBuilder()
     .add(Selectors.Include.selectorId, handleInclude)
@@ -469,7 +549,10 @@ export function greybelKeywordHandlerBuilder(): KeywordHandlerBuilder {
     .add(Selectors.ImportWithComment.selectorId, handleImport)
     .add(Selectors.Envar.selectorId, handleEnvar)
     .add(Selectors.Inject.selectorId, handleInject)
-    .add(Selectors.Debugger.selectorId, handleDebugger);
+    .add(Selectors.Debugger.selectorId, handleDebugger)
+    .add(Selectors.IfEnv.selectorId, handleIfEnv)
+    .add(Selectors.ElseEnv.selectorId, handleElseEnv)
+    .add(Selectors.EndIfEnv.selectorId, handleEndIfEnv);
 }
 
 export const greybelInfixOps = buildInfixOpIndex(

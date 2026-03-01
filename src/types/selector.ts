@@ -30,7 +30,10 @@ export enum SelectorTypes {
   UnsignedRightShift = 'UnsignedRightShift',
   BitwiseOr = 'BitwiseOr',
   BitwiseAnd = 'BitwiseAnd',
-  Escape = 'Escape'
+  Escape = 'Escape',
+  IfEnv = 'IfEnv',
+  ElseEnv = 'ElseEnv',
+  EndIfEnv = 'EndIfEnv'
 }
 
 export const Selectors: typeof CoreSelectors &
@@ -99,6 +102,18 @@ export const Selectors: typeof CoreSelectors &
   Escape: createSelector({
     type: TokenType.Punctuator,
     value: CoreOperator.Escape
+  }),
+  IfEnv: createSelector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.IfEnv
+  }),
+  ElseEnv: createSelector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.ElseEnv
+  }),
+  EndIfEnv: createSelector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.EndIfEnv
   })
 };
 

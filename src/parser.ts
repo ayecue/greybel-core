@@ -24,6 +24,8 @@ export interface ParserOptions extends ParserOptionsBase {
   astProvider?: ASTProvider;
   lexer?: Lexer;
   filename?: string;
+  strictMode?: boolean;
+  environmentVariables?: Map<string, string>;
 }
 
 export default class Parser extends ParserBase {
@@ -32,6 +34,8 @@ export default class Parser extends ParserBase {
   includes: ASTFeatureIncludeExpression[];
   injects: ASTFeatureInjectExpression[];
   astProvider: ASTProvider;
+  strictMode: boolean;
+  environmentVariables: Map<string, string>;
 
   constructor(content: string, options: ParserOptions = {}) {
     options.lexer =
@@ -54,6 +58,8 @@ export default class Parser extends ParserBase {
     me.imports = [];
     me.includes = [];
     me.injects = [];
+    me.strictMode = options.strictMode ?? false;
+    me.environmentVariables = options.environmentVariables ?? new Map();
   }
 
   consumeNoop(): number {
@@ -85,6 +91,7 @@ export default class Parser extends ParserBase {
   parseChunk(): ASTChunkGreybel | ASTBase {
     const chunk = super.parseChunk();
     const me = this;
+
     const c = chunk as ASTChunkGreybel;
     c.imports = me.imports;
     c.includes = me.includes;
