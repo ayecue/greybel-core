@@ -419,6 +419,7 @@ function handleInclude(me: Parser): void {
   me.lineRegistry.register(item);
   me.attachPendingComments(item);
   pendingBlock.body.push(item);
+  me.consume(BaseSelectors.EndOfLine);
 }
 
 function handleImport(me: Parser): void {
@@ -461,6 +462,7 @@ function handleImport(me: Parser): void {
   me.lineRegistry.register(item);
   me.attachPendingComments(item);
   pendingBlock.body.push(item);
+  me.consume(BaseSelectors.EndOfLine);
 }
 
 function handleEnvar(me: Parser): void {
@@ -485,6 +487,7 @@ function handleEnvar(me: Parser): void {
   me.lineRegistry.register(item);
   me.attachPendingComments(item);
   pendingBlock.body.push(item);
+  me.consume(BaseSelectors.EndOfLine);
 }
 
 function handleInject(me: Parser): void {
@@ -510,6 +513,7 @@ function handleInject(me: Parser): void {
   me.lineRegistry.register(item);
   me.attachPendingComments(item);
   pendingBlock.body.push(item);
+  me.consume(BaseSelectors.EndOfLine);
 }
 
 function handleDebugger(me: Parser): void {
@@ -527,6 +531,7 @@ function handleDebugger(me: Parser): void {
   me.lineRegistry.register(item);
   me.attachPendingComments(item);
   pendingBlock.body.push(item);
+  me.consume(BaseSelectors.EndOfLine);
 }
 
 function handleIfEnv(me: Parser): void {
