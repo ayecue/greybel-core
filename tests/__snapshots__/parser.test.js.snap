@@ -801,7 +801,7 @@ exports[`parse default scripts eol.ms 1`] = `
 		IfClause[1:1-3:5][Literal[1:5-1:9][true]
 			CallExpression[2:5-2:18][Identifier[2:5-2:10][print](Literal[2:11-2:17][true])]
 		]
-		ElseClause[3:5-5:7][
+		ElseClause[3:1-5:7][
 			CallExpression[4:5-4:19][Identifier[4:5-4:10][print](Literal[4:11-4:18][false])]
 		}]
 	]
@@ -831,7 +831,7 @@ exports[`parse default scripts eol.ms unsafe 1`] = `
 		IfClause[1:1-3:5][Literal[1:5-1:9][true]
 			CallExpression[2:5-2:18][Identifier[2:5-2:10][print](Literal[2:11-2:17][true])]
 		]
-		ElseClause[3:5-5:7][
+		ElseClause[3:1-5:7][
 			CallExpression[4:5-4:19][Identifier[4:5-4:10][print](Literal[4:11-4:18][false])]
 		}]
 	]
@@ -1864,7 +1864,7 @@ exports[`parse default scripts password-generator.src 1`] = `
 					IfClause[25:9-27:13][BinaryExpression[25:13-25:19][Identifier[25:13-25:14][i] == Literal[25:18-25:19][0]]
 						CallExpression[26:13-26:38][MemberExpression[26:13-26:35][Identifier[26:13-26:30][currentCharBuffer].Identifier[26:31-26:35][push]](Literal[26:36-26:37][0])]
 					]
-					ElseClause[27:13-29:15][
+					ElseClause[27:9-29:15][
 						CallExpression[28:13-28:37][MemberExpression[28:13-28:30][Identifier[28:13-28:15][me].Identifier[28:16-28:30][increaseBuffer]](BinaryExpression[28:31-28:36][Identifier[28:31-28:32][i] - Literal[28:35-28:36][1]])]
 					}]
 				]
@@ -1951,7 +1951,7 @@ exports[`parse default scripts password-generator.src unsafe 1`] = `
 					IfClause[25:9-27:13][BinaryExpression[25:13-25:19][Identifier[25:13-25:14][i] == Literal[25:18-25:19][0]]
 						CallExpression[26:13-26:38][MemberExpression[26:13-26:35][Identifier[26:13-26:30][currentCharBuffer].Identifier[26:31-26:35][push]](Literal[26:36-26:37][0])]
 					]
-					ElseClause[27:13-29:15][
+					ElseClause[27:9-29:15][
 						CallExpression[28:13-28:37][MemberExpression[28:13-28:30][Identifier[28:13-28:15][me].Identifier[28:16-28:30][increaseBuffer]](BinaryExpression[28:31-28:36][Identifier[28:31-28:32][i] - Literal[28:35-28:36][1]])]
 					}]
 				]
@@ -2186,7 +2186,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
 				IfClause[180:9-182:13][BinaryExpression[180:13-180:27][Identifier[180:13-180:23][currentBit] % Literal[180:26-180:27][4]]
 					AssignmentStatement[181:13-181:50][Identifier[181:13-181:23][bitStorage] = BinaryExpression[181:26-181:50][BinaryExpression[181:26-181:41][Identifier[181:26-181:36][bitStorage] * Literal[181:39-181:41][64]] + Identifier[181:44-181:50][buffer]]]
 				]
-				ElseClause[182:13-184:15][
+				ElseClause[182:9-184:15][
 					AssignmentStatement[183:13-183:32][Identifier[183:13-183:23][bitStorage] = Identifier[183:26-183:32][buffer]]
 				}]
 			]
@@ -2433,7 +2433,7 @@ exports[`parse default scripts pseudo-crypto.src unsafe 1`] = `
 				IfClause[180:9-182:13][BinaryExpression[180:13-180:27][Identifier[180:13-180:23][currentBit] % Literal[180:26-180:27][4]]
 					AssignmentStatement[181:13-181:50][Identifier[181:13-181:23][bitStorage] = BinaryExpression[181:26-181:50][BinaryExpression[181:26-181:41][Identifier[181:26-181:36][bitStorage] * Literal[181:39-181:41][64]] + Identifier[181:44-181:50][buffer]]]
 				]
-				ElseClause[182:13-184:15][
+				ElseClause[182:9-184:15][
 					AssignmentStatement[183:13-183:32][Identifier[183:13-183:23][bitStorage] = Identifier[183:26-183:32][buffer]]
 				}]
 			]
@@ -2826,7 +2826,7 @@ exports[`parse default scripts shorthand.ms 1`] = `
 		IfClause[4:1-6:5][Literal[4:5-4:10][false]
 			CallExpression[5:5-5:17][Identifier[5:5-5:10][print](Literal[5:11-5:16][false])]
 		]
-		ElseClause[6:5-8:7][
+		ElseClause[6:1-8:7][
 			CallExpression[7:5-7:16][Identifier[7:5-7:10][print](Literal[7:11-7:15][true])]
 		}]
 	]
@@ -2834,7 +2834,7 @@ exports[`parse default scripts shorthand.ms 1`] = `
 		IfClause[9:1-11:5][Literal[9:5-9:10][false]
 			CallExpression[10:5-10:17][Identifier[10:5-10:10][print](Literal[10:11-10:16][false])]
 		]
-		ElseClause[11:5-14:7][
+		ElseClause[11:1-14:7][
 			CallExpression[12:5-12:16][Identifier[12:5-12:10][print](Literal[12:11-12:15][true])]
 			IfStatement[13:5-13:53][
 				IfShortcutClause[13:5-13:39][Literal[13:9-13:14][false]
@@ -2926,7 +2926,7 @@ exports[`parse default scripts shorthand.ms unsafe 1`] = `
 		IfClause[4:1-6:5][Literal[4:5-4:10][false]
 			CallExpression[5:5-5:17][Identifier[5:5-5:10][print](Literal[5:11-5:16][false])]
 		]
-		ElseClause[6:5-8:7][
+		ElseClause[6:1-8:7][
 			CallExpression[7:5-7:16][Identifier[7:5-7:10][print](Literal[7:11-7:15][true])]
 		}]
 	]
@@ -2934,7 +2934,7 @@ exports[`parse default scripts shorthand.ms unsafe 1`] = `
 		IfClause[9:1-11:5][Literal[9:5-9:10][false]
 			CallExpression[10:5-10:17][Identifier[10:5-10:10][print](Literal[10:11-10:16][false])]
 		]
-		ElseClause[11:5-14:7][
+		ElseClause[11:1-14:7][
 			CallExpression[12:5-12:16][Identifier[12:5-12:10][print](Literal[12:11-12:15][true])]
 			IfStatement[13:5-13:53][
 				IfShortcutClause[13:5-13:39][Literal[13:9-13:14][false]

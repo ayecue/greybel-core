@@ -197,6 +197,7 @@ function greybelParseMap(p: Parser): ASTBase {
       keyValueItem.rangeEnd = me.previousToken.rangeEnd;
       fields.push(keyValueItem);
 
+      me.consumeInlineComment(keyValueItem);
       if (!me.strictMode) me.consumeNoop();
 
       const token = me.requireTokenOfAny(
@@ -208,6 +209,7 @@ function greybelParseMap(p: Parser): ASTBase {
 
       if (BaseSelectors.CRBracket(token)) break;
 
+      me.consumeInlineComment(keyValueItem);
       me.consumeNoop();
     }
   }
@@ -265,6 +267,7 @@ function greybelParseList(p: Parser): ASTBase {
       listValue.rangeEnd = me.previousToken.rangeEnd;
       fields.push(listValue);
 
+      me.consumeInlineComment(listValue);
       if (!me.strictMode) me.consumeNoop();
 
       const token = me.requireTokenOfAny(
@@ -276,6 +279,7 @@ function greybelParseList(p: Parser): ASTBase {
 
       if (BaseSelectors.SRBracket(token)) break;
 
+      me.consumeInlineComment(listValue);
       me.consumeNoop();
     }
   }
