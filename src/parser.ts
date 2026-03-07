@@ -70,7 +70,9 @@ export default class Parser extends ParserBase {
   protected createComment(token: any): Comment {
     return {
       value: token.value,
-      isMultiline: token.value.indexOf('\n') !== -1
+      isMultiline: token.value.indexOf('\n') !== -1,
+      startLine: token.line,
+      endLine: token.endLine ?? token.line
     };
   }
 
