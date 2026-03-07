@@ -49,7 +49,7 @@
     "typescript": "~5.9.0"
   },
   "dependencies": {
-    "miniscript-core": "2.0.0"
+    "miniscript-core": "~2.0.0"
   },
   "keywords": [
     "miniscript"
