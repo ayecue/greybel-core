@@ -10,6 +10,7 @@ import {
   Selectors as CoreSelectors,
   SelectorType as CoreSelectorType
 } from 'miniscript-core/dist/types/selector';
+import { compile } from 'miniscript-core/dist/utils/selector-registry';
 
 import { GreybelKeyword } from './keywords';
 import { Operator } from './operators';
@@ -151,3 +152,5 @@ export const SelectorGroups: Record<
     [Selectors.LeftShift, Selectors.RightShift, Selectors.UnsignedRightShift]
   )
 };
+
+compile();
