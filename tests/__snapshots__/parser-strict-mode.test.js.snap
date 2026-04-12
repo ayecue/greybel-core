@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`strictMode list with newline after value allowed without strict mode 1`] = `
+"Chunk[1:1-2:2][
+	AssignmentStatement[1:1-2:2][Identifier[1:1-1:2][x] = ListConstructor[1:5-2:2][
+		ListValue[1:6-1:7][Literal[1:6-1:7][1]]
+	]]
+]"
+`;
+
+exports[`strictMode map with newline after value allowed without strict mode 1`] = `
+"Chunk[1:1-2:2][
+	AssignmentStatement[1:1-2:2][Identifier[1:1-1:2][x] = MapConstructor[1:5-2:2][
+		MapKeyString[1:6-1:12][Literal[1:6-1:9][a]: Literal[1:11-1:12][1]]
+	]]
+]"
+`;
+
+exports[`strictMode shorthand assignment allowed without strict mode 1`] = `
+"Chunk[1:1-2:7][
+	AssignmentStatement[1:1-1:6][Identifier[1:1-1:2][x] = Literal[1:5-1:6][1]]
+	AssignmentStatement[2:1-2:7][Identifier[2:1-2:2][x] = BinaryExpression[2:6-2:7][Identifier[2:1-2:2][x] + Literal[2:6-2:7][2]]]
+]"
+`;

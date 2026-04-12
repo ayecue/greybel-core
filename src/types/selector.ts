@@ -1,15 +1,16 @@
+import { TokenType } from 'miniscript-core/dist/lexer/token';
+import { Operator as CoreOperator } from 'miniscript-core/dist/types/operators';
 import {
   createSelector,
   createSelectorGroup,
-  Operator as CoreOperator,
   Selector,
   SelectorGroup,
   SelectorGroups as CoreSelectorGroups,
   SelectorGroupType as CoreSelectorGroupType,
   Selectors as CoreSelectors,
-  SelectorType as CoreSelectorType,
-  TokenType
-} from 'miniscript-core';
+  SelectorType as CoreSelectorType
+} from 'miniscript-core/dist/types/selector';
+import { compile } from 'miniscript-core/dist/utils/selector-registry';
 
 import { GreybelKeyword } from './keywords';
 import { Operator } from './operators';
@@ -18,6 +19,11 @@ export enum SelectorTypes {
   From = 'From',
   Envar = 'Envar',
   Inject = 'Inject',
+  Include = 'Include',
+  IncludeWithComment = 'IncludeWithComment',
+  Import = 'Import',
+  ImportWithComment = 'ImportWithComment',
+  Debugger = 'Debugger',
   Line = 'Line',
   File = 'File',
   LeftShift = 'LeftShift',
@@ -25,7 +31,10 @@ export enum SelectorTypes {
   UnsignedRightShift = 'UnsignedRightShift',
   BitwiseOr = 'BitwiseOr',
   BitwiseAnd = 'BitwiseAnd',
-  Escape = 'Escape'
+  Escape = 'Escape',
+  IfEnv = 'IfEnv',
+  ElseEnv = 'ElseEnv',
+  EndIfEnv = 'EndIfEnv'
 }
 
 export const Selectors: typeof CoreSelectors &
@@ -42,6 +51,26 @@ export const Selectors: typeof CoreSelectors &
   Inject: createSelector({
     type: TokenType.Keyword,
     value: GreybelKeyword.Inject
+  }),
+  Include: createSelector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.Include
+  }),
+  IncludeWithComment: createSelector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.IncludeWithComment
+  }),
+  Import: createSelector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.Import
+  }),
+  ImportWithComment: createSelector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.ImportWithComment
+  }),
+  Debugger: createSelector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.Debugger
   }),
   Line: createSelector({
     type: TokenType.Keyword,
@@ -74,6 +103,18 @@ export const Selectors: typeof CoreSelectors &
   Escape: createSelector({
     type: TokenType.Punctuator,
     value: CoreOperator.Escape
+  }),
+  IfEnv: createSelector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.IfEnv
+  }),
+  ElseEnv: createSelector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.ElseEnv
+  }),
+  EndIfEnv: createSelector({
+    type: TokenType.Keyword,
+    value: GreybelKeyword.EndIfEnv
   })
 };
 
@@ -91,11 +132,11 @@ export const SelectorGroups: Record<
   ...CoreSelectorGroups,
   [SelectorGroupType.MapSeparator]: createSelectorGroup(
     SelectorGroupType.MapSeparator,
-    [Selectors.MapSeperator, Selectors.CRBracket]
+    [Selectors.MapSeparator, Selectors.CRBracket]
   ),
   [SelectorGroupType.ListSeparator]: createSelectorGroup(
     SelectorGroupType.ListSeparator,
-    [Selectors.MapSeperator, Selectors.SRBracket]
+    [Selectors.MapSeparator, Selectors.SRBracket]
   ),
   [SelectorGroupType.PathSegmentEnd]: createSelectorGroup(
     SelectorGroupType.PathSegmentEnd,
@@ -106,3 +147,5 @@ export const SelectorGroups: Record<
     [Selectors.LeftShift, Selectors.RightShift, Selectors.UnsignedRightShift]
   )
 };
+
+compile();

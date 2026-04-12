@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bitwise operators bitwise and 1`] = `
+"Chunk[1:1-1:15][
+	AssignmentStatement[1:1-1:15][Identifier[1:1-1:7][result] = BinaryExpression[1:10-1:15][Identifier[1:10-1:11][a] & Identifier[1:14-1:15][b]]]
+]"
+`;
+
+exports[`bitwise operators bitwise or 1`] = `
+"Chunk[1:1-1:15][
+	AssignmentStatement[1:1-1:15][Identifier[1:1-1:7][result] = BinaryExpression[1:10-1:15][Identifier[1:10-1:11][a] | Identifier[1:14-1:15][b]]]
+]"
+`;
+
+exports[`bitwise operators bitwise precedence: and binds tighter than or 1`] = `
+"Chunk[1:1-1:19][
+	AssignmentStatement[1:1-1:19][Identifier[1:1-1:7][result] = BinaryExpression[1:10-1:19][BinaryExpression[1:10-1:15][Identifier[1:10-1:11][a] & Identifier[1:14-1:15][b]] | Identifier[1:18-1:19][c]]]
+]"
+`;
+
+exports[`bitwise operators bitwise precedence: shift binds tighter than and 1`] = `
+"Chunk[1:1-1:20][
+	AssignmentStatement[1:1-1:20][Identifier[1:1-1:7][result] = BinaryExpression[1:10-1:20][BinaryExpression[1:10-1:16][Identifier[1:10-1:11][a] << Literal[1:15-1:16][1]] & Identifier[1:19-1:20][b]]]
+]"
+`;
+
+exports[`bitwise operators bitwise with arithmetic 1`] = `
+"Chunk[1:1-1:22][
+	AssignmentStatement[1:1-1:22][Identifier[1:1-1:7][result] = BinaryExpression[1:10-1:22][BinaryExpression[1:11-1:16][Identifier[1:11-1:12][a] + Identifier[1:15-1:16][b]] << Literal[1:21-1:22][2]]]
+]"
+`;
+
+exports[`bitwise operators left shift 1`] = `
+"Chunk[1:1-1:16][
+	AssignmentStatement[1:1-1:16][Identifier[1:1-1:7][result] = BinaryExpression[1:10-1:16][Literal[1:10-1:11][1] << Literal[1:15-1:16][2]]]
+]"
+`;
+
+exports[`bitwise operators right shift 1`] = `
+"Chunk[1:1-1:16][
+	AssignmentStatement[1:1-1:16][Identifier[1:1-1:7][result] = BinaryExpression[1:10-1:16][Literal[1:10-1:11][8] >> Literal[1:15-1:16][2]]]
+]"
+`;
+
+exports[`bitwise operators unsigned right shift 1`] = `
+"Chunk[1:1-1:17][
+	AssignmentStatement[1:1-1:17][Identifier[1:1-1:7][result] = BinaryExpression[1:10-1:17][Literal[1:10-1:11][8] >>> Literal[1:16-1:17][2]]]
+]"
+`;

@@ -2,7 +2,7 @@ import {
   ASTBase,
   ASTBaseOptions,
   ASTProvider as ASTProviderBase
-} from 'miniscript-core';
+} from 'miniscript-core/dist/parser/ast';
 
 import { ASTType } from './ast/base';
 import { ASTChunkGreybel, ASTChunkGreybelOptions } from './ast/chunk';

@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#if/#else/#endif #else without #if errors 1`] = `
+Array [
+  Object {
+    "code": 0,
+    "hint": null,
+    "message": "'#else' without matching '#if'",
+    "range": Object {
+      "end": Array [
+        2,
+        6,
+      ],
+      "start": Array [
+        2,
+        1,
+      ],
+    },
+  },
+  Object {
+    "code": 0,
+    "hint": null,
+    "message": "'#endif' without matching '#if'",
+    "range": Object {
+      "end": Array [
+        4,
+        7,
+      ],
+      "start": Array [
+        4,
+        1,
+      ],
+    },
+  },
+]
+`;
+
+exports[`#if/#else/#endif #endif without #if errors 1`] = `
+Array [
+  Object {
+    "code": 0,
+    "hint": null,
+    "message": "'#endif' without matching '#if'",
+    "range": Object {
+      "end": Array [
+        2,
+        7,
+      ],
+      "start": Array [
+        2,
+        1,
+      ],
+    },
+  },
+]
+`;
+
+exports[`#if/#else/#endif #if with multiple statements in branches 1`] = `
+"Chunk[1:1-12:5][
+	AssignmentStatement[2:1-2:6][Identifier[2:1-2:2][x] = Literal[2:5-2:6][1]]
+	AssignmentStatement[4:1-4:6][Identifier[4:1-4:2][x] = Literal[4:5-4:6][2]]
+	AssignmentStatement[5:1-5:6][Identifier[5:1-5:2][y] = Literal[5:5-5:6][3]]
+	CallExpression[6:1-6:13][Identifier[6:1-6:6][print](BinaryExpression[6:7-6:12][Identifier[6:7-6:8][x] + Identifier[6:11-6:12][y]])]
+	CallExpression[11:1-11:14][Identifier[11:1-11:6][print](Literal[11:7-11:13][done])]
+]"
+`;
+
+exports[`#if/#else/#endif #if without #endif errors 1`] = `
+Array [
+  Object {
+    "code": 4002,
+    "hint": "Add 'end #if' to close this block",
+    "message": "'#if' without matching 'end #if'",
+    "range": Object {
+      "end": Array [
+        2,
+        1,
+      ],
+      "start": Array [
+        2,
+        1,
+      ],
+    },
+  },
+]
+`;
+
+exports[`#if/#else/#endif falsy #if excludes body 1`] = `
+"Chunk[1:1-6:5][
+	CallExpression[5:1-5:16][Identifier[5:1-5:6][print](Literal[5:7-5:15][always])]
+]"
+`;
+
+exports[`#if/#else/#endif falsy #if/#else takes else branch 1`] = `
+"Chunk[1:1-8:5][
+	CallExpression[5:1-5:21][Identifier[5:1-5:6][print](Literal[5:7-5:20][else branch])]
+	CallExpression[7:1-7:16][Identifier[7:1-7:6][print](Literal[7:7-7:15][always])]
+]"
+`;
+
+exports[`#if/#else/#endif falsy values: 0 1`] = `"Chunk[1:1-5:5][]"`;
+
+exports[`#if/#else/#endif falsy values: empty string 1`] = `"Chunk[1:1-5:5][]"`;
+
+exports[`#if/#else/#endif falsy values: false 1`] = `"Chunk[1:1-5:5][]"`;
+
+exports[`#if/#else/#endif nested #if blocks 1`] = `
+"Chunk[1:1-10:5][
+	CallExpression[3:1-3:21][Identifier[3:1-3:6][print](Literal[3:7-3:20][outer start])]
+	CallExpression[5:1-5:15][Identifier[5:1-5:6][print](Literal[5:7-5:14][inner])]
+	CallExpression[7:1-7:19][Identifier[7:1-7:6][print](Literal[7:7-7:18][outer end])]
+	CallExpression[9:1-9:16][Identifier[9:1-9:6][print](Literal[9:7-9:15][always])]
+]"
+`;
+
+exports[`#if/#else/#endif nested #if with outer false 1`] = `
+"Chunk[1:1-10:5][
+	CallExpression[9:1-9:16][Identifier[9:1-9:6][print](Literal[9:7-9:15][always])]
+]"
+`;
+
+exports[`#if/#else/#endif truthy #if includes body 1`] = `
+"Chunk[1:1-6:5][
+	CallExpression[3:1-3:18][Identifier[3:1-3:6][print](Literal[3:7-3:17][included])]
+	CallExpression[5:1-5:16][Identifier[5:1-5:6][print](Literal[5:7-5:15][always])]
+]"
+`;
+
+exports[`#if/#else/#endif truthy #if/#else takes if branch 1`] = `
+"Chunk[1:1-8:5][
+	CallExpression[3:1-3:19][Identifier[3:1-3:6][print](Literal[3:7-3:18][if branch])]
+	CallExpression[7:1-7:16][Identifier[7:1-7:6][print](Literal[7:7-7:15][always])]
+]"
+`;

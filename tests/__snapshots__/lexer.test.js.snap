@@ -1035,8 +1035,48 @@ NumericLiteral[5:5 - 5:6: value = 4]
 Punctuator[5:6 - 5:7: value = ',']
 EOL[5:7 - 5:7: value = ';']
 NumericLiteral[6:5 - 6:6: value = 5]
-EOL[6:6 - 6:6: value = ';']
-Punctuator[7:1 - 7:2: value = ')']"
+Punctuator[6:6 - 6:7: value = ')']
+EOL[6:7 - 6:7: value = ';']
+EOL[7:1 - 7:1: value = ';']
+Identifier[8:1 - 8:2: value = 'x']
+Punctuator[8:2 - 8:3: value = '(']
+EOL[8:3 - 8:3: value = ';']
+NumericLiteral[9:5 - 9:6: value = 1]
+Punctuator[9:6 - 9:7: value = ',']
+EOL[9:7 - 9:7: value = ';']
+NumericLiteral[10:5 - 10:6: value = 2]
+Punctuator[10:6 - 10:7: value = ',']
+EOL[10:7 - 10:7: value = ';']
+NumericLiteral[11:5 - 11:6: value = 3]
+Punctuator[11:6 - 11:7: value = ',']
+EOL[11:7 - 11:7: value = ';']
+NumericLiteral[12:5 - 12:6: value = 4]
+Punctuator[12:6 - 12:7: value = ',']
+EOL[12:7 - 12:7: value = ';']
+NumericLiteral[13:5 - 13:6: value = 5]
+Punctuator[13:6 - 13:7: value = ',']
+EOL[13:7 - 13:7: value = ';']
+Punctuator[14:1 - 14:2: value = ')']
+EOL[14:2 - 14:2: value = ';']
+EOL[15:1 - 15:1: value = ';']
+Identifier[16:1 - 16:2: value = 'x']
+Punctuator[16:2 - 16:3: value = '(']
+EOL[16:3 - 16:3: value = ';']
+NumericLiteral[17:5 - 17:6: value = 1]
+Punctuator[17:6 - 17:7: value = ',']
+EOL[17:7 - 17:7: value = ';']
+NumericLiteral[18:5 - 18:6: value = 2]
+Punctuator[18:6 - 18:7: value = ',']
+EOL[18:7 - 18:7: value = ';']
+NumericLiteral[19:5 - 19:6: value = 3]
+Punctuator[19:6 - 19:7: value = ',']
+EOL[19:7 - 19:7: value = ';']
+NumericLiteral[20:5 - 20:6: value = 4]
+Punctuator[20:6 - 20:7: value = ',']
+EOL[20:7 - 20:7: value = ';']
+NumericLiteral[21:5 - 21:6: value = 5]
+EOL[21:6 - 21:6: value = ';']
+Punctuator[22:1 - 22:2: value = ')']"
 `;
 
 exports[`parse default scripts comments.ms 1`] = `
@@ -1366,7 +1406,25 @@ Identifier[12:17 - 12:20: value = 'bar']
 EOL[12:20 - 12:21: value = ';']"
 `;
 
-exports[`parse default scripts invalid code 1`] = `Array []`;
+exports[`parse default scripts invalid code 1`] = `
+Array [
+  Object {
+    "code": 1004,
+    "hint": null,
+    "message": "'end' without following keyword ('if', 'function', etc.)",
+    "range": Object {
+      "end": Array [
+        9,
+        13,
+      ],
+      "start": Array [
+        9,
+        5,
+      ],
+    },
+  },
+]
+`;
 
 exports[`parse default scripts line-expression.src 1`] = `
 "Identifier[1:1 - 1:6: value = 'print']

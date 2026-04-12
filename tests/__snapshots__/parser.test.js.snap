@@ -706,24 +706,28 @@ exports[`parse default scripts call-with-spaces.ms unsafe 1`] = `
 `;
 
 exports[`parse default scripts callexpr-with-nl.ms 1`] = `
-"Chunk[1:1-7:2][
-	CallExpression[1:1-7:2][Identifier[1:1-1:2][x](Literal[2:5-2:6][1], Literal[3:5-3:6][2], Literal[4:5-4:6][3], Literal[5:5-5:6][4], Literal[6:5-6:6][5])]
+"Chunk[1:1-22:2][
+	CallExpression[1:1-6:7][Identifier[1:1-1:2][x](Literal[2:5-2:6][1], Literal[3:5-3:6][2], Literal[4:5-4:6][3], Literal[5:5-5:6][4], Literal[6:5-6:6][5])]
+	CallExpression[8:1-14:2][Identifier[8:1-8:2][x](Literal[9:5-9:6][1], Literal[10:5-10:6][2], Literal[11:5-11:6][3], Literal[12:5-12:6][4], Literal[13:5-13:6][5])]
+	CallExpression[16:1-22:2][Identifier[16:1-16:2][x](Literal[17:5-17:6][1], Literal[18:5-18:6][2], Literal[19:5-19:6][3], Literal[20:5-20:6][4], Literal[21:5-21:6][5])]
 ]"
 `;
 
 exports[`parse default scripts callexpr-with-nl.ms 2`] = `
 Object {
-  "variable": 1,
+  "variable": 3,
 }
 `;
 
-exports[`parse default scripts callexpr-with-nl.ms 3`] = `5`;
+exports[`parse default scripts callexpr-with-nl.ms 3`] = `15`;
 
 exports[`parse default scripts callexpr-with-nl.ms 4`] = `0`;
 
 exports[`parse default scripts callexpr-with-nl.ms unsafe 1`] = `
-"Chunk[1:1-7:2][
-	CallExpression[1:1-7:2][Identifier[1:1-1:2][x](Literal[2:5-2:6][1], Literal[3:5-3:6][2], Literal[4:5-4:6][3], Literal[5:5-5:6][4], Literal[6:5-6:6][5])]
+"Chunk[1:1-22:2][
+	CallExpression[1:1-6:7][Identifier[1:1-1:2][x](Literal[2:5-2:6][1], Literal[3:5-3:6][2], Literal[4:5-4:6][3], Literal[5:5-5:6][4], Literal[6:5-6:6][5])]
+	CallExpression[8:1-14:2][Identifier[8:1-8:2][x](Literal[9:5-9:6][1], Literal[10:5-10:6][2], Literal[11:5-11:6][3], Literal[12:5-12:6][4], Literal[13:5-13:6][5])]
+	CallExpression[16:1-22:2][Identifier[16:1-16:2][x](Literal[17:5-17:6][1], Literal[18:5-18:6][2], Literal[19:5-19:6][3], Literal[20:5-20:6][4], Literal[21:5-21:6][5])]
 ]"
 `;
 
@@ -797,7 +801,7 @@ exports[`parse default scripts eol.ms 1`] = `
 		IfClause[1:1-3:5][Literal[1:5-1:9][true]
 			CallExpression[2:5-2:18][Identifier[2:5-2:10][print](Literal[2:11-2:17][true])]
 		]
-		ElseClause[3:5-5:7][
+		ElseClause[3:1-5:7][
 			CallExpression[4:5-4:19][Identifier[4:5-4:10][print](Literal[4:11-4:18][false])]
 		}]
 	]
@@ -827,7 +831,7 @@ exports[`parse default scripts eol.ms unsafe 1`] = `
 		IfClause[1:1-3:5][Literal[1:5-1:9][true]
 			CallExpression[2:5-2:18][Identifier[2:5-2:10][print](Literal[2:11-2:17][true])]
 		]
-		ElseClause[3:5-5:7][
+		ElseClause[3:1-5:7][
 			CallExpression[4:5-4:19][Identifier[4:5-4:10][print](Literal[4:11-4:18][false])]
 		}]
 	]
@@ -1010,18 +1014,148 @@ exports[`parse default scripts greybel-utils.src unsafe 1`] = `
 ]"
 `;
 
-exports[`parse default scripts invalid code 1`] = `Array []`;
+exports[`parse default scripts invalid code 1`] = `
+Array [
+  Object {
+    "code": 1004,
+    "hint": null,
+    "message": "'end' without following keyword ('if', 'function', etc.)",
+    "range": Object {
+      "end": Array [
+        18,
+        13,
+      ],
+      "start": Array [
+        18,
+        5,
+      ],
+    },
+  },
+]
+`;
 
 exports[`parse default scripts invalid code 2`] = `
 Array [
-  [Error: got Identifier[4:5 - 4:10: value = 'print'] where any of ",", ")" is required],
-  [Error: got Punctuator[4:12 - 4:13: value = ')'] where number, string, or identifier is required],
-  [Error: got Identifier[8:19 - 8:21: value = 'wa'] where any of ",", ";", "<eof>" is required],
-  [Error: got Punctuator[11:9 - 11:10: value = '+'] where number, string, or identifier is required],
-  [Error: got Keyword[13:9 - 13:12: value = 'not'] where number, string, or identifier is required],
-  [Error: unexpected keyword Keyword[17:5 - 17:13: value = 'function'] at start of line],
-  [Error: unexpected keyword Keyword[18:5 - 18:13: value = 'end func'] at start of line],
-  [Error: got Identifier[28:16 - 28:21: value = 'print'] where "then" is required],
+  Object {
+    "code": 3001,
+    "hint": null,
+    "message": "got Identifier('print') in call arguments where one of Punctuator(',') or Punctuator(')') is required",
+    "range": Object {
+      "end": Array [
+        4,
+        10,
+      ],
+      "start": Array [
+        2,
+        11,
+      ],
+    },
+  },
+  Object {
+    "code": 3002,
+    "hint": null,
+    "message": "got Punctuator(')') where number, string, or identifier is required",
+    "range": Object {
+      "end": Array [
+        4,
+        13,
+      ],
+      "start": Array [
+        4,
+        12,
+      ],
+    },
+  },
+  Object {
+    "code": 3001,
+    "hint": null,
+    "message": "got Identifier('wa') in command arguments where one of Punctuator(','), EOL('end of line') or EOF('end of file') is required",
+    "range": Object {
+      "end": Array [
+        8,
+        21,
+      ],
+      "start": Array [
+        8,
+        11,
+      ],
+    },
+  },
+  Object {
+    "code": 3002,
+    "hint": null,
+    "message": "got Punctuator('+') where number, string, or identifier is required",
+    "range": Object {
+      "end": Array [
+        11,
+        10,
+      ],
+      "start": Array [
+        11,
+        9,
+      ],
+    },
+  },
+  Object {
+    "code": 3002,
+    "hint": null,
+    "message": "got Keyword('not') where number, string, or identifier is required",
+    "range": Object {
+      "end": Array [
+        13,
+        12,
+      ],
+      "start": Array [
+        13,
+        9,
+      ],
+    },
+  },
+  Object {
+    "code": 2002,
+    "hint": "Use 'function' on the right side of an assignment, e.g. f = function(x)",
+    "message": "Keyword('function') can only be used within expressions",
+    "range": Object {
+      "end": Array [
+        17,
+        13,
+      ],
+      "start": Array [
+        17,
+        5,
+      ],
+    },
+  },
+  Object {
+    "code": 3002,
+    "hint": null,
+    "message": "got Unknown('') where number, string, or identifier is required",
+    "range": Object {
+      "end": Array [
+        18,
+        13,
+      ],
+      "start": Array [
+        18,
+        5,
+      ],
+    },
+  },
+  Object {
+    "code": 3001,
+    "hint": null,
+    "message": "got Identifier('print') in if statement where Keyword('then') is required",
+    "range": Object {
+      "end": Array [
+        28,
+        21,
+      ],
+      "start": Array [
+        28,
+        5,
+      ],
+    },
+  },
 ]
 `;
 
@@ -1608,12 +1742,58 @@ exports[`parse default scripts obj-init.src unsafe 1`] = `
 ]"
 `;
 
-exports[`parse default scripts open block 1`] = `Array []`;
+exports[`parse default scripts open block 1`] = `
+Array [
+  Object {
+    "code": 1004,
+    "hint": null,
+    "message": "'end' without following keyword ('if', 'function', etc.)",
+    "range": Object {
+      "end": Array [
+        40,
+        17,
+      ],
+      "start": Array [
+        40,
+        9,
+      ],
+    },
+  },
+]
+`;
 
 exports[`parse default scripts open block 2`] = `
 Array [
-  [Error: unexpected keyword Keyword[40:9 - 40:17: value = 'end whil'] at start of line],
-  [Error: found open block WhileStatement],
+  Object {
+    "code": 3002,
+    "hint": null,
+    "message": "got Unknown('') where number, string, or identifier is required",
+    "range": Object {
+      "end": Array [
+        40,
+        17,
+      ],
+      "start": Array [
+        40,
+        9,
+      ],
+    },
+  },
+  Object {
+    "code": 4002,
+    "hint": "Add 'end while' to close this block",
+    "message": "'while' without matching 'end while'",
+    "range": Object {
+      "end": Array [
+        36,
+        9,
+      ],
+      "start": Array [
+        36,
+        9,
+      ],
+    },
+  },
 ]
 `;
 
@@ -1684,7 +1864,7 @@ exports[`parse default scripts password-generator.src 1`] = `
 					IfClause[25:9-27:13][BinaryExpression[25:13-25:19][Identifier[25:13-25:14][i] == Literal[25:18-25:19][0]]
 						CallExpression[26:13-26:38][MemberExpression[26:13-26:35][Identifier[26:13-26:30][currentCharBuffer].Identifier[26:31-26:35][push]](Literal[26:36-26:37][0])]
 					]
-					ElseClause[27:13-29:15][
+					ElseClause[27:9-29:15][
 						CallExpression[28:13-28:37][MemberExpression[28:13-28:30][Identifier[28:13-28:15][me].Identifier[28:16-28:30][increaseBuffer]](BinaryExpression[28:31-28:36][Identifier[28:31-28:32][i] - Literal[28:35-28:36][1]])]
 					}]
 				]
@@ -1771,7 +1951,7 @@ exports[`parse default scripts password-generator.src unsafe 1`] = `
 					IfClause[25:9-27:13][BinaryExpression[25:13-25:19][Identifier[25:13-25:14][i] == Literal[25:18-25:19][0]]
 						CallExpression[26:13-26:38][MemberExpression[26:13-26:35][Identifier[26:13-26:30][currentCharBuffer].Identifier[26:31-26:35][push]](Literal[26:36-26:37][0])]
 					]
-					ElseClause[27:13-29:15][
+					ElseClause[27:9-29:15][
 						CallExpression[28:13-28:37][MemberExpression[28:13-28:30][Identifier[28:13-28:15][me].Identifier[28:16-28:30][increaseBuffer]](BinaryExpression[28:31-28:36][Identifier[28:31-28:32][i] - Literal[28:35-28:36][1]])]
 					}]
 				]
@@ -2006,7 +2186,7 @@ exports[`parse default scripts pseudo-crypto.src 1`] = `
 				IfClause[180:9-182:13][BinaryExpression[180:13-180:27][Identifier[180:13-180:23][currentBit] % Literal[180:26-180:27][4]]
 					AssignmentStatement[181:13-181:50][Identifier[181:13-181:23][bitStorage] = BinaryExpression[181:26-181:50][BinaryExpression[181:26-181:41][Identifier[181:26-181:36][bitStorage] * Literal[181:39-181:41][64]] + Identifier[181:44-181:50][buffer]]]
 				]
-				ElseClause[182:13-184:15][
+				ElseClause[182:9-184:15][
 					AssignmentStatement[183:13-183:32][Identifier[183:13-183:23][bitStorage] = Identifier[183:26-183:32][buffer]]
 				}]
 			]
@@ -2253,7 +2433,7 @@ exports[`parse default scripts pseudo-crypto.src unsafe 1`] = `
 				IfClause[180:9-182:13][BinaryExpression[180:13-180:27][Identifier[180:13-180:23][currentBit] % Literal[180:26-180:27][4]]
 					AssignmentStatement[181:13-181:50][Identifier[181:13-181:23][bitStorage] = BinaryExpression[181:26-181:50][BinaryExpression[181:26-181:41][Identifier[181:26-181:36][bitStorage] * Literal[181:39-181:41][64]] + Identifier[181:44-181:50][buffer]]]
 				]
-				ElseClause[182:13-184:15][
+				ElseClause[182:9-184:15][
 					AssignmentStatement[183:13-183:32][Identifier[183:13-183:23][bitStorage] = Identifier[183:26-183:32][buffer]]
 				}]
 			]
@@ -2646,7 +2826,7 @@ exports[`parse default scripts shorthand.ms 1`] = `
 		IfClause[4:1-6:5][Literal[4:5-4:10][false]
 			CallExpression[5:5-5:17][Identifier[5:5-5:10][print](Literal[5:11-5:16][false])]
 		]
-		ElseClause[6:5-8:7][
+		ElseClause[6:1-8:7][
 			CallExpression[7:5-7:16][Identifier[7:5-7:10][print](Literal[7:11-7:15][true])]
 		}]
 	]
@@ -2654,7 +2834,7 @@ exports[`parse default scripts shorthand.ms 1`] = `
 		IfClause[9:1-11:5][Literal[9:5-9:10][false]
 			CallExpression[10:5-10:17][Identifier[10:5-10:10][print](Literal[10:11-10:16][false])]
 		]
-		ElseClause[11:5-14:7][
+		ElseClause[11:1-14:7][
 			CallExpression[12:5-12:16][Identifier[12:5-12:10][print](Literal[12:11-12:15][true])]
 			IfStatement[13:5-13:53][
 				IfShortcutClause[13:5-13:39][Literal[13:9-13:14][false]
@@ -2746,7 +2926,7 @@ exports[`parse default scripts shorthand.ms unsafe 1`] = `
 		IfClause[4:1-6:5][Literal[4:5-4:10][false]
 			CallExpression[5:5-5:17][Identifier[5:5-5:10][print](Literal[5:11-5:16][false])]
 		]
-		ElseClause[6:5-8:7][
+		ElseClause[6:1-8:7][
 			CallExpression[7:5-7:16][Identifier[7:5-7:10][print](Literal[7:11-7:15][true])]
 		}]
 	]
@@ -2754,7 +2934,7 @@ exports[`parse default scripts shorthand.ms unsafe 1`] = `
 		IfClause[9:1-11:5][Literal[9:5-9:10][false]
 			CallExpression[10:5-10:17][Identifier[10:5-10:10][print](Literal[10:11-10:16][false])]
 		]
-		ElseClause[11:5-14:7][
+		ElseClause[11:1-14:7][
 			CallExpression[12:5-12:16][Identifier[12:5-12:10][print](Literal[12:11-12:15][true])]
 			IfStatement[13:5-13:53][
 				IfShortcutClause[13:5-13:39][Literal[13:9-13:14][false]
@@ -3056,7 +3236,35 @@ exports[`parse default scripts using repeat keyword 1`] = `Array []`;
 
 exports[`parse default scripts using repeat keyword 2`] = `
 Array [
-  [Error: unexpected keyword Keyword[2:9 - 2:15: value = 'repeat'] at start of line],
-  [Error: no matching open function block],
+  Object {
+    "code": 2002,
+    "hint": "'repeat' is a reserved keyword but has no function",
+    "message": "Keyword('repeat') is currently unused",
+    "range": Object {
+      "end": Array [
+        2,
+        15,
+      ],
+      "start": Array [
+        2,
+        9,
+      ],
+    },
+  },
+  Object {
+    "code": 4001,
+    "hint": null,
+    "message": "'end function' without matching 'function'",
+    "range": Object {
+      "end": Array [
+        4,
+        21,
+      ],
+      "start": Array [
+        4,
+        21,
+      ],
+    },
+  },
 ]
 `;
