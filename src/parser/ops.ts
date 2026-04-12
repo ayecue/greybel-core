@@ -397,7 +397,7 @@ function handleInclude(me: Parser): void {
   const startToken = me.previousToken;
 
   let typeOnly = false;
-  if (Selectors.IncludeType(me.token)) {
+  if (me.token.type === TokenType.Identifier && me.token.value === 'type') {
     typeOnly = true;
     me.next();
   }
@@ -605,16 +605,7 @@ export function greybelKeywordHandlerBuilder(): KeywordHandlerBuilder {
     .add(Selectors.Debugger.selectorId, handleDebugger)
     .add(Selectors.IfEnv.selectorId, handleIfEnv)
     .add(Selectors.ElseEnv.selectorId, handleElseEnv)
-    .add(Selectors.EndIfEnv.selectorId, handleEndIfEnv)
-    .add(Selectors.IncludeType.selectorId, (me: Parser) => {
-      me.raise(
-        `Keyword('type') can only be used after '#include'`,
-        new ASTRange(
-          [me.token.line, me.token.startChar],
-          [me.token.endLine, me.token.endChar]
-        )
-      );
-    });
+    .add(Selectors.EndIfEnv.selectorId, handleEndIfEnv);
 }
 
 export const greybelInfixOps = buildInfixOpIndex(

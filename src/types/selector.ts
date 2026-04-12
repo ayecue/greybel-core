@@ -34,8 +34,7 @@ export enum SelectorTypes {
   Escape = 'Escape',
   IfEnv = 'IfEnv',
   ElseEnv = 'ElseEnv',
-  EndIfEnv = 'EndIfEnv',
-  IncludeType = 'IncludeType'
+  EndIfEnv = 'EndIfEnv'
 }
 
 export const Selectors: typeof CoreSelectors &
@@ -116,10 +115,6 @@ export const Selectors: typeof CoreSelectors &
   EndIfEnv: createSelector({
     type: TokenType.Keyword,
     value: GreybelKeyword.EndIfEnv
-  }),
-  IncludeType: createSelector({
-    type: TokenType.Keyword,
-    value: GreybelKeyword.IncludeType
   })
 };
 
